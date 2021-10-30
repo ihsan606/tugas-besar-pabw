@@ -1,6 +1,6 @@
 .hero{
     background-color: #F6F5FF;
-    height: 600px;
+    height: 520px;
     background-size: cover;
  
 }
@@ -8,4 +8,10 @@
 
 .hero-text {
     font-size: 38px;
+    color: #000;
+    
+}
+
+.img-radius {
+    border-radius:10px;
 }
