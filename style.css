@@ -1,3 +1,11 @@
-*{
-background-color:red;
+.hero{
+    background-color: #F6F5FF;
+    height: 600px;
+    background-size: cover;
+ 
+}
+
+
+.hero-text {
+    font-size: 38px;
 }
