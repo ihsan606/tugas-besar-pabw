@@ -15,3 +15,40 @@
 .img-radius {
     border-radius:10px;
 }
+
+.margin-10{
+    margin: 10px;
+}
+
+/* footer */
+#bottom{
+    text-align: center;
+}
+#bottom .border-top{
+    border: none;
+}
+.bottom-footer{
+    background-color: #6c63ff;
+    color:white;
+}
+.bottom-footer li a{
+    color: white;
+}
+.bottom-footer li{
+    list-style-type: none;
+}
+.copyright{
+    margin: auto;
+    
+}
+
+.follow-us{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#social-media-icons{
+    margin: 0px auto 20px auto ;
+}
+
+
