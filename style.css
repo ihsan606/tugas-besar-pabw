@@ -1,6 +1,7 @@
+
 .hero{
     background-color: #F6F5FF;
-    height: 520px;
+    height: 100%;
     background-size: cover;
  
 }
@@ -51,4 +52,7 @@
     margin: 0px auto 20px auto ;
 }
 
+.pd-2{
+     padding: 2% 2% 2% 2% !important;
+}
 
