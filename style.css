@@ -6,7 +6,6 @@
  
 }
 
-
 .hero-text {
     font-size: 38px;
     color: #000;
@@ -42,12 +41,10 @@
     margin: auto;
     
 }
-
 .follow-us{
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 #social-media-icons{
     margin: 0px auto 20px auto ;
 }
