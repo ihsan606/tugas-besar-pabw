@@ -1,6 +1,6 @@
 <?php 
 
-class Home{
+class HomeController{
   public function index()
   {
     echo 'home/index';

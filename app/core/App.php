@@ -2,7 +2,7 @@
 
 class App 
 {
-  protected $controller = "Home";
+  protected $controller = "HomeController";
   protected $method = "index";
   protected $params = [];
 
@@ -10,11 +10,11 @@ class App
   {
     //controller
     $url = $this->parseURL();
-    if(file_exists('../app/controller/' . $url(0) . 'Controller.php')){
-      $this->controller = $url[0];
+    if(file_exists('../app/controllers/' . $url[0] . 'Controller.php')){
+      $this->controller = $url[0] . 'Controller';
       unset($url[0]);
     }    
-    require_once '../app/controller/' . $this->controller . 'Controller.php';
+    require_once '../app/controllers/' . $this->controller . '.php';
     $this->controller = new $this->controller;
 
     //method
