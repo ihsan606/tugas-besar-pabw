@@ -15,7 +15,7 @@ perlu membuat:
     created_at
     update_at
 
-  tabel category:
+  tabel categorys:
     id
     nama
     image
@@ -23,35 +23,43 @@ perlu membuat:
     created_at
     update_at
 
-  tabel meja:
+  tabel mejas:
     id
     nomor_meja
     created_at
     update_at
 
-  tabel customer:
+  tabel customers:
     id
     nama
     nomor_meja
     created_at
     update_at
 
-  tabel order:
-    id
-    invoice_id
-    product_id
-    jumlah
-    created_at
-    update_at  
-  
-  tabel invoice:
+  tabel kernjangs:
     id
     customer_id
     meja_id
     created_at
     update_at
 
-  tabel admin:
+  tabel orders:
+    id
+    invoice_id
+    product_id
+    qty
+    price
+    created_at
+    update_at  
+  
+  tabel invoices:
+    id
+    customer_id
+    meja_id
+    created_at
+    update_at
+
+  tabel admins:
     id
     username
     email
