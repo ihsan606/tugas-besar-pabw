@@ -18,7 +18,6 @@ class App
     }
     
     require_once '../app/controllers/' . $this->controller . '.php';
-    var_dump($this->controller);
     $this->controller = new $this->controller;
 
     //method

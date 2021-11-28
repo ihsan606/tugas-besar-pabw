@@ -1,8 +1,10 @@
 <?php 
 
-class HomeController{
+class HomeController extends Controller{
   public function index()
   {
-    echo 'home/index';
+    $this->view('template/header', ['title' => 'Halaman Home']);
+    $this->view('Home/index');
+    $this->view('template/footer');
   }
 }
