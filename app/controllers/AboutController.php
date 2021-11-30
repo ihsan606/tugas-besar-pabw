@@ -8,16 +8,16 @@ class AboutController extends Controller{
       'pekerjaan' => $pekerjaan,
       'umur' => $umur
     ];
-    $this->view('template/header', ['title' => 'Halaman About']);
-    $this->view('about/index', $data);
-    $this->view('template/footer');
+    // $this->view('template/header', ['title' => 'Halaman About']);
+    $this->view('about/index', $data, 'admin');
+    // $this->view('template/footer');
   }
 
   public function page()
   {
-    $this->view('template/header', ['title' => 'Halaman Page']);
+    // $this->view('template/header', ['title' => 'Halaman Page']);
     $this->view('about/page');
-    $this->view('template/footer');
+    // $this->view('template/footer');
   }
 }
 
