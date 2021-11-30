@@ -3,6 +3,6 @@
 class DetailMenuController extends Controller{
   public function index()
   {
-    echo 'Halaman Detail Menu';
+    $this->view('detailMenu', [], 'customer');
   }
 }

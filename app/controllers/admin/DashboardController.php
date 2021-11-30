@@ -3,6 +3,6 @@
 class DashboardController extends Controller{
   public function index()
   {
-    echo 'Halaman Dashboard Admin';
+    $this->view('dashboard', [], 'admin');
   }
 }

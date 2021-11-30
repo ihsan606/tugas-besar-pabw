@@ -4,14 +4,14 @@ class Controller {
   public function view($view, $data = [], $layout = ""){
     if($layout == 'customer'){
       $this::getComponent('customer/headerCustomer', $data);
-      require_once '../app/views/' . $view . '.php';
+      require_once '../app/views/pages/customer/' . $view . '.php';
       $this::getComponent('customer/footerCustomer', $data);
     }else if($layout == 'admin'){
       $this::getComponent('admin/headerAdmin', $data);
-      require_once '../app/views/' . $view . '.php';
+      require_once '../app/views/pages/admin/' . $view . '.php';
       $this::getComponent('admin/footerAdmin', $data);
     }else{
-      require_once '../app/views/' . $view . '.php';
+      require_once '../app/views/pages/single/' . $view . '.php';
     }
   }
 

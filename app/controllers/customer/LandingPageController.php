@@ -3,6 +3,6 @@
 class LandingPageController extends Controller{
   public function index()
   {
-    echo 'Halaman Landing Page';
+    $this->view('landingPage', [], 'customer');
   }
 }
