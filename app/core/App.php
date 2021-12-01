@@ -2,7 +2,7 @@
 
 class App 
 {
-  protected $controller = "HomeController";
+  protected $controller = "LandingPageController";
   protected $method = "index";
   protected $params = [];
 
@@ -21,8 +21,11 @@ class App
         unset($url[0]);
         require_once '../app/controllers/customer/' . $this->controller . '.php';
         $this->controller = new $this->controller;
-      }       
-    }
+      }   
+    }else{
+        require_once '../app/controllers/customer/' . $this->controller . '.php';
+        $this->controller = new $this->controller;
+      }    
     
     //method
     if(isset($url[1])){
