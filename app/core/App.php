@@ -21,8 +21,13 @@ class App
         unset($url[0]);
         require_once '../app/controllers/customer/' . $this->controller . '.php';
         $this->controller = new $this->controller;
+      }else{
+        unset($url[0]);
+        require_once '../app/controllers/customer/' . $this->controller . '.php';
+        $this->controller = new $this->controller;
       }   
     }else{
+        unset($url[0]);
         require_once '../app/controllers/customer/' . $this->controller . '.php';
         $this->controller = new $this->controller;
       }    
