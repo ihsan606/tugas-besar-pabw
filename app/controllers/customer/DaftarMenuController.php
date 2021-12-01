@@ -3,6 +3,7 @@
 class DaftarMenuController extends Controller{
   public function index()
   {
-    $this->view('daftarMenu', [], 'customer');
+    $data = ['title' => 'Daftar Menu',];
+    $this->view('daftarMenu', $data, 'customer');
   }
 }

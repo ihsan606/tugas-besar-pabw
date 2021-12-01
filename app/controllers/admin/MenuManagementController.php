@@ -3,6 +3,7 @@
 class MenuManagementController extends Controller{
   public function index()
   {
-    $this->view('menuManagement', [], 'admin');
+    $data = ['title' => 'Manajemen Menu',];
+    $this->view('menuManagement', $data, 'admin');
   }
 }

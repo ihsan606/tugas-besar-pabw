@@ -3,6 +3,7 @@
 class DetailMenuController extends Controller{
   public function index()
   {
-    $this->view('detailMenu', [], 'customer');
+    $data = ['title' => 'Detail Menu',];
+    $this->view('detailMenu', $data, 'customer');
   }
 }

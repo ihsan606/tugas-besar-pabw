@@ -3,6 +3,7 @@
 class LoginAdminController extends Controller{
   public function index()
   {
-    $this->view('loginAdmin', [], 'single');
+    $data = ['title' => 'Login',];
+    $this->view('loginAdmin', $data, 'single');
   }
 }

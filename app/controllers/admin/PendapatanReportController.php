@@ -3,6 +3,7 @@
 class PendapatanReportController extends Controller{
   public function index()
   {
-    $this->view('pendapatanReport', [], 'admin');
+    $data = ['title' => 'Laporan Pendapatan',];
+    $this->view('pendapatanReport', $data, 'admin');
   }
 }

@@ -3,6 +3,7 @@
 class KeranjangController extends Controller{
   public function index()
   {
-    $this->view('keranjang', [], 'customer');
+    $data = ['title' => 'Keranjang',];
+    $this->view('keranjang', $data, 'customer');
   }
 }

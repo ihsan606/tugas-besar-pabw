@@ -3,6 +3,7 @@
 class MenuReportController extends Controller{
   public function index()
   {
-    $this->view('menuReport', [], 'admin');
+    $data = ['title' => 'Laporan Menu',];
+    $this->view('menuReport', $data, 'admin');
   }
 }

@@ -3,6 +3,7 @@
 class LandingPageController extends Controller{
   public function index()
   {
-    $this->view('landingPage', [], 'customer');
+    $data = ['title' => 'Landing Page',];
+    $this->view('landingPage', $data, 'customer');
   }
 }

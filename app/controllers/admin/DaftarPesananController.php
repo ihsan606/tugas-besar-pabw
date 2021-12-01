@@ -2,7 +2,8 @@
 
 class DaftarPesananController extends Controller{
   public function index()
-  {
-    $this->view('daftarPesanan', [], 'admin');
+  { 
+    $data = ['title' => 'Daftar Pesanan',];
+    $this->view('daftarPesanan', $data, 'admin');
   }
 }

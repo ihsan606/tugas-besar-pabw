@@ -3,6 +3,7 @@
 class PesananBerhasilController extends Controller{
   public function index()
   {
-    $this->view('pesananBerhasil', [], 'single');
+    $data = ['title' => 'Pesanan Berhasil',];
+    $this->view('pesananBerhasil', $data, 'single');
   }
 }
