@@ -61,35 +61,13 @@
           <!-- Left links -->
           <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto">
             <li class="nav-item px-2">
-              <a class="nav-link active"  href="#">Home</a>
+              <a class="nav-link active"  href="<?=BASEURL;?>">Home</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="<?=BASEURL;?>/daftarMenu">Menu</a>
             </li>
-            <!-- Navbar dropdown -->
-            <li class="nav-item dropdown p2-5">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Courses
-              </a>
-              <!-- Dropdown menu -->
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li>
-                  <a class="dropdown-item" href="#">Python</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Java</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">Vuejs</a>
-                </li>
-              </ul>
+            <li class="nav-item px-2">
+              <a class="nav-link" href="<?=BASEURL;?>/keranjang">Keranjang</a>
             </li>
           </ul>
           <!-- Left links -->
