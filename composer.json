@@ -4,6 +4,9 @@
     },
 
     "autoload": {
+        "files": [
+            "app/Database.php"
+        ],
         "classmap": [
             "app/Models"
         ]
