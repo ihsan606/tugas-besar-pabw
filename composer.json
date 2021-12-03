@@ -1,0 +1,14 @@
+{
+    "require": {
+        "illuminate/database": "^8.74"
+    },
+
+    "autoload": {
+        "files": [
+            "app/Database.php"
+        ],
+        "classmap": [
+            "app/Models"
+        ]
+    }
+}
