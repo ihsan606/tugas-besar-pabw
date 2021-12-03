@@ -4,20 +4,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="<?=BASEURL;?>/assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="<?=BASEURL;?>/assets/img/favicon.png">
-  <title>
-    Black Dashboard by Creative Tim
-  </title>
-  <!--     Fonts and icons     -->
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <!-- Fonts and icons -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Nucleo Icons -->
-  <link href="<?=BASEURL;?>/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link href="<?=BASEURL;?>/assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="<?=BASEURL;?>/assets/demo/demo.css" rel="stylesheet" />
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <!-- Title -->
+  <title>Rezerva | Admin | <?= $data['title'] ?></title>
 </head>
 
 <body class="">
@@ -28,64 +27,66 @@
     -->
       <div class="sidebar-wrapper">
         <div class="logo">
+          <h3 style='margin : 0px 0px 0px 0px; padding : 0px 0px 0px 10px;'>
           <a href="javascript:void(0)" class="simple-text logo-mini">
-            CT
+            LOGO
           </a>
           <a href="javascript:void(0)" class="simple-text logo-normal">
-            Creative Tim
+            REZERVA
           </a>
+          </h3>
         </div>
         <ul class="nav">
           <li>
-            <a href="admin/dashboard">
+            <a href="dashboard">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="admin/icons">
+            <a href="daftar_pesanan">
               <i class="tim-icons icon-atom"></i>
-              <p>Icons</p>
+              <p>Daftar Pesanan</p>
             </a>
           </li>
           <li>
-            <a href="admin/map">
+            <a href="laporan_pendapatan">
               <i class="tim-icons icon-pin"></i>
-              <p>Maps</p>
+              <p>Laporan Pendapatan</p>
             </a>
           </li>
           <li>
-            <a href="admin/notifications">
+            <a href="laporan_menu">
               <i class="tim-icons icon-bell-55"></i>
-              <p>Notifications</p>
+              <p>Laporan Menu</p>
             </a>
           </li>
           <li>
-            <a href="admin/user">
+            <a href="kelola_menu">
               <i class="tim-icons icon-single-02"></i>
-              <p>User Profile</p>
+              <p>Kelola Menu</p>
             </a>
           </li>
           <li>
-            <a href="admin/tables">
+            <a href="tables">
               <i class="tim-icons icon-puzzle-10"></i>
               <p>Table List</p>
             </a>
           </li>
           <li>
-            <a href="admin/typography">
+            <a href="typography">
               <i class="tim-icons icon-align-center"></i>
               <p>Typography</p>
             </a>
           </li>
           <li>
-            <a href="admin/rtl">
+            <a href="rtl">
               <i class="tim-icons icon-world"></i>
               <p>RTL Support</p>
             </a>
           </li>
           <li>
-            <a href="admin/upgrade">
+            <a href="upgrade">
               <i class="tim-icons icon-spaceship"></i>
               <p>Upgrade to PRO</p>
             </a>
@@ -94,7 +95,7 @@
       </div>
     </div>
     <div class="main-panel">
-       <!-- Navbar -->
+      <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
         <div class="container-fluid">
           <div class="navbar-wrapper">
@@ -105,7 +106,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:void(0)">Dashboard</a>
+            <a class="navbar-brand " style='margin : 0px 0px 0px 0px; padding : 0px 0px 0px 20px;' href="javascript:void(0)"><h2 style='margin : 0px 0px 0px 0px;'><?= $data['title']?></h2></a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -171,6 +172,4 @@
       </div>
       <!-- End Navbar -->
       <div class="content">
-     
-
-      
+        
