@@ -34,14 +34,15 @@
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light ">
       <!-- Container wrapper -->
       <div class="container">
-        <a class="navbar-brand me-2" href="https://mdbgo.com/">
-          <img
+        <a class="navbar-brand me-2" href="<?=BASEURL;?>">
+        Rezerva
+          <!-- <img
             src="img/ucourse.png"
             width="90%"
             alt=""
             loading="lazy"
             style="margin-top: -1px;"
-          />
+          /> -->
         </a>
         <!-- Toggle button -->
         <button
@@ -71,19 +72,19 @@
             </li>
           </ul>
           <!-- Left links -->
-          <div class="d-flex align-items-center">
-            <button type="button" class="btn btn-link px-3 me-2">
+          <div class="d-flex-end  justify-content-end">
+            <button type="button" class="btn btn-link">
               Login
             </button>
-            <button type="button" class="btn btn-primary me-3">
+            <button type="button" class="btn btn-primary">
               Sign up for free
             </button>
-            <a
+            <!-- <a
               class="btn btn-dark px-3"
               href="https://github.com/ihsan606/tugas-besar-pabw"
               role="button"
               ><i class="fab fa-github"></i
-            ></a>
+            ></a> -->
           </div>
         </div>
         <!-- Collapsible wrapper -->
