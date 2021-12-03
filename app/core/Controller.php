@@ -3,13 +3,13 @@
 class Controller {
   public function view($view, $data = [], $layout = ""){
     if($layout == 'customer'){
-      $this::getComponent('customer/headerCustomer', $data);
+      $this::getComponent('customer/header-customer', $data);
       require_once '../app/views/pages/customer/' . $view . '.php';
-      $this::getComponent('customer/footerCustomer', $data);
+      $this::getComponent('customer/footer-customer', $data);
     }else if($layout == 'admin'){
-      $this::getComponent('admin/headerAdmin', $data);
+      $this::getComponent('admin/header-admin', $data);
       require_once '../app/views/pages/admin/' . $view . '.php';
-      $this::getComponent('admin/footerAdmin', $data);
+      $this::getComponent('admin/footer-admin', $data);
     }else{
       require_once '../app/views/pages/single/' . $view . '.php';
     }
