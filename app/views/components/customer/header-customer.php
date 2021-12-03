@@ -24,7 +24,7 @@
     rel="stylesheet"
     />
     <!-- local css -->
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <title>Rezerva | Customer | <?=$data['title'];?></title>
@@ -64,10 +64,10 @@
               <a class="nav-link active"  href="<?=BASEURL;?>">Home</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="<?=BASEURL;?>/daftarMenu">Menu</a>
+              <a class="nav-link" href="<?=BASEURL;?>/customer/daftar_menu">Menu</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="<?=BASEURL;?>/keranjang">Keranjang</a>
+              <a class="nav-link" href="<?=BASEURL;?>/customer/keranjang">Keranjang</a>
             </li>
           </ul>
           <!-- Left links -->
