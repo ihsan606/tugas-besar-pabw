@@ -14,13 +14,13 @@ function endMigrations($table){
  $tables= [
      'users',
      'customers',
-     'tables',
-     'categories',
-     'menus',
-     'carts',
-     'orders',
-     'invoices',
-     'customers'
+    //  'tables',
+    //  'categories',
+    //  'menus',
+    //  'carts',
+    //  'orders',
+    //  'invoices',
+    //  'customers'
     ];
 
 foreach ($tables as $table){
@@ -58,24 +58,7 @@ foreach ($tables as $table){
             endMigrations('customers');
         });
         
-        //customers table
-        Manager::schema()->dropIfExists('customers');
-        Manager::schema()->create('customers', function ($table) {
-            start('customers');
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-            endMigrations('customers');
-        });
     }
-
-
-     
-
 }
     
 
