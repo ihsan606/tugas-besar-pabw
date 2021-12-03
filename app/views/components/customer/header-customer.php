@@ -24,7 +24,7 @@
     rel="stylesheet"
     />
     <!-- local css -->
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <title>Rezerva | Customer | <?=$data['title'];?></title>
@@ -34,14 +34,15 @@
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light ">
       <!-- Container wrapper -->
       <div class="container">
-        <a class="navbar-brand me-2" href="https://mdbgo.com/">
-          <img
+        <a class="navbar-brand me-2" href="<?=BASEURL;?>">
+        Rezerva
+          <!-- <img
             src="img/ucourse.png"
             width="90%"
             alt=""
             loading="lazy"
             style="margin-top: -1px;"
-          />
+          /> -->
         </a>
         <!-- Toggle button -->
         <button
@@ -64,26 +65,26 @@
               <a class="nav-link active"  href="<?=BASEURL;?>">Home</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="<?=BASEURL;?>/daftarMenu">Menu</a>
+              <a class="nav-link" href="<?=BASEURL;?>/customer/daftar_menu">Menu</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="<?=BASEURL;?>/keranjang">Keranjang</a>
+              <a class="nav-link" href="<?=BASEURL;?>/customer/keranjang">Keranjang</a>
             </li>
           </ul>
           <!-- Left links -->
-          <div class="d-flex align-items-center">
-            <button type="button" class="btn btn-link px-3 me-2">
+          <div class="d-flex-end  justify-content-end">
+            <button type="button" class="btn btn-link">
               Login
             </button>
-            <button type="button" class="btn btn-primary me-3">
+            <button type="button" class="btn btn-primary">
               Sign up for free
             </button>
-            <a
+            <!-- <a
               class="btn btn-dark px-3"
               href="https://github.com/ihsan606/tugas-besar-pabw"
               role="button"
               ><i class="fab fa-github"></i
-            ></a>
+            ></a> -->
           </div>
         </div>
         <!-- Collapsible wrapper -->
