@@ -1,18 +1,48 @@
+      <footer class="footer">
+        <div class="container-fluid">
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="nav-link">
+                Creative Tim
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="nav-link">
+                About Us
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="javascript:void(0)" class="nav-link">
+                Blog
+              </a>
+            </li>
+          </ul>
+          <div class="copyright">
+            ©
+            <script>
+              document.write(new Date().getFullYear())
+            </script>2020 <i class="tim-icons icon-heart-2"></i> by
+            <a href="javascript:void(0)" target="_blank">Creative Tim</a> for a better web.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
   <!--   Core JS Files   -->
-  <script src="<?=BASEURL;?>assets/js/core/jquery.min.js"></script>
-  <script src="<?=BASEURL;?>assets/js/core/popper.min.js"></script>
-  <script src="<?=BASEURL;?>assets/js/core/bootstrap.min.js"></script>
-  <script src="<?=BASEURL;?>assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="<?=BASEURL;?>/assets/js/core/jquery.min.js"></script>
+  <script src="<?=BASEURL;?>/assets/js/core/popper.min.js"></script>
+  <script src="<?=BASEURL;?>/assets/js/core/bootstrap.min.js"></script>
+  <script src="<?=BASEURL;?>/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!--  Google Maps Plugin    -->
   <!-- Place this tag in your head or just before your close body tag. -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
-  <script src="<?=BASEURL;?>assets/js/plugins/chartjs.min.js"></script>
+  <script src="<?=BASEURL;?>/assets/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
-  <script src="<?=BASEURL;?>assets/js/plugins/bootstrap-notify.js"></script>
+  <script src="<?=BASEURL;?>/assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="<?=BASEURL;?>assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
-  <script src="<?=BASEURL;?>assets/demo/demo.js"></script>
+  <script src="<?=BASEURL;?>/assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
+  <script src="<?=BASEURL;?>/assets/demo/demo.js"></script>
   <script>
     $(document).ready(function() {
       $().ready(function() {
