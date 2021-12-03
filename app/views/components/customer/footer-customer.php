@@ -7,9 +7,9 @@
           </div>
           <div class="col-2 d-flex-end">
             <ul class="nav justify-content-end list-unstyled">
-              <li class="ms-3"><a class="text-light" href="#"><i class="bi-twitter" role="img" aria-label="GitHub"></i></a></li>
-              <li class="ms-3"><a class="text-light" href="#"><i class="bi-instagram" role="img" aria-label="GitHub"></i></a></li>
-              <li class="ms-3"><a class="text-light" href="#"><i class="bi-facebook" role="img" aria-label="GitHub"></i></a></li>
+              <li class="ms-3"><a class="text-light" href="#"><i class="bi-twitter" role="img" aria-label="Twitter"></i></a></li>
+              <li class="ms-3"><a class="text-light" href="#"><i class="bi-instagram" role="img" aria-label="Instagram"></i></a></li>
+              <li class="ms-3"><a class="text-light" href="#"><i class="bi-facebook" role="img" aria-label="Facebook"></i></a></li>
             </ul>
           </div>
         </div>

@@ -15,6 +15,8 @@
   <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <!-- Bootstrap Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
   <!-- Title -->
   <title>Rezerva | Admin | <?= $data['title'] ?></title>
 </head>
@@ -28,12 +30,8 @@
       <div class="sidebar-wrapper">
         <div class="logo">
           <h3 style='margin : 0px 0px 0px 0px; padding : 0px 0px 0px 10px;'>
-          <a href="javascript:void(0)" class="simple-text logo-mini">
-            LOGO
-          </a>
-          <a href="javascript:void(0)" class="simple-text logo-normal">
-            REZERVA
-          </a>
+            <a href="javascript:void(0)" class="simple-text logo-mini" style='margin : 0px 10px 0px 0px;'><i class="bi-slack" role="img" aria-label="Slack"></i></a>
+            <a href="javascript:void(0)" class="simple-text logo-normal">REZERVA</a>
           </h3>
         </div>
         <ul class="nav">
