@@ -4,17 +4,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="<?=BASEURL;?>/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="<?=BASEURL;?>/assets/img/favicon.png">
   <!-- Fonts and icons -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="<?=BASEURL;?>/assets/css/nucleo-icons.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <link href="<?=BASEURL;?>/assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="<?=BASEURL;?>/assets/demo/demo.css" rel="stylesheet" />
   <!-- Bootstrap Icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
   <!-- Title -->
@@ -36,55 +36,55 @@
         </div>
         <ul class="nav">
           <li>
-            <a href="dashboard">
+            <a href="<?=BASEURL;?>/admin/dashboard">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="daftar_pesanan">
+            <a href="<?=BASEURL;?>/admin/daftar_pesanan">
               <i class="tim-icons icon-atom"></i>
               <p>Daftar Pesanan</p>
             </a>
           </li>
           <li>
-            <a href="laporan_pendapatan">
+            <a href="<?=BASEURL;?>/admin/laporan_pendapatan">
               <i class="tim-icons icon-pin"></i>
               <p>Laporan Pendapatan</p>
             </a>
           </li>
           <li>
-            <a href="laporan_menu">
+            <a href="<?=BASEURL;?>/admin/laporan_menu">
               <i class="tim-icons icon-bell-55"></i>
               <p>Laporan Menu</p>
             </a>
           </li>
           <li>
-            <a href="kelola_menu">
+            <a href="<?=BASEURL;?>/admin/kelola_menu">
               <i class="tim-icons icon-single-02"></i>
               <p>Kelola Menu</p>
             </a>
           </li>
           <li>
-            <a href="tables">
+            <a href="<?=BASEURL;?>/admin/tables">
               <i class="tim-icons icon-puzzle-10"></i>
               <p>Table List</p>
             </a>
           </li>
           <li>
-            <a href="typography">
+            <a href="<?=BASEURL;?>/admin/typography">
               <i class="tim-icons icon-align-center"></i>
               <p>Typography</p>
             </a>
           </li>
           <li>
-            <a href="rtl">
+            <a href="<?=BASEURL;?>/admin/rtl">
               <i class="tim-icons icon-world"></i>
               <p>RTL Support</p>
             </a>
           </li>
           <li>
-            <a href="upgrade">
+            <a href="<?=BASEURL;?>/admin/upgrade">
               <i class="tim-icons icon-spaceship"></i>
               <p>Upgrade to PRO</p>
             </a>
@@ -137,7 +137,7 @@
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="../assets/img/anime3.png" alt="Profile Photo">
+                    <img src="<?=BASEURL;?>/assets/img/anime3.png" alt="Profile Photo">
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
