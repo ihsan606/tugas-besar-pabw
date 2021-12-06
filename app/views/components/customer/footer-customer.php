@@ -6,7 +6,7 @@
             <ul class="nav" style = "padding : 0px 0px 0px 0px;">
               <li class="nav-item">
                 <a href="javascript:void(0)" class="nav-link" style = "padding : 0px 0px 0px 0px; font-weight : 550;color : white;">
-                © 2020 KELOMPOK LOREM IPSUM | ALL RIGHT RESERVED | 
+                © 2021 KELOMPOK LOREM IPSUM | ALL RIGHT RESERVED | 
                 </a>
               </li>
             </ul>              
@@ -19,7 +19,8 @@
                     MUHAMMAD AUFA ASMAWY - 20523235@STUDENTS.UII.AC.ID | 
                     MUHAMMAD DEVANO ZAIDAN - 20523034@STUDENTS.UII.AC.ID | 
                     MUHAMMAD IHSAN SYAFIUL UMAM - 20523217@STUDENTS.UII.AC.ID | 
-                    MOH. ANANDA PUTRA DWIYANTO - 20523217@STUDENTS.UII.AC.ID
+                    MOH. ANANDA PUTRA DWIYANTO - 20523198@STUDENTS.UII.AC.ID | 
+                    MUHAMMAD FAJAR ANNAUFAL - 18523140@STUDENTS.UII.AC.ID
                   </marquee>
                 </a>
               </li>

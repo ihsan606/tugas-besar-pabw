@@ -61,14 +61,14 @@
           </li>
           <li>
             <a href="<?=BASEURL;?>/admin/kelola_menu">
-              <i class="tim-icons icon-single-02"></i>
+              <i class="tim-icons icon-puzzle-10"></i>
               <p>Kelola Menu</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/tables">
-              <i class="tim-icons icon-puzzle-10"></i>
-              <p>Table List</p>
+            <a href="<?=BASEURL;?>/admin/kategori">
+              <i class="tim-icons icon-single-02"></i>
+              <p>Kategori</p>
             </a>
           </li>
           <li>
