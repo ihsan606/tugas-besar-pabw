@@ -1,22 +1,31 @@
-<div class="card card-tasks">
+<div class="card card-tasks" style = 'height : 100%;'>
   <div class="card-header ">
     <h3>Kategori</h3>
   </div>
   <div class="card-body ">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="text-left" width = "20px"><p class="title">No</p></th>
+          <th class="text-left"><p class="title">Nama Kategori</p></th>
+          <th class="text-center" width = "120px"><p class="title">Action</p></th>
+        </tr>
+      </thead>
+    </table>
     <div class="table-full-width table-responsive">
       <table class="table">
         <thead>
           <tr>
-            <th class="text-left" width = "20px"><p class="title">No</p></th>
-            <th class="text-left"><p class="title">Nama</p></th>
-            <th class="text-center" width = "120px"><p class="title">Action</p></th>
+            <th class="text-left" width = "20px"></p></th>
+            <th class="text-left"></p></th>
+            <th class="text-center" width = "120px"></p></th>
             </tr>
           <tr>
         </thead>
         <tbody>
           <!-- buat perulangan untuk menampilkan kategori -->
           <?php 
-          for($i = 0; $i < 10; $i++){
+          for($i = 0; $i < 30; $i++){
             echo "
               <tr>
                 <td>
@@ -41,4 +50,4 @@
       </table>
     </div>
   </div>
-</div>              
+</div>   
