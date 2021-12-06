@@ -66,9 +66,9 @@
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/kategori">
+            <a href="<?=BASEURL;?>/admin/kelola_kategori">
               <i class="tim-icons icon-single-02"></i>
-              <p>Kategori</p>
+              <p>Kelola Kategori</p>
             </a>
           </li>
           <li>

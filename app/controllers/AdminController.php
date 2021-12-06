@@ -51,9 +51,9 @@ class AdminController extends Controller{
   }
 
   //halaman laporan menu
-  public function kategori()
+  public function kelola_kategori()
   { 
-    $data = ['title' => 'Kategori',];
-    $this->view('kategori', $data, 'admin');
+    $data = ['title' => 'Kelola Kategori',];
+    $this->view('kelola-kategori', $data, 'admin');
   }
 }
