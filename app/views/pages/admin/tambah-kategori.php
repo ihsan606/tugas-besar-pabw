@@ -15,11 +15,11 @@
     <form action = "<?=BASEURL;?>/admin/Tambah_Kategori/store" method = "POST">
       <div class="">
         <label>GAMBAR</label>
-        <input type="file" name = "kategori.gambar" class="form-control form-control-md">
+        <input type="file" name = "kategori_gambar" class="form-control form-control-md">
       </div>
       <div class="form-group">
         <label>NAMA CATEGORY</label>
-        <input type="text" name ="kategori.nama" placeholder="Masukkan Nama Category" class="form-control">
+        <input type="text" name ="kategori_nama" placeholder="Masukkan Nama Category" class="form-control">
       </div>
       <button class="btn btn-info mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
         SAVE</button>
