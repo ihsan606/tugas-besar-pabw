@@ -1,6 +1,7 @@
 {
     "require": {
-        "illuminate/database": "^8.74"
+        "illuminate/database": "^8.74",
+        "midtrans/midtrans-php": "^2.5"
     },
 
     "autoload": {

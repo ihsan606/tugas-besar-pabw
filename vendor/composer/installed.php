@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'd4804596fb109420fbb74425d93ecc93923eff3a',
+        'reference' => 'c8925c781f55f0bd9a82cec459bcf39fdb9f8a9c',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'd4804596fb109420fbb74425d93ecc93923eff3a',
+            'reference' => 'c8925c781f55f0bd9a82cec459bcf39fdb9f8a9c',
             'dev_requirement' => false,
         ),
         'doctrine/inflector' => array(
@@ -80,6 +80,15 @@
             'install_path' => __DIR__ . '/../illuminate/support',
             'aliases' => array(),
             'reference' => '79bb5570274d6abbfaac736992c6b5f5cbcc17c1',
+            'dev_requirement' => false,
+        ),
+        'midtrans/midtrans-php' => array(
+            'pretty_version' => '2.5.2',
+            'version' => '2.5.2.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../midtrans/midtrans-php',
+            'aliases' => array(),
+            'reference' => 'a1ad0c824449ca8c68c4cf11b3417ad518311d2b',
             'dev_requirement' => false,
         ),
         'nesbot/carbon' => array(
