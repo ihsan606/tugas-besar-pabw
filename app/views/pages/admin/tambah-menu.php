@@ -12,36 +12,24 @@
         </div>
       </div>
     </div>
-    <form action = "", method = "POST">
-
-      
-
+    <form action = "<?=BASEURL;?>/admin/Tambah_Menu/store", method = "POST" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-6">
           <div class="">
             <label>GAMBAR</label>
-            <input type="file" name = "kategori.gambar" class="form-control form-control-md" >
+            <input type="file" name = "image" class="form-control form-control-md" >
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label>CATEGORY</label>
-            <select class="form-control" v-model="product.category_id">
-              <option value="">-- select category --</option>
+            <label>KATEGORI</label>
+            <select class="form-control" name="category_id">
+              <option value="" style="background-color: #344675;">-- select category --</option>
               <?php 
-              require '../vendor/autoload.php';
-              use App\models\Category;
-
-              $categories = Category::All();
-
-              if($customer){
-                  echo "berhasil";
-                  foreach($categories as $category){
-                    echo "<option value='$category->id'>$category->name</option>";
-                  }
+              $categories = $data['categories'];
+              foreach($categories as $category){
+                echo "<option value='$category->id' style='background-color: #344675;'>$category->name</option>";
               }
-              echo "<h1> $customer</h1>";
-
               ?>
             </select>
           </div>
@@ -52,13 +40,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>NAMA MENU</label>
-            <input type="text" name="kategori.title" placeholder="Masukkan Nama Menu" class="form-control">
+            <input type="text" name="name" placeholder="Masukkan Nama Menu" class="form-control">
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label>DESCRIPTION</label>
-            <input type="number" v-model="product.stock" placeholder="Masukkan Deskripsi Menu" class="form-control">
+            <label>DESKRIPSI</label>
+            <input type="text" name="description" placeholder="Masukkan Deskripsi Menu" class="form-control">
           </div>
         </div>
       </div>
@@ -66,24 +54,24 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label>PRICE</label>
-            <input type="number" v-model="product.price" placeholder="Masukkan Harga Product"
+            <label>HARGA</label>
+            <input type="number" name="price" placeholder="Masukkan Harga Menu"
               class="form-control">
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
-            <label>DISCOUNT (%)</label>
-            <input type="number" v-model="product.discount" placeholder="Masukkan Discount Product (%)"
+            <label>DISKON (%)</label>
+            <input type="number" name="discount" placeholder="Masukkan Diskon Menu (%)"
               class="form-control">
           </div>
         </div>
       </div>
 
-      <button class="btn btn-info mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
-        SAVE</button>
-      <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo"></i>
-        RESET</button>
+      <button class="btn btn-info mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane text-white mr-2"></i>
+        SIMPAN</button>
+      <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo text-white mr-2"></i>
+        BERSIHKAN</button>
 
     </form>
   </div>

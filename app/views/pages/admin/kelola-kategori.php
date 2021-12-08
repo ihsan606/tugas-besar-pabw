@@ -47,13 +47,12 @@
           <!-- buat perulangan untuk menampilkan kategori -->
           <?php 
           $categories = $data['categories'];
-          // var_dump($categories);
+          $url = BASEURL;
           foreach($categories as $category){
-            $url = BASEURL;
             echo "
               <tr>
-                <td class='text-center'>
-                  <p>$category->id</p>
+                <td>
+                  <p class='title text-center'>$category->id</p>
                 </td>
                 <td class='text-center'>
                   <img src='$url/img/categories/$category->image' alt='' height = '40px' width = '40px'>
