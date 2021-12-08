@@ -1,6 +1,6 @@
 <?php 
 
-class KeranjangController extends Controller{
+class Keranjang_Controller extends Controller{
   public function index()
   {
     $data = ['title' => 'Keranjang',];

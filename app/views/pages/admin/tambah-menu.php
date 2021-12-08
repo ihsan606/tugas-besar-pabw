@@ -28,7 +28,21 @@
             <label>CATEGORY</label>
             <select class="form-control" v-model="product.category_id">
               <option value="">-- select category --</option>
-              <option v-for="category in categories" :key="category.id" :value="category.id">{{ category.name }}</option>
+              <?php 
+              require '../vendor/autoload.php';
+              use App\models\Category;
+
+              $categories = Category::All();
+
+              if($customer){
+                  echo "berhasil";
+                  foreach($categories as $category){
+                    echo "<option value='$category->id'>$category->name</option>";
+                  }
+              }
+              echo "<h1> $customer</h1>";
+
+              ?>
             </select>
           </div>
         </div>

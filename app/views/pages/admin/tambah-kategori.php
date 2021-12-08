@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <form action = "" method = "POST">
+    <form action = "<?=APPURL;?>/AdminController.php" method = "POST">
       <div class="">
         <label>GAMBAR</label>
         <input type="file" name = "kategori.gambar" class="form-control form-control-md">
