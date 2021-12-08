@@ -45,6 +45,10 @@ class ComposerStaticInit8967fef25254fedcfe4218aae1d8cf27
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Container\\' => 14,
         ),
+        'M' => 
+        array (
+            'Midtrans\\' => 9,
+        ),
         'I' => 
         array (
             'Illuminate\\Support\\' => 19,
@@ -119,6 +123,10 @@ class ComposerStaticInit8967fef25254fedcfe4218aae1d8cf27
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'Midtrans\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans',
+        ),
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/collections',
@@ -151,7 +159,8 @@ class ComposerStaticInit8967fef25254fedcfe4218aae1d8cf27
         'App\\models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
         'App\\models\\Cart' => __DIR__ . '/../..' . '/app/Models/Cart.php',
         'App\\models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
-        'App\\models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
+        'App\\models\\Customer' => __DIR__ . '/../..' . '/app/Models/customer.php',
+        'App\\models\\Invoice' => __DIR__ . '/../..' . '/app/Models/Invoice.php',
         'App\\models\\Menu' => __DIR__ . '/../..' . '/app/Models/Menu.php',
         'App\\models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
         'App\\models\\Rating' => __DIR__ . '/../..' . '/app/Models/Rating.php',
