@@ -12,10 +12,10 @@ class Tambah_Kategori_Controller extends Controller{
   }
 
   public function store(){
-    if(issset($_POST['upload'])){
+    // if(issset($_POST['upload'])){
       $name = $_POST['nama']; 
       $image_name = $_FILES['gambar']['name'];
-      $direktori = BASEURL . '/img/categories/';
+      $direktori = 'img/categories/';
       move_uploaded_file($_FILES['gambar']['tmp_name'], $direktori.$image_name);
       // var_dump($_FILES);
 
@@ -28,6 +28,6 @@ class Tambah_Kategori_Controller extends Controller{
       if($category){
         header('Location: ' . BASEURL . '/admin/Kelola_Kategori');
       }
-    }   
+    // }   
   }
 }
