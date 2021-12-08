@@ -7,20 +7,20 @@
       <div class="row pb-3">
         <div class="col-md-auto align-self-center">
           <div class="input-group-apend">
-            <a href = "<?=BASEURL;?>/admin/kelola_kategori" class="btn btn-sm p-2 text-white"><i class="bi-arrow-left-circle-fill mr-2 text-white"></i>KEMBALI</a>
+            <a href = "<?= BASEURL ?>/admin/kelola_kategori" class="btn btn-sm p-2 text-white"><i class="bi-arrow-left-circle-fill mr-2 text-white"></i>KEMBALI</a>
           </div>
         </div>
       </div>
     </div>
-                      <form @submit.prevent="storeProduct">
+                        <form @submit.prevent="storeProduct">
 
-                  <div class="form-group">
-                    <label>GAMBAR</label>
-                    <input type="file" @change="handleFileChange" class="form-control">
-                    <div v-if="validation.image" class="mt-2">
-                      <b-alert show variant="danger">{{ validation.image[0] }}</b-alert>
+                    <div class="form-group">
+                      <label>GAMBAR</label>
+                      <input type="file" @change="handleFileChange" class="form-control">
+                      <div v-if="validation.image" class="mt-2">
+                        <b-alert show variant="danger">{{ validation.image[0] }}</b-alert>
+                      </div>
                     </div>
-                  </div>
 
                   <div class="row">
                     <div class="col-md-6">
