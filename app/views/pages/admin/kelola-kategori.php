@@ -49,13 +49,14 @@
           $categories = $data['categories'];
           // var_dump($categories);
           foreach($categories as $category){
+            $url = BASEURL;
             echo "
               <tr>
                 <td class='text-center'>
                   <p>$category->id</p>
                 </td>
                 <td class='text-center'>
-                  <img src='$category->image' alt='' height = '40px' width = '40px'>
+                  <img src='$url/img/categories/$category->image' alt='' height = '40px' width = '40px'>
                 </td>
                 <td>
                   <p class='title'>$category->name</p>
