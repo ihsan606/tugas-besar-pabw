@@ -19,9 +19,9 @@
       </div> 
       <div class="form-group">
         <label for="nama" class="form-label">NAMA CATEGORY</label>
-        <input type="text" name ="nama" placeholder="Masukkan Nama Category" class="form-control">
+        <input class="form-control" type="text" id = "nama" name = "nama" placeholder="Masukkan Nama Category" >
       </div>
-      <button class="btn btn-info mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
+      <button class="btn btn-info mr-1 btn-submit" type="submit" name = "upload"><i class="fa fa-paper-plane"></i>
         SAVE</button>
       <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo"></i>
         RESET</button>
