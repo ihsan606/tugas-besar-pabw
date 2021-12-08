@@ -148,9 +148,9 @@ class ComposerStaticInit8967fef25254fedcfe4218aae1d8cf27
     );
 
     public static $classMap = array (
+        'App\\models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'Customer' => __DIR__ . '/../..' . '/app/Models/customer.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
