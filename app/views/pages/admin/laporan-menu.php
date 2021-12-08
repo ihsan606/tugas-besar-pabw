@@ -3,7 +3,6 @@
     <h3 style = "margin : 0px 0px 0px 0px;">Laporan Menu</h3>
   </div>
   <div class="card-body">
-   
     <div class="form-group-apend">
       <div class="row pb-3">
         <div class="col align-self-center pr-0">
