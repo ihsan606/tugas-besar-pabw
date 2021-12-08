@@ -50,6 +50,12 @@ class AdminController extends Controller{
     $this->view('kelola-menu', $data, 'admin');
   }
 
+  public function tambah_menu()
+  { 
+    $data = ['title' => 'Tambah Menu',];
+    $this->view('tambah-menu', $data, 'admin');
+  }
+
   //halaman kelola kategori
   public function kelola_kategori()
   { 

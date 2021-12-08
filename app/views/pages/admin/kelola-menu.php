@@ -7,7 +7,7 @@
       <div class="row pb-3">
         <div class="col-md-auto align-self-center">
           <div class="input-group-apend">
-            <a class="btn btn-sm p-2 text-white"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH MENU</a>
+            <a href = "<?=BASEURL;?>/admin/tambah_menu" class="btn btn-sm p-2 text-white"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH MENU</a>
           </div>
         </div>
         <div class="col align-self-center px-0">
