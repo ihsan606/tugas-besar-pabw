@@ -2,6 +2,7 @@
 
 require '../vendor/autoload.php';
 use App\models\Category;
+use Illuminate\Support\Str;
 
 class Tambah_Kategori_Controller extends Controller{
   public function index()
@@ -20,7 +21,7 @@ class Tambah_Kategori_Controller extends Controller{
     $category = Category::create([
       'name' => $name,
       'image' => $image,
-      'slug' => $name->slug()
+      'slug' => Str::slug($name, '-')
     ]);
 
     if($category){
