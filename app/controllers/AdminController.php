@@ -59,8 +59,8 @@ class AdminController extends Controller{
 
   public function tambah_kategori()
   { 
-    $data = ['title' => 'Kelola Kategori',];
-    $this->view('kelola-kategori', $data, 'admin');
+    $data = ['title' => 'Tambah Kategori',];
+    $this->view('tambah-kategori', $data, 'admin');
   }
   
 }
