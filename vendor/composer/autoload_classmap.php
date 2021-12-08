@@ -6,7 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\models\\Admin' => $baseDir . '/app/Models/Admin.php',
+    'App\\models\\Cart' => $baseDir . '/app/Models/Cart.php',
+    'App\\models\\Category' => $baseDir . '/app/Models/Category.php',
     'App\\models\\Customer' => $baseDir . '/app/Models/Customer.php',
+    'App\\models\\Menu' => $baseDir . '/app/Models/Menu.php',
+    'App\\models\\Order' => $baseDir . '/app/Models/Order.php',
+    'App\\models\\Rating' => $baseDir . '/app/Models/Rating.php',
+    'App\\models\\Table' => $baseDir . '/app/Models/Table.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',

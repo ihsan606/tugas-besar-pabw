@@ -12,7 +12,7 @@
         </div>
         <div class="col-md-auto align-self-center">
           <div class="input-group-apend">
-            <button class="btn btn-sm p-2"><i class="fa fa-search mr-2 text-white"></i>SEARCH</button>
+            <a class="btn btn-sm p-2 text-white"><i class="fa fa-search mr-2 text-white"></i>SEARCH</a>
           </div>
         </div>
       </div>
