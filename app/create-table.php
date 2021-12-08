@@ -13,7 +13,7 @@ function endMigrations($table){
     echo $table."_table_successfully_created_at_". date('Y-m-d H:i:s').PHP_EOL;
 }
  $tables= [
-     'users',
+     'admins',
      'customers',
      'categories',
      'menus',
@@ -31,9 +31,9 @@ foreach ($tables as $table){
 
 
         // users table --this table provided for admin
-        Manager::schema()->dropIfExists('users');
-        Manager::schema()->create('users', function (Blueprint $table) {
-            start('users');
+        Manager::schema()->dropIfExists('admins');
+        Manager::schema()->create('admins', function (Blueprint $table) {
+            start('admins');
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
@@ -41,7 +41,7 @@ foreach ($tables as $table){
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            endMigrations('users');
+            endMigrations('admins');
         });
 
 
