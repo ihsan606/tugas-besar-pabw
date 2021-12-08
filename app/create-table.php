@@ -26,7 +26,7 @@ function endMigrations($table){
 
 foreach ($tables as $table){
     if (Manager::schema()->hasTable($table)) {
-        endMigrations($table);
+         endMigrations($table);
     }else {
 
 
@@ -142,6 +142,7 @@ foreach ($tables as $table){
             start('orders');
             $table->id();
             $table->unsignedBigInteger('invoice_id');
+            $table->unsignedBigInteger('table_id');
             $table->unsignedBigInteger('menu_id');
             $table->enum('status',array('dikonfirmasi','diproses','diantar','ditolak'));
             $table->integer('qty');
@@ -150,6 +151,7 @@ foreach ($tables as $table){
 
             //relationship menu
             $table->foreign('menu_id')->references('id')->on('menus');
+            $table->foreign('table_id')->references('id')->on('tables');
             $table->foreign('invoice_id')->references('id')->on('invoices');
             endMigrations('orders');
         });
