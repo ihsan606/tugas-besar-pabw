@@ -2,6 +2,10 @@
 namespace App\models;
 use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Model{
+class Category extends Model{
   protected $guarded = ['id'];
+
+
+ 
+
 }

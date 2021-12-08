@@ -2,6 +2,6 @@
 namespace App\models;
 use Illuminate\Database\Eloquent\Model;
 
-class Admin extends Model{
+class Order extends Model{
   protected $guarded = ['id'];
 }
