@@ -46,17 +46,20 @@
         <tbody>
           <!-- buat perulangan untuk menampilkan kategori -->
           <?php 
-          for($i = 1; $i < 31; $i++){
+          $categories = $data['categories'];
+          // var_dump($categories);
+          foreach($categories as $category){
+            $url = BASEURL;
             echo "
               <tr>
                 <td class='text-center'>
-                  <p>$i</p>
+                  <p>$category->id</p>
                 </td>
                 <td class='text-center'>
-                  <img src='' alt='' height = '40px' width = '40px'>
+                  <img src='$url/img/categories/$category->image' alt='' height = '40px' width = '40px'>
                 </td>
                 <td>
-                  <p class='title'>Kategori ke-$i</p>
+                  <p class='title'>$category->name</p>
                 </td>
                 <td class='td-actions text-center'>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Edit Kategori'>

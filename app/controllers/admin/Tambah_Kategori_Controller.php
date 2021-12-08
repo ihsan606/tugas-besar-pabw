@@ -1,6 +1,8 @@
 <?php 
-  require '../vendor/autoload.php';
-  use App\models\Category;
+
+require '../vendor/autoload.php';
+use App\models\Category;
+use Illuminate\Support\Str;
 
 class Tambah_Kategori_Controller extends Controller{
   public function index()
@@ -10,15 +12,22 @@ class Tambah_Kategori_Controller extends Controller{
   }
 
   public function store(){
-    $name = $_POST['kategori.nama']; 
-    $image = $_POST['kategori.gambar'];
-    $category = Category::create([
-      'name' => $name,
-      'image' => $image,
-    ]);
+    // if(issset($_POST['upload'])){
+      $name = $_POST['nama']; 
+      $image_name = $_FILES['gambar']['name'];
+      $direktori = 'img/categories/';
+      move_uploaded_file($_FILES['gambar']['tmp_name'], $direktori.$image_name);
+      // var_dump($_FILES);
 
-    if($category){
-      header('Location: Kelola_Kategori_Controller.php');
-    }
+      $category = Category::create([
+        'name' => $name,
+        'image' => $image_name,
+        'slug' => Str::slug($name, '-')
+      ]);
+
+      if($category){
+        header('Location: ' . BASEURL . '/admin/Kelola_Kategori');
+      }
+    // }   
   }
 }

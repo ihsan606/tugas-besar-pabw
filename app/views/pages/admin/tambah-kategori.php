@@ -12,16 +12,16 @@
         </div>
       </div>
     </div>
-    <form action = "<?=BASEURL;?>/admin/Tambah_Kategori/store" method = "POST">
-      <div class="">
-        <label>GAMBAR</label>
-        <input type="file" name = "kategori.gambar" class="form-control form-control-md">
-      </div>
+    <form action = "<?=BASEURL;?>/admin/Tambah_Kategori/store" method = "POST" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="gambar" class="form-label">GAMBAR</label>
+        <input class="form-control form-control-md" type="file" id="gambar" name = "gambar">
+      </div> 
       <div class="form-group">
-        <label>NAMA CATEGORY</label>
-        <input type="text" name ="kategori.nama" placeholder="Masukkan Nama Category" class="form-control">
+        <label for="nama" class="form-label">NAMA CATEGORY</label>
+        <input class="form-control" type="text" id = "nama" name = "nama" placeholder="Masukkan Nama Category" >
       </div>
-      <button class="btn btn-info mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane"></i>
+      <button class="btn btn-info mr-1 btn-submit" type="submit" name = "upload"><i class="fa fa-paper-plane"></i>
         SAVE</button>
       <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo"></i>
         RESET</button>
