@@ -12,20 +12,22 @@ class Tambah_Kategori_Controller extends Controller{
   }
 
   public function store(){
-    $name = $_POST['kategori_nama']; 
-    $image = $_POST['kategori_gambar'];
+    var_dump($_POST);
+    // $name = $_POST['nama']; 
+    // $image = $_POST['gambar'];
+    dd($_POST);
     // var_dump($name);
     // var_dump($image);
     // $image = $image->file('image');
-    // $image->storeAs(BASEURL . '/img/categories/', $image->hashName());
-    $category = Category::create([
-      'name' => $name,
-      'image' => $image,
-      'slug' => Str::slug($name, '-')
-    ]);
+    // $image->storeAs(BASEURL . '/img/categories/', $image);
+    // $category = Category::create([
+    //   'name' => $name,
+    //   'image' => $image,
+    //   'slug' => Str::slug($name, '-')
+    // ]);
 
-    if($category){
-      header('Location: ' . BASEURL . '/admin/Kelola_Kategori');
-    }
+    // if($category){
+    //   header('Location: ' . BASEURL . '/admin/Kelola_Kategori');
+    // }
   }
 }
