@@ -52,13 +52,13 @@
             echo "
               <tr>
                 <td>
-                  <p class='title text-center'>$category->id</p>
+                  <p class='text-center'>$category->id</p>
                 </td>
                 <td class='text-center'>
                   <img src='$url/img/categories/$category->image' alt='' height = '40px' width = '40px'>
                 </td>
                 <td>
-                  <p class='title'>$category->name</p>
+                  <p>$category->name</p>
                 </td>
                 <td class='td-actions text-center'>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Edit Kategori'>
