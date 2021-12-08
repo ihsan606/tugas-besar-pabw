@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-class App 
+class App
 {
   protected $controller = "Home_Controller";
   protected $method = "index";
@@ -10,39 +10,57 @@ class App
   {
     //controller
     $url = $this->parseURL();
-    unset($url[0]);
-    if(isset($url[1])){
-      if(file_exists('../app/controllers/admin/' . $url[1] . '_Controller.php')){
-        $this->controller = $url[1] . '_Controller';
-        unset($url[1]);
-        require_once '../app/controllers/admin/' . $this->controller . '.php';
-        $this->controller = new $this->controller;   
-      }else if(file_exists('../app/controllers/customer/' . $url[1] . '_Controller.php')){
-        $this->controller = $url[1] . '_Controller';
-        unset($url[1]);
+    if (isset($url[0])) {
+      if ($url[0] == "customer") {
+        if (isset($url[1])) {
+          if (file_exists('../app/controllers/customer/' . $url[1] . '_Controller.php')) {
+            $this->controller = $url[1] . '_Controller';
+            unset($url[1]);
+            require_once '../app/controllers/customer/' . $this->controller . '.php';
+            $this->controller = new $this->controller;
+          } else {
+            require_once '../app/controllers/customer/' . $this->controller . '.php';
+            $this->controller = new $this->controller;
+          }
+        } else {
+          require_once '../app/controllers/customer/' . $this->controller . '.php';
+          $this->controller = new $this->controller;
+        }
+      } else if ($url[0] == "admin") {
+        $this->controller = "Dashboard_Controller";
+        if (isset($url[1])) {
+          if (file_exists('../app/controllers/admin/' . $url[1] . '_Controller.php')) {
+            $this->controller = $url[1] . '_Controller';
+            unset($url[1]);
+            require_once '../app/controllers/admin/' . $this->controller . '.php';
+            $this->controller = new $this->controller;
+          } else {
+            require_once '../app/controllers/admin/' . $this->controller . '.php';
+            $this->controller = new $this->controller;
+          }
+        } else {
+          require_once '../app/controllers/admin/' . $this->controller . '.php';
+          $this->controller = new $this->controller;
+        }
+      } else {
         require_once '../app/controllers/customer/' . $this->controller . '.php';
-        $this->controller = new $this->controller;   
-      }else{
-        require_once '../app/controllers/customer/' . $this->controller . '.php';
-        $this->controller = new $this->controller;   
+        $this->controller = new $this->controller;
       }
-    }else{
+    } else {
       require_once '../app/controllers/customer/' . $this->controller . '.php';
-        $this->controller = new $this->controller;   
+      $this->controller = new $this->controller;
     }
 
-    
-    
     //method
-    if(isset($url[2])){
-      if(method_exists($this->controller, $url[2])){
+    if (isset($url[2])) {
+      if (method_exists($this->controller, $url[2])) {
         $this->method = $url[2];
         unset($url[2]);
       }
     }
 
     //params
-    if(!empty($url)){
+    if (!empty($url)) {
       $this->params = array_values($url);
     }
 
@@ -52,11 +70,11 @@ class App
 
   public function parseURL()
   {
-    if(isset($_GET['url'])){
+    if (isset($_GET['url'])) {
       $url = rtrim($_GET['url'], '/');
       $url = filter_var($url, FILTER_SANITIZE_URL);
       $url = explode('/', $url);
       return $url;
     }
-  } 
+  }
 }
