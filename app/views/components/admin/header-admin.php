@@ -169,5 +169,5 @@
         </div>
       </div>
       <!-- End Navbar -->
-      <div class="content">
+      <div class="content pb-0">
         

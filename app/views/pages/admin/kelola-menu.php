@@ -3,7 +3,6 @@
     <h3 style = "margin : 0px 0px 0px 0px;">Kelola Menu</h3>
   </div>
   <div class="card-body">
-   
     <div class="form-group-apend">
       <div class="row pb-3">
         <div class="col-md-auto align-self-center">
@@ -26,7 +25,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th class="text-left" width = "20px"><p class="title">No</p></th>
+          <th class="text-center" width = "20px"><p class="title">No</p></th>
           <th class="text-center" width = "70px"><p class="title">Gambar</p></th>
           <th class="text-left"><p class="title">Nama Menu</p></th>
           <th class="text-left" width = "200px"><p class="title">Kategori</p></th>
@@ -38,7 +37,7 @@
       <table class="table">
         <thead>
           <tr>
-            <th class="text-left" width = "20px"></p></th>
+            <th class="text-center" width = "20px"></p></th>
             <th class="text-center" width = "70px"></p></th>
             <th class="text-left"></p></th>
             <th class="text-left"width = "200px"></p></th>
@@ -53,7 +52,7 @@
             echo "
               <tr>
                 <td>
-                  <p>$i</p>
+                  <p class='text-center'>$i</p>
                 </td>
                 <td class='text-center'>
                   <img src='' alt='' height = '40px' width = '40px'>

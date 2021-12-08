@@ -1,5 +1,5 @@
       </div>
-      <footer class="footer">
+      <footer class="footer" style = "padding : 0px 0px 24px 250px;">
         <div class="container">
           <div class="row">
             <div class="col-md-auto" style = "padding : 0px 0px 0px 15px;">
