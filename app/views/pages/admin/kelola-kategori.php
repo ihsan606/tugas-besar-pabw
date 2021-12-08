@@ -7,7 +7,7 @@
       <div class="row pb-3">
         <div class="col-md-auto align-self-center">
           <div class="input-group-apend">
-            <button class="btn btn-sm p-2"><i class="fa fa-plus-circle mr-2"></i>TAMBAH KATEGORI</button>
+            <button class="btn btn-sm p-2"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH KATEGORI</button>
           </div>
         </div>
         <div class="col align-self-center px-0">
@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-auto align-self-center">
           <div class="input-group-apend">
-            <button class="btn btn-sm p-2"><i class="fa fa-search mr-2"></i>SEARCH</button>
+            <button class="btn btn-sm p-2"><i class="fa fa-search mr-2 text-white"></i>SEARCH</button>
           </div>
         </div>
       </div>
@@ -26,6 +26,7 @@
       <thead>
         <tr>
           <th class="text-center" width = "20px"><p class="title">No</p></th>
+          <th class="text-center" width = "70px"><p class="title">Gambar</p></th>
           <th class="text-left"><p class="title">Nama Kategori</p></th>
           <th class="text-center" width = "120px"><p class="title">Action</p></th>
         </tr>
@@ -36,6 +37,7 @@
         <thead>
           <tr>
             <th class="text-center" width = "20px"></p></th>
+            <th class="text-center" width = "70px"></p></th>
             <th class="text-left"></p></th>
             <th class="text-center" width = "120px"></p></th>
             </tr>
@@ -49,6 +51,9 @@
               <tr>
                 <td class='text-center'>
                   <p>$i</p>
+                </td>
+                <td class='text-center'>
+                  <img src='' alt='' height = '40px' width = '40px'>
                 </td>
                 <td>
                   <p class='title'>Kategori ke-$i</p>

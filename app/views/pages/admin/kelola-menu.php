@@ -7,7 +7,7 @@
       <div class="row pb-3">
         <div class="col-md-auto align-self-center">
           <div class="input-group-apend">
-            <button class="btn btn-sm p-2"><i class="fa fa-plus-circle mr-2"></i>TAMBAH MENU</button>
+            <button class="btn btn-sm p-2"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH MENU</button>
           </div>
         </div>
         <div class="col align-self-center px-0">
@@ -17,7 +17,7 @@
         </div>
         <div class="col-md-auto align-self-center">
           <div class="input-group-apend">
-            <button class="btn btn-sm p-2"><i class="fa fa-search mr-2"></i>SEARCH</button>
+            <button class="btn btn-sm p-2"><i class="fa fa-search mr-2 text-white"></i>SEARCH</button>
           </div>
         </div>
       </div>
