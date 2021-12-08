@@ -176,13 +176,3 @@ foreach ($tables as $table){
         });
     }
 }
-    
-
-   
-
-
-
-
-
-
-

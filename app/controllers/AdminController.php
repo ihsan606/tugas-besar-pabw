@@ -29,11 +29,11 @@ class AdminController extends Controller{
     $this->view('daftar-pesanan', $data, 'admin');
   }
 
-  //halaman kelola menu
-  public function kelola_menu()
+  //halaman laporan pendapatan
+  public function laporan_pendapatan()
   { 
-    $data = ['title' => 'Kelola Menu',];
-    $this->view('kelola-menu', $data, 'admin');
+    $data = ['title' => 'Laporan Pendapatan',];
+    $this->view('laporan-pendapatan', $data, 'admin');
   }
 
   //halaman laporan menu
@@ -43,10 +43,17 @@ class AdminController extends Controller{
     $this->view('laporan-menu', $data, 'admin');
   }
 
-  //halaman laporan pendapatan
-  public function laporan_pendapatan()
+  //halaman kelola menu
+  public function kelola_menu()
   { 
-    $data = ['title' => 'Laporan Pendapatan',];
-    $this->view('laporan-pendapatan', $data, 'admin');
+    $data = ['title' => 'Kelola Menu',];
+    $this->view('kelola-menu', $data, 'admin');
+  }
+
+  //halaman laporan menu
+  public function kelola_kategori()
+  { 
+    $data = ['title' => 'Kelola Kategori',];
+    $this->view('kelola-kategori', $data, 'admin');
   }
 }

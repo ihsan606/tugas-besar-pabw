@@ -1,15 +1,36 @@
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="background-color: #6C63FF;">
-      <div class="container">
-        <div class="row row justify-content-between">
-          <div class="col-8 d-flex-start ">
-            <span class="text-light">© 2021 Lorem Ipsum Company | All rights reserved</span>
+      <div class="container" style = "padding : 5px 0px 0px 0px;">
+        <div class="row">
+          <div class="col-md-auto " style = "padding : 0px 0px 0px 0px; margin : 2px 0px 0px 0px;">
+            <ul class="nav" style = "padding : 0px 0px 0px 0px;">
+              <li class="nav-item">
+                <a href="javascript:void(0)" class="nav-link" style = "padding : 0px 0px 0px 0px; font-weight : 550;color : white;">
+                © 2021 KELOMPOK LOREM IPSUM | ALL RIGHT RESERVED | 
+                </a>
+              </li>
+            </ul>              
           </div>
-          <div class="col-2 d-flex-end">
+          <div class="col" style = "padding : 3px 15px 0px 0px;">
+            <ul class="nav" style = "padding : 0px 0px 0px 0px;">
+              <li class="nav-item">
+                <a href="javascript:void(0)" class="nav-link" style = "padding : 0px 0px 0px 0px; font-weight : 550; color : white;">
+                  <marquee width="100%" direction="left">
+                    MUHAMMAD AUFA ASMAWY - 20523235@STUDENTS.UII.AC.ID | 
+                    MUHAMMAD DEVANO ZAIDAN - 20523034@STUDENTS.UII.AC.ID | 
+                    MUHAMMAD IHSAN SYAFIUL UMAM - 20523217@STUDENTS.UII.AC.ID | 
+                    MOH. ANANDA PUTRA DWIYANTO - 20523198@STUDENTS.UII.AC.ID | 
+                    MUHAMMAD FAJAR ANNAUFAL - 18523140@STUDENTS.UII.AC.ID
+                  </marquee>
+                </a>
+              </li>
+            </ul>      
+          </div>
+          <div class="col-md-auto d-flex-end">
             <ul class="nav justify-content-end list-unstyled">
-              <li class="ms-3"><a class="text-light" href="#"><i class="bi-twitter" role="img" aria-label="GitHub"></i></a></li>
-              <li class="ms-3"><a class="text-light" href="#"><i class="bi-instagram" role="img" aria-label="GitHub"></i></a></li>
-              <li class="ms-3"><a class="text-light" href="#"><i class="bi-facebook" role="img" aria-label="GitHub"></i></a></li>
+              <li class="ms-3"><a class="text-light" href="#" style = "font-size : 20px;"><i class="bi-twitter" role="img" aria-label="Twitter"></i></a></li>
+              <li class="ms-3"><a class="text-light" href="#" style = "font-size : 20px;"><i class="bi-instagram" role="img" aria-label="Instagram"></i></a></li>
+              <li class="ms-3"><a class="text-light" href="#" style = "font-size : 20px;"><i class="bi-facebook" role="img" aria-label="Facebook"></i></a></li>
             </ul>
           </div>
         </div>

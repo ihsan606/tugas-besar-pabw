@@ -1,32 +1,60 @@
       </div>
-      <footer class="footer">
-        <div class="container-fluid">
-          <ul class="nav">
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-                Creative Tim
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-                About Us
-              </a>
-            </li>
-            <li class="nav-item">
-              <a href="javascript:void(0)" class="nav-link">
-                Blog
-              </a>
-            </li>
-          </ul>
-          <div class="copyright">
-            ©
-            <script>
-              document.write(new Date().getFullYear())
-            </script>2020 <i class="tim-icons icon-heart-2"></i> by
-            <a href="javascript:void(0)" target="_blank">Creative Tim</a> for a better web.
+      <footer class="footer" style = "padding : 0px 0px 24px 250px;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-auto" style = "padding : 0px 0px 0px 15px;">
+              <ul class="nav" style = "padding : 0px 0px 0px 0px;">
+                <li class="nav-item">
+                  <a href="javascript:void(0)" class="nav-link" style = "padding : 0px 0px 0px 0px; font-weight : 550;">
+                  © 2021 Kelompok Lorem Ipsum | All rights reserved | 
+                  </a>
+                </li>
+              </ul>              
+            </div>
+            <div class="col" style = "padding : 2px 15px 0px 0px;">
+              <ul class="nav" style = "padding : 0px 0px 0px 0px;">
+                <li class="nav-item">
+                  <a href="javascript:void(0)" class="nav-link" style = "padding : 0px 0px 0px 0px; font-weight : 550;">
+                    <marquee width="100%" direction="left" >
+                      MUHAMMAD AUFA ASMAWY - 20523235@STUDENTS.UII.AC.ID | 
+                      MUHAMMAD DEVANO ZAIDAN - 20523034@STUDENTS.UII.AC.ID | 
+                      MUHAMMAD IHSAN SYAFIUL UMAM - 20523217@STUDENTS.UII.AC.ID | 
+                      MOH. ANANDA PUTRA DWIYANTO - 20523198@STUDENTS.UII.AC.ID | 
+                      MUHAMMAD FAJAR ANNAUFAL - 18523140@STUDENTS.UII.AC.ID
+                    </marquee>
+                  </a>
+                </li>
+              </ul>      
+            </div>
           </div>
         </div>
       </footer>
+    </div>
+  </div>
+  <div class="fixed-plugin">
+    <div class="dropdown show-dropdown">
+      <a href="#" data-toggle="dropdown">
+        <i class="fa fa-cog fa-2x"> </i>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="header-title"> Sidebar Background</li>
+        <li class="adjustments-line">
+          <a href="javascript:void(0)" class="switch-trigger background-color">
+            <div class="badge-colors text-center">
+              <span class="badge filter badge-primary active" data-color="primary"></span>
+              <span class="badge filter badge-info" data-color="blue"></span>
+              <span class="badge filter badge-success" data-color="green"></span>
+            </div>
+            <div class="clearfix"></div>
+          </a>
+        </li>
+        <li class="adjustments-line text-center color-change" style = "margin-bottom : 18px;">
+          <span class="color-label">LIGHT MODE</span>
+          <span class="badge light-badge mr-2"></span>
+          <span class="badge dark-badge ml-2"></span>
+          <span class="color-label">DARK MODE</span>
+        </li>
+      </ul>
     </div>
   </div>
   <!--   Core JS Files   -->
@@ -34,7 +62,7 @@
   <script src="<?=BASEURL;?>/assets/js/core/popper.min.js"></script>
   <script src="<?=BASEURL;?>/assets/js/core/bootstrap.min.js"></script>
   <script src="<?=BASEURL;?>/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
+  <!-- Google Maps Plugin -->
   <!-- Place this tag in your head or just before your close body tag. -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
