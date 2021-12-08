@@ -27,8 +27,9 @@
       <thead>
         <tr>
           <th class="text-left" width = "20px"><p class="title">No</p></th>
+          <th class="text-center" width = "70px"><p class="title">Gambar</p></th>
           <th class="text-left"><p class="title">Nama Menu</p></th>
-          <th class="text-left" width = "240px"><p class="title">Gambar</p></th>
+          <th class="text-left" width = "200px"><p class="title">Kategori</p></th>
           <th class="text-center" width = "120px"><p class="title">Action</p></th>
         </tr>
       </thead>
@@ -38,14 +39,15 @@
         <thead>
           <tr>
             <th class="text-left" width = "20px"></p></th>
+            <th class="text-center" width = "70px"></p></th>
             <th class="text-left"></p></th>
-            <th class="text-left" width = "240px"></p></th>
+            <th class="text-left"width = "200px"></p></th>
             <th class="text-center" width = "120px"></p></th>
             </tr>
           <tr>
         </thead>
         <tbody>
-          <!-- buat perulangan untuk menampilkan kategori -->
+          <!-- buat perulangan untuk menampilkan menu -->
           <?php 
           for($i = 1; $i < 31; $i++){
             echo "
@@ -53,11 +55,14 @@
                 <td>
                   <p>$i</p>
                 </td>
+                <td class='text-center'>
+                  <img src='' alt='' height = '40px' width = '40px'>
+                </td>
                 <td>
                   <p class='title'>Menu ke-$i</p>
                 </td>
                 <td>
-                  <img src='' alt='' height = '40px' width = '40px'>
+                  <p class='title'>Kategori Menu ke-$i</p>
                 </td>
                 <td class='td-actions text-center'>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Hapus Kategori'>
