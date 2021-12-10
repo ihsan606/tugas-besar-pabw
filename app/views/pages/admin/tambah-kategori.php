@@ -14,17 +14,19 @@
     </div>
     <form action = "<?=BASEURL;?>/admin/Tambah_Kategori/store" method = "POST" enctype="multipart/form-data">
       <div class="mb-3">
-        <label for="gambar" class="form-label">GAMBAR</label>
-        <input class="form-control form-control-md" type="file" id="gambar" name = "gambar">
+        <label for="image" class="form-label">GAMBAR</label>
+        <input class="form-control form-control-md" type="file" id="image" name = "image">
       </div> 
       <div class="form-group">
-        <label for="nama" class="form-label">NAMA CATEGORY</label>
-        <input class="form-control" type="text" id = "nama" name = "nama" placeholder="Masukkan Nama Category" >
+        <label for="name" class="form-label">NAMA KATEGORI</label>
+        <input class="form-control" type="text" id = "name" name = "name" placeholder="Masukkan Nama Kategori" >
       </div>
-      <button class="btn btn-info mr-1 btn-submit" type="submit" name = "upload"><i class="fa fa-paper-plane"></i>
-        SAVE</button>
-      <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo"></i>
-        RESET</button>
+
+      <button class="btn btn-info mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane text-white mr-2"></i>
+        SIMPAN</button>
+      <button class="btn btn-warning btn-reset" type="reset"><i class="fa fa-redo text-white mr-2"></i>
+        BERSIHKAN</button>
+        
     </form>
   </div>
 </div>   

@@ -47,19 +47,18 @@
           <!-- buat perulangan untuk menampilkan kategori -->
           <?php 
           $categories = $data['categories'];
-          // var_dump($categories);
+          $url = BASEURL;
           foreach($categories as $category){
-            $url = BASEURL;
             echo "
               <tr>
-                <td class='text-center'>
-                  <p>$category->id</p>
+                <td>
+                  <p class='text-center'>$category->id</p>
                 </td>
                 <td class='text-center'>
                   <img src='$url/img/categories/$category->image' alt='' height = '40px' width = '40px'>
                 </td>
                 <td>
-                  <p class='title'>$category->name</p>
+                  <p>$category->name</p>
                 </td>
                 <td class='td-actions text-center'>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Edit Kategori'>

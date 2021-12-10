@@ -12,22 +12,29 @@ class Tambah_Kategori_Controller extends Controller{
   }
 
   public function store(){
-    // if(issset($_POST['upload'])){
-      $name = $_POST['nama']; 
-      $image_name = $_FILES['gambar']['name'];
-      $direktori = 'img/categories/';
-      move_uploaded_file($_FILES['gambar']['tmp_name'], $direktori.$image_name);
-      // var_dump($_FILES);
+    $image_name = $_FILES['image']['name'];
+    $allowed_extension = ['png', 'jpg', 'jpeg'];
+    $x = explode('.', $image_name);
+    $extension = strtolower(end($x));
+    $size = $_FILES['image']['size'];
 
-      $category = Category::create([
-        'name' => $name,
-        'image' => $image_name,
-        'slug' => Str::slug($name, '-')
-      ]);
+    $name = $_POST['name']; 
 
-      if($category){
-        header('Location: ' . BASEURL . '/admin/Kelola_Kategori');
+    if(in_array($extension, $allowed_extension) === true){
+      // echo 'type true';
+      if($size < 2000000){
+        // echo 'ukuran true';
+        $direktori = 'img/categories/';
+        move_uploaded_file($_FILES['image']['tmp_name'], $direktori.$image_name);
+        $category = Category::create([
+          'name' => $name,
+          'image' => $image_name,
+          'slug' => Str::slug($name, '-')
+        ]);
+        if($category){
+          header('Location: ' . BASEURL . '/admin/Kelola_Kategori');
+        }
       }
-    // }   
+    }  
   }
 }

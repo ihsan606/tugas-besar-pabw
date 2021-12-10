@@ -48,20 +48,22 @@
         <tbody>
           <!-- buat perulangan untuk menampilkan menu -->
           <?php 
-          for($i = 1; $i < 31; $i++){
+          $menus = $data['menus'];
+          $url = BASEURL;
+          foreach($menus as $menu){
             echo "
               <tr>
                 <td>
-                  <p class='text-center'>$i</p>
+                  <p class='text-center'>$menu->id</p>
                 </td>
                 <td class='text-center'>
-                  <img src='' alt='' height = '40px' width = '40px'>
+                  <img src='$url/img/menus/$menu->image' alt='' height = '40px' width = '40px'>
                 </td>
                 <td>
-                  <p class='title'>Menu ke-$i</p>
+                  <p>$menu->title</p>
                 </td>
                 <td>
-                  <p class='title'>Kategori Menu ke-$i</p>
+                  <p>$menu->category_id</p>
                 </td>
                 <td class='td-actions text-center'>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Hapus Kategori'>
