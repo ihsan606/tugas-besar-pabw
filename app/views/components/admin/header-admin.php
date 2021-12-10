@@ -72,7 +72,7 @@
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/typography">
+            <a href="<?=BASEURL;?>/admin/kelola_admin">
               <i class="tim-icons icon-align-center"></i>
               <p>Kelola Admin</p>
             </a>

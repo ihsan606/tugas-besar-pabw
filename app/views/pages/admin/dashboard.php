@@ -1,8 +1,3 @@
-<?php 
-$menus = $data['menus'];
-foreach($menus as $menu){
-  echo $menu->category->name;
-}
-?>
+<h1>Halaman Dashboard</h1>
 
 
