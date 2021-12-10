@@ -3,25 +3,27 @@
     <h3 style = "margin : 0px 0px 0px 0px;">Kelola Kategori</h3>
   </div>
   <div class="card-body">
-    <div class="form-group-apend">
-      <div class="row pb-3">
-        <div class="col-md-auto align-self-center">
-          <div class="input-group-apend">
-            <a href = "<?=BASEURL;?>/admin/tambah_kategori" class="btn btn-sm p-2 text-white"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH KATEGORI</a>
+    <form action = "<?=BASEURL;?>/admin/kelola_kategori/show", method = "POST">
+      <div class="form-group-apend">
+        <div class="row pb-3">
+          <div class="col-md-auto align-self-center">
+            <div class="input-group-apend">
+              <a href = "<?=BASEURL;?>/admin/tambah_kategori" class="btn btn-sm p-2 text-white"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH KATEGORI</a>
+            </div>
           </div>
-        </div>
-        <div class="col align-self-center px-0">
-          <div class="input-group-prepended ">
-            <input type="text" class="form-control" placeholder="cari berdasarkan nama kategori">        
+          <div class="col align-self-center px-0">
+            <div class="input-group-prepended ">
+              <input type="text" class="form-control" name = "search" placeholder="cari berdasarkan nama kategori">        
+            </div>
           </div>
-        </div>
-        <div class="col-md-auto align-self-center">
-          <div class="input-group-apend">
-            <a class="btn btn-sm p-2 text-white"><i class="fa fa-search mr-2 text-white"></i>SEARCH</a>
+          <div class="col-md-auto align-self-center">
+            <div class="input-group-apend">
+              <button type = "submit" class="btn btn-sm p-2 text-white"><i class="fa fa-search mr-2 text-white"></i>SEARCH</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
     <table class="table">
       <thead>
         <tr>

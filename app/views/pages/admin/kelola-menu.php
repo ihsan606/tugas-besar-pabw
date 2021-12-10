@@ -53,6 +53,7 @@
           $menus = $data['menus'];
           $url = BASEURL;
           foreach($menus as $menu){
+            $category_name = $menu->category->name;
             echo "
               <tr>
                 <td>
@@ -65,7 +66,7 @@
                   <p>$menu->title</p>
                 </td>
                 <td>
-                  <p>$menu->category_id</p>
+                  <p>$category_name</p>
                 </td>
                 <td class='td-actions text-center'>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Hapus Kategori'>

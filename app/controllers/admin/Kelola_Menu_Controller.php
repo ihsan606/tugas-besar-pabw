@@ -8,7 +8,7 @@ class Kelola_Menu_Controller extends Controller{
   {
     $data = [
       'title' => 'Kelola Menu',
-      'menus' => Menu::all(),
+      'menus' => Menu::with('category')->get(),
     ];
     $this->view('kelola-menu', $data, 'admin');
   }
@@ -18,7 +18,7 @@ class Kelola_Menu_Controller extends Controller{
     $search = $_POST['search'];
 
     if($search){
-      $menus = Menu::where('title', $search)->get();
+      $menus = Menu::with('category')->where('title', 'like', '%'.$search.'%')->get();
     }else{
       $menus = Menu::all();
     }
@@ -29,6 +29,4 @@ class Kelola_Menu_Controller extends Controller{
     ];
     $this->view('kelola-menu', $data, 'admin');
   }
-
-
 }
