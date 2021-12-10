@@ -3,25 +3,27 @@
     <h3 style = "margin : 0px 0px 0px 0px;">Kelola Menu</h3>
   </div>
   <div class="card-body">
-    <div class="form-group-apend">
-      <div class="row pb-3">
-        <div class="col-md-auto align-self-center">
-          <div class="input-group-apend">
-            <a href = "<?=BASEURL;?>/admin/tambah_menu" class="btn btn-sm p-2 text-white"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH MENU</a>
+    <form action = "<?=BASEURL;?>/admin/kelola_menu/show", method = "POST">
+      <div class="form-group-apend">
+        <div class="row pb-3">
+          <div class="col-md-auto align-self-center">
+            <div class="input-group-apend">
+              <a href = "<?=BASEURL;?>/admin/tambah_menu" class="btn btn-sm p-2 text-white"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH MENU</a>
+            </div>
           </div>
-        </div>
-        <div class="col align-self-center px-0">
-          <div class="input-group-prepended ">
-            <input type="text" class="form-control" placeholder="cari berdasarkan nama menu">        
+          <div class="col align-self-center px-0">
+            <div class="input-group-prepended ">
+              <input type="text" class="form-control" name='search' placeholder="cari berdasarkan nama menu">        
+            </div>
           </div>
-        </div>
-        <div class="col-md-auto align-self-center">
-          <div class="input-group-apend">
-            <a class="btn btn-sm p-2 text-white"><i class="fa fa-search mr-2 text-white"></i>SEARCH</a>
+          <div class="col-md-auto align-self-center">
+            <div class="input-group-apend">
+              <button type = "submit" class="btn btn-sm p-2 text-white"><i class="fa fa-search mr-2 text-white"></i>SEARCH</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </form>
     <table class="table">
       <thead>
         <tr>
@@ -85,3 +87,15 @@
     </div>
   </div>
 </div>   
+
+<!-- <ol type = "1">
+  <li>Masuk WhatsAp group PPDB MTHQ. Hubungi WA <a href="https://api.whatsapp.com/send?phone=6287749181562&text=Hello%2C%20I%20want%20to%20ask%20about%20this%20product">0877-4918-1462</a></li>
+  <li>Melakukan transfer biaya pendaftaran sebesar Rp200.000 ke BSI (Bank Syariah Indonesia), No. rekening <a href=""> 1057079758</a>, a/n Panitia MTHQ, Kode Bank 451</li>
+  <li>Mengisi Formulir Online Link Pendaftaran <a href="https://gateway.mthq.ponpes.id">https://gateway.mthq.ponpes.id</a> </li>
+</ol>
+
+<ol type = "1">
+  <li>Masuk WhatsAp group PPDB MTHQ dengan menghubungi <br> WA <a href="https://api.whatsapp.com/send?phone=6287749181562&text=Hello%2C%20I%20want%20to%20ask%20about%20this%20product">0877-4918-1462</a></li>
+  <li>Mengisi Formulir Online Link Pendaftaran  <a href="https://gateway.mthq.ponpes.id">https://gateway.mthq.ponpes.id</a> </li>
+  <li>Melengkapi Berkas Persyaratan <a herf = "/berkas">lihat di sini</a></li>
+</ol> -->

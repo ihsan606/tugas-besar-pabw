@@ -74,19 +74,7 @@
           <li>
             <a href="<?=BASEURL;?>/admin/typography">
               <i class="tim-icons icon-align-center"></i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li>
-            <a href="<?=BASEURL;?>/admin/rtl">
-              <i class="tim-icons icon-world"></i>
-              <p>RTL Support</p>
-            </a>
-          </li>
-          <li>
-            <a href="<?=BASEURL;?>/admin/upgrade">
-              <i class="tim-icons icon-spaceship"></i>
-              <p>Upgrade to PRO</p>
+              <p>Kelola Admin</p>
             </a>
           </li>
         </ul>
