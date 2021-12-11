@@ -58,22 +58,26 @@ class Kelola_Menu_Controller extends Controller{
 
     $discount = $_POST['discount']; 
 
-    if(in_array($extension, $allowed_extension) === true){
-      echo 'type true';
-      if($size < 2000000){
-        echo 'ukuran true';
-        $direktori = 'img/menus/';
-        move_uploaded_file($_FILES['image']['tmp_name'], $direktori.$image_name);
-        $menu = Menu::create([
-          'image' => $image_name,
-          'title' => $name,
-          'slug' => Str::slug($name, '-'),
-          'category_id' => $category_id,
-          'description' => $description,
-          'price' => $price,
-          'discount' => $discount,
-        ]);
-        if($menu){
+    if($name != null && $image_name != null && $price != null && $category_id != null && $description !== null && $discount != null){
+      if(in_array($extension, $allowed_extension) === true){
+        echo 'type true';
+        if($size < 2000000){
+          echo 'ukuran true';
+          $direktori = 'img/menus/';
+          move_uploaded_file($_FILES['image']['tmp_name'], $direktori.$image_name);
+          $menu = Menu::create([
+            'image' => $image_name,
+            'title' => $name,
+            'slug' => Str::slug($name, '-'),
+            'category_id' => $category_id,
+            'description' => $description,
+            'price' => $price,
+            'discount' => $discount,
+          ]);
+          if($menu){
+            header('Location: ' . BASEURL . '/admin/kelola_menu');
+          }
+        }else{
           header('Location: ' . BASEURL . '/admin/kelola_menu');
         }
       }else{
