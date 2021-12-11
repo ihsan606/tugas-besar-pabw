@@ -8,7 +8,7 @@
         <div class="row pb-3">
           <div class="col-md-auto align-self-center">
             <div class="input-group-apend">
-              <a href = "<?=BASEURL;?>/admin/tambah_menu" class="btn btn-sm p-2 text-white"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH MENU</a>
+              <a href = "<?=BASEURL;?>/admin/kelola_menu/tambah_menu" class="btn btn-sm p-2 text-white"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH MENU</a>
             </div>
           </div>
           <div class="col align-self-center px-0">
@@ -27,10 +27,12 @@
     <table class="table">
       <thead>
         <tr>
-          <th class="text-center" width = "20px"><p class="title">No</p></th>
-          <th class="text-center" width = "70px"><p class="title">Gambar</p></th>
+          <th class="text-center" width = "30px"><p class="title">No</p></th>
+          <th class="text-center" width = "80px"><p class="title">Gambar</p></th>
           <th class="text-left"><p class="title">Nama Menu</p></th>
           <th class="text-left" width = "200px"><p class="title">Kategori</p></th>
+          <th class="text-center" width = "60px"><p class="title">Terjual</p></th>
+          <th class="text-center" width = "60px"><p class="title">Rating</p></th>
           <th class="text-center" width = "120px"><p class="title">Action</p></th>
         </tr>
       </thead>
@@ -39,10 +41,12 @@
       <table class="table">
         <thead>
           <tr>
-            <th class="text-center" width = "20px"></p></th>
-            <th class="text-center" width = "70px"></p></th>
+            <th class="text-center" width = "30px"></p></th>
+            <th class="text-center" width = "80px"></p></th>
             <th class="text-left"></p></th>
             <th class="text-left"width = "200px"></p></th>
+            <th class="text-center" width = "60px"></p></th>
+            <th class="text-center" width = "60px"></p></th>
             <th class="text-center" width = "120px"></p></th>
             </tr>
           <tr>
@@ -67,6 +71,12 @@
                 </td>
                 <td>
                   <p>$category_name</p>
+                </td>
+                <td>
+                  <p class='title text-center'>$menu-></p>
+                </td>
+                <td>
+                  <p class='title text-center'>5</p>
                 </td>
                 <td class='td-actions text-center'>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Hapus Kategori'>

@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <form action = "<?=BASEURL;?>/admin/Tambah_Menu/store", method = "POST" enctype="multipart/form-data">
+    <form action = "<?=BASEURL;?>/admin/kelola_menu/store", method = "POST" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-6">
           <div class="">
