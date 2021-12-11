@@ -63,7 +63,7 @@
                 </td>
                 <td class='td-actions text-center'>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Edit Kategori'>
-                    <a class='text-light' href='$url./admin/kelola_admin/update/$admin->id' style = 'font-size : 16px;'><i class='bi-pencil' role='img' aria-label='Pencil'></i></a>
+                    <a class='text-light' href='$url./admin/kelola_admin/edit_admin/$admin->id' style = 'font-size : 16px;'><i class='bi-pencil' role='img' aria-label='Pencil'></i></a>
                   </button>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Hapus Kategori'>
                     <a class='text-light' href='$url./admin/kelola_admin/destroy/$admin->id' style = 'font-size : 16px;'><i class='bi-trash' role='img' aria-label='Trash'></i></a>

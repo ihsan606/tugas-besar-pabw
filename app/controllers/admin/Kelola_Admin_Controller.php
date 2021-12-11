@@ -20,6 +20,12 @@ class Kelola_Admin_Controller extends Controller{
     $this->view('tambah-admin', $data, 'admin');
   }
 
+  public function edit_admin($id)
+  {
+    $data = ['title' => 'Edit Admin',];
+    $this->view('edit-admin', $data, 'admin');
+  }
+
   public function show()
   {
     $search = $_POST['search'];

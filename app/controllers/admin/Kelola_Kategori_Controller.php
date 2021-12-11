@@ -19,6 +19,12 @@ class Kelola_Kategori_Controller extends Controller{
     $this->view('tambah-kategori', $data, 'admin');
   }
 
+  public function edit_kategori($id)
+  {
+    $data = ['title' => 'Edit Kategori',];
+    $this->view('edit-kategori', $data, 'admin');
+  }
+
   public function show(){
     $search = $_POST['search'];
 
@@ -71,7 +77,9 @@ class Kelola_Kategori_Controller extends Controller{
   }
 
   public function update($id){
-    echo 'update' . $id;
+    Category::where('id', $id)->update([
+      'delayed' => 1
+    ]);
   }
 
   public function destroy($id){

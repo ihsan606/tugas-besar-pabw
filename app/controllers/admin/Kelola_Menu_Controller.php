@@ -24,6 +24,12 @@ class Kelola_Menu_Controller extends Controller{
     $this->view('tambah-menu', $data, 'admin');
   }
 
+  public function edit_menu($id)
+  {
+    $data = ['title' => 'Edit Menu',];
+    $this->view('edit-menu', $data, 'admin');
+  }
+
   public function show()
   {
     $search = $_POST['search'];
