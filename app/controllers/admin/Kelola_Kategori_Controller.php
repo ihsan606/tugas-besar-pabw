@@ -6,8 +6,7 @@ use Illuminate\Support\Str;
 
 
 class Kelola_Kategori_Controller extends Controller{
-  public function index()
-  {
+  public function index(){
     $data = [
       'title' => 'Kelola Kategori',
       'categories' => Category::All(),
@@ -15,14 +14,12 @@ class Kelola_Kategori_Controller extends Controller{
     $this->view('kelola-kategori', $data, 'admin');
   }
 
-  public function tambah_kategori()
-  {
+  public function tambah_kategori(){
     $data = ['title' => 'Tambah Kategori',];
     $this->view('tambah-kategori', $data, 'admin');
   }
 
-  public function show()
-  {
+  public function show(){
     $search = $_POST['search'];
 
     if($search){
@@ -74,10 +71,10 @@ class Kelola_Kategori_Controller extends Controller{
   }
 
   public function update(){
-
+    echo 'update';
   }
 
   public function destroy(){
-    
+    echo 'destroy';
   }
 }

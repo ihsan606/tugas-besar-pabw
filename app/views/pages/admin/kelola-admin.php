@@ -62,12 +62,16 @@
                   <p>$admin->email</p>
                 </td>
                 <td class='td-actions text-center'>
-                  <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Edit Kategori'>
-                    <a class='text-light' href='#' style = 'font-size : 16px;'><i class='bi-pencil' role='img' aria-label='Pencil'></i></a>
-                  </button>
-                  <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Hapus Kategori'>
-                    <a class='text-light' href='#' style = 'font-size : 16px;'><i class='bi-trash' role='img' aria-label='Trash'></i></a>
-                  </button>
+                  <form action = '<?=BASEURL;?>/admin/kelola_admin/update', method = 'POST'>
+                    <button type='submit' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Edit Kategori'>
+                      <a class='text-light' href='#' style = 'font-size : 16px;'><i class='bi-pencil' role='img' aria-label='Pencil'></i></a>
+                    </button>
+                  </form>
+                  <form action = '<?=BASEURL;?>/admin/kelola_admin/destroy', method = 'POST'>
+                    <button type='submit' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Hapus Kategori'>
+                      <a class='text-light' href='#' style = 'font-size : 16px;'><i class='bi-trash' role='img' aria-label='Trash'></i></a>
+                    </button>
+                  </form>
                 </td>
               </tr>
             ";

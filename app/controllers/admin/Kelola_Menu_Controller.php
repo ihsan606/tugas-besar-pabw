@@ -89,10 +89,10 @@ class Kelola_Menu_Controller extends Controller{
   }
 
   public function update(){
-
+    echo 'update';
   }
 
   public function destroy(){
-    
+    echo 'destroy';
   }
 }
