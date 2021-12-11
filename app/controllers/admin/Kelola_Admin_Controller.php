@@ -54,7 +54,7 @@ class Kelola_Admin_Controller extends Controller{
           'password' =>$password
         ]);
         if($admin){
-          header('Location: ' . BASEURL . '/admin/kelola_admin/tambah_admin');
+          header('Location: ' . BASEURL . '/admin/kelola_admin');
         }
       }else{
         header('Location: ' . BASEURL . '/admin/kelola_admin/tambah_admin');
@@ -64,11 +64,17 @@ class Kelola_Admin_Controller extends Controller{
     } 
   }
 
-  public function update(){
-    echo 'update';
+  public function update($id){
+    echo 'update' . $id;
   }
 
-  public function destroy(){
-    echo 'destroy';    
+  public function destroy($id){
+    echo 'destroy' . $id;
+    // $admin = Admin::withTrashed()
+    //             ->where('id', $id)
+    //             ->get();
+    // if($admin){
+    //   header('Location: ' . BASEURL . '/admin/kelola_admin');
+    // }
   }
 }

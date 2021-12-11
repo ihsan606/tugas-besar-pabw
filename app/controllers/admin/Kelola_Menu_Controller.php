@@ -75,7 +75,7 @@ class Kelola_Menu_Controller extends Controller{
             'discount' => $discount,
           ]);
           if($menu){
-            header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
+            header('Location: ' . BASEURL . '/admin/kelola_menu');
           }
         }else{
           header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
@@ -88,15 +88,15 @@ class Kelola_Menu_Controller extends Controller{
     }  
   }
 
-  public function update(){
-    echo 'update';
+  public function update($id){
+    echo 'update' . $id;
   }
 
-  public function destroy(){
-    echo 'destroy';
+  public function destroy($id){
+    echo 'destroy' . $id;
   }
 
-  public function set_stock(){
-    echo 'set stock';
+  public function set_stock($id){
+    echo 'set stock' . $id;
   }
 }

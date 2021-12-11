@@ -57,7 +57,7 @@ class Kelola_Kategori_Controller extends Controller{
             'slug' => Str::slug($name, '-')
           ]);
           if($category){
-            header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
+            header('Location: ' . BASEURL . '/admin/kelola_kategori');
           }
         }else{
           header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
@@ -70,11 +70,11 @@ class Kelola_Kategori_Controller extends Controller{
     }  
   }
 
-  public function update(){
-    echo 'update';
+  public function update($id){
+    echo 'update' . $id;
   }
 
-  public function destroy(){
-    echo 'destroy';
+  public function destroy($id){
+    echo 'destroy' . $id;
   }
 }
