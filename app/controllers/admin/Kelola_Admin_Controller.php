@@ -14,6 +14,12 @@ class Kelola_Admin_Controller extends Controller{
     $this->view('kelola-admin', $data, 'admin');
   }
 
+  public function tambah_admin()
+  {
+    $data = ['title' => 'Tambah Admin',];
+    $this->view('tambah-admin', $data, 'admin');
+  }
+
   public function show()
   {
     $search = $_POST['search'];
@@ -29,5 +35,32 @@ class Kelola_Admin_Controller extends Controller{
       'admins' => $admins,
     ];
     $this->view('kelola-admin', $data, 'admin');
+  }
+
+  public function store(){
+    $name = $_POST['name']; 
+
+    $email = $_POST['email'];
+
+    $password = $_POST['password']; 
+
+    $confirm_password = $_POST['confirm_password'];
+
+    if($name != null && $email != null && $password != null && $confirm_password != null){
+      if($password == $confirm_password){
+        $admin= Admin::create([
+          'name' => $name,
+          'email' => $email,
+          'password' =>$password
+        ]);
+        if($admin){
+          header('Location: ' . BASEURL . '/admin/kelola_admin');
+        }
+      }else{
+        header('Location: ' . BASEURL . '/admin/tambah_admin');
+      }   
+    }else{
+      header('Location: ' . BASEURL . '/admin/tambah_admin');
+    } 
   }
 }
