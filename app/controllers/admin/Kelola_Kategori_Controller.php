@@ -75,6 +75,9 @@ class Kelola_Kategori_Controller extends Controller{
   }
 
   public function destroy($id){
-    echo 'destroy' . $id;
+    $category = Category::where('id', $id)->delete();
+    if($category){
+      header('Location: ' . BASEURL . '/admin/kelola_kategori');
+    }
   }
 }

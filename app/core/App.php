@@ -12,6 +12,7 @@ class App
     $url = $this->parseURL();
     if (isset($url[0])) {
       if ($url[0] == "customer") {
+        unset($url[0]);
         if (isset($url[1])) {
           if (file_exists('../app/controllers/customer/' . $url[1] . '_Controller.php')) {
             $this->controller = $url[1] . '_Controller';
@@ -27,6 +28,7 @@ class App
           $this->controller = new $this->controller;
         }
       } else if ($url[0] == "admin") {
+        unset($url[0]);
         $this->controller = "Dashboard_Controller";
         if (isset($url[1])) {
           if (file_exists('../app/controllers/admin/' . $url[1] . '_Controller.php')) {

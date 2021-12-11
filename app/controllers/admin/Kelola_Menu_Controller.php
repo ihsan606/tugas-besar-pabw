@@ -93,7 +93,10 @@ class Kelola_Menu_Controller extends Controller{
   }
 
   public function destroy($id){
-    echo 'destroy' . $id;
+    $menu = Menu::where('id', $id)->delete();
+    if($menu){
+      header('Location: ' . BASEURL . '/admin/kelola_menu');
+    }
   }
 
   public function set_stock($id){

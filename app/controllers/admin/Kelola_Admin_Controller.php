@@ -69,12 +69,9 @@ class Kelola_Admin_Controller extends Controller{
   }
 
   public function destroy($id){
-    echo 'destroy' . $id;
-    // $admin = Admin::withTrashed()
-    //             ->where('id', $id)
-    //             ->get();
-    // if($admin){
-    //   header('Location: ' . BASEURL . '/admin/kelola_admin');
-    // }
+    $admin = Admin::where('id', $id)->delete();
+    if($admin){
+      header('Location: ' . BASEURL . '/admin/kelola_admin');
+    }
   }
 }
