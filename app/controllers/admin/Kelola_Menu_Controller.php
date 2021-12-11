@@ -74,9 +74,13 @@ class Kelola_Menu_Controller extends Controller{
           'discount' => $discount,
         ]);
         if($menu){
-          header('Location: ' . BASEURL . '/admin/Kelola_Menu');
+          header('Location: ' . BASEURL . '/admin/kelola_menu');
         }
+      }else{
+        header('Location: ' . BASEURL . '/admin/kelola_menu');
       }
+    }else{
+      header('Location: ' . BASEURL . '/admin/kelola_menu');
     }  
   }
 }
