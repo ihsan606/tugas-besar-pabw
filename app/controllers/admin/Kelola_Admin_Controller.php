@@ -22,7 +22,10 @@ class Kelola_Admin_Controller extends Controller{
 
   public function edit_admin($id)
   {
-    $data = ['title' => 'Edit Admin',];
+    $data = [
+      'title' => 'Edit Admin',
+      'this_admin' => Admin::where('id', $id)->get(),
+    ];
     $this->view('edit-admin', $data, 'admin');
   }
 
@@ -71,7 +74,30 @@ class Kelola_Admin_Controller extends Controller{
   }
 
   public function update($id){
-    echo 'update' . $id;
+    $name = $_POST['name']; 
+
+    $email = $_POST['email'];
+
+    $password = $_POST['password']; 
+
+    $confirm_password = $_POST['confirm_password'];
+
+    if($name != null && $email != null && $password != null && $confirm_password != null){
+      if($password == $confirm_password){
+        $admin= Admin::where('id', $id)->update([
+          'name' => $name,
+          'email' => $email,
+          'password' =>$password
+        ]);
+        if($admin){
+          header('Location: ' . BASEURL . '/admin/kelola_admin');
+        }
+      }else{
+        header('Location: ' . BASEURL . '/admin/kelola_admin/tambah_admin');
+      }   
+    }else{
+      header('Location: ' . BASEURL . '/admin/kelola_admin/tambah_admin');
+    } 
   }
 
   public function destroy($id){
