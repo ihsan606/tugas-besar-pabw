@@ -8,7 +8,7 @@
         <div class="row pb-3">
           <div class="col-md-auto align-self-center">
             <div class="input-group-apend">
-              <a href = "<?=BASEURL;?>/admin/tambah_admin" class="btn btn-sm p-2 text-white"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH ADMIN</a>
+              <a href = "<?=BASEURL;?>/admin/Tambah_Admin" class="btn btn-sm p-2 text-white"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH ADMIN</a>
             </div>
           </div>
           <div class="col align-self-center px-0">
@@ -28,8 +28,8 @@
       <thead>
         <tr>
           <th class="text-center" width = "20px"><p class="title">No</p></th>
-          <th class="text-center" width = "70px"><p class="title">Gambar</p></th>
-          <th class="text-left"><p class="title">Nama Kategori</p></th>
+          <th class="text-left"><p class="title">Nama</p></th>
+          <th class="text-left"><p class="title">Email</p></th>
           <th class="text-center" width = "120px"><p class="title">Action</p></th>
         </tr>
       </thead>
@@ -39,7 +39,7 @@
         <thead>
           <tr>
             <th class="text-center" width = "20px"></p></th>
-            <th class="text-center" width = "70px"></p></th>
+            <th class="text-left"></p></th>
             <th class="text-left"></p></th>
             <th class="text-center" width = "120px"></p></th>
             </tr>
@@ -48,19 +48,19 @@
         <tbody>
           <!-- buat perulangan untuk menampilkan kategori -->
           <?php 
-          $categories = $data['categories'];
+          $admins = $data['admins'];
           $url = BASEURL;
-          foreach($categories as $category){
+          foreach($admins as $admin){
             echo "
               <tr>
                 <td>
-                  <p class='text-center'>$category->id</p>
-                </td>
-                <td class='text-center'>
-                  <img src='$url/img/categories/$category->image' alt='' height = '40px' width = '40px'>
+                  <p class='text-center'>$admin->id</p>
                 </td>
                 <td>
-                  <p>$category->name</p>
+                  <p>$admin->name</p>
+                </td>
+                <td>
+                  <p>$admin->email</p>
                 </td>
                 <td class='td-actions text-center'>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Edit Kategori'>
