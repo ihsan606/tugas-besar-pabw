@@ -60,16 +60,16 @@ class Kelola_Kategori_Controller extends Controller{
             'slug' => Str::slug($name, '-')
           ]);
           if($category){
-            header('Location: ' . BASEURL . '/admin/kelola_kategori');
+            header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
           }
         }else{
-          header('Location: ' . BASEURL . '/admin/kelola_kategori');
+          header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
         }
       }else{
-        header('Location: ' . BASEURL . '/admin/kelola_kategori');
+        header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
       }
     }else{
-      header('Location: ' . BASEURL . '/admin/kelola_kategori');
+      header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
     }  
   }
 }

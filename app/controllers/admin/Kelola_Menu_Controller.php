@@ -75,16 +75,16 @@ class Kelola_Menu_Controller extends Controller{
             'discount' => $discount,
           ]);
           if($menu){
-            header('Location: ' . BASEURL . '/admin/kelola_menu');
+            header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
           }
         }else{
-          header('Location: ' . BASEURL . '/admin/kelola_menu');
+          header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
         }
       }else{
-        header('Location: ' . BASEURL . '/admin/kelola_menu');
+        header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
       }
     }else{
-      header('Location: ' . BASEURL . '/admin/kelola_menu');
+      header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
     }  
   }
 }

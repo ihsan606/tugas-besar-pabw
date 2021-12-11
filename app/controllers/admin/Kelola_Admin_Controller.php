@@ -54,13 +54,13 @@ class Kelola_Admin_Controller extends Controller{
           'password' =>$password
         ]);
         if($admin){
-          header('Location: ' . BASEURL . '/admin/kelola_admin');
+          header('Location: ' . BASEURL . '/admin/kelola_admin/tambah_admin');
         }
       }else{
-        header('Location: ' . BASEURL . '/admin/tambah_admin');
+        header('Location: ' . BASEURL . '/admin/kelola_admin/tambah_admin');
       }   
     }else{
-      header('Location: ' . BASEURL . '/admin/tambah_admin');
+      header('Location: ' . BASEURL . '/admin/kelola_admin/tambah_admin');
     } 
   }
 }
