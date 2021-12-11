@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <form action = "<?=BASEURL;?>/admin/Tambah_Kategori/store" method = "POST" enctype="multipart/form-data">
+    <form action = "<?=BASEURL;?>/admin/kelola_kategori/store" method = "POST" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="image" class="form-label">GAMBAR</label>
         <input class="form-control form-control-md" type="file" id="image" name = "image">

@@ -8,7 +8,7 @@
         <div class="row pb-3">
           <div class="col-md-auto align-self-center">
             <div class="input-group-apend">
-              <a href = "<?=BASEURL;?>/admin/tambah_kategori" class="btn btn-sm p-2 text-white"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH KATEGORI</a>
+              <a href = "<?=BASEURL;?>/admin/kelola_kategori/tambah_kategori" class="btn btn-sm p-2 text-white"><i class="fa fa-plus-circle mr-2 text-white"></i>TAMBAH KATEGORI</a>
             </div>
           </div>
           <div class="col align-self-center px-0">
