@@ -87,4 +87,12 @@ class Kelola_Menu_Controller extends Controller{
       header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
     }  
   }
+
+  public function update(){
+
+  }
+
+  public function destroy(){
+    
+  }
 }

@@ -63,4 +63,12 @@ class Kelola_Admin_Controller extends Controller{
       header('Location: ' . BASEURL . '/admin/kelola_admin/tambah_admin');
     } 
   }
+
+  public function update(){
+
+  }
+
+  public function destroy(){
+    
+  }
 }

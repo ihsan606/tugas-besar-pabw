@@ -72,4 +72,12 @@ class Kelola_Kategori_Controller extends Controller{
       header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
     }  
   }
+
+  public function update(){
+
+  }
+
+  public function destroy(){
+    
+  }
 }
