@@ -17,13 +17,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>NAMA</label>
-            <input type="text" name="name" placeholder="Masukkan Nama" class="form-control" value=<?=$data['this_admin'][0]->name?>> 
+            <input type="text" name="name" placeholder="Masukkan Nama" class="form-control" value="<?=$data['this_admin'][0]->name?>"> 
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>PASSWORD</label>
-            <input type="password" name="password" placeholder="Masukkan Password" class="form-control" value=<?=$data['this_admin'][0]->password?>>
+            <input type="password" name="password" placeholder="Masukkan Password" class="form-control" value="<?=$data['this_admin'][0]->password?>">
           </div>
         </div>
       </div>
@@ -32,13 +32,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>EMAIL</label>
-            <input type="email" name="email" placeholder="Masukkan Email" class="form-control" value=<?=$data['this_admin'][0]->email?>>
+            <input type="email" name="email" placeholder="Masukkan Email" class="form-control" value="<?=$data['this_admin'][0]->email?>">
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>KONFIRMASI PASSWORD</label>
-            <input type="password" name="confirm_password" placeholder="Masukkan Konfirmasi Password" class="form-control" value=<?=$data['this_admin'][0]->password?>>
+            <input type="password" name="confirm_password" placeholder="Masukkan Konfirmasi Password" class="form-control" value="<?=$data['this_admin'][0]->password?>">
           </div>
         </div>
       </div>

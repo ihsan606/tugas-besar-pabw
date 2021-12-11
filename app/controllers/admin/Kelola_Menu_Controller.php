@@ -26,7 +26,11 @@ class Kelola_Menu_Controller extends Controller{
 
   public function edit_menu($id)
   {
-    $data = ['title' => 'Edit Menu',];
+    $data = [
+      'title' => 'Edit Menu',
+      'this_menu' => Menu::with('category')->where('id', $id)->get(),
+      'categories' => Category::All(),
+    ];
     $this->view('edit-menu', $data, 'admin');
   }
 
@@ -66,9 +70,9 @@ class Kelola_Menu_Controller extends Controller{
 
     if($name != null && $image_name != null && $price != null && $category_id != null && $description !== null && $discount != null){
       if(in_array($extension, $allowed_extension) === true){
-        echo 'type true';
+        // echo 'type true';
         if($size < 2000000){
-          echo 'ukuran true';
+          // echo 'ukuran true';
           $direktori = 'img/menus/';
           move_uploaded_file($_FILES['image']['tmp_name'], $direktori.$image_name);
           $menu = Menu::create([
@@ -95,10 +99,58 @@ class Kelola_Menu_Controller extends Controller{
   }
 
   public function update($id){
-    echo 'update' . $id;
+    $image_name = $_FILES['image']['name'];
+    $allowed_extension = ['png', 'jpg', 'jpeg'];
+    $x = explode('.', $image_name);
+    $extension = strtolower(end($x));
+    $size = $_FILES['image']['size'];
+
+    $name = $_POST['name']; 
+
+    $price = $_POST['price']; 
+
+    $category_id = $_POST['category_id'];
+     
+    $description = $_POST['description'];
+
+    $discount = $_POST['discount']; 
+
+    if($name != null && $image_name != null && $price != null && $category_id != null && $description !== null && $discount != null){
+      if(in_array($extension, $allowed_extension) === true){
+        // echo 'type true';
+        if($size < 2000000){
+          // echo 'ukuran true';
+          $direktori = 'img/menus/';
+          $menu = Menu::where('id', $id)->get();
+          unlink($direktori . $menu[0]->image);
+          move_uploaded_file($_FILES['image']['tmp_name'], $direktori.$image_name);
+          $menu = Menu::where('id', $id)->update([
+            'image' => $image_name,
+            'title' => $name,
+            'slug' => Str::slug($name, '-'),
+            'category_id' => $category_id,
+            'description' => $description,
+            'price' => $price,
+            'discount' => $discount,
+          ]);
+          if($menu){
+            header('Location: ' . BASEURL . '/admin/kelola_menu');
+          }
+        }else{
+          header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
+        }
+      }else{
+        header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
+      }
+    }else{
+      header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
+    }  
   }
 
   public function destroy($id){
+    $direktori = 'img/menus/';
+    $menu = Menu::where('id', $id)->get();
+    unlink($direktori . $menu[0]->image);
     $menu = Menu::where('id', $id)->delete();
     if($menu){
       header('Location: ' . BASEURL . '/admin/kelola_menu');
