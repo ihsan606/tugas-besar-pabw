@@ -95,4 +95,8 @@ class Kelola_Menu_Controller extends Controller{
   public function destroy(){
     echo 'destroy';
   }
+
+  public function set_stock(){
+    echo 'set stock';
+  }
 }

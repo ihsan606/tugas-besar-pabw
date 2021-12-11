@@ -79,13 +79,13 @@
                 </td>
                 <td class='td-actions text-center'>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Hapus Kategori'>
-                    <a class='text-light' href='#' style = 'font-size : 16px;'><i class='bi-bag-check' role='img' aria-label='Trash'></i></a>
+                    <a class='text-light' href='$url./admin/kelola_menu/set_stock/$menu->id' style = 'font-size : 16px;'><i class='bi-bag-check' role='img' aria-label='Trash'></i></a>
                   </button>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Edit Kategori'>
-                    <a class='text-light' href='#' style = 'font-size : 16px;'><i class='bi-pencil' role='img' aria-label='Pencil'></i></a>
+                    <a class='text-light' href='$url./admin/kelola_menu/update/$menu->id' style = 'font-size : 16px;'><i class='bi-pencil' role='img' aria-label='Pencil'></i></a>
                   </button>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Hapus Kategori'>
-                    <a class='text-light' href='#' style = 'font-size : 16px;'><i class='bi-trash' role='img' aria-label='Trash'></i></a>
+                    <a class='text-light' href='$url./admin/kelola_menu/destroy/$menu->id' style = 'font-size : 16px;'><i class='bi-trash' role='img' aria-label='Trash'></i></a>
                   </button>
                 </td>
               </tr>
