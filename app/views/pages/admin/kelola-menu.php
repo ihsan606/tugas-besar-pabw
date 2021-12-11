@@ -31,8 +31,8 @@
           <th class="text-center" width = "80px"><p class="title">Gambar</p></th>
           <th class="text-left"><p class="title">Nama Menu</p></th>
           <th class="text-left" width = "200px"><p class="title">Kategori</p></th>
-          <th class="text-center" width = "60px"><p class="title">Terjual</p></th>
-          <th class="text-center" width = "60px"><p class="title">Rating</p></th>
+          <th class="text-center" width = "80px"><p class="title">Terjual</p></th>
+          <th class="text-center" width = "80px"><p class="title">Rating</p></th>
           <th class="text-center" width = "120px"><p class="title">Action</p></th>
         </tr>
       </thead>
@@ -45,8 +45,8 @@
             <th class="text-center" width = "80px"></p></th>
             <th class="text-left"></p></th>
             <th class="text-left"width = "200px"></p></th>
-            <th class="text-center" width = "60px"></p></th>
-            <th class="text-center" width = "60px"></p></th>
+            <th class="text-center" width = "80px"></p></th>
+            <th class="text-center" width = "80px"></p></th>
             <th class="text-center" width = "120px"></p></th>
             </tr>
           <tr>
@@ -73,10 +73,10 @@
                   <p>$category_name</p>
                 </td>
                 <td>
-                  <p class='title text-center'>$menu-></p>
+                  <p class='title text-center'>$menu->sold</p>
                 </td>
                 <td>
-                  <p class='title text-center'>5</p>
+                  <p class='title text-center'>$menu->rating</p>
                 </td>
                 <td class='td-actions text-center'>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Hapus Kategori'>

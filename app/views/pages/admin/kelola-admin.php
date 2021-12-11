@@ -27,7 +27,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th class="text-center" width = "20px"><p class="title">No</p></th>
+          <th class="text-center" width = "30px"><p class="title">No</p></th>
           <th class="text-left"><p class="title">Nama</p></th>
           <th class="text-left"><p class="title">Email</p></th>
           <th class="text-center" width = "120px"><p class="title">Action</p></th>
@@ -38,7 +38,7 @@
       <table class="table">
         <thead>
           <tr>
-            <th class="text-center" width = "20px"></p></th>
+            <th class="text-center" width = "30px"></p></th>
             <th class="text-left"></p></th>
             <th class="text-left"></p></th>
             <th class="text-center" width = "120px"></p></th>
