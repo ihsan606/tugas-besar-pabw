@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <form action = "<?=BASEURL;?>/admin/kelola_menu/store", method = "POST" enctype="multipart/form-data">
+    <form action = "<?=BASEURL;?>/admin/kelola_menu/update/<?=$data['this_menu'][0]->id?>", method = "POST" enctype="multipart/form-data">
       <div class="row">
         <div class="col-md-6">
           <div class="">
@@ -23,12 +23,16 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>KATEGORI</label>
-            <select class="form-control" name="category_id">
+            <select class="form-control" name="category_id" value = "<?=$data['this_menu'][0]->category->name?>">
               <option value="" style="background-color: #344675;">-- select category --</option>
               <?php 
               $categories = $data['categories'];
               foreach($categories as $category){
-                echo "<option value='$category->id' style='background-color: #344675;'>$category->name</option>";
+                if($category->id == $data['this_menu'][0]->category->id){
+                  echo "<option value='$category->id' style='background-color: #344675;' selected>$category->name</option>";
+                }else{
+                  echo "<option value='$category->id' style='background-color: #344675;'>$category->name</option>";
+                }
               }
               ?>
             </select>
@@ -40,13 +44,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>NAMA MENU</label>
-            <input type="text" name="name" placeholder="Masukkan Nama Menu" class="form-control">
+            <input type="text" name="name" placeholder="Masukkan Nama Menu" class="form-control" value="<?=$data['this_menu'][0]->title?>">
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>DESKRIPSI</label>
-            <input type="text" name="description" placeholder="Masukkan Deskripsi Menu" class="form-control">
+            <input type="text" name="description" placeholder="Masukkan Deskripsi Menu" class="form-control" value="<?=$data['this_menu'][0]->description?>">
           </div>
         </div>
       </div>
@@ -55,15 +59,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>HARGA</label>
-            <input type="number" name="price" placeholder="Masukkan Harga Menu"
-              class="form-control">
+            <input type="number" name="price" placeholder="Masukkan Harga Menu" class="form-control" value="<?=$data['this_menu'][0]->price?>">
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>DISKON (%)</label>
-            <input type="number" name="discount" placeholder="Masukkan Diskon Menu (%)"
-              class="form-control">
+            <input type="number" name="discount" placeholder="Masukkan Diskon Menu (%)" class="form-control" value="<?=$data['this_menu'][0]->discount?>">
           </div>
         </div>
       </div>
@@ -75,4 +77,4 @@
 
     </form>
   </div>
-</div>   
+</div> 

@@ -84,6 +84,8 @@ foreach ($tables as $table){
             $table->bigInteger('price');
             $table->enum('stock',array('tersedia','habis'))->default('tersedia');
             $table->integer('discount');
+            $table->integer('sold');
+            $table->integer('rating');
             $table->timestamps();
 
             //relationship category

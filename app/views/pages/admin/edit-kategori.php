@@ -12,14 +12,14 @@
         </div>
       </div>
     </div>
-    <form action = "<?=BASEURL;?>/admin/kelola_kategori/store" method = "POST" enctype="multipart/form-data">
+    <form action = "<?=BASEURL;?>/admin/kelola_kategori/update/<?=$data['this_category'][0]->id?>" method = "POST" enctype="multipart/form-data">
       <div class="mb-3">
         <label for="image" class="form-label">GAMBAR</label>
         <input class="form-control form-control-md" type="file" id="image" name = "image">
       </div> 
       <div class="form-group">
         <label for="name" class="form-label">NAMA KATEGORI</label>
-        <input class="form-control" type="text" id = "name" name = "name" placeholder="Masukkan Nama Kategori" >
+        <input class="form-control" type="text" id = "name" name = "name" placeholder="Masukkan Nama Kategori" value="<?=$data['this_category'][0]->name?>">
       </div>
 
       <button class="btn btn-info mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane text-white mr-2"></i>

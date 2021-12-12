@@ -30,7 +30,7 @@
       <div class="container login">
         <div class="row">
           <div class="col-7  text-center left-image">
-            <img src="../assets/img/header.jpg" alt="">
+            <img src="../img/rezerva.png" alt="" >
           </div>
           <div class="col-5">
             <div class="login-wrap p-4 p-md-5">

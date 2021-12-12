@@ -18,7 +18,7 @@
   <!-- Bootstrap Icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
   <!-- Title -->
-  <title>Rezerva | Admin | <?= $data['title'] ?></title>
+  <title>Rezerva | Admin | <?= $data['title']?></title>
 </head>
 
 <body class="">
@@ -72,21 +72,9 @@
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/typography">
+            <a href="<?=BASEURL;?>/admin/kelola_admin">
               <i class="tim-icons icon-align-center"></i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li>
-            <a href="<?=BASEURL;?>/admin/rtl">
-              <i class="tim-icons icon-world"></i>
-              <p>RTL Support</p>
-            </a>
-          </li>
-          <li>
-            <a href="<?=BASEURL;?>/admin/upgrade">
-              <i class="tim-icons icon-spaceship"></i>
-              <p>Upgrade to PRO</p>
+              <p>Kelola Admin</p>
             </a>
           </li>
         </ul>
