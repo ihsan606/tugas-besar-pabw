@@ -18,7 +18,7 @@
   <!-- Bootstrap Icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
   <!-- Title -->
-  <title>Rezerva | Admin | <?= $data['title'] ?></title>
+  <title>Rezerva | Admin | <?= $data['title']?></title>
 </head>
 
 <body class="">

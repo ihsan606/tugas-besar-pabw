@@ -1,6 +1,6 @@
 <div class="card card-tasks" style = 'height : 100%;'>
   <div class="card-header ">
-    <h3 style = "margin : 0px 0px 0px 0px;">Edit Admin</h3>
+    <h3 style = "margin : 0px 0px 0px 0px;"><?= $data['title']?></h3>
   </div>
   <div class="card-body">
     <div class="form-group-apend">
