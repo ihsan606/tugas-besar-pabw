@@ -11,7 +11,7 @@
             <a class="text-dark" href="<?=BASEURL?>/customer/daftar_menu">Daftar Menu</a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
-            <strong>Food Detail</strong> 
+            <strong>Detail Menu</strong> 
           </li>
         </ol>
       </nav>
@@ -20,7 +20,7 @@
 
   <div class="row mt-3">
     <div class="col md-6">
-      <img :src="'/assets/images/' + product.gambar" class="img-fluid shadow" :alt="product.gambar" />
+      <img :src="/img/menus/<?=$data['detail_menu'][0]->title?>" class="img-fluid shadow" :alt="product.gambar" />
     </div>
     <div class="col md-6">
       <h2>

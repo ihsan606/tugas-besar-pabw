@@ -8,7 +8,7 @@ class Detail_Menu_Controller extends Controller{
   {
     $data = [
       'title' => 'Detail Menu',
-      'detail' => Menu::with('category')->where('slug', $slug)->get(),
+      'detail_menu' => Menu::with('category')->where('slug', $slug)->get(),
     ];
     $this->view('detail-menu', $data, 'customer');
   }

@@ -35,19 +35,60 @@
           $discount_price = $menu->price*(100-$menu->discount)/100;
           echo "
             <div class='col mt-3 d-flex'>
-              <!--  <a href='$url/customer/detail_menu/$menu->slug' style='text-decoration: none!important;'> -->
-                <div class='card shadow card-product' style = 'border-radius: 7px;'>
-                  <img src='$url/img/menus/$menu->image' class='card-img-top' alt='...'/ style = 'border-radius: 7px 7px 0px 0px;'>
-                  <div class='card-body'>
-                    <h5 class='card-title'>$menu->title</h5>";
-                    if($menu->discount > 0){
-                      echo "<p class='card-text'><strike>Rp $menu->price</strike> $menu->discount% <br>Rp $discount_price</p>";
-                    }else{
-                      echo "<p class='card-text'>Rp $menu->price</p>";
-                    }
-                    echo "                  
+              <div class='card shadow card-product' style = 'border-radius: 7px;'>
+                <img src='$url/img/menus/$menu->image' class='card-img-top' alt='...'/ style = 'border-radius: 7px 7px 0px 0px;'>
+
+                <div class='card-body'>
+                  <h5 class='card-title text-dark'>$menu->title</h5>";
+                  if($menu->discount > 0){
+                    echo "<p class='card-text text-danger'><strike>Rp $menu->price</strike> <strong class ='text-dark'>$menu->discount% <br>Rp $discount_price</strong></p>";
+                  }else{
+                    echo "<p class='card-text text-dark'><strong>Rp $menu->price</strong></p>";
+                  }
+                  echo "
+                </div>
+                
+                <div class='row justify-content-between mx-3 mb-3'>
+                  <div class='col-md px-0'>
+                    <a class='btn btn-sm btn-success' href='$url/customer/detail_menu/$menu->slug'>
+                      <b-icon-cart></b-icon-cart>
+                      Pesan
+                    </a>
                   </div>
-                  <div class='row justify-content-between mx-3 mb-3'>
+                  <div class='col-md-auto px-0'>
+                    <p class='card-text'>terjual $menu->sold | <i class='bi-star-fill' role='text' aria-label='Star-Fill' style='color: #ffc107;'></i> $menu->rating</p>
+                  </div>
+                </div>
+                 
+              </div>
+            </div>
+          ";
+        }
+        ?>
+        
+      </div>
+    </div>
+
+    <!-- <div class='col mt-3 d-flex'>
+              <div class='card shadow card-product' style = 'border-radius: 7px;'>
+                <a href='$url/customer/detail_menu/$menu->slug' style='text-decoration: none!important;'>
+                  <img src='$url/img/menus/$menu->image' class='card-img-top' alt='...'/ style = 'border-radius: 7px 7px 0px 0px;'>
+                </a>
+
+                <div class='card-body'>
+                  <a href='$url/customer/detail_menu/$menu->slug' style='text-decoration: none!important;'>
+                    <h5 class='card-title text-dark'>$menu->title</h5>";
+                    if($menu->discount > 0){
+                      echo "<p class='card-text text-danger'><strike>Rp $menu->price</strike> <strong class ='text-dark'>$menu->discount% <br>Rp $discount_price</strong></p>";
+                    }else{
+                      echo "<p class='card-text text-dark'><strong>Rp $menu->price</strong></p>";
+                    }
+                    echo "
+                  </a>
+                </div>
+                
+                <div class='row justify-content-between mx-3 mb-3'>
+                  <a href='$url/customer/detail_menu/$menu->slug' style='text-decoration: none!important;'>
                     <div class='col-md px-0'>
                       <a class='btn btn-sm btn-success' href='$url/customer/detail_menu/$menu->slug'>
                         <b-icon-cart></b-icon-cart>
@@ -57,16 +98,12 @@
                     <div class='col-md-auto px-0'>
                       <p class='card-text'>terjual $menu->sold | <i class='bi-star-fill' role='text' aria-label='Star-Fill' style='color: #ffc107;'></i> $menu->rating</p>
                     </div>
-                  </div>
-                </div>
-              <!-- </a> -->
-            </div>
-          ";
-        }
-        ?>
-        
-      </div>
-    </div>
+                  </a>
+                </div> 
+              </div>
+            </div> -->
+
+    
     
     
     
