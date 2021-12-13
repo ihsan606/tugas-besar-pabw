@@ -10,16 +10,16 @@
 
       <div class="row mt-3">
         <div class="col">
-          <form action = "<?=BASEURL;?>/admin/daftar-menu/show", method = "POST">   
-            <div class="row row-cols-2">
-              <div class="col align-self-center pr-0" style="margin-right: 0px;">
+          <form action = "<?=BASEURL;?>/customer/daftar-menu/show", method = "POST">   
+            <div class="row justify-content-between">
+              <div class="col align-self-center" style="padding-right: 0px;">
                 <div class="input-group input-group-lg mb-3">
                   <input name="search" type="text" class="form-control form-control-m" placeholder="Cari Makanan Kesukan Anda..." aria-label="Cari" aria-describedby="basic-addon1"/>
                 </div>
               </div>
-              <div class="col-md-auto align-self-center">
-                <div class="input-group input-group-lg mb-3">
-                  <button type = "submit" class="btn btn-sm p-2 text-dark"> <i class="fa fa-search px-2 text-dark"></i> </button>
+              <div class="col align-self-center" style="max-width: 70px!important;">
+                <div class="input-group input-group-lg mb-3 justify-content-end" style="max-width: 70px!important;">
+                  <button type = "submit" class="btn btn-sm p-2 text-dark"><i class="fa fa-search px-2 text-dark"></i></button>
                 </div>
               </div>
             </div>
@@ -48,7 +48,7 @@
                     echo "
                       
                   </div>
-                  <div class='row justify-content between mx-3 mb-3'>
+                  <div class='row justify-content-between mx-3 mb-3'>
                     <div class='col-md px-0'>
                       <a class='btn btn-sm btn-success' href='$url/customer/detail_menu/$menu->slug'>
                         <b-icon-cart></b-icon-cart>
