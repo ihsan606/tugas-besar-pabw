@@ -137,13 +137,25 @@ class Kelola_Menu_Controller extends Controller{
             header('Location: ' . BASEURL . '/admin/kelola_menu');
           }
         }else{
-          header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
+          header('Location: ' . BASEURL . '/admin/kelola_menu/edit_menu/' . $id);
         }
       }else{
-        header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
+        header('Location: ' . BASEURL . '/admin/kelola_menu/edit_menu/' . $id);
+      }
+    }else if($name != null && $price != null && $category_id != null && $description !== null && $discount != null){
+      $menu = Menu::where('id', $id)->update([
+        'title' => $name,
+        'slug' => Str::slug($name, '-'),
+        'category_id' => $category_id,
+        'description' => $description,
+        'price' => $price,
+        'discount' => $discount,
+      ]);
+      if($menu){
+        header('Location: ' . BASEURL . '/admin/kelola_menu');
       }
     }else{
-      header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
+      header('Location: ' . BASEURL . '/admin/kelola_menu/edit_menu/' . $id);
     }  
   }
 
