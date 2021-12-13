@@ -36,13 +36,6 @@
       <div class="container">
         <a class="navbar-brand me-2" href="<?=BASEURL;?>/customer/home">
         Rezerva
-          <!-- <img
-            src="img/ucourse.png"
-            width="90%"
-            alt=""
-            loading="lazy"
-            style="margin-top: -1px;"
-          /> -->
         </a>
         <!-- Toggle button -->
         <button
@@ -68,17 +61,15 @@
               <a class="nav-link" href="<?=BASEURL;?>/customer/daftar_menu">Menu</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="<?=BASEURL;?>/customer/keranjang">Keranjang</a>
+              
+              <!-- <a class="nav-link" href="<?=BASEURL;?>/customer/keranjang">Keranjang</a> -->
             </li>
           </ul>
           <!-- Left links -->
           <div class="d-flex-end  justify-content-end">
-            <button type="button" class="btn btn-link">
-              Login
-            </button>
-            <button type="button" class="btn btn-primary">
-              Sign up for free
-            </button>
+            <a href="<?=BASEURL;?>/customer/keranjang" type="button" class="btn btn-primary">
+              Keranjang <span class="badge bg-secondary">4</span>
+            </a>
             <!-- <a
               class="btn btn-dark px-3"
               href="https://github.com/ihsan606/tugas-besar-pabw"

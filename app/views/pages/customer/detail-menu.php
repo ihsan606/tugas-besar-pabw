@@ -33,8 +33,8 @@
       </h4>
       <form class="mt-4" action = "<?=BASEURL;?>/admin/detail_menu/store", method = "POST">
         <div class="form-group mb-4">
-          <label for="jumlah-pesanan">Jumlah Pesanan</label>
-          <input type="number" class="form-control" name="jumlah" />
+          <label for="jumlah">Jumlah Pesanan</label>
+          <input type="number" class="form-control" name="jumlah" placeholder="Masukkan Jumlah Pesanan"/>
         </div>
         <div class="form-group mb-4">
           <label for="keterangan">Keterangan</label>

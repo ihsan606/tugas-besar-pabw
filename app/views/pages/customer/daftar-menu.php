@@ -32,7 +32,8 @@
         $menus = $data['menus'];
         $url = BASEURL;
         foreach($menus as $menu){
-          $discount_price = $menu->price*(100-$menu->discount)/100;
+          $price = money_format($menu->price);
+          $discount_price = money_format($menu->price*(100-$menu->discount)/100);
           echo "
             <div class='col mt-3 d-flex'>
               <div class='card shadow card-product' style = 'border-radius: 7px;'>
@@ -41,9 +42,9 @@
                 <div class='card-body'>
                   <h5 class='card-title text-dark'>$menu->title</h5>";
                   if($menu->discount > 0){
-                    echo "<p class='card-text'><strong class ='text-dark'>Rp $discount_price</strong><br><strong class='text-danger' style='font-size: 13px!important;'><strike style='color: #909497'>Rp $menu->price</strike> $menu->discount% </strong></p>";
+                    echo "<p class='card-text'><strong class ='text-dark'>$discount_price</strong><br><strong class='text-danger' style='font-size: 13px!important;'><strike style='color: #909497'>$price</strike> $menu->discount% </strong></p>";
                   }else{
-                    echo "<p class='card-text text-dark'><strong>Rp $menu->price</strong></p>";
+                    echo "<p class='card-text text-dark'><strong>$price</strong></p>";
                   }
                   echo "
                 </div>
