@@ -10,33 +10,31 @@
 
       <div class="row mt-3">
         <div class="col">
-          <div class="input-group">
-            <div class="input-group mb-3">
-              <input
-                v-model="search"
-                type="text"
-                class="form-control"
-                placeholder="Cari Makanan Kesukan Anda..."
-                aria-label="Cari"
-                aria-describedby="basic-addon1"
-                @keyup="searchFood"
-              />
-              <span class="input-group-text" id="basic-addon1">
-                <a class="text-dark" href="#" style = "font-size : 16px;"><i class="bi-search" role="img" aria-label="Search"></i></a>
-              </span>
+          <form action = "<?=BASEURL;?>/admin/daftar-menu/show", method = "POST">   
+            <div class="row">
+              <div class="col align-self-center pr-0">
+                <div class="input-group input-group-lg mb-3">
+                  <input name="search" type="text" class="form-control form-control-m" placeholder="Cari Makanan Kesukan Anda..." aria-label="Cari" aria-describedby="basic-addon1"/>
+                </div>
+              </div>
+              <div class="col-md-auto align-self-center">
+                <div class="input-group input-group-lg mb-3">
+                  <button type = "submit" class="btn btn-sm p-2 text-dark"><i class="fa fa-search mr-2 text-dark"></i>SEARCH</button>
+                </div>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
 
-      <div class="row mb-4" align="start">
+      <div class="row row-cols-2 row-cols-sm-4 mb-4" align="start">
         <?php
         $menus = $data['menus'];
         $url = BASEURL;
         foreach($menus as $menu){
           $discount_price = $menu->price*(100-$menu->discount)/100;
           echo "
-            <div class='col-md-3 mt-3 d-flex'>
+            <div class='col mt-3 d-flex'>
               <!--  <a href='$url/customer/detail_menu/$menu->slug' style='text-decoration: none!important;'> -->
                 <div class='card shadow card-product' style = 'border-radius: 7px;'>
                   <img src='$url/img/menus/$menu->image' class='card-img-top' alt='...'/ style = 'border-radius: 7px 7px 0px 0px;'>
@@ -70,16 +68,6 @@
         
       </div>
     </div>
-
-    
-<!-- <div class='position-absolute bottom-0 start-0 px-3 py-3'>
-                        <p class='card-text'>terjual $menu->sold | <i class='bi-star-fill' role='img' aria-label='Star-Fill'></i> $menu->rating</p>
-                        <a class='btn btn-sm btn-success' href='$url/customer/detail_menu/$menu->slug'>
-                          <b-icon-cart></b-icon-cart>
-                          Pesan
-                        </a>
-                      </div> -->
-
     
     
     
