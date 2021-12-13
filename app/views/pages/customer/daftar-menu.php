@@ -10,7 +10,7 @@
 
       <div class="row mt-3">
         <div class="col">
-          <form action = "<?=BASEURL;?>/customer/daftar-menu/show", method = "POST">   
+          <form action = "<?=BASEURL;?>/customer/daftar_menu/show", method = "POST">   
             <div class="row justify-content-between">
               <div class="col align-self-center" style="padding-right: 0px;">
                 <div class="input-group input-group-lg mb-3">
@@ -19,7 +19,7 @@
               </div>
               <div class="col align-self-center" style="max-width: 70px!important;">
                 <div class="input-group input-group-lg mb-3 justify-content-end" style="max-width: 70px!important;">
-                  <button type = "submit" class="btn btn-sm p-2 text-dark"><i class="fa fa-search px-2 text-dark"></i></button>
+                  <button type = "submit" class="btn btn-success btn-sm p-2"><i class="fa fa-search px-2 text-white"></i></button>
                 </div>
               </div>
             </div>
@@ -45,8 +45,7 @@
                     }else{
                       echo "<p class='card-text'>Rp $menu->price</p>";
                     }
-                    echo "
-                      
+                    echo "                  
                   </div>
                   <div class='row justify-content-between mx-3 mb-3'>
                     <div class='col-md px-0'>

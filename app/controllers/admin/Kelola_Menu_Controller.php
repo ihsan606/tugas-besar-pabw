@@ -39,16 +39,14 @@ class Kelola_Menu_Controller extends Controller{
     $search = $_POST['search'];
 
     if($search){
-      $menus = Menu::with('category')->where('title', 'like', '%'.$search.'%')->get();
+      $data = [
+        'title' => 'Kelola Menu',
+        'menus' => Menu::with('category')->where('title', 'like', '%'.$search.'%')->get(),
+      ];
+      $this->view('kelola-menu', $data, 'admin');
     }else{
-      $menus = Menu::all();
+      header('Location: ' . BASEURL . '/admin/kelola_menu');
     }
-      
-    $data = [
-      'title' => 'Kelola Menu',
-      'menus' => $menus,
-    ];
-    $this->view('kelola-menu', $data, 'admin');
   }
 
   public function store(){

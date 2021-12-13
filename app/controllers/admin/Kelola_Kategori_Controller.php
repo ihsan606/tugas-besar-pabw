@@ -3,11 +3,10 @@
 require '../vendor/autoload.php';
 use App\models\Category;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
-
 
 class Kelola_Kategori_Controller extends Controller{
-  public function index(){
+  public function index()
+  {
     $data = [
       'title' => 'Kelola Kategori',
       'categories' => Category::All(),
@@ -15,7 +14,8 @@ class Kelola_Kategori_Controller extends Controller{
     $this->view('kelola-kategori', $data, 'admin');
   }
 
-  public function tambah_kategori(){
+  public function tambah_kategori()
+  {
     $data = ['title' => 'Tambah Kategori',];
     $this->view('tambah-kategori', $data, 'admin');
   }
@@ -33,16 +33,14 @@ class Kelola_Kategori_Controller extends Controller{
     $search = $_POST['search'];
 
     if($search){
-      $categories = Category::where('name', 'like', '%'.$search.'%')->get();
+      $data = [
+        'title' => 'Kelola Kategori',
+        'categories' => Category::where('name', 'like', '%'.$search.'%')->get(),
+      ];
+      $this->view('kelola-kategori', $data, 'admin');
     }else{
-      $categories = Category::all();
+      header('Location: ' . BASEURL . '/admin/kelola_kategori');
     }
-      
-    $data = [
-      'title' => 'Kelola Kategori',
-      'categories' => $categories,
-    ];
-    $this->view('kelola-kategori', $data, 'admin');
   }
 
   public function store(){

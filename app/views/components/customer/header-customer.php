@@ -34,7 +34,7 @@
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light ">
       <!-- Container wrapper -->
       <div class="container">
-        <a class="navbar-brand me-2" href="<?=BASEURL;?>">
+        <a class="navbar-brand me-2" href="<?=BASEURL;?>/customer/home">
         Rezerva
           <!-- <img
             src="img/ucourse.png"
@@ -62,7 +62,7 @@
           <!-- Left links -->
           <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto">
             <li class="nav-item px-2">
-              <a class="nav-link active"  href="<?=BASEURL;?>">Home</a>
+              <a class="nav-link active"  href="<?=BASEURL;?>/customer/home">Home</a>
             </li>
             <li class="nav-item px-2">
               <a class="nav-link" href="<?=BASEURL;?>/customer/daftar_menu">Menu</a>
