@@ -56,10 +56,10 @@
                     </a>
                   </div>
                   <div class='col-md-auto px-0'>
-                    <p class='card-text'>terjual $menu->sold | <i class='bi-star-fill' role='text' aria-label='Star-Fill' style='color: #ffc107;'></i> $menu->rating</p>
+                    <p class='card-text'>Terjual $menu->sold | <i class='bi-star-fill' role='text' aria-label='Star-Fill' style='color: #ffc107;'></i> $menu->rating</p>
                   </div>
                 </div>
-                 
+
               </div>
             </div>
           ";
