@@ -39,6 +39,9 @@ class Checkout_Controller extends Controller {
 
             //generate no invoice
             $no_invoice = 'INV-'.Str::upper($random);
+            $invoice = Invoice::create([
+                
+            ]);
             
         });
     }
