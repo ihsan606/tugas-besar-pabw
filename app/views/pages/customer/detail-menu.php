@@ -20,27 +20,27 @@
 
   <div class="row mt-3">
     <div class="col md-6">
-      <img :src="/img/menus/<?=$data['detail_menu'][0]->title?>" class="img-fluid shadow" :alt="product.gambar" />
+      <img src="<?=BASEURL?>/img/menus/<?=$data['detail_menu'][0]->image?>" class="img-fluid shadow" alt="..." />
     </div>
     <div class="col md-6">
       <h2>
-        <strong>{{ product.nama }}</strong>
+        <strong><?=$data['detail_menu'][0]->title?></strong>
       </h2>
       <hr />
       <h4>
         Harga:
-        <strong>Rp {{ product.harga }}</strong>
+        <strong>Rp <?=$data['detail_menu'][0]->price?></strong>
       </h4>
-      <form class="mt-4" v-on:submit.prevent>
-        <div class="form-group">
+      <form class="mt-4" action = "<?=BASEURL;?>/admin/detail_menu/store", method = "POST">
+        <div class="form-group mb-4">
           <label for="jumlah-pesanan">Jumlah Pesanan</label>
-          <input type="number" class="form-control" v-model="pesan.jumlah_pemesanan" />
+          <input type="number" class="form-control" name="jumlah" />
         </div>
-        <div class="form-group">
+        <div class="form-group mb-4">
           <label for="keterangan">Keterangan</label>
-          <textarea v-model="pesan.keterangan" class="form-control" placeholder="Keterangan seperti: Pedas, Bungkus"></textarea>
+          <textarea name="keterangan" class="form-control" placeholder="Keterangan seperti: Pedas, Bungkus"></textarea>
         </div>
-        <button type="submit" class="btn btn-success" @click="pemesanan">
+        <button type="submit" class="btn btn-success">
           <b-icon-cart></b-icon-cart>
           Pesan
         </button>
