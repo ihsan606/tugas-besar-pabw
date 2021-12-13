@@ -30,26 +30,36 @@
       </div>
 
       <div class="row mb-4" align="start">
-        <div
-          class="col-md-4 mt-4 d-flex"
-          v-for="product in products"
-          :key="product.id"
-        >
-          <div class="card shadow card-product">
-            <img
-              :src="'/assets/images/' + product.gambar"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">{{ product.nama }}</h5>
-              <p class="card-text">Harga: Rp {{ product.harga }}</p>
-              <router-link class="btn btn-success" :to="'/foods/'+product.id">
-                <b-icon-cart></b-icon-cart>
-                Pesan
-              </router-link>
+        <?php
+        $menus = $data['menus'];
+        $url = BASEURL;
+        foreach($menus as $menu){
+          $discount_price = $menu->price*(100-$menu->discount)/100;
+          echo "
+            <div class='col-md-3 mt-3 d-flex'>
+              <!--  <a href='$url/customer/detail_menu/$menu->slug' style='text-decoration: none!important;'> -->
+                <div class='card shadow card-product'>
+                  <img src='$url/img/menus/$menu->image' class='card-img-top' alt='...'/>
+                  <div class='card-body'>
+                    <h5 class='card-title'>$menu->title</h5>";
+                    if($menu->discount > 0){
+                      echo "<p class='card-text'><strike>Rp $menu->price</strike> Diskon $menu->discount% <br>Rp $discount_price</p>";
+                    }else{
+                      echo "<p class='card-text'>Rp $menu->price</p>";
+                    }
+                    echo "<a class='btn btn-success d-flex-end' href='$url/customer/detail_menu/$menu->slug'>
+                      <b-icon-cart></b-icon-cart>
+                      Pesan
+                    </a>
+                  </div>
+                </div>
+              <!-- </a> -->
             </div>
-          </div>
-        </div>
+          ";
+        }
+        ?>
+        
       </div>
     </div>
+
+    

@@ -17,7 +17,7 @@
         <div class="col-md-6">
           <div class="">
             <label>GAMBAR</label>
-            <input type="file" name = "image" class="form-control form-control-md" >
+            <input type="file" name = "image" class="form-control form-control-md">
           </div>
         </div>
         <div class="col-md-6">

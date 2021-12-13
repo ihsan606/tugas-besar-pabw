@@ -107,13 +107,21 @@ class Kelola_Kategori_Controller extends Controller{
             header('Location: ' . BASEURL . '/admin/kelola_kategori');
           }
         }else{
-          header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
+          header('Location: ' . BASEURL . '/admin/kelola_kategori/edit_kategori/' . $id);
         }
       }else{
-        header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
+        header('Location: ' . BASEURL . '/admin/kelola_kategori/edit_kategori/' . $id);
+      }
+    }else if($name != null){
+      $category = Category::where('id', $id)->update([
+        'name' => $name,
+        'slug' => Str::slug($name, '-')
+      ]);
+      if($category){
+        header('Location: ' . BASEURL . '/admin/kelola_kategori');
       }
     }else{
-      header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
+      header('Location: ' . BASEURL . '/admin/kelola_kategori/edit_kategori/' . $id);
     }
   }
 
