@@ -8,4 +8,10 @@ class Keranjang_Controller extends Controller{
     ];
     $this->view('keranjang', $data, 'customer');
   }
+
+  public function show(){
+    session_start();
+    $data = $_SESSION['keranjang'];
+    var_dump($data);
+  }
 }

@@ -30,8 +30,7 @@
               <th scope="col">#</th>
               <th scope="col">Foto</th>
               <th scope="col">Makanan</th>
-              <th scope="col">Keterangan</th>
-              <th scope="col">Jumlah</th>
+              <th scope="col">Qty</th>
               <th scope="col">Harga</th>
               <th scope="col">Total</th>
               <th scope="col">Hapus</th>
@@ -39,7 +38,7 @@
           </thead>
           <tbody>
             <tr v-for="(keranjang, index) in keranjangs" :key="keranjang.id">
-              <th>{{ index + 1 }}</th>
+              <th>1</th>
               <td>
                 <img :src="'/assets/images/' + keranjang.product.gambar" class="img-fluid shadow" width="250" :alt="keranjang.product.gambar" />
               </td>
