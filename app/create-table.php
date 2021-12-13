@@ -14,7 +14,6 @@ function endMigrations($table){
 }
  $tables= [
      'admins',
-     'customers',
      'categories',
      'menus',
      'carts',
@@ -24,10 +23,10 @@ function endMigrations($table){
      'ratings'
     ];
 
-foreach ($tables as $table){
-    if (Manager::schema()->hasTable($table)) {
-         endMigrations($table);
-    }else {
+// foreach ($tables as $table){
+//     if (Manager::schema()->hasTable($table)) {
+//          endMigrations($table);
+//     }else {
 
 
         // users table --this table provided for admin
@@ -45,19 +44,19 @@ foreach ($tables as $table){
         });
 
 
-        //customers table
-        Manager::schema()->dropIfExists('customers');
-        Manager::schema()->create('customers', function (Blueprint $table) {
-            start('customers');
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-            endMigrations('customers');
-        });
+        // //customers table
+        // Manager::schema()->dropIfExists('customers');
+        // Manager::schema()->create('customers', function (Blueprint $table) {
+        //     start('customers');
+        //     $table->id();
+        //     $table->string('name');
+        //     $table->string('email')->unique();
+        //     $table->timestamp('email_verified_at')->nullable();
+        //     $table->string('password');
+        //     $table->rememberToken();
+        //     $table->timestamps();
+        //     endMigrations('customers');
+        // });
         
         //categories table
         Manager::schema()->dropIfExists('categories');
@@ -117,7 +116,7 @@ foreach ($tables as $table){
             start('invoices');
             $table->id();
             $table->string('invoice');
-            $table->unsignedBigInteger('customer_id');
+            $table->string('customer_name');
             $table->enum('status',array('pending','success','expired','failed'));
             $table->bigInteger('grand_total');
             $table->string('snap_token')->nullable();
@@ -178,5 +177,5 @@ foreach ($tables as $table){
             $table->foreign('customer_id')->references('id')->on('customers');
             endMigrations('ratings');
         });
-    }
-}
+    // }
+// }
