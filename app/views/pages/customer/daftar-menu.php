@@ -41,7 +41,7 @@
                 <div class='card-body'>
                   <h5 class='card-title text-dark'>$menu->title</h5>";
                   if($menu->discount > 0){
-                    echo "<p class='card-text text-danger'><strike>Rp $menu->price</strike> <strong class ='text-dark'>$menu->discount% <br>Rp $discount_price</strong></p>";
+                    echo "<p class='card-text'><strong class ='text-dark'>Rp $discount_price</strong><br><strong class='text-danger' style='font-size: 13px!important;'><strike style='color: #909497'>Rp $menu->price</strike> $menu->discount% </strong></p>";
                   }else{
                     echo "<p class='card-text text-dark'><strong>Rp $menu->price</strong></p>";
                   }
