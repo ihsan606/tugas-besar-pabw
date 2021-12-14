@@ -34,6 +34,7 @@
     foreach($menus as $menu){
       $price = money_format($menu->price);
       $discount_price = money_format($menu->price*(100-$menu->discount)/100);
+      $category_name = $menu->category->name;
       echo "
         <div class='col mt-3 d-flex'>
           <div class='card shadow card-product' style = 'border-radius: 7px;'>
@@ -48,7 +49,13 @@
               }
               echo "
             </div>
-            
+
+            <div class='row position-absolute top-0 end-0 mx-0 mt-2'>
+              <div class='col-md-auto col align-self-end'>
+                <span class='badge' style='background-color: rgba(0, 0, 0, 0.7)'>$category_name</span>
+              </div>
+            </div>
+                        
             <div class='row  justify-content-between mx-3 mb-3'>
               <div class='col-md px-0' align-self-start style='width: auto;'>
                 <a class='btn btn-sm btn-success' href='$url/customer/detail_menu/$menu->slug'>
