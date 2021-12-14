@@ -53,28 +53,5 @@
       </form>
     </div>
   </div>
-  <div class="col md-6">
-    <h2>
-      <strong><?=$data['detail_menu'][0]->title?></strong>
-    </h2>
-    <hr />
-    <h4>
-      Harga:
-      <strong>Rp <?=$data['detail_menu'][0]->price?></strong>
-    </h4>
-    <form class="mt-4" action = "<?=BASEURL;?>/customer/detail_menu/store/<?=$data['detail_menu'][0]->id?>", method = "POST">
-      <div class="form-group mb-4">
-        <label for="jumlah">Jumlah Pesanan</label>
-        <input type="number" class="form-control" name="jumlah" placeholder="Masukkan Jumlah Pesanan"/>
-      </div>
-      <div class="form-group mb-4">
-        <label for="keterangan">Keterangan</label>
-        <textarea name="keterangan" class="form-control" placeholder="Keterangan seperti: Pedas, Bungkus" style='height: 100px;'></textarea>
-      </div>
-      <button type="submit" class="btn btn-success">
-        <b-icon-cart></b-icon-cart>
-        Pesan
-      </button>
-    </form>
-  </div>
+  
 </div>
