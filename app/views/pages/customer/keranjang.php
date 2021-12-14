@@ -98,7 +98,7 @@
   <!-- Form Checkout -->
   <div class="row justify-content-end">
     <div class="col-md-4">
-      <form class="mt-4" v-on:submit.prevent>
+      <form class="mt-4" >
         <div class="form-group mb-3">
           <label for="nama">Nama :</label>
           <input type="text" class="form-control" v-model="pesan.nama" />
