@@ -39,7 +39,7 @@
         Harga:
         <strong>Rp <?=$data['detail_menu'][0]->price?></strong>
       </h4>
-      <form class="mt-4" action = "<?=BASEURL;?>/admin/detail_menu/store", method = "POST">
+      <form class="mt-4" action = "<?=BASEURL;?>/customer/detail_menu/store/<?=$data['detail_menu'][0]->id?>", method = "POST">
         <div class="form-group mb-4">
           <label for="jumlah">Jumlah Pesanan</label>
           <input type="number" class="form-control" name="jumlah" placeholder="Masukkan Jumlah Pesanan"/>

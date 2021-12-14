@@ -146,6 +146,7 @@ foreach ($tables as $table){
             $table->unsignedBigInteger('invoice_id');
             $table->unsignedBigInteger('table_id');
             $table->unsignedBigInteger('menu_id');
+            $table->string('description');
             $table->enum('status',array('dikonfirmasi','diproses','diantar','ditolak'));
             $table->integer('qty');
             $table->bigInteger('price');
