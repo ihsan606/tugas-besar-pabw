@@ -1,6 +1,5 @@
 
     </div>
-    <div class="row">
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 mt-4 border-top bg-success">
         <div class="container" style = "padding: 5px 20px 0px 20px;">
           <div class="row">
@@ -43,8 +42,6 @@
           </div>
         </div>
       </footer>  
-
-    </div>
 
       
 
