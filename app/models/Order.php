@@ -14,10 +14,10 @@ class Order extends Model
         return $this->belongsTo(Menu::class);
     }
 
-    public function invoice()
-    {
-        return $this->belongsTo(Invoice::class);
-    }
+    // public function invoice()
+    // {
+    //     return $this->belongsTo(Invoice::class);
+    // }
 
     public function table()
     {

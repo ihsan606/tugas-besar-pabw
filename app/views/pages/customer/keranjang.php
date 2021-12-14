@@ -107,7 +107,7 @@
           <label for="noMeja">Nomor Meja :</label>
           <input type="text" class="form-control" name="no_meja" />
         </div>
-        <input type="text" class="form-control" value='<?= $total_harga; ?>' name="grand_total" hidden/>
+        <input type="text" class="form-control" value='<?= $_SESSION['keranjang']['total_harga']; ?>' name="grand_total" hidden/>
         
         <button type="submit" class="btn btn-success float-right" >
           <b-icon-cart></b-icon-cart>
