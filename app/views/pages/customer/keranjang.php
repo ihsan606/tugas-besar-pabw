@@ -1,4 +1,7 @@
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript"
+            src="https://app.sandbox.midtrans.com/snap/snap.js"
+            data-client-key="SB-Mid-client-_0bji155hJ_YL7Pw"></script>
 <div class="row mt-4" align="start">
   <div class="col">
     <h2>
