@@ -98,16 +98,18 @@
   <!-- Form Checkout -->
   <div class="row justify-content-end">
     <div class="col-md-4">
-      <form class="mt-4" >
+      <form action="<?=BASEURL;?>/customer/checkout/store" method="post" class="mt-4" >
         <div class="form-group mb-3">
           <label for="nama">Nama :</label>
-          <input type="text" class="form-control" v-model="pesan.nama" />
+          <input type="text" class="form-control" name="customer_name" />
         </div>
         <div class="form-group mb-3">
           <label for="noMeja">Nomor Meja :</label>
-          <input type="text" class="form-control" v-model="pesan.noMeja" />
+          <input type="text" class="form-control" name="no_meja" />
         </div>
-        <button type="submit" class="btn btn-success float-right" @click="checkout">
+        <input type="text" class="form-control" value='<?= $total_harga; ?>' name="grand_total" hidden/>
+        
+        <button type="submit" class="btn btn-success float-right" >
           <b-icon-cart></b-icon-cart>
           Pesan
         </button>

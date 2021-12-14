@@ -7,6 +7,7 @@
       </h2>
     </div>
   </div>
+  <p><?= $data['menus']; ?></p>
 
   <!-- breadcrumb -->
   <div class="row mt-4">
@@ -63,8 +64,12 @@
               }else{
                 echo "<p class='card-text text-dark'><strong>$price</strong></p>";
               }
+            
               echo "
+             
+              
             </div>
+<<<<<<< HEAD
 
             <div class='row position-absolute top-0 end-0 mx-0 mt-2'>
               <div class='col-md-auto col align-self-end'>
@@ -74,6 +79,16 @@
                         
             <div class='row  justify-content-between mx-3'>
               <div class='col-md px-0 mb-3' align-self-start style='width: auto;'>
+=======
+            <div class='row'>
+              <div class='col-md-auto mx-3 mb-3'>
+                <span class='badge' style='background-color:gray'>Primary</span>
+              </div>
+            
+            </div>
+            <div class='row  justify-content-between mx-3 mb-3'>
+              <div class='col-md px-0' align-self-start style='width: auto;'>
+>>>>>>> f51c588 (badge)
                 <a class='btn btn-sm btn-success' href='$url/customer/detail_menu/$menu->slug'>
                   <b-icon-cart></b-icon-cart>
                   Pesan
