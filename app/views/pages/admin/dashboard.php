@@ -27,7 +27,7 @@
             <div class="col-lg-6 mx-auto">
               <p class="lead mb-4">Rezerva menawarkan fitur yang cukup menarik,silahkan eksplor dan jelajahi fitur yang ada</p>
               <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Transaksi</button>
+                <button type="button" class="btn btn-succes btn-lg px-4 gap-3">Transaksi</button>
 
               </div>
             </div>
@@ -89,3 +89,8 @@
     </div>
   </div>
 </div>
+
+
+<?php
+  require 
+?>
