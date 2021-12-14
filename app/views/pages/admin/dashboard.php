@@ -23,7 +23,7 @@
           <div class="px-4 py-5 my-1 text-center" id="hero">
             <i class="bi-slack" id="logo-rezerva" role="img" aria-label="Slack"></i>
             <!-- <img class="d-block mx-auto mb-4" src="" alt="logo rezerva" width="72" height="57"> -->
-            <h1 class="display-5 fw-bold">Welcome to Our dashboard</h1>
+            <h1 class="display-5 fw-bold">Welcome to Rezerva's dashboard</h1>
             <div class="col-lg-6 mx-auto">
               <p class="lead mb-4">Rezerva menawarkan fitur yang cukup menarik,silahkan eksplor dan jelajahi fitur yang ada</p>
               <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
