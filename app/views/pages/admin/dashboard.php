@@ -1,6 +1,3 @@
-<?php
-
-?>
 <div class="content card p-4">
   <div class="container">
 
