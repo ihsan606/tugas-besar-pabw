@@ -1,3 +1,9 @@
+
+#logo-rezerva {
+    color: white;
+    font-size: 50px;
+}
+
 .head-left{
     display: flex;
     justify-content: space-between;
@@ -7,3 +13,53 @@
     width: 40%;
 }
 
+.penjualan{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+#income{
+    background-color:#32325d;
+    color: black;
+    box-shadow: 5px 5px 18px #1f1f1f;
+}
+#icon-badge{
+   font-size: 30px;
+   color: white;
+}
+
+#search{
+    box-shadow: 5px 5px 18px #1f1f1f;
+}
+
+#hero{
+    background-color:#2c92ff;
+    border-radius: 10px;
+}
+
+.button-penjualan{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* button penjualan di bawah hero */
+.button-penjualan-list{
+    background-color: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+
+    width: 200px;
+    height: 60px;
+    border-radius: 10px;
+}
+.button-penjualan-list h4{
+    color: black;
+    margin-bottom: 0;
+}
+.button-penjualan-list p{
+    color: black;
+}
