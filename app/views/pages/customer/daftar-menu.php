@@ -8,6 +8,22 @@
     </div>
   </div>
 
+  <!-- breadcrumb -->
+  <div class="row mt-4">
+    <div class="col">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a class="text-dark" href="<?=BASEURL?>/customer/home">Home</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            <strong>Daftar Menu</strong> 
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
   <div class="row mt-3">
     <div class="col">
       <form action = "<?=BASEURL;?>/customer/daftar_menu/show", method = "POST">   
