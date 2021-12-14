@@ -47,3 +47,17 @@ class Detail_Menu_Controller extends Controller{
     header('Location: ' . BASEURL . '/customer/keranjang');
   }
 }
+
+// 'keranjang' = [
+//   'nama_pelanggan' =>'',
+//   'nomor_meja' =>'',
+//   'total_tagihan' =>'',
+//   'menus' =>[
+//     [
+//       'menu_id' => $menu_id,
+//       'menu' => Menu::where('id', $menu_id)->get(),
+//       'jumlah' => $jumlah,
+//       'keterangan' => $keterangan,
+//     ]
+//   ]
+// ]
