@@ -14,8 +14,12 @@ class Keranjang_Controller extends Controller{
   public function store($menu_id){
     $jumlah = $_POST['jumlah'];
     $keterangan = $_POST['keterangan'];
+
     session_start();
-    $_SESSION['keranjang']['menus'] = [];
+    if(isset($_SESSION['keranjang']['menus']) == 0){
+      $_SESSION['keranjang']['menus'] = []; 
+    }
+
     array_push(
       $_SESSION['keranjang']['menus'],
       [

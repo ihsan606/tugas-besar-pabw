@@ -45,6 +45,7 @@
             <?php
             $menus = $_SESSION['keranjang']['menus'];
             $total_harga = 0; 
+            var_dump($menus);
             foreach($menus as $menu){
               $url = BASEURL;
               $id = $menu['menu_id'];
@@ -97,11 +98,11 @@
   <div class="row justify-content-end">
     <div class="col-md-4">
       <form class="mt-4" v-on:submit.prevent>
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="nama">Nama :</label>
           <input type="text" class="form-control" v-model="pesan.nama" />
         </div>
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="noMeja">Nomor Meja :</label>
           <input type="text" class="form-control" v-model="pesan.noMeja" />
         </div>
