@@ -31,7 +31,7 @@
 
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light ">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light " style="min-height: 10vh!important;">
       <!-- Container wrapper -->
       <div class="container">
         <a class="navbar-brand me-2" href="<?=BASEURL;?>/customer/home">
@@ -91,4 +91,4 @@
       <!-- Container wrapper -->
     </nav>
 
-    <div class="container" align="start">
+    <div class="container" align="start" style="min-height: 80vh!important;">

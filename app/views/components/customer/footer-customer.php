@@ -1,5 +1,5 @@
     </div>
-      <footer class="d-flex flex-wrap justify-content-between py-3 mt-4 border-top bg-success">
+      <footer class="d-flex flex-wrap justify-content-between py-3 border-top bg-success" style="min-height: 10vh!important;">
         <div class="container" style = "padding: 5px 20px 0px 20px;">
           <div class="row">
             <div class="col-md-auto " style = "padding : 0px 0px 0px 0px; margin : 2px 0px 0px 0px;">
