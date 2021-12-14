@@ -7,7 +7,6 @@
       </h2>
     </div>
   </div>
-  <p><?= $data['menus']; ?></p>
 
   <!-- breadcrumb -->
   <div class="row mt-4">
