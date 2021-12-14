@@ -1,4 +1,4 @@
-<div class="row mt-4" align="start">
+<div class="row" align="start">
   <div class="col">
     <h2>
       Detail
@@ -46,7 +46,7 @@
           <label for="keterangan">Keterangan</label>
           <textarea name="keterangan"  class="form-control" placeholder="Keterangan seperti: Pedas, Bungkus" style='height: 100px;'></textarea>
         </div>
-        <button type="submit" class="btn btn-success mb-4">
+        <button type="submit" class="btn btn-success">
           <b-icon-cart></b-icon-cart>
           Pesan
         </button>

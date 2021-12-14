@@ -1,4 +1,4 @@
-<div class="row mt-4" align="start">
+<div class="row" align="start">
   <div class="col">
     <h2>
       Daftar
@@ -39,7 +39,7 @@
     </form>
   </div>
 </div>
-<div class="row row-cols-2 row-cols-sm-4 mb-4" align="start">
+<div class="row row-cols-2 row-cols-sm-4" align="start">
   <?php
   $menus = $data['menus'];
   $url = BASEURL;

@@ -1,7 +1,7 @@
 <div class="hero">
   <!-- Dekstop -->
   <div class="d-none d-md-block">
-    <div class="row mt-4">
+    <div class="row">
       <div class="col md-6" align="start">
         <div class="d-flex h-100">
           <div class="justify-content-center align-self-center">
@@ -25,7 +25,7 @@
   </div>
   <!-- Mobile -->
   <div class="d-sm-block d-md-none">
-    <div class="row mt-4">
+    <div class="row">
       <div class="col-md-6 mb-3" align="start">
           <img src="<?=BASEURL?>/img/menus/sate-ayam.jpg" alt="kulineran" width="100%" />
       </div>
@@ -97,7 +97,7 @@
   }
   ?>
 </div>
-<div class="row mt-4 mb-4" align="end">
+<div class="row mt-4" align="end">
   <div class="col">
     <a href="<?=BASEURL?>/customer/daftar_menu" class="btn btn-success float-right">
       <b-icon-eye></b-icon-eye>
@@ -158,7 +158,7 @@
   }
   ?>
 </div>
-<div class="row mt-4 mb-4" align="end">
+<div class="row mt-4" align="end">
   <div class="col">
     <a href="<?=BASEURL?>/customer/daftar_menu" class="btn btn-success float-right">
       <b-icon-eye></b-icon-eye>
