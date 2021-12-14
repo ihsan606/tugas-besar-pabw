@@ -33,7 +33,7 @@
             <tr>
               <th class="text-center" width = "30px"><p class="title">No</p></th>
               <th class="text-center" width = "150px"><p class="title">Gambar</p></th>
-              <th class="text-left" width = "200px"><p class="title">Nama Menu</p></th>
+              <th class="text-left" width = "200px"><p class="title">Menu</p></th>
               <th class="text-left"><p class="title">Keterangan</p></th>
               <th class="text-left" width = "100px"><p class="title">Jumlah</p></th>
               <th class="text-right" width = "150px"><p class="title">Harga</p></th>
@@ -55,7 +55,6 @@
               $price = money_format($menu['menu'][0]->price*(100-$menu['menu'][0]->discount)/100);
               $total = money_format($jumlah * $menu['menu'][0]->price*(100-$menu['menu'][0]->discount)/100);
               $total_harga += $jumlah * $menu['menu'][0]->price*(100-$menu['menu'][0]->discount)/100;
-              var_dump($image);
               echo"
               <tr>
                 <td>$id</td>
