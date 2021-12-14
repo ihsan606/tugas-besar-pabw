@@ -1,0 +1,9 @@
+.head-left{
+    display: flex;
+    justify-content: space-between;
+}
+
+.search{
+    width: 40%;
+}
+
