@@ -46,9 +46,10 @@
             $menus = $_SESSION['keranjang']['menus'];
             $total_harga = 0; 
             var_dump($menus);
-            foreach($menus as $menu){
+            for($i = 0; $i < count($menus); $i++){
+              $menu = $menus[$i];
               $url = BASEURL;
-              $id = $menu['menu_id'];
+              $no = $i + 1;
               $image = $menu['menu'][0]->image;
               $title = $menu['menu'][0]->title;
               $keterangan = $menu['keterangan'];
@@ -58,7 +59,7 @@
               $total_harga += $jumlah * $menu['menu'][0]->price*(100-$menu['menu'][0]->discount)/100;
               echo"
               <tr>
-                <td>$id</td>
+                <td>$no</td>
                 <td><img src='$url./img/menus/$image' class='img-fluid shadow' alt='...' /></td>
                 <td>$title</td>
                 <td>$keterangan</td>
