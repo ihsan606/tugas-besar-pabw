@@ -49,14 +49,14 @@
                   echo "
                 </div>
                 
-                <div class='row justify-content-between mx-3 mb-3'>
-                  <div class='col-md px-0'>
+                <div class='row  justify-content-between mx-3 mb-3'>
+                  <div class='col-md px-0' align-self-start style='width: auto;'>
                     <a class='btn btn-sm btn-success' href='$url/customer/detail_menu/$menu->slug'>
                       <b-icon-cart></b-icon-cart>
                       Pesan
                     </a>
                   </div>
-                  <div class='col-md-auto px-0'>
+                  <div class='col-md-auto px-0' style='width: auto;'>
                     <p class='card-text'>Terjual $menu->sold | <i class='bi-star-fill' role='text' aria-label='Star-Fill' style='color: #ffc107;'></i> $menu->rating</p>
                   </div>
                 </div>
