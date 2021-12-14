@@ -71,8 +71,8 @@ session_start();
           </ul>
           <!-- Left links -->
           <div class="d-flex-end  justify-content-end">
-            <a href="<?=BASEURL;?>/customer/keranjang" type="button" class="btn btn-primary">
-              Keranjang <span class="badge bg-secondary">4</span>
+            <a href="<?=BASEURL;?>/customer/keranjang" type="button" class="btn btn-success" style="font-size: 14px;">
+              Keranjang <span class="badge bg-white" style="color: #0d6efd; font-size: 12px; font-weight: 600;"><?=count($_SESSION['keranjang']['menus'])?></span>
             </a>
             <!-- <a
               class="btn btn-dark px-3"
