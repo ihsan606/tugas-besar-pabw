@@ -1,4 +1,12 @@
 <div class="container" align="start">
+  <div class="row mt-4" align="start">
+    <div class="col">
+      <h2>
+        Detail
+        <strong>Menu</strong>
+      </h2>
+    </div>
+  </div>
   <!-- breadcrumb -->
   <div class="row mt-4">
     <div class="col">
@@ -38,7 +46,7 @@
         </div>
         <div class="form-group mb-4">
           <label for="keterangan">Keterangan</label>
-          <textarea name="keterangan" class="form-control" placeholder="Keterangan seperti: Pedas, Bungkus"></textarea>
+          <textarea name="keterangan" class="form-control" placeholder="Keterangan seperti: Pedas, Bungkus" style='height: 100px;'></textarea>
         </div>
         <button type="submit" class="btn btn-success">
           <b-icon-cart></b-icon-cart>

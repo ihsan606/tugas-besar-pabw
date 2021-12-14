@@ -35,7 +35,7 @@
       <!-- Container wrapper -->
       <div class="container">
         <a class="navbar-brand me-2" href="<?=BASEURL;?>/customer/home">
-        Rezerva
+        REZERVA
         </a>
         <!-- Toggle button -->
         <button

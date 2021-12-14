@@ -1,18 +1,23 @@
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="background-color: #6C63FF;">
-      <div class="container" style = "padding : 5px 0px 0px 0px;">
+      <div class="container" style = "padding: 5px 20px 0px 20px;">
         <div class="row">
           <div class="col-md-auto " style = "padding : 0px 0px 0px 0px; margin : 2px 0px 0px 0px;">
-            <ul class="nav" style = "padding : 0px 0px 0px 0px;">
+            <ul class="nav list-unstyled" style = "padding : 0px 0px 0px 0px;">
+              <li class="nav-item">
+                <a href="javascript:void(0)" class="nav-link" style = "padding : 0px 5px 0px 0px; font-weight : 550;color : white;">
+                  © 2021 KELOMPOK LOREM IPSUM |
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="javascript:void(0)" class="nav-link" style = "padding : 0px 0px 0px 0px; font-weight : 550;color : white;">
-                © 2021 KELOMPOK LOREM IPSUM | ALL RIGHT RESERVED | 
+                 ALL RIGHT RESERVED |
                 </a>
               </li>
             </ul>              
           </div>
-          <div class="col" style = "padding : 3px 15px 0px 0px;">
-            <ul class="nav" style = "padding : 0px 0px 0px 0px;">
+          <div class="col" style = "padding : 3px 1px 0px 0px;">
+            <ul class="nav list-unstyled" style = "padding : 0px 0px 0px 0px;">
               <li class="nav-item">
                 <a href="javascript:void(0)" class="nav-link" style = "padding : 0px 0px 0px 0px; font-weight : 550; color : white;">
                   <marquee width="100%" direction="left">
@@ -26,7 +31,7 @@
               </li>
             </ul>      
           </div>
-          <div class="col-md-auto d-flex-end">
+          <div class="col-md-auto d-flex-end" style = "padding: 0px 0px 0px;">
             <ul class="nav justify-content-end list-unstyled">
               <li class="ms-3"><a class="text-light" href="#" style = "font-size : 20px;"><i class="bi-twitter" role="img" aria-label="Twitter"></i></a></li>
               <li class="ms-3"><a class="text-light" href="#" style = "font-size : 20px;"><i class="bi-instagram" role="img" aria-label="Instagram"></i></a></li>
@@ -48,3 +53,4 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   </body>
 </html>
+
