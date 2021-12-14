@@ -72,7 +72,15 @@ session_start();
           <!-- Left links -->
           <div class="d-flex-end  justify-content-end">
             <a href="<?=BASEURL;?>/customer/keranjang" type="button" class="btn btn-success" style="font-size: 14px;">
-              Keranjang <span class="badge bg-white" style="color: #0d6efd; font-size: 12px; font-weight: 600;">5</span>
+              Keranjang <span class="badge bg-white" style="color: #0d6efd; font-size: 12px; font-weight: 600;">
+              <?php 
+              if(isset($_SESSION['keranjang']['menus'])){
+                echo count($_SESSION['keranjang']['menus']);
+              }else{
+                echo 0;
+              }
+              ?>
+            </span>
             </a>
             <!-- <a
               class="btn btn-dark px-3"
