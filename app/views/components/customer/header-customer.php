@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -19,10 +23,10 @@
     rel="stylesheet"
     />
     <!-- MDB -->
-    <link
+    <!-- <link
     href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css"
     rel="stylesheet"
-    />
+    /> -->
     <!-- local css -->
     <!-- <link rel="stylesheet" href="style.css"> -->
     <!-- Bootstrap Icon -->
