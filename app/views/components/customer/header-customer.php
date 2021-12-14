@@ -34,15 +34,8 @@
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light ">
       <!-- Container wrapper -->
       <div class="container">
-        <a class="navbar-brand me-2" href="<?=BASEURL;?>">
-        Rezerva
-          <!-- <img
-            src="img/ucourse.png"
-            width="90%"
-            alt=""
-            loading="lazy"
-            style="margin-top: -1px;"
-          /> -->
+        <a class="navbar-brand me-2" href="<?=BASEURL;?>/customer/home">
+        REZERVA
         </a>
         <!-- Toggle button -->
         <button
@@ -62,23 +55,21 @@
           <!-- Left links -->
           <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto">
             <li class="nav-item px-2">
-              <a class="nav-link active"  href="<?=BASEURL;?>">Home</a>
+              <a class="nav-link active"  href="<?=BASEURL;?>/customer/home">Home</a>
             </li>
             <li class="nav-item px-2">
               <a class="nav-link" href="<?=BASEURL;?>/customer/daftar_menu">Menu</a>
             </li>
             <li class="nav-item px-2">
-              <a class="nav-link" href="<?=BASEURL;?>/customer/keranjang">Keranjang</a>
+              
+              <!-- <a class="nav-link" href="<?=BASEURL;?>/customer/keranjang">Keranjang</a> -->
             </li>
           </ul>
           <!-- Left links -->
           <div class="d-flex-end  justify-content-end">
-            <button type="button" class="btn btn-link">
-              Login
-            </button>
-            <button type="button" class="btn btn-primary">
-              Sign up for free
-            </button>
+            <a href="<?=BASEURL;?>/customer/keranjang" type="button" class="btn btn-primary">
+              Keranjang <span class="badge bg-secondary">4</span>
+            </a>
             <!-- <a
               class="btn btn-dark px-3"
               href="https://github.com/ihsan606/tugas-besar-pabw"

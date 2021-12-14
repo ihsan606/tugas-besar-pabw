@@ -3,7 +3,6 @@
 require '../vendor/autoload.php';
 use App\models\Admin;
 
-
 class Kelola_Admin_Controller extends Controller{
   public function index()
   {
@@ -34,16 +33,14 @@ class Kelola_Admin_Controller extends Controller{
     $search = $_POST['search'];
 
     if($search){
-      $admins = Admin::where('name', 'like', '%'.$search.'%')->get();
+      $data = [
+        'title' => 'Kelola Admin',
+        'admins' => Admin::where('name', 'like', '%'.$search.'%')->get(),
+      ];
+      $this->view('kelola-admin', $data, 'admin');
     }else{
-      $admins = Admin::all();
+      header('Location: ' . BASEURL . '/admin/kelola_admin');
     }
-      
-    $data = [
-      'title' => 'Kelola Admin',
-      'admins' => $admins,
-    ];
-    $this->view('kelola-admin', $data, 'admin');
   }
 
   public function store(){

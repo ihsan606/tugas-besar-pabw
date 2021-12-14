@@ -14,7 +14,7 @@ function endMigrations($table){
 }
  $tables= [
      'admins',
-     'customers',
+
      'categories',
      'menus',
      'carts',
