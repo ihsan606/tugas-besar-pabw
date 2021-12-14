@@ -34,7 +34,7 @@ session_start();
     <title>Rezerva | Customer | <?=$data['title'];?></title>
 
   </head>
-  <body>
+  <body style="min-height: 100vh!important;">
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light ">
       <!-- Container wrapper -->
       <div class="container">
@@ -94,3 +94,5 @@ session_start();
       </div>
       <!-- Container wrapper -->
     </nav>
+
+    <div class="container" align="start">
