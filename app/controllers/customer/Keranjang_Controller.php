@@ -1,6 +1,5 @@
 <?php 
 
-
 require '../vendor/autoload.php';
 use App\models\Menu;
 
@@ -20,15 +19,28 @@ class Keranjang_Controller extends Controller{
       $_SESSION['keranjang']['menus'] = []; 
     }
 
-    array_push(
-      $_SESSION['keranjang']['menus'],
-      [
-        'menu_id' => $menu_id,
-        'menu' => Menu::where('id', $menu_id)->get(),
-        'jumlah' => $jumlah,
-        'keterangan' => $keterangan,
-      ]
-    );
+    $cek = false;
+    for($i = 0; $i < count($_SESSION['keranjang']['menus']); $i++){
+      if($_SESSION['keranjang']['menus'][$i]['menu_id'] == $menu_id){
+        $cek = true;
+        $_SESSION['keranjang']['menus'][$i]['jumlah'] = $_SESSION['keranjang']['menus'][$i]['jumlah'] + $jumlah;
+        $_SESSION['keranjang']['menus'][$i]['keterangan'] = $_SESSION['keranjang']['menus'][$i]['keterangan'] . ", " . $keterangan;
+        break;
+      }
+    }
+
+    if(!$cek){
+      array_push(
+        $_SESSION['keranjang']['menus'],
+        [
+          'menu_id' => $menu_id,
+          'menu' => Menu::where('id', $menu_id)->get(),
+          'jumlah' => $jumlah,
+          'keterangan' => $keterangan,
+        ]
+      );
+    }
+    
     header('Location: ' . BASEURL . '/customer/keranjang');
   }
 }
