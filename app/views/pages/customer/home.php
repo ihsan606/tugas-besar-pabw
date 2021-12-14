@@ -28,24 +28,20 @@
     <!-- Mobile -->
     <div class="d-sm-block d-md-none">
       <div class="row mt-4">
-        <div class="col md-6 mb-3" align="start">
-          <div class="col md-6">
+        <div class="col-md-6 mb-3" align="start">
             <img src="<?=BASEURL?>/img/menus/sate-ayam.jpg" alt="kulineran" width="100%" />
-          </div>
-          <div class="d-flex h-100">
-            <div class="justify-content-center align-self-center mb-8">
-              <h2>
-                <strong>Delicious Food Menu,</strong>
-                <br />
-                in Your Gadged
-              </h2>
-              <p>Ayo segera pilih dan pesan makanan favorit Anda</p>
-              <a class="btn btn-lg btn-success" href="<?=BASEURL?>/customer/daftar_menu">
-                <b-icon-arrow-right></b-icon-arrow-right>
-                Pesan Sekarang
-              </a>
-            </div>
-          </div>
+        </div>
+        <div class="col-md-6 justify-content-center mb3" align="start">
+          <h2>
+            <strong>Delicious Food Menu,</strong>
+            <br />
+            in Your Gadged
+          </h2>
+          <p>Ayo segera pilih dan pesan makanan favorit Anda</p>
+          <a class="btn btn-lg btn-success" href="<?=BASEURL?>/customer/daftar_menu">
+            <b-icon-arrow-right></b-icon-arrow-right>
+            Pesan Sekarang
+          </a>
         </div>
       </div>
     </div>
