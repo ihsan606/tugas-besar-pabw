@@ -1,10 +1,11 @@
 <?php
 
-use App\models\Customer;
+use Midtrans\Snap;
+use App\models\Order;
 use App\models\Invoice;
+use App\models\Customer;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
-use Midtrans\Snap;
 
 require '../vendor/autoload.php';
 
@@ -43,11 +44,10 @@ class Checkout_Controller extends Controller
             for ($i = 0; $i < $length; $i++) {
                 $random .= rand(0, 1) ? rand(0, 9) : chr(rand(ord('a'), ord('z')));
             }
-
             // //generate no invoice
             $no_invoice = 'INV-' . Str::upper($random);
             $invoice = Invoice::create([
-                'invoices' => $no_invoice,
+                'invoice' => $no_invoice,
                 'customer_id' => $customer->id,
                 'grand_total' => $_POST['grand_total'],
                 'status' =>'pending',
@@ -55,8 +55,8 @@ class Checkout_Controller extends Controller
             $menus = $_SESSION['keranjang']['menus'];
             for ($i=0; $i < count($menus); $i++) { 
                 $menu = $menus[$i];
-                $invoice->orders()->create([
-                    'invoice_id' => $invoice->id,
+                Order::create([
+                    'invoice_id' => Invoice::latest('id')->first()->id,
                     'menu_id' => $menu['menu']['0']->id,
                     'qty' => $menu['jumlah'],
                     'table_id'=>$_POST['no_meja'],
@@ -67,7 +67,7 @@ class Checkout_Controller extends Controller
             }
 
             //hapus keranjang
-            session_unset();
+            // session_unset();
             //create transaction to midtrans, then save snap token
             $payload = [
                 'transaction_details' => [
@@ -86,7 +86,8 @@ class Checkout_Controller extends Controller
             //update snap_token
             $invoice->snap_token = $snap_token;
             $invoice->save();
-            header('location:'. BASEURL. 'customer/keranjang');
+            echo $snap_token;
+            // header('location:'. BASEURL. 'customer/keranjang/index/snap_token');
 
 
             
