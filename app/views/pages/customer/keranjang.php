@@ -45,7 +45,7 @@
             <?php
             $menus = $_SESSION['keranjang']['menus'];
             $total_harga = 0; 
-            var_dump($menus);
+            // var_dump($menus);
             for($i = 0; $i < count($menus); $i++){
               $menu = $menus[$i];
               $url = BASEURL;
