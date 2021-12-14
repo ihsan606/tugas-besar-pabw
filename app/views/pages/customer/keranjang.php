@@ -41,7 +41,7 @@
             <th class="text-left" width = "100px"><p class="title">Jumlah</p></th>
             <th class="text-right" width = "150px"><p class="title">Harga</p></th>
             <th class="text-right" width = "150px"><p class="title">Total</p></th>
-            <th class="text-center" width = "150px"><p class="title">Action</p></th>
+            <th class="text-center" style="min-width: 160px;"><p class="title">Action</p></th>
           </tr>
         </thead>
         <tbody>
