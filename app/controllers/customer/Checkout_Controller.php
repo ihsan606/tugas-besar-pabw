@@ -86,7 +86,7 @@ class Checkout_Controller extends Controller
             //update snap_token
             $invoice->snap_token = $snap_token;
             $invoice->save();
-            header('location:'. BASEURL. 'customer/keranjang/');
+            header('location:'. BASEURL. 'customer/keranjang');
 
 
             
