@@ -25,10 +25,6 @@ class Checkout_Controller extends Controller {
         DB::transaction(function () use ($data) {
 
             //create customer table
-
-
-
-
             //create invoice number
             $length = 10;
             $random = '';
