@@ -1,3 +1,9 @@
+
+#logo-rezerva {
+    color: white;
+    font-size: 50px;
+}
+
 .head-left{
     display: flex;
     justify-content: space-between;
