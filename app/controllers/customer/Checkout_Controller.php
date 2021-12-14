@@ -29,7 +29,9 @@ class Checkout_Controller extends Controller
     {
         session_start();
         
-       
+        DB::transaction(function() {
+            
+        });
             //create customer table
             $customer = Customer::create([
                 'name' => $_POST['customer_name'],
