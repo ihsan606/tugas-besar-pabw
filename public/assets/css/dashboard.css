@@ -1,4 +1,6 @@
-
+#main-content{
+    height: 100vh;
+}
 #logo-rezerva {
     color: white;
     font-size: 50px;

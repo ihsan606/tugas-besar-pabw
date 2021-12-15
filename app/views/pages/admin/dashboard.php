@@ -63,133 +63,239 @@
         <div class="chart">
           <div id="chart" class="card"></div>
         </div>
-        <div class="card">
-    <table class="table">
-        <thead class="thead-light">
-            <tr>
+        <!-- daftar pesanan -->
+        <div class="card" style="border-radius: 10px;">
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
                 <th class="text-center">No</th>
                 <th>Name</th>
                 <th>No meja</th>
                 <th class="text-left">Daftar Menu</th>
                 <th class="text-right">Actions</th>
-            </tr>
-        </thead>
-        <tbody class="table-striped">
-            <tr>
+              </tr>
+            </thead>
+            <tbody class="table-striped">
+              <tr>
 
                 <td class="text-center">1</td>
                 <td class="td-top">Devano</td>
                 <td>1</td>
                 <td class="text-right">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th class="text-left">no</th>
-                                <th class="text-left">nama makanan</th>
-                                <th class="text-left">jumlah</th>
-                                <th class="text-center">Keterangan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-left">1</td>
-                                <td class="text-left">Seafood Udang </td>
-                                <td class="text-left">4</td>
-                                <td class="text-center">Tidak pake nasi</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="text-left">no</th>
+                        <th class="text-left">nama makanan</th>
+                        <th class="text-left">jumlah</th>
+                        <th class="text-center">Keterangan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-left">1</td>
+                        <td class="text-left">Seafood Udang </td>
+                        <td class="text-left">4</td>
+                        <td class="text-center">Tidak pake nasi</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </td>
                 <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
-                        <i class="tim-icons icon-single-02"></i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                        <i class="tim-icons icon-settings"></i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                        <i class="tim-icons icon-simple-remove"></i>
-                    </button>
+                  <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
+                    <i class="tim-icons icon-single-02"></i>
+                  </button>
+                  <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                    <i class="tim-icons icon-settings"></i>
+                  </button>
+                  <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </button>
                 </td>
-            </tr>
-            <tr>
+              </tr>
+              <tr>
 
                 <td class="text-center">1</td>
                 <td class="td-top">Devano</td>
                 <td>1</td>
                 <td class="text-right">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th class="text-left">no</th>
-                                <th class="text-left">nama makanan</th>
-                                <th class="text-left">jumlah</th>
-                                <th class="text-center">Keterangan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-left">1</td>
-                                <td class="text-left">Seafood Udang </td>
-                                <td class="text-left">4</td>
-                                <td class="text-center">Tidak pake nasi</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="text-left">no</th>
+                        <th class="text-left">nama makanan</th>
+                        <th class="text-left">jumlah</th>
+                        <th class="text-center">Keterangan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-left">1</td>
+                        <td class="text-left">Seafood Udang </td>
+                        <td class="text-left">4</td>
+                        <td class="text-center">Tidak pake nasi</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </td>
                 <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
-                        <i class="tim-icons icon-single-02"></i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                        <i class="tim-icons icon-settings"></i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                        <i class="tim-icons icon-simple-remove"></i>
-                    </button>
+                  <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
+                    <i class="tim-icons icon-single-02"></i>
+                  </button>
+                  <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                    <i class="tim-icons icon-settings"></i>
+                  </button>
+                  <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </button>
                 </td>
-            </tr>
-            <tr>
+              </tr>
+              <tr>
 
                 <td class="text-center">1</td>
                 <td class="td-top">Devano</td>
                 <td>1</td>
                 <td class="text-right">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th class="text-left">no</th>
-                                <th class="text-left">nama makanan</th>
-                                <th class="text-left">jumlah</th>
-                                <th class="text-center">Keterangan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-left">1</td>
-                                <td class="text-left">Seafood Udang </td>
-                                <td class="text-left">4</td>
-                                <td class="text-center">Tidak pake nasi</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="text-left">no</th>
+                        <th class="text-left">nama makanan</th>
+                        <th class="text-left">jumlah</th>
+                        <th class="text-center">Keterangan</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="text-left">1</td>
+                        <td class="text-left">Seafood Udang </td>
+                        <td class="text-left">4</td>
+                        <td class="text-center">Tidak pake nasi</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </td>
                 <td class="td-actions text-right">
-                    <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
-                        <i class="tim-icons icon-single-02"></i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
-                        <i class="tim-icons icon-settings"></i>
-                    </button>
-                    <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
-                        <i class="tim-icons icon-simple-remove"></i>
-                    </button>
+                  <button type="button" rel="tooltip" class="btn btn-info btn-sm btn-icon">
+                    <i class="tim-icons icon-single-02"></i>
+                  </button>
+                  <button type="button" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                    <i class="tim-icons icon-settings"></i>
+                  </button>
+                  <button type="button" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                    <i class="tim-icons icon-simple-remove"></i>
+                  </button>
                 </td>
-            </tr>
-        </tbody>
-    </table>
+              </tr>
+            </tbody>
+          </table>
 
-</div>
+        </div>
+        <!-- laporan menu -->
+        <div class="card card-tasks" style='height : 60vh;'>
+          <div class="card-header ">
+            <h3 style="margin : 0px 0px 0px 0px;">Laporan Menu</h3>
+          </div>
+          <div class="card-body">
+            <div class="form-group-apend">
+              <div class="row pb-3">
+                <div class="col align-self-center pr-0">
+                  <div class="input-group-prepended ">
+                    <input type="text" class="form-control" placeholder="cari berdasarkan nama menu">
+                  </div>
+                </div>
+                <div class="col-md-auto align-self-center">
+                  <div class="input-group-apend">
+                    <a class="btn btn-sm p-2 text-white"><i class="fa fa-search mr-2 text-white"></i>SEARCH</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="text-center" width="20px">
+                    <p class="title">No</p>
+                  </th>
+                  <th class="text-center" width="70px">
+                    <p class="title">Gambar</p>
+                  </th>
+                  <th class="text-left">
+                    <p class="title">Nama Menu</p>
+                  </th>
+                  <th class="text-left" width="200px">
+                    <p class="title">Kategori</p>
+                  </th>
+                  <th class="text-center" width="60px">
+                    <p class="title">Terjual</p>
+                  </th>
+                  <th class="text-center" width="60px">
+                    <p class="title">Rating</p>
+                  </th>
+                </tr>
+              </thead>
+            </table>
+            <div class="table-full-width table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="text-center" width="20px">
+                      </p>
+                    </th>
+                    <th class="text-center" width="70px">
+                      </p>
+                    </th>
+                    <th class="text-left">
+                      </p>
+                    </th>
+                    <th class="text-left" width="200px">
+                      </p>
+                    </th>
+                    <th class="text-center" width="60px">
+                      </p>
+                    </th>
+                    <th class="text-center" width="60px">
+                      </p>
+                    </th>
+                  </tr>
+                  <tr>
+                </thead>
+                <tbody>
+                  <!-- buat perulangan untuk menampilkan laporan menu -->
+                  <?php
+                  for ($i = 1; $i < 31; $i++) {
+                    echo "
+              <tr>
+                <td class='text-center'>
+                  <p>$i</p>
+                </td>
+                <td class='text-center'>
+                  <img src='' alt='' height = '40px' width = '40px'>
+                </td>
+                <td>
+                  <p class='title'>Menu ke-$i</p>
+                </td>
+                <td>
+                  <p class='title'>Kategori Menu ke-$i</p>
+                </td>
+                <td>
+                  <p class='title text-center'>100</p>
+                </td>
+                <td>
+                  <p class='title text-center'>5</p>
+                </td>
+              </tr>
+            ";
+                  }
+                  ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- laporan pendapatan -->
+
       </div>
       <div class="col-md-4">
         <h2>Income</h2>
@@ -208,10 +314,8 @@
           </div>
 
         </div>
-        
+
       </div>
     </div>
   </div>
 </div>
-
-
