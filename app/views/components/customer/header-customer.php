@@ -1,7 +1,3 @@
-<?php 
-session_start();
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -35,7 +31,7 @@ session_start();
 
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light ">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light " style="min-height: 10vh!important;">
       <!-- Container wrapper -->
       <div class="container">
         <a class="navbar-brand me-2" href="<?=BASEURL;?>/customer/home">
@@ -71,8 +67,16 @@ session_start();
           </ul>
           <!-- Left links -->
           <div class="d-flex-end  justify-content-end">
-            <a href="<?=BASEURL;?>/customer/keranjang" type="button" class="btn btn-primary">
-              Keranjang <span class="badge bg-secondary">4</span>
+            <a href="<?=BASEURL;?>/customer/keranjang" type="button" class="btn btn-success" style="font-size: 14px;">
+              Keranjang <span class="badge bg-white" style="color: #0d6efd; font-size: 12px; font-weight: 600;">
+              <?php 
+              if(isset($_SESSION['keranjang']['menus'])){
+                echo count($_SESSION['keranjang']['menus']);
+              }else{
+                echo 0;
+              }
+              ?>
+            </span>
             </a>
             <!-- <a
               class="btn btn-dark px-3"
@@ -86,3 +90,5 @@ session_start();
       </div>
       <!-- Container wrapper -->
     </nav>
+
+    <div class="container py-4" align="start" style="min-height: 80vh!important;">
