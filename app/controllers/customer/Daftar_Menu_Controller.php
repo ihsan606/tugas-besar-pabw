@@ -6,6 +6,7 @@ use App\models\Menu;
 class Daftar_Menu_Controller extends Controller{
   public function index()
   {
+    session_start();
     $data = [
       'title' => 'Daftar Menu',
       'menus' => Menu::with('category')->get(),
@@ -13,7 +14,9 @@ class Daftar_Menu_Controller extends Controller{
     $this->view('daftar-menu', $data, 'customer');
   }
 
-  public function show(){
+  public function show()
+  {
+    session_start();
     $search = $_POST['search'];
 
     if($search){

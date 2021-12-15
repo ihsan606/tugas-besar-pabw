@@ -6,6 +6,7 @@ use App\models\Menu;
 class Detail_Menu_Controller extends Controller{
   public function index($slug)
   {
+    session_start();
     $data = [
       'title' => 'Detail Menu',
       'detail_menu' => Menu::with('category')->where('slug', $slug)->get(),

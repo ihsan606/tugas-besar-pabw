@@ -7,6 +7,7 @@ use App\models\Category;
 class Home_Controller extends Controller{
   public function index()
   {
+    session_start();
     $menu_andalan_id = Category::where('name', 'Menu Andalan')->first()->id;
     $menu_terbaru_id = Category::where('name', 'Menu Terbaru')->first()->id;
     $data = [
