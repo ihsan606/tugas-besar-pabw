@@ -24,9 +24,9 @@ class Invoice_Controller extends Controller{
         $customer_id = $_SESSION['customer_id'];
         $data =[
             'title' => 'Detail Invoice',
-            'invoices' =>Invoice::with('orders.product','customer')->where('customer_id',$customer_id)->where('snap_token',$snap_token)->first(),
+            'invoices' =>Invoice::with('orders.menu','customer')->where('customer_id',$customer_id)->where('snap_token',$snap_token)->first(),
         ];
-        $this->view('invoice', $data, 'customer');
+        $this->view('detail-invoice', $data, 'customer');
 
     }
 }
