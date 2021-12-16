@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="col md-6">
-        <img src="<?=BASEURL?>/img/menus/sate-ayam.jpg" alt="kulineran" width="100%" />
+        <img class="rounded shadow" src="<?=BASEURL?>/img/menus/sate-ayam.jpg" alt="kulineran" width="100%" />
       </div>
     </div>
   </div>
