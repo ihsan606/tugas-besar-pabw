@@ -86,7 +86,7 @@ require '../vendor/autoload.php'; ?>
                     <td>:</td>
                     <td>
                       <button id="btn-status" class="btn btn-info"> pending</button>
-                      <button class="btn btn-warning"id="pay-button" onclick="openSnap()">Bayar Sekarang</button>
+                      <button class="btn btn-success"id="pay-button" onclick="openSnap()">Bayar Sekarang</button>
 
 
                     </td>
@@ -96,13 +96,19 @@ require '../vendor/autoload.php'; ?>
             </div>
           </div>
 
-          <div class="card border-0 rounded shadow border-top-orange mt-4">
+          <div class="card border-0 rounded shadow border-top-orange mt-4 mb-5">
             <div class="card-header">
               <span class="font-weight-bold"><i class="fa fa-shopping-cart"></i> DETAIL ITEMS</span>
             </div>
-            <?= $data['invoices']; ?>
             <div class="card-body">
-              <table style='border-style: solid !important;border-color: rgb(198, 206, 214) !important;'>
+              <table style='border-color: rgb(198, 206, 214) !important;'>
+              <tr>
+              <th>Foto</th>
+              <th>Makanan</th>
+              <th>Pesan Pelanggan</th>
+              <th>Jumlah</th>
+              <th>Total</th>
+              </tr>
               
               <?php
               $url = BASEURL;
@@ -110,25 +116,32 @@ require '../vendor/autoload.php'; ?>
               foreach($data['invoices']->orders as $orders){
                 $image_menu = $orders->menu->image;
                 $menu = $orders->menu;
+                $price = money_format($orders->price);
 
-                echo "<tr style='background: #edf2f7;'>
+                echo "<tr style='background: #edf2f7; margin-bottom:5px; '>
                   <td class='b-none' width='25%'>
                   <div class='wrapper-image-cart'>
-                  <img src='$url/img/menus/$image_menu' style='width: 100%;border-radius: .5rem'>
+                  <img src='$url/img/menus/$image_menu' style='width: 80%;border-radius: .5rem'>
                 </div>
                   </td>
-                  <td class='b-none' width='50%'>
+                  <td class='b-none'>
                         <h5><b>$menu->title</b></h5>
                         <table class='table-borderless' style='font-size: 14px'>
                           <tr>
-                            <td style='padding: .20rem'>QTY</td>
+                            <td style='padding: .20rem'>Jumlah</td>
                             <td style='padding: .20rem'>:</td>
                             <td style='padding: .20rem'><b>$orders->qty</b></td>
                           </tr>
                         </table>
                       </td>
+                      <td class='b-none '>
+                      <p class='m-0'>$orders->description</p>
+                    </td>
+                      <td class='b-none text-left'>
+                      <p class='m-0'>$orders->table_id</p>
+                    </td>
                       <td class='b-none text-right'>
-                      <p class='m-0 font-weight-bold'>Rp. {{ formatPrice(order.price) }}</p>
+                      <p class='m-0'>$price</p>
                     </td>
                 </tr>";
               }
