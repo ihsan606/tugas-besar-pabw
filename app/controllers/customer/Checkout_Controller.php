@@ -67,7 +67,7 @@ class Checkout_Controller extends Controller
             }
 
             //hapus keranjang
-            // session_unset();
+            session_unset();
             //create transaction to midtrans, then save snap token
             $payload = [
                 'transaction_details' => [
@@ -89,7 +89,7 @@ class Checkout_Controller extends Controller
             
             session_start();
             $_SESSION['customer_id'] = $customer->id;
-            header('location:'. BASEURL. 'customer/invoice/show/'.$snap_token);
+            header('location:'. BASEURL. '/customer/invoice/show/'.$snap_token);
 
 
             
