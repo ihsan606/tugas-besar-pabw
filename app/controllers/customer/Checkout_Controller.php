@@ -62,7 +62,7 @@ class Checkout_Controller extends Controller
                     'table_id'=>$_POST['no_meja'],
                     'description' =>$menu['keterangan'],
                     'status' =>'dikonfirmasi',
-                    'price'=>$menu['menu'][0]->price*(100-$menu['menu'][0]->discount)/100
+                    'price'=>($menu['menu'][0]->price*(100-$menu['menu'][0]->discount)/100)*$menu['jumlah']
                 ]);
             }
 
