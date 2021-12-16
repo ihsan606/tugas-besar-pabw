@@ -29,9 +29,7 @@ class Checkout_Controller extends Controller
     {
         session_start();
         
-        DB::transaction(function() {
-
-        });
+    
             //create customer table
             $customer = Customer::create([
                 'name' => $_POST['customer_name'],
@@ -88,8 +86,10 @@ class Checkout_Controller extends Controller
             //update snap_token
             $invoice->snap_token = $snap_token;
             $invoice->save();
-            echo $snap_token;
-            header('location:'. BASEURL. 'customer/keranjang/index/snap_token');
+            
+            session_start();
+            $_SESSION['customer_id'] = $customer->id;
+            header('location:'. BASEURL. 'customer/invoice/show/'.$snap_token);
 
 
             
