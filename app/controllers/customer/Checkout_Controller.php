@@ -50,7 +50,7 @@ class Checkout_Controller extends Controller
                 'invoice' => $no_invoice,
                 'customer_id' => $customer->id,
                 'grand_total' => $_POST['grand_total'],
-                'status' =>'pending',
+                'status' =>'success',
             ]);
             $menus = $_SESSION['keranjang']['menus'];
             for ($i=0; $i < count($menus); $i++) { 
