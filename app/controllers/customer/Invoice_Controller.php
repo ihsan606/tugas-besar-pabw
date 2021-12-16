@@ -26,7 +26,7 @@ class Invoice_Controller extends Controller{
             'title' => 'Detail Invoice',
             'invoices' =>Invoice::with('orders.menu','customer')->where('customer_id',$customer_id)->where('snap_token',$snap_token)->first(),
         ];
-        $this->view('detail-invoice', $data, 'customer');
+        $this->view('detail-invoice', $data, 'single');
 
     }
 }
