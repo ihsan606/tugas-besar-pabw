@@ -103,19 +103,35 @@ require '../vendor/autoload.php'; ?>
             <?= $data['invoices']; ?>
             <div class="card-body">
               <table style='border-style: solid !important;border-color: rgb(198, 206, 214) !important;'>
+              
               <?php
               $url = BASEURL;
               
-              foreach($data['invoices']->orders as $menu)
-                $image_title = $menu[0]->menu->title;
-                echo "<p>$menu->description</p>--> $image_title" ;
+              foreach($data['invoices']->orders as $orders){
+                $image_menu = $orders->menu->image;
+                $menu = $orders->menu;
+
                 echo "<tr style='background: #edf2f7;'>
                   <td class='b-none' width='25%'>
                   <div class='wrapper-image-cart'>
                   <img src='$url/img/menus/$image_menu' style='width: 100%;border-radius: .5rem'>
                 </div>
                   </td>
-                </tr>"
+                  <td class='b-none' width='50%'>
+                        <h5><b>$menu->title</b></h5>
+                        <table class='table-borderless' style='font-size: 14px'>
+                          <tr>
+                            <td style='padding: .20rem'>QTY</td>
+                            <td style='padding: .20rem'>:</td>
+                            <td style='padding: .20rem'><b>$orders->qty</b></td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td class='b-none text-right'>
+                      <p class='m-0 font-weight-bold'>Rp. {{ formatPrice(order.price) }}</p>
+                    </td>
+                </tr>";
+              }
                 ?>
                 </table>
                 
