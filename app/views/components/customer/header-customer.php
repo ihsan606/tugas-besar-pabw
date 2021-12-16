@@ -30,7 +30,7 @@
     <title>Rezerva | Customer | <?=$data['title'];?></title>
 
   </head>
-  <body>
+  <body style="background-color: #FDFEFE;">
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light " style="min-height: 10vh!important;">
       <!-- Container wrapper -->
       <div class="container">
