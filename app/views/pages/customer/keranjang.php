@@ -52,6 +52,7 @@
           for($i = 0; $i < count($menus); $i++){
             $menu = $menus[$i];
             $url = BASEURL;
+            $id = $menu['menu_id'];
             $no = $i + 1;
             $image = $menu['menu'][0]->image;
             $title = $menu['menu'][0]->title;
@@ -70,11 +71,11 @@
               <td>$price</td>
               <td>$total</td>
               <td class='td-actions text-center'>
-                <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Edit Kategori'>
-                  <a class='text-dark' href='$url./customer/keranjang' style = 'font-size : 20px;'><i class='bi-pencil' role='img' aria-label='Pencil'></i></a>
+                <button type='button' rel='tooltip' title='' class='btn btn-link bg-info px-1 py-0' data-original-title='Edit Kategori'>
+                  <a class='text-dark' href='$url./customer/keranjang/edit_keranjang/$id' style = 'font-size : 20px;'><i class='bi-pencil text-white' role='img' aria-label='Pencil'></i></a>
                 </button>
-                <button type='button' rel='tooltip' title='' class='btn btn-link px-1' data-original-title='Hapus Kategori'>
-                  <a class='text-dark' href='$url./customer/keranjang' style = 'font-size : 20px;'><i class='bi-trash' role='img' aria-label='Trash'></i></a>
+                <button type='button' rel='tooltip' title='' class='btn btn-link px-1 py-0' data-original-title='Hapus Kategori' style='background-color: #FF0000;'>
+                  <a class='text-dark' href='$url./customer/keranjang/destroy/$id' style = 'font-size : 20px;'><i class='bi-trash text-white' role='img' aria-label='Trash'></i></a>
                 </button>
               </td>
             </tr>
