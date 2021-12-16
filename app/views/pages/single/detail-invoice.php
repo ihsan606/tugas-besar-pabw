@@ -106,7 +106,7 @@ require '../vendor/autoload.php'; ?>
               <th>Foto</th>
               <th>Makanan</th>
               <th>Pesan Pelanggan</th>
-              <th>Jumlah</th>
+              <th>No Meja</th>
               <th>Total</th>
               </tr>
               
@@ -198,7 +198,8 @@ require '../vendor/autoload.php'; ?>
             alert("payment success!"); console.log(result);
           },
           onPending: function(result){
-            /* You may add your own implementation here *
+            
+            window.location.replace("<?= BASEURL;?>/customer/success")
           },
           onError: function(result){
             /* You may add your own implementation here */
