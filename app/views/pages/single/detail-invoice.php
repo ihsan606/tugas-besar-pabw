@@ -43,14 +43,31 @@ require '../vendor/autoload.php'; ?>
     <script type="text/javascript"
             src="https://app.sandbox.midtrans.com/snap/snap.js"
             data-client-key="SB-Mid-client-_0bji155hJ_YL7Pw"></script>
+    <style>
+       h5 {
+    font-size: 1em;
+    font-weight: 500;
+  }
+
+      @media (max-width: 600px) {
+ 
+  p {
+    font-size: 0.7em;
+  }
+  h5 {
+    font-size: 0.7em;
+    font-weight: 400;
+  }
+}
+    </style>
 </head>
 <body>
-  <div class="container mt-4">
-<div class="card border-0 rounded shadow">
+  <div class="container ">
+<div class="card border-0 rounded shadow mt-5">
             <div class="card-body">
               <h5><i class="fa fa-shopping-cart"></i> DETAIL ORDER</h5>
               <hr>
-              <table class="table table-bordered">
+              <table class="table-responsive border-0">
                 <client-only>
                   <tr>
                     <td style="width: 25%">
@@ -85,8 +102,8 @@ require '../vendor/autoload.php'; ?>
                     </td>
                     <td>:</td>
                     <td>
-                      <button id="btn-status" class="btn btn-info"> pending</button>
-                      <button class="btn btn-success"id="pay-button" onclick="openSnap()">Bayar Sekarang</button>
+                      <button id="btn-status" class="btn btn-sm btn-info"> pending</button>
+                      <button class="btn btn-sm btn-success"id="pay-button" onclick="openSnap()">Bayar Sekarang</button>
 
 
                     </td>
@@ -98,16 +115,17 @@ require '../vendor/autoload.php'; ?>
 
           <div class="card border-0 rounded shadow border-top-orange mt-4 mb-5">
             <div class="card-header">
-              <span class="font-weight-bold"><i class="fa fa-shopping-cart"></i> DETAIL ITEMS</span>
+              <h5 class="font"><i class="fa fa-shopping-cart"></i> DETAIL ITEMS</h5>
             </div>
             <div class="card-body">
-              <table style='border-color: rgb(198, 206, 214) !important;'>
+              <table class="mx-2 rounded" style='border-color: rgb(198, 206, 214) !important;'>
               <tr>
-              <th>Foto</th>
-              <th>Makanan</th>
-              <th>Pesan Pelanggan</th>
-              <th>No Meja</th>
-              <th>Total</th>
+              <th><h5>Foto</h5> </th>
+              <th><h5>Makanan</h5> </th>
+              <th><h5>jumlah</h5> </th>
+              <th><h5>Pesan</h5></th>
+              <th><h5>Meja</h5> </th>
+              <th><h5>Total</h5> </th>
               </tr>
               
               <?php
@@ -119,21 +137,17 @@ require '../vendor/autoload.php'; ?>
                 $price = money_format($orders->price);
 
                 echo "<tr style='background: #edf2f7; margin-bottom:5px; '>
-                  <td class='b-none' width='25%'>
+                  <td class='b-none' width='15%'>
                   <div class='wrapper-image-cart'>
                   <img src='$url/img/menus/$image_menu' style='width: 80%;border-radius: .5rem'>
                 </div>
                   </td>
                   <td class='b-none'>
-                        <h5><b>$menu->title</b></h5>
-                        <table class='table-borderless' style='font-size: 14px'>
-                          <tr>
-                            <td style='padding: .20rem'>Jumlah</td>
-                            <td style='padding: .20rem'>:</td>
-                            <td style='padding: .20rem'><b>$orders->qty</b></td>
-                          </tr>
-                        </table>
+                        <p>$menu->title</p>
                       </td>
+                      <td class='b-none '>
+                      <p class='m-0'>$orders->qty</p>
+                    </td>
                       <td class='b-none '>
                       <p class='m-0'>$orders->description</p>
                     </td>
@@ -147,34 +161,6 @@ require '../vendor/autoload.php'; ?>
               }
                 ?>
                 </table>
-                
-              
-              <!-- <table class="table" style="border-style: solid !important;border-color: rgb(198, 206, 214) !important;">
-                <tbody>
-                  <client-only>
-                    <tr v-for="order in invoice.orders" :key="order.id" style="background: #edf2f7;">
-                      <td class="b-none" width="25%">
-                        <div class="wrapper-image-cart">
-                          <img :src="order.product.image" style="width: 100%;border-radius: .5rem">
-                        </div>
-                      </td>
-                      <td class="b-none" width="50%">
-                        <h5><b>{{ order.product.title }}</b></h5>
-                        <table class="table-borderless" style="font-size: 14px">
-                          <tr>
-                            <td style="padding: .20rem">QTY</td>
-                            <td style="padding: .20rem">:</td>
-                            <td style="padding: .20rem"><b>{{ order.qty }}</b></td>
-                          </tr>
-                        </table>
-                      </td>
-                      <td class="b-none text-right">
-                        <p class="m-0 font-weight-bold">Rp. {{ formatPrice(order.price) }}</p>
-                      </td>
-                    </tr>
-                  </client-only>
-                </tbody>
-              </table> -->
             </div>
           </div>
         </div>
