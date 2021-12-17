@@ -31,7 +31,6 @@
             <div class="row ">
               <div class="col" >
                 <i> <h2 class="card-title">Pendapatan Bulanan</h2></i>
-                <h5 class="card-category">Total</h5>
               </div>
             </div>
             <div class="chart pb-0">
@@ -41,8 +40,8 @@
         </div>
       </div>
 
-      <div class="col-md-4 ">
-        <div class="row justify-content-between">
+      <div class="col-md-4">
+        <div class="row justify-content-between align-items-center">
           <!-- <div class="col-md-12">
             <div class="card card-stats mb-3">
               <div class="card-header card-header-success card-header-icon">
