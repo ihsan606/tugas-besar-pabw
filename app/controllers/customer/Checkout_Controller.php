@@ -29,7 +29,7 @@ class Checkout_Controller extends Controller
     {
         session_start();
         
-       
+    
             //create customer table
             $customer = Customer::create([
                 'name' => $_POST['customer_name'],
@@ -50,7 +50,7 @@ class Checkout_Controller extends Controller
                 'invoice' => $no_invoice,
                 'customer_id' => $customer->id,
                 'grand_total' => $_POST['grand_total'],
-                'status' =>'pending',
+                'status' =>'success',
             ]);
             $menus = $_SESSION['keranjang']['menus'];
             for ($i=0; $i < count($menus); $i++) { 
@@ -62,12 +62,12 @@ class Checkout_Controller extends Controller
                     'table_id'=>$_POST['no_meja'],
                     'description' =>$menu['keterangan'],
                     'status' =>'dikonfirmasi',
-                    'price'=>$menu['menu'][0]->price*(100-$menu['menu'][0]->discount)/100
+                    'price'=>($menu['menu'][0]->price*(100-$menu['menu'][0]->discount)/100)*$menu['jumlah']
                 ]);
             }
 
             //hapus keranjang
-            // session_unset();
+            session_unset();
             //create transaction to midtrans, then save snap token
             $payload = [
                 'transaction_details' => [
@@ -86,8 +86,10 @@ class Checkout_Controller extends Controller
             //update snap_token
             $invoice->snap_token = $snap_token;
             $invoice->save();
-            echo $snap_token;
-            // header('location:'. BASEURL. 'customer/keranjang/index/snap_token');
+            
+            session_start();
+            $_SESSION['customer_id'] = $customer->id;
+            header('location:'. BASEURL. '/customer/invoice/show/'.$snap_token);
 
 
             
