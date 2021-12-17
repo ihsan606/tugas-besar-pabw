@@ -6,7 +6,7 @@
                 <div class="bg-primary py-4 px-4 mfe-3">
                     <i class="fas fa-circle-notch fa-spin fa-2x"></i>
                 </div>
-                <div class="pl-2">
+                <div class="pl-2" style="min-width: 100px;">
                     <div class="text-value text-primary font-weight-bold"><?= $data['pending'] ?></div>
                     <div class="text-primary title text-uppercase font-weight-bold">PENDING</div>
                 </div>
@@ -20,7 +20,7 @@
                 <div class="bg-success py-4 px-4 mfe-3">
                     <i class="fas fa-check-circle fa-2x"></i>
                 </div>
-                <div class="pl-2">
+                <div class="pl-2" style="min-width: 100px;">
                     <div class="text-value text-success font-weight-bold"><?= $data['success'] ?></div>
                     <div class="text-success text-uppercase font-weight-bold">SUCCESS</div>
                 </div>
@@ -34,7 +34,7 @@
                 <div class="bg-warning py-4 px-4 mfe-3">
                     <i class="fas fa-exclamation-triangle fa-2x"></i>
                 </div>
-                <div class="pl-2">
+                <div class="pl-2" style="min-width: 100px;">
                     <div class="text-value text-warning font-weight-bold"><?= $data['expired'] ?></div>
                     <div class="text-warning text-uppercase font-weight-bold">EXPIRED</div>
                 </div>
@@ -48,7 +48,7 @@
                 <div class="bg-danger py-4 px-4 mfe-3">
                     <i class="fas fa-times-circle fa-2x"></i>
                 </div>
-                <div class="pl-2">
+                <div class="pl-2" style="min-width: 100px;">
                     <div class="text-value text-danger font-weight-bold"><?= $data['failed'] ?></div>
                     <div class="text-danger text-uppercase font-weight-bold">FAILED</div>
                 </div>
