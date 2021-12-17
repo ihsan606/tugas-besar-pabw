@@ -28,9 +28,13 @@
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <title>Rezerva | Customer | <?=$data['title'];?></title>
-
+    <!-- snap pay configuration -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript"
+            src="https://app.sandbox.midtrans.com/snap/snap.js"
+            data-client-key="SB-Mid-client-_0bji155hJ_YL7Pw"></script>
   </head>
-  <body>
+  <body style="background-color: #FDFEFE;">
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light " style="min-height: 10vh!important;">
       <!-- Container wrapper -->
       <div class="container">
