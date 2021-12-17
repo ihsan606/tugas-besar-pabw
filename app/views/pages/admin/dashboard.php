@@ -3,7 +3,7 @@
   <div class="container-fill">
     <!-- Laporan Pendapatan -->
     <div class="row">
-      <div class="col-md-8 pl-0 pb-0 mb-0 d-flex">
+      <div class="col-md-8 pb-0 mb-0 d-flex">
         <!-- <div class="head-left">
           <div class="nama admin">
             <h2>Hai <?= "nama admin" ?></h2>
@@ -26,34 +26,31 @@
             </div>
           </div>
         </div> -->
-        <div class="card card-chart mb-3">
+        <div class="card card-chart">
           <div class="card-header">
             <div class="row ">
               <div class="col" >
                 <i> <h2 class="card-title">Pendapatan Bulanan</h2></i>
-                <h5 class="card-category">Total</h5>
               </div>
             </div>
-            <div class="card-body pb-0">
-              <div class="chart">
-                <div id="chart" class="card pb-0"></div>
-              </div>
+            <div class="chart pb-0">
+              <div id="chart" class="card pb-0"></div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-md-4 px-0">
-        <div class="row justify-content-between">
-          <div class="col-md-12">
+      <div class="col-md-4">
+        <div class="row justify-content-between align-items-center">
+          <!-- <div class="col-md-12">
             <div class="card card-stats mb-3">
               <div class="card-header card-header-success card-header-icon">
                 <i> <h2 class="card-title">Detail Pendapatan</h2></i>
               </div>
             </div>
-          </div>
+          </div> -->
           <div class="col-md-12">
-            <div class="card card-stats mb-3">
+            <div class="card card-stats">
               <div class="card-header card-header-success card-header-icon">
                 <div class="card-icon">
                   <i class="material-icons">Pendapatan Hari Ini</i>
@@ -64,7 +61,7 @@
             </div>
           </div>
           <div class="col-md-12">
-            <div class="card card-stats mb-3">
+            <div class="card card-stats">
               <div class="card-header card-header-success card-header-icon">
                 <div class="card-icon">
                   <i class="material-icons">Pendapatan Minggu Ini</i>
@@ -75,7 +72,7 @@
             </div>
           </div>
           <div class="col-md-12">
-            <div class="card card-stats mb-3">
+            <div class="card card-stats">
               <div class="card-header card-header-danger card-header-icon">
                 <div class="card-icon">
                   <i class="material-icons">Pendapatan Bulan Ini</i>
@@ -86,7 +83,7 @@
             </div>
           </div>
           <div class="col-md-12">
-            <div class="card card-stats mb-3">
+            <div class="card card-stats">
               <div class="card-header card-header-danger card-header-icon">
                 <div class="card-icon">
                   <i class="material-icons">Pendapatan Tahun Ini</i>
