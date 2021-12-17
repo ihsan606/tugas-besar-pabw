@@ -72,8 +72,9 @@
         </thead>
         <tbody class="table-striped">
             <?php 
-            foreach($data['invoices'] as $invoice){
-                echo $invoice->orders->menu;
+
+            foreach($data['invoices']->orders as $orders){
+                echo $orders;
             }
             // echo $data['invoices'];
             // echo  $no_table = $data['invoices']->orders->table->table;
