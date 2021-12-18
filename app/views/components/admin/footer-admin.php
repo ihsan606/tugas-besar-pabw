@@ -76,7 +76,7 @@
       <script src="<?= BASEURL; ?>/assets/js/plugins/bootstrap-notify.js"></script>
       <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
       <script src="<?= BASEURL; ?>/assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
-      <script src="<?= BASEURL; ?>/assets/demo/demo.js"></script>
+      <script src="assets/demo/demo.js"></script>
       <script>
         $(document).ready(function() {
           $().ready(function() {
