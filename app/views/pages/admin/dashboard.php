@@ -3,29 +3,7 @@
   <!-- Laporan Pendapatan -->
   <div class="row">
     <div class="col-md-8 pb-0 mb-0 d-flex">
-      <!-- <div class="head-left">
-          <div class="nama admin">
-            <h2>Hai <?= "nama admin" ?></h2>
-          </div>
-          <div class="search">
-            <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search">
-          </div>
-        </div> -->
-      <!-- <div class="hero">
-          <div class="px-4 py-5 my-1 text-center" id="hero">
-            <i class="bi-slack" id="logo-rezerva" role="img" aria-label="Slack"></i>
-            <img class="d-block mx-auto mb-4" src="" alt="logo rezerva" width="72" height="57">
-            <h1 class="display-5 fw-bold">Welcome to Rezerva's dashboard</h1>
-            <div class="col-lg-6 mx-auto">
-              <p class="lead mb-4">Rezerva menawarkan fitur yang cukup menarik,silahkan eksplor dan jelajahi fitur yang ada</p>
-              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button type="button" class="btn btn-succes btn-lg px-4 gap-3">Transaksi</button>
-
-              </div>
-            </div>
-          </div>
-        </div> -->
-      <div class="card card-chart">
+      <!-- <div class="card card-chart">
         <div class="card-header">
           <div class="row ">
             <div class="col">
@@ -38,8 +16,14 @@
             <div id="chart" class="card pb-0"></div>
           </div>
         </div>
-      </div>
-
+      </div> -->
+      <div class="card">
+        <div class="card-body">
+            <h5 class="card-title text-center">Laporan Pendapatan Bulanan</h5>
+            <canvas id="chartMonth"></canvas>
+        </div>
+    </div>
+      
       
     </div>
     <div class="col-md-4">
@@ -100,3 +84,44 @@
 
 
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js"></script>
+  <?php 
+    // memasukkan string ke dalam script chart
+    $dataBulanan=[1000000,2000000,3000000,4000000,2000000];
+    $insideData="";
+    for($i=0;$i<count($dataBulanan);$i++){
+      $insideData.=$dataBulanan[$i];
+      $insideData.=",";
+    }
+
+    echo
+    "<script>
+    const ct = document.getElementById('chartMonth').getContext('2d');
+    const chartMonth = new Chart(ct, {
+        type: 'bar',
+        data: {
+            labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+            datasets: [{
+                label: '# of Votes',
+                data: [$insideData],
+                backgroundColor:'#17a2b8',
+                borderColor:'#17a2b8',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+    </script>" 
+    ?>
+
