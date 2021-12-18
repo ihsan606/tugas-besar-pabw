@@ -1,13 +1,5 @@
-<div class="row" align="start">
-  <div class="col">
-    <h2>
-      Daftar
-      <strong>Menu</strong>
-    </h2>
-  </div>
-</div>
 <!-- breadcrumb -->
-<div class="row mt-4">
+<div class="row">
   <div class="col">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -21,7 +13,7 @@
     </nav>
   </div>
 </div>
-<div class="row mt-3">
+<div class="row mt-2">
   <div class="col">
     <form action = "<?=BASEURL;?>/customer/daftar_menu/show", method = "POST">   
       <div class="row justify-content-between">
@@ -98,7 +90,7 @@
     $discount_price = money_format($menu->price*(100-$menu->discount)/100);
     $category_name = $menu->category->name;
     echo "
-      <div class='col mt-3 d-flex'>
+      <div class='col mt-3 d-flex my-2'>
         <div class='card shadow card-product' style = 'border-radius: 7px;'>
           <img src='$url/img/menus/$menu->image' class='card-img-top' alt='...'/ style = 'border-radius: 7px 7px 0px 0px;'>
           <div class='card-body'>

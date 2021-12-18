@@ -2,16 +2,8 @@
     <script type="text/javascript"
             src="https://app.sandbox.midtrans.com/snap/snap.js"
             data-client-key="SB-Mid-client-_0bji155hJ_YL7Pw"></script>
-<div class="row" align="start">
-  <div class="col">
-    <h2>
-      Keranjang
-      <strong>Saya</strong>
-    </h2>
-  </div>
-</div>
 <!-- breadcrumb -->
-<div class="row mt-4">
+<div class="row">
   <div class="col">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
