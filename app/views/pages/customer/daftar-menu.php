@@ -46,31 +46,31 @@
         <thead>
           <tr class="d-flex">
             <th class="align-top text-left pt-0 px-0" style="width: max-content; min-width: 100%;">
-              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/semua_menu' style='margin-right:5px;'>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/semua_menu' style='margin-right:5px;'>
                 <b-icon-cart></b-icon-cart>
                 Semua Menu
               </a>
-              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/termurah' style='margin-right:5px;'>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/termurah' style='margin-right:5px;'>
                 <b-icon-cart></b-icon-cart>
                 Termurah
               </a>
-              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/termahal' style='margin-right:5px;'>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/termahal' style='margin-right:5px;'>
                 <b-icon-cart></b-icon-cart>
                 Termahal
               </a>
-              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/terbaru' style='margin-right:5px;'>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/terbaru' style='margin-right:5px;'>
                 <b-icon-cart></b-icon-cart>
                 Terbaru
               </a>
-              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/terlaris' style='margin-right:5px;'>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/terlaris' style='margin-right:5px;'>
                 <b-icon-cart></b-icon-cart>
                 Terlaris
               </a>
-              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/rating' style='margin-right:5px;'>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/rating' style='margin-right:5px;'>
                 <b-icon-cart></b-icon-cart>
                 Rating
               </a>
-              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/promo'>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/promo'>
                 <b-icon-cart></b-icon-cart>
                 Promo
               </a>
