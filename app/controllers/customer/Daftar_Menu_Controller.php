@@ -36,7 +36,9 @@ class Daftar_Menu_Controller extends Controller{
     session_start();
 
     if($key_word == 'termurah'){
-      $menus = Menu::with('category')->orderBy('final_price')->get();
+      $menus = Menu::with('category')->orderBy('final_price', 'ASC')->get();
+    }else if($key_word == 'termahal'){
+      $menus = Menu::with('category')->orderBy('final_price', 'DESC')->get();
     }else{
       header('Location: ' . BASEURL . '/customer/daftar_menu');
     }
