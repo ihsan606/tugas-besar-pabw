@@ -57,9 +57,7 @@
           </ul>
         </div>
       </div>
-      <!-- js for chart from highchart -->
-      <script src="https://code.highcharts.com/highcharts.js"></script>
-      <script src="<?= BASEURL; ?>/assets/js/core/barchart.js"></script>
+    
 
 
   <!--   Core JS Files   -->

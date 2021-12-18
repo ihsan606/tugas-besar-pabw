@@ -20,10 +20,11 @@
     <script>
     const ctx = document.getElementById('chartDay').getContext('2d');
     const chartDay = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'],
             datasets: [{
+                tension: 0.3,
                 label: 'Laporan Penjualan Harian',
                 data: [1500000, 3000000, 2500000, 4000000, 1700000, 3400000, 2700000],
                 backgroundColor: [
@@ -71,22 +72,8 @@
             datasets: [{
                 label: '# of Votes',
                 data: [32000000, 33500000, 30000000, 40000000, 27000000, 39500000, 32000000, 29000000, 32700000, 29500000, 34000000, 32900000],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
+                backgroundColor:"#17a2b8",
+                borderColor:"#17a2b8",
                 borderWidth: 1
             }]
         },
