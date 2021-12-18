@@ -1,8 +1,8 @@
 <div class="row" align="start">
   <div class="col">
     <h2>
-      Menampilkan 
-      <strong><?=$data['message']?></strong>
+      Daftar
+      <strong>Menu</strong>
     </h2>
   </div>
 </div>
@@ -79,6 +79,14 @@
         </thead>
       </table>
     </div>
+  </div>
+</div>
+<div class="row" align="start">
+  <div class="col">
+    <h5>
+      Menampilkan 
+      <strong><?=$data['message']?></strong>
+    </h5>
   </div>
 </div>
 <div class="row row-cols-2 row-cols-sm-4 " align="start">
