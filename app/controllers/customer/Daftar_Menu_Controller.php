@@ -21,9 +21,26 @@ class Daftar_Menu_Controller extends Controller{
 
     if($search){
       $menus = Menu::with('category')->where('title', 'like', '%'.$search.'%')->get();
+    }else{
+      header('Location: ' . BASEURL . '/customer/daftar_menu');
+    }
+
+    $data = [
+      'title' => 'Daftar Menu',
+      'menus' => $menus,
+    ];
+    $this->view('daftar-menu', $data, 'customer');
+  }
+
+  public function sort($key_word)
+  {
+    session_start();
+
+    if($key_word){
+      // $menus = Menu::with('category')->where('title', 'like', '%'.$search.'%')->get();
       $data = [
         'title' => 'Daftar Menu',
-        'menus' => $menus,
+        // 'menus' => $menus,
       ];
       $this->view('daftar-menu', $data, 'customer');
     }else{
