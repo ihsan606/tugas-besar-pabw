@@ -1,9 +1,5 @@
-<!doctype html>
-<head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js"></script>
-</head>
 
-<body>
+    
     <h1>Halaman Laporan Penjualan</h1>
     <div class="card">
         <div class="card-body">
@@ -17,6 +13,9 @@
             <canvas id="chartMonth"></canvas>
         </div>
     </div>
+
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js"></script>
     
     <script>
     const ctx = document.getElementById('chartDay').getContext('2d');
@@ -61,6 +60,8 @@
     });
     </script>
 
+    
+
     <script>
     const ct = document.getElementById('chartMonth').getContext('2d');
     const chartMonth = new Chart(ct, {
@@ -103,7 +104,6 @@
         }
     });
     </script>
-</body>
 
 <div class="row">
   <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
