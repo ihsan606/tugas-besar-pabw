@@ -80,6 +80,7 @@ foreach ($tables as $table){
             $table->unsignedBigInteger('category_id');
             $table->text('description');
             $table->bigInteger('price');
+            $table->bigInteger('final_price');
             $table->enum('stock',array('tersedia','habis'))->default('tersedia');
             $table->integer('discount');
             $table->integer('sold');

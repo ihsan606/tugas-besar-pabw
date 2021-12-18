@@ -60,11 +60,13 @@ class Kelola_Menu_Controller extends Controller{
 
     $price = $_POST['price']; 
 
+    $discount = $_POST['discount']; 
+
+    $final_price = $price * (100 - $discount) / 100; 
+
     $category_id = $_POST['category_id'];
      
     $description = $_POST['description'];
-
-    $discount = $_POST['discount']; 
 
     if($name != null && $image_name != null && $price != null && $category_id != null && $description !== null && $discount != null){
       if(in_array($extension, $allowed_extension) === true){
@@ -81,6 +83,7 @@ class Kelola_Menu_Controller extends Controller{
             'description' => $description,
             'price' => $price,
             'discount' => $discount,
+            'final_price' => $final_price,
           ]);
           if($menu){
             header('Location: ' . BASEURL . '/admin/kelola_menu');
@@ -107,11 +110,13 @@ class Kelola_Menu_Controller extends Controller{
 
     $price = $_POST['price']; 
 
+    $discount = $_POST['discount']; 
+
+    $final_price = $price * (100 - $discount) / 100; 
+
     $category_id = $_POST['category_id'];
      
     $description = $_POST['description'];
-
-    $discount = $_POST['discount']; 
 
     if($name != null && $image_name != null && $price != null && $category_id != null && $description !== null && $discount != null){
       if(in_array($extension, $allowed_extension) === true){
@@ -130,6 +135,7 @@ class Kelola_Menu_Controller extends Controller{
             'description' => $description,
             'price' => $price,
             'discount' => $discount,
+            'final_price' => $final_price,
           ]);
           if($menu){
             header('Location: ' . BASEURL . '/admin/kelola_menu');
@@ -148,6 +154,7 @@ class Kelola_Menu_Controller extends Controller{
         'description' => $description,
         'price' => $price,
         'discount' => $discount,
+        'final_price' => $final_price,
       ]);
       if($menu){
         header('Location: ' . BASEURL . '/admin/kelola_menu');
