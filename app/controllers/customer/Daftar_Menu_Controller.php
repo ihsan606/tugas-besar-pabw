@@ -10,7 +10,7 @@ class Daftar_Menu_Controller extends Controller{
     $data = [
       'title' => 'Daftar Menu',
       'menus' => Menu::with('category')->get(),
-      'message' => 'Semua Menu',
+      'message' => 'Daftar Menu',
     ];
     $this->view('daftar-menu', $data, 'customer');
   }
@@ -28,6 +28,7 @@ class Daftar_Menu_Controller extends Controller{
     $data = [
       'title' => 'Daftar Menu',
       'menus' => $menus,
+      'message' => 'Hasil Pencarian ' . '"' . $search . '"',  
     ];
     $this->view('daftar-menu', $data, 'customer');
   }
