@@ -87,7 +87,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js"></script>
   <?php 
     // memasukkan string ke dalam script chart
-    $dataBulanan=[1000000,2000000,3000000,4000000,2000000];
+    $dataBulanan=$data['pendapatan_perbulan'];
     $insideData="";
     for($i=0;$i<count($dataBulanan);$i++){
       $insideData.=$dataBulanan[$i];

@@ -45,7 +45,13 @@
       <table class="table">
         <thead>
           <tr>
-            <th class="align-top text-left pt-0 px-0" align="center">
+            <th class="align-top text-center pt-0 px-0" align="center" style="max-width: auto;">
+              <a class='btn btn-outline-success' href='<?=BASEURL;?>/customer/daftar_menu/sort/termurah'>
+                <b-icon-cart></b-icon-cart>
+                Termurah
+              </a>
+            </th>
+            <th class="align-top text-center pt-0 px-0" align="center" width='minimum'>
               <a class='btn btn-outline-success' href='<?=BASEURL;?>/customer/daftar_menu/sort/termurah'>
                 <b-icon-cart></b-icon-cart>
                 Termurah
