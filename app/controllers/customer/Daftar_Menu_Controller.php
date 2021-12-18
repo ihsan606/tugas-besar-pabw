@@ -10,6 +10,7 @@ class Daftar_Menu_Controller extends Controller{
     $data = [
       'title' => 'Daftar Menu',
       'menus' => Menu::with('category')->get(),
+      'message' => 'Semua Menu',
     ];
     $this->view('daftar-menu', $data, 'customer');
   }
@@ -37,8 +38,22 @@ class Daftar_Menu_Controller extends Controller{
 
     if($key_word == 'termurah'){
       $menus = Menu::with('category')->orderBy('final_price', 'ASC')->get();
+      $message = 'Menu Termurah';
     }else if($key_word == 'termahal'){
       $menus = Menu::with('category')->orderBy('final_price', 'DESC')->get();
+      $message = 'Menu Termahal';
+    }else if($key_word == 'terbaru'){
+      $menus = Menu::with('category')->orderBy('created_at', 'DESC')->get();
+      $message = 'Menu Terbaru';
+    }else if($key_word == 'terlaris'){
+      $menus = Menu::with('category')->orderBy('sold', 'DESC')->get();
+      $message = 'Menu Terlaris';
+    }else if($key_word == 'rating'){
+      $menus = Menu::with('category')->orderBy('rating', 'DESC')->get();
+      $message = 'Urutan Rating';
+    }else if($key_word == 'promo'){
+      $menus = Menu::with('category')->where('discount', '>', '0')->get();
+      $message = 'Menu Promo';
     }else{
       header('Location: ' . BASEURL . '/customer/daftar_menu');
     }
@@ -46,6 +61,7 @@ class Daftar_Menu_Controller extends Controller{
     $data = [
         'title' => 'Daftar Menu',
         'menus' => $menus,
+        'message' => $message,
       ];
       $this->view('daftar-menu', $data, 'customer');
   }

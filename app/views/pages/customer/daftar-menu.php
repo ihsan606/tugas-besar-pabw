@@ -27,7 +27,7 @@
       <div class="row justify-content-between">
         <div class="col align-self-center" style="padding-right: 0px;">
           <div class="input-group input-group-lg mb-3">
-            <input name="search" type="text" class="form-control form-control-m" placeholder="Cari Makanan Kesukan Anda..." aria-label="Cari" aria-describedby="basic-addon1"/>
+            <input name="search" type="text" class="form-control border-success" placeholder="Cari Makanan Kesukan Anda..." aria-label="Cari" aria-describedby="basic-addon1"/>
           </div>
         </div>
         <div class="col align-self-center" style="max-width: 70px!important;">
@@ -44,23 +44,49 @@
     <div class="table-responsive">
       <table class="table">
         <thead>
-          <tr>
-            <th class="align-top text-center pt-0 px-0" align="center" style="max-width: auto;">
-              <a class='btn btn-outline-success' href='<?=BASEURL;?>/customer/daftar_menu/sort/termurah'>
+          <tr class="d-flex">
+            <th class="align-top text-left pt-0 px-0" style="width: max-content; min-width: 100%;">
+              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/semua_menu' style='margin-right:5px;'>
+                <b-icon-cart></b-icon-cart>
+                Semua Menu
+              </a>
+              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/termurah' style='margin-right:5px;'>
                 <b-icon-cart></b-icon-cart>
                 Termurah
               </a>
-            </th>
-            <th class="align-top text-center pt-0 px-0" align="center" width='minimum'>
-              <a class='btn btn-outline-success' href='<?=BASEURL;?>/customer/daftar_menu/sort/termurah'>
+              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/termahal' style='margin-right:5px;'>
                 <b-icon-cart></b-icon-cart>
-                Termurah
+                Termahal
+              </a>
+              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/terbaru' style='margin-right:5px;'>
+                <b-icon-cart></b-icon-cart>
+                Terbaru
+              </a>
+              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/terlaris' style='margin-right:5px;'>
+                <b-icon-cart></b-icon-cart>
+                Terlaris
+              </a>
+              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/rating' style='margin-right:5px;'>
+                <b-icon-cart></b-icon-cart>
+                Rating
+              </a>
+              <a class='btn btn-outline-success px-3' href='<?=BASEURL;?>/customer/daftar_menu/sort/promo'>
+                <b-icon-cart></b-icon-cart>
+                Promo
               </a>
             </th>
           </tr>
         </thead>
       </table>
     </div>
+  </div>
+</div>
+<div class="row" align="start">
+  <div class="col">
+    <h2>
+      Menampilkan 
+      <strong><?=$data['message']?></strong>
+    </h2>
   </div>
 </div>
 <div class="row row-cols-2 row-cols-sm-4 " align="start">
