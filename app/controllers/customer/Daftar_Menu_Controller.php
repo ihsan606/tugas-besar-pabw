@@ -24,7 +24,6 @@ class Daftar_Menu_Controller extends Controller{
     }else{
       header('Location: ' . BASEURL . '/customer/daftar_menu');
     }
-
     $data = [
       'title' => 'Daftar Menu',
       'menus' => $menus,
@@ -36,15 +35,16 @@ class Daftar_Menu_Controller extends Controller{
   {
     session_start();
 
-    if($key_word){
-      // $menus = Menu::with('category')->where('title', 'like', '%'.$search.'%')->get();
-      $data = [
-        'title' => 'Daftar Menu',
-        // 'menus' => $menus,
-      ];
-      $this->view('daftar-menu', $data, 'customer');
+    if($key_word == 'termurah'){
+      $menus = Menu::with('category')->orderBy('final_price')->get();
     }else{
       header('Location: ' . BASEURL . '/customer/daftar_menu');
     }
+
+    $data = [
+        'title' => 'Daftar Menu',
+        'menus' => $menus,
+      ];
+      $this->view('daftar-menu', $data, 'customer');
   }
 }
