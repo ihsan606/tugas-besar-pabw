@@ -73,14 +73,14 @@
         <tbody class="table-striped">
             <?php 
 
-            foreach($data['invoices']->orders as $orders){
-                echo $orders;
-            }
+            // foreach($data['orders'] as $order){
+            //     echo $order->table->table;
+            // }
             // echo $data['invoices'];
             // echo  $no_table = $data['invoices']->orders->table->table;
             for($i = 0; $i < count($data['invoices']); $i++){
                 $no = $i + 1;
-                $orders = $data['invoices'][$i]->orders;
+                // $orders = $data['invoices'][$i]->orders;
                 $name = $data['invoices'][$i]->customer->name;
                 // $no_table = $data['invoices'][$i]->orders->table->table;
                 echo"

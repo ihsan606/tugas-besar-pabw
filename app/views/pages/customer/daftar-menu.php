@@ -39,7 +39,61 @@
     </form>
   </div>
 </div>
-<div class="row row-cols-2 row-cols-sm-4" align="start">
+<div class="row">
+  <div class="col">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th class="text-center" align="center">
+              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
+                <b-icon-cart></b-icon-cart>
+                Pesan
+              </a>
+            </th>
+            <th class="text-center" align="center">
+              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
+                <b-icon-cart></b-icon-cart>
+                Pesan
+              </a>
+            </th>
+            <th class="text-center" align="center">
+              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
+                <b-icon-cart></b-icon-cart>
+                Pesan
+              </a>
+            </th>
+            <th class="text-center" align="center">
+              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
+                <b-icon-cart></b-icon-cart>
+                Pesan
+              </a>
+            </th>
+            <th class="text-center" align="center">
+              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
+                <b-icon-cart></b-icon-cart>
+                Pesan
+              </a>
+            </th>
+            <th class="text-center" align="center">
+              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
+                <b-icon-cart></b-icon-cart>
+                Pesan
+              </a>
+            </th>
+            <th class="text-center" align="center">
+              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
+                <b-icon-cart></b-icon-cart>
+                Pesan
+              </a>
+            </th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="row row-cols-2 row-cols-sm-4 " align="start">
   <?php
   $menus = $data['menus'];
   $url = BASEURL;

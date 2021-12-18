@@ -36,6 +36,11 @@
             <div class="chart pb-0">
               <div id="chart" class="card pb-0"></div>
             </div>
+            <div class="card-body">
+                <div class="chart-area">
+                  <canvas id="chartBig1"></canvas>
+                </div>
+              </div>
           </div>
         </div>
       </div>
