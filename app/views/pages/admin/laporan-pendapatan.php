@@ -20,10 +20,11 @@
     <script>
     const ctx = document.getElementById('chartDay').getContext('2d');
     const chartDay = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: {
             labels: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'],
             datasets: [{
+                tension: 0.5,
                 label: 'Laporan Penjualan Harian',
                 data: [1500000, 3000000, 2500000, 4000000, 1700000, 3400000, 2700000],
                 backgroundColor: [
