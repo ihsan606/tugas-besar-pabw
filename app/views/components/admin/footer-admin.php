@@ -62,12 +62,12 @@
       <script src="<?= BASEURL; ?>/assets/js/core/barchart.js"></script>
 
 
-      <!--   Core JS Files   -->
+       <!--   Core JS Files   -->
       <script src="<?= BASEURL; ?>/assets/js/core/jquery.min.js"></script>
       <script src="<?= BASEURL; ?>/assets/js/core/popper.min.js"></script>
       <script src="<?= BASEURL; ?>/assets/js/core/bootstrap.min.js"></script>
       <script src="<?= BASEURL; ?>/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-      <!-- Google Maps Plugin -->
+      <!--  Google Maps Plugin    -->
       <!-- Place this tag in your head or just before your close body tag. -->
       <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
       <!-- Chart JS -->
@@ -76,7 +76,7 @@
       <script src="<?= BASEURL; ?>/assets/js/plugins/bootstrap-notify.js"></script>
       <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
       <script src="<?= BASEURL; ?>/assets/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
-      <script src="assets/demo/demo.js"></script>
+      <script src="<?= BASEURL; ?>/assets/demo/demo.js"></script>
       <script>
         $(document).ready(function() {
           $().ready(function() {
@@ -203,6 +203,6 @@
             application: "black-dashboard-free"
           });
       </script>
-      </body>
+    </body>
 
-      </html>
+    </html>
