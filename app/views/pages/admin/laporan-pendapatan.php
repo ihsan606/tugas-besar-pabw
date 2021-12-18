@@ -1,5 +1,3 @@
-
-    
     <h1>Halaman Laporan Penjualan</h1>
     <div class="card">
         <div class="card-body">
@@ -16,17 +14,37 @@
 
     <!-- Chart JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js"></script>
-    
-    <script>
+    <?php 
+      $sampleArray = array(
+        0 => "Geeks", 
+        1 => "for", 
+        2 => "Geeks", 
+    );
+      
+    ?>
+
+    <?php 
+    // memasukkan string ke dalam script chart
+    $dataHarian=[1000000,2000000,3000000,4000000,2000000];
+    $insideData="";
+    for($i=0;$i<count($dataHarian);$i++){
+      $insideData.=$dataHarian[$i];
+      $insideData.=",";
+    }
+
+    echo
+    "<script>
+    const LabelHarian=['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
+
     const ctx = document.getElementById('chartDay').getContext('2d');
     const chartDay = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'],
+            labels:LabelHarian,
             datasets: [{
                 tension: 0.3,
                 label: 'Laporan Penjualan Harian',
-                data: [1500000, 3000000, 2500000, 4000000, 1700000, 3400000, 2700000],
+                data:[$insideData],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -59,11 +77,19 @@
             }
         }
     });
-    </script>
+    </script>"
+    ?>
+     <?php 
+    // memasukkan string ke dalam script chart
+    $dataBulanan=[1000000,2000000,3000000,4000000,2000000];
+    $insideData="";
+    for($i=0;$i<count($dataBulanan);$i++){
+      $insideData.=$dataBulanan[$i];
+      $insideData.=",";
+    }
 
-    
-
-    <script>
+    echo
+    "<script>
     const ct = document.getElementById('chartMonth').getContext('2d');
     const chartMonth = new Chart(ct, {
         type: 'bar',
@@ -71,9 +97,9 @@
             labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
             datasets: [{
                 label: '# of Votes',
-                data: [32000000, 33500000, 30000000, 40000000, 27000000, 39500000, 32000000, 29000000, 32700000, 29500000, 34000000, 32900000],
-                backgroundColor:"#17a2b8",
-                borderColor:"#17a2b8",
+                data: [$insideData],
+                backgroundColor:'#17a2b8',
+                borderColor:'#17a2b8',
                 borderWidth: 1
             }]
         },
@@ -90,7 +116,11 @@
             }
         }
     });
-    </script>
+    </script>" 
+    ?>
+
+
+
 
 <div class="row">
   <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
