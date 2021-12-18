@@ -45,46 +45,10 @@
       <table class="table">
         <thead>
           <tr>
-            <th class="text-center" align="center">
-              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
+            <th class="align-top text-left pt-0 px-0" align="center">
+              <a class='btn btn-outline-success' href='<?=BASEURL;?>/customer/daftar_menu/sort/termurah'>
                 <b-icon-cart></b-icon-cart>
-                Pesan
-              </a>
-            </th>
-            <th class="text-center" align="center">
-              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
-                <b-icon-cart></b-icon-cart>
-                Pesan
-              </a>
-            </th>
-            <th class="text-center" align="center">
-              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
-                <b-icon-cart></b-icon-cart>
-                Pesan
-              </a>
-            </th>
-            <th class="text-center" align="center">
-              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
-                <b-icon-cart></b-icon-cart>
-                Pesan
-              </a>
-            </th>
-            <th class="text-center" align="center">
-              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
-                <b-icon-cart></b-icon-cart>
-                Pesan
-              </a>
-            </th>
-            <th class="text-center" align="center">
-              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
-                <b-icon-cart></b-icon-cart>
-                Pesan
-              </a>
-            </th>
-            <th class="text-center" align="center">
-              <a class='btn btn-outline-success' href='$url/customer/detail_menu/$menu->slug'>
-                <b-icon-cart></b-icon-cart>
-                Pesan
+                Termurah
               </a>
             </th>
           </tr>
