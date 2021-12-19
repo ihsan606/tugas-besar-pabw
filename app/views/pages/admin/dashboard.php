@@ -22,7 +22,7 @@
             <h5 class="card-title text-center">Laporan Pendapatan Bulanan</h5>
             <canvas id="chartMonth"></canvas>
         </div>
-    </div>
+      </div>
       
       
     </div>
@@ -84,6 +84,7 @@
 
 
   </div>
+</div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js"></script>
   <?php 
     // memasukkan string ke dalam script chart
