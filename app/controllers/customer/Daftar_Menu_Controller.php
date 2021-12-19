@@ -20,7 +20,7 @@ class Daftar_Menu_Controller extends Controller{
   {
     session_start();
 
-    if($_POST['search'] != ''){
+    if(isset($_POST['search']) && $_POST['search'] != ''){
       $menus = Menu::with('category')->where('title', 'like', '%'.$_POST['search'].'%')->get();
       $message = 'Hasil Pencarian ' . '"' . $_POST['search'] . '"';
     }else if($slug){
