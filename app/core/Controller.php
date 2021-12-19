@@ -1,7 +1,11 @@
 <?php
 
+require '../vendor/autoload.php';
+use App\models\Category;
+
 class Controller {
   public function view($view, $data = [], $layout = ""){
+    $data['data_categories'] = Category::all();
     if($layout == 'customer'){
       $this::getComponent('customer/header-customer', $data);
       require_once '../app/views/pages/customer/' . $view . '.php';

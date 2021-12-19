@@ -2,6 +2,7 @@
 
 require '../vendor/autoload.php';
 use App\models\Menu;
+use App\models\Category;
 
 class Daftar_Menu_Controller extends Controller{
   public function index()
@@ -15,20 +16,24 @@ class Daftar_Menu_Controller extends Controller{
     $this->view('daftar-menu', $data, 'customer');
   }
 
-  public function show()
+  public function show($slug='')
   {
     session_start();
-    $search = $_POST['search'];
 
-    if($search){
-      $menus = Menu::with('category')->where('title', 'like', '%'.$search.'%')->get();
+    if(isset($_POST['search'])){
+      $menus = Menu::with('category')->where('title', 'like', '%'.$_POST['search'].'%')->get();
+      $message = 'Hasil Pencarian ' . '"' . $_POST['search'] . '"';
+    }else if($slug){
+      $id = Category::where('slug', $slug)->first()->id;
+      $menus = Menu::with('category')->where('category_id', $id)->get();
+      $message = 'Menampilkan Kategory ' . Category::where('slug', $slug)->first()->name;
     }else{
       header('Location: ' . BASEURL . '/customer/daftar_menu');
     }
     $data = [
       'title' => 'Daftar Menu',
       'menus' => $menus,
-      'message' => 'Hasil Pencarian ' . '"' . $search . '"',  
+      'message' => $message,
     ];
     $this->view('daftar-menu', $data, 'customer');
   }

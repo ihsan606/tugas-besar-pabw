@@ -57,9 +57,52 @@
         <li class="nav-item">
           <a class="nav-link" href="<?= BASEURL; ?>/customer/daftar_menu">Menu</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Kategori</a>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Kategori
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <?php 
+            foreach($data['data_categories'] as $category){
+              $url = BASEURL;
+              echo"
+                <li>
+                  <a class='dropdown-item' href='$url/customer/daftar_menu/show/$category->slug'>
+                    <h6><img src='$url/img/categories/$category->image' width='50' style='margin-right: 10px;'>$category->name</h6>
+                  </a>
+                </li>
+              ";
+            }
+            ?>
+          </ul>
         </li>
+        <!-- <li class="nav-item dropdown">
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            KATEGORI
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <?php 
+            // foreach($data['data_categories'] as $category){
+            //   $url = BASEURL;
+            //   echo"
+            //     <li>
+            //       <a class='dropdown-item' href='$url/customer/daftar_menu/show/$category->slug'>
+            //         <img src='$url/img/categories/$category->image' width='50'>$category->name
+            //       </a>
+            //     </li>
+            //   ";
+            // }
+            ?>
+          </ul>
+        </li> -->
       </ul>
       <!-- Left links -->
     </div>
