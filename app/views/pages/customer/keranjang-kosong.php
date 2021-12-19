@@ -8,6 +8,5 @@
 <div class="row">
     <div class="col d-flex justify-content-center">
         <a href="<?=BASEURL;?>/customer/daftar_menu" class="btn btn-success">Cari Makanan</a>
-        
     </div>
 </div>
