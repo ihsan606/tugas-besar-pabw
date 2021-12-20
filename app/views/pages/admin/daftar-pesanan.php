@@ -89,7 +89,7 @@
                     <td class='text-center'>$no</td>
                     <td class=''>$name</td>
                     <td class=''></td>
-                    <td class='text-center'><h2 style='margin-bottom: 0;'><i class='bi-caret-down-fill text-white'></i></h2></td>
+                    <td class='text-center'><h2 style='margin-bottom: 0;'><i class='bi-caret-down-fill text-mute'></i></h2></td>
 
                     <td class='td-actions text-center'>
                         <button type='button' rel='tooltip' class='btn btn-info btn-sm btn-icon'>
