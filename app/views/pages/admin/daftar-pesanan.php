@@ -84,12 +84,12 @@
                 $name = $data['invoices'][$i]->customer->name;
                 // $no_table = $data['invoices'][$i]->orders->table->table;
                 echo"
-                <tr data-toggle='collapse' data-target='#demo$no' class='accordion-toggle'>
+                <tr>
 
                     <td class='text-center'>$no</td>
                     <td class=''>$name</td>
                     <td class=''></td>
-                    <td class='text-center'><h2 style='margin-bottom: 0;'><i class='bi-caret-down-fill text-mute'></i></h2></td>
+                    <td class='text-center'><h2 style='margin-bottom: 0;'><i class='bi-caret-down-fill text-mute accordion-toggle' data-toggle='collapse' data-target='#demo$no'></i></h2></td>
 
                     <td class='td-actions text-center'>
                         <button type='button' rel='tooltip' class='btn btn-info btn-sm btn-icon'>
@@ -120,6 +120,7 @@
                                 ";
 
                                 for($j = 0; $j < count($orders); $j++){
+                                    $order = 
                                     $no = $j + 1;
                                     echo"
                                         <tr>
