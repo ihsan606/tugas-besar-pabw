@@ -81,7 +81,7 @@
     ?>
      <?php 
     // memasukkan string ke dalam script chart
-    $dataBulanan=$data['pendapatan_perbulan'];
+    $dataBuTotal
     $insideData="";
     for($i=0;$i<count($dataBulanan);$i++){
       $insideData.=$dataBulanan[$i];
@@ -129,7 +129,7 @@
         <div class="card-icon">
           <i class="material-icons">Pendapatan Hari Ini</i>
         </div>
-        <p class="card-category">Revenue</p>
+        <p class="card-category">Total</p>
         <h3 class="card-title"><?=$data['pendapatan_hari_ini']?></h3>
       </div>
     </div>
@@ -140,7 +140,7 @@
         <div class="card-icon">
           <i class="material-icons">Pendapatan Minggu Ini</i>
         </div>
-        <p class="card-category">Revenue</p>
+        <p class="card-category">Total</p>
         <h3 class="card-title"><?=$data['pendapatan_minggu_ini']?></h3>
       </div>
     </div>
@@ -151,7 +151,7 @@
         <div class="card-icon">
           <i class="material-icons">Pendapatan Bulan Ini</i>
         </div>
-        <p class="card-category">Revenue</p>
+        <p class="card-category">Total</p>
         <h3 class="card-title"><?=$data['pendapatan_bulan_ini']?></h3>
       </div>
     </div>
@@ -162,7 +162,7 @@
         <div class="card-icon">
           <i class="material-icons">Pendapatan Tahun Ini</i>
         </div>
-        <p class="card-category">Revenue</p>
+        <p class="card-category">Total</p>
         <h3 class="card-title"><?=$data['pendapatan_tahun_ini']?></h3>
       </div>
     </div>
