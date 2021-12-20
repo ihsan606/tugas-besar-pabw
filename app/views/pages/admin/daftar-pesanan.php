@@ -73,65 +73,65 @@
         <tbody class="table-striped">
             <?php 
 
-            // foreach($data['orders'] as $order){
-            //     echo $order->table->table;
-            // }
-            // echo $data['invoices'];
-            // echo  $no_table = $data['invoices']->orders->table->table;
-            for($i = 0; $i < count($data['invoices']); $i++){
-                $no = $i + 1;
-                // $orders = $data['invoices'][$i]->orders;
-                $name = $data['invoices'][$i]->customer->name;
-                // $no_table = $data['invoices'][$i]->orders->table->table;
-                echo"
-                <tr>
+            // // foreach($data['orders'] as $order){
+            // //     echo $order->table->table;
+            // // }
+            // // echo $data['invoices'];
+            // // echo  $no_table = $data['invoices']->orders->table->table;
+            // for($i = 0; $i < count($data['invoices']); $i++){
+            //     $no = $i + 1;
+            //     // $orders = $data['invoices'][$i]->orders;
+            //     $name = $data['invoices'][$i]->customer->name;
+            //     // $no_table = $data['invoices'][$i]->orders->table->table;
+            //     echo"
+            //     <tr>
 
-                <td class='text-center align-top pt-4 '>$no</td>
-                <td class='td-top align-top pt-4'>$name</td>
-                <td class='align-top pt-4'></td>
+            //     <td class='text-center align-top pt-4 '>$no</td>
+            //     <td class='td-top align-top pt-4'>$name</td>
+            //     <td class='align-top pt-4'></td>
                 
-                <td class='text-right align-top'>
-                    <table class='table'>
-                        <thead>
+            //     <td class='text-right align-top'>
+            //         <table class='table'>
+            //             <thead>
                 
-                            <tr>
-                                <th class='text-left'>no</th>
-                                <th class='text-left'>nama makanan</th>
-                                <th class='text-left'>jumlah</th>
-                                <th class='text-center'>Keterangan</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                ";
-                    for($j = 0; $j < count($orders); $j++){
-                        echo"
-                            <tr>
-                                <td class='text-lef'>1</td>
-                                <td class='text-left'>Seafood Udang </td>
-                                <td class='text-left'>4</td>
-                                <td class='text-center'>Tidak pake nasi</td>
-                            </tr>
-                        ";
-                    }
-                echo"
+            //                 <tr>
+            //                     <th class='text-left'>no</th>
+            //                     <th class='text-left'>nama makanan</th>
+            //                     <th class='text-left'>jumlah</th>
+            //                     <th class='text-center'>Keterangan</th>
+            //                 </tr>
+            //             </thead>
+            //             <tbody>
+            //     ";
+            //         for($j = 0; $j < count($orders); $j++){
+            //             echo"
+            //                 <tr>
+            //                     <td class='text-lef'>1</td>
+            //                     <td class='text-left'>Seafood Udang </td>
+            //                     <td class='text-left'>4</td>
+            //                     <td class='text-center'>Tidak pake nasi</td>
+            //                 </tr>
+            //             ";
+            //         }
+            //     echo"
                 
-                        </tbody>
-                    </table>
-                </td>
-                <td class='td-actions text-center align-top pt-4'>
-                    <button type='button' rel='tooltip' class='btn btn-info btn-sm btn-icon'>
-                        <i class='tim-icons icon-single-02'></i>
-                    </button>
-                    <button type='button' rel='tooltip' class='btn btn-success btn-sm btn-icon'>
-                        <i class='tim-icons icon-settings'></i>
-                    </button>
-                    <button type='button' rel='tooltip' class='btn btn-danger btn-sm btn-icon'>
-                        <i class='tim-icons icon-simple-remove'></i>
-                    </button>
-                </td>
-            </tr>
-            ";        
-            }
+            //             </tbody>
+            //         </table>
+            //     </td>
+            //     <td class='td-actions text-center align-top pt-4'>
+            //         <button type='button' rel='tooltip' class='btn btn-info btn-sm btn-icon'>
+            //             <i class='tim-icons icon-single-02'></i>
+            //         </button>
+            //         <button type='button' rel='tooltip' class='btn btn-success btn-sm btn-icon'>
+            //             <i class='tim-icons icon-settings'></i>
+            //         </button>
+            //         <button type='button' rel='tooltip' class='btn btn-danger btn-sm btn-icon'>
+            //             <i class='tim-icons icon-simple-remove'></i>
+            //         </button>
+            //     </td>
+            // </tr>
+            // ";        
+            // }
             ?>
             
         </tbody>
