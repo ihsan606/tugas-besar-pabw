@@ -14,7 +14,7 @@
     <div class="card card-chart">
       <div class="card-body">
         <div class="chart-area">
-          <canvas id="chartLineGreen"></canvas>
+          <canvas id="chartLinePurple"></canvas>
         </div>
       </div>
     </div>
