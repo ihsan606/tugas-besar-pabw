@@ -11,6 +11,13 @@
             <canvas id="chartMonth"></canvas>
         </div>
     </div>
+    <div class="card card-chart">
+      <div class="card-body">
+        <div class="chart-area">
+          <canvas id="chartLineGreen"></canvas>
+        </div>
+      </div>
+    </div>
 
     <!-- Chart JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js"></script>
@@ -20,10 +27,16 @@
         1 => "for", 
         2 => "Geeks", 
     );
+    
       
     ?>
 
+    <script>
+      
+    </script>
+
     <?php 
+
     // memasukkan string ke dalam script chart
     $dataHarian=[1000000,2000000,3000000,4000000,2000000];
     $insideData="";
