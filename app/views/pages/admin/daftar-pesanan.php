@@ -59,15 +59,15 @@
 </div>
 
 
-<div class="card">
-    <table class="table">
+<div class="card px-3 py-3">
+    <table class="table table-esponsive" style="border-collapse:collapse;">
         <thead class="thead-light">
             <tr>
-                <th class="text-center">No</th>
-                <th>Name</th>
-                <th>No meja</th>
-                <th class="text-left">Daftar Menu</th>
-                <th class="text-center">Actions</th>
+                <th class="text-center" width = "30px">No</th>
+                <th class="text-left" width = "300px">Name</th>
+                <th class="text-left">No meja</th>
+                <th class="text-center" width = "100px">Daftar Menu</th>
+                <th class="text-center" width = "120px">Actions</th>
             </tr>
         </thead>
         <tbody class="table-striped">
@@ -77,61 +77,69 @@
             // //     echo $order->table->table;
             // // }
             // // echo $data['invoices'];
-            // // echo  $no_table = $data['invoices']->orders->table->table;
-            // for($i = 0; $i < count($data['invoices']); $i++){
-            //     $no = $i + 1;
-            //     // $orders = $data['invoices'][$i]->orders;
-            //     $name = $data['invoices'][$i]->customer->name;
-            //     // $no_table = $data['invoices'][$i]->orders->table->table;
-            //     echo"
-            //     <tr>
+            // echo  $no_table = $data['invoices']->orders->table->table;
+            for($i = 0; $i < count($data['invoices']); $i++){
+                $no = $i + 1;
+                $orders = $data['invoices'][$i]->orders;
+                $name = $data['invoices'][$i]->customer->name;
+                // $no_table = $data['invoices'][$i]->orders->table->table;
+                echo"
+                <tr data-toggle='collapse' data-target='#demo$no' class='accordion-toggle'>
 
-            //     <td class='text-center align-top pt-4 '>$no</td>
-            //     <td class='td-top align-top pt-4'>$name</td>
-            //     <td class='align-top pt-4'></td>
-                
-            //     <td class='text-right align-top'>
-            //         <table class='table'>
-            //             <thead>
-                
-            //                 <tr>
-            //                     <th class='text-left'>no</th>
-            //                     <th class='text-left'>nama makanan</th>
-            //                     <th class='text-left'>jumlah</th>
-            //                     <th class='text-center'>Keterangan</th>
-            //                 </tr>
-            //             </thead>
-            //             <tbody>
-            //     ";
-            //         for($j = 0; $j < count($orders); $j++){
-            //             echo"
-            //                 <tr>
-            //                     <td class='text-lef'>1</td>
-            //                     <td class='text-left'>Seafood Udang </td>
-            //                     <td class='text-left'>4</td>
-            //                     <td class='text-center'>Tidak pake nasi</td>
-            //                 </tr>
-            //             ";
-            //         }
-            //     echo"
-                
-            //             </tbody>
-            //         </table>
-            //     </td>
-            //     <td class='td-actions text-center align-top pt-4'>
-            //         <button type='button' rel='tooltip' class='btn btn-info btn-sm btn-icon'>
-            //             <i class='tim-icons icon-single-02'></i>
-            //         </button>
-            //         <button type='button' rel='tooltip' class='btn btn-success btn-sm btn-icon'>
-            //             <i class='tim-icons icon-settings'></i>
-            //         </button>
-            //         <button type='button' rel='tooltip' class='btn btn-danger btn-sm btn-icon'>
-            //             <i class='tim-icons icon-simple-remove'></i>
-            //         </button>
-            //     </td>
-            // </tr>
-            // ";        
-            // }
+                    <td class='text-center'>$no</td>
+                    <td class=''>$name</td>
+                    <td class=''></td>
+                    <td class='text-center'><h2 style='margin-bottom: 0;'><i class='bi-caret-down-fill text-white'></i></h2></td>
+
+                    <td class='td-actions text-center'>
+                        <button type='button' rel='tooltip' class='btn btn-info btn-sm btn-icon'>
+                            <i class='tim-icons icon-single-02'></i>
+                        </button>
+                        <button type='button' rel='tooltip' class='btn btn-success btn-sm btn-icon'>
+                            <i class='tim-icons icon-settings'></i>
+                        </button>
+                        <button type='button' rel='tooltip' class='btn btn-danger btn-sm btn-icon'>
+                            <i class='tim-icons icon-simple-remove'></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='12' class='py-0 hiddenRow'>
+                        <div class='accordion accordion-flush collapse mx-4' id='demo$no'>
+                            <div class='accordion-item'>
+                                <table class='table'>
+                                    <thead>
+                                        <tr>
+                                            <th class='text-center' width = '30px'>no</th>
+                                            <th class='text-left' width = '270px'>nama makanan</th>
+                                            <th class='text-center' width = '50px'>jumlah</th>
+                                            <th class='text-left'>Keterangan</th>
+                                        </tr>
+                                    </thead>
+                                <tbody>
+                                ";
+
+                                for($j = 0; $j < count($orders); $j++){
+                                    $no = $j + 1;
+                                    echo"
+                                        <tr>
+                                            <td class='text-center'>$no</td>
+                                            <td class='text-left'>Seafood Udang </td>
+                                            <td class='text-center'>4</td>
+                                            <td class='text-left'>Tidak pake nasi</td>
+                                        </tr>
+                                    ";
+                                }
+
+                                echo"
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            ";        
+            }
             ?>
             
         </tbody>
