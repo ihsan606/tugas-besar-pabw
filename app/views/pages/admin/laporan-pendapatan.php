@@ -81,7 +81,7 @@
     ?>
      <?php 
     // memasukkan string ke dalam script chart
-    $dataBuTotal
+    $dataBulanan=$data['pendapatan_perbulan'];
     $insideData="";
     for($i=0;$i<count($dataBulanan);$i++){
       $insideData.=$dataBulanan[$i];
