@@ -146,7 +146,7 @@
             datasets: [{
                 label: '# of Votes',
                 data: [$insideData],
-                backgroundColor:'#17a2b8',
+                backgroundColor:'transparent',
                 borderColor:'#17a2b8',
                 borderWidth: 1
             }]
