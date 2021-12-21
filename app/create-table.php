@@ -91,23 +91,6 @@ foreach ($tables as $table){
             endMigrations('menus');
         });
 
-        //carts table
-        Manager::schema()->dropIfExists('carts');
-        Manager::schema()->create('carts', function (Blueprint $table) {
-            start('carts');
-            $table->id();
-            $table->unsignedBigInteger('menu_id');
-            $table->unsignedBigInteger('customer_id');
-            $table->integer('qty');
-            $table->bigInteger('price');
-            $table->timestamps();
-
-            //relationship menu
-            $table->foreign('menu_id')->references('id')->on('menus');
-            $table->foreign('customer_id')->references('id')->on('customers');
-            endMigrations('carts');
-        });
-
         //tables table
         Manager::schema()->dropIfExists('tables');
         Manager::schema()->create('tables', function (Blueprint $table) {
