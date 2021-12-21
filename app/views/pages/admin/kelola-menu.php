@@ -76,13 +76,13 @@
                   <p>$category_name</p>
                 </td>
                 <td>
-                  <p class='title text-center'>$menu->sold</p>
+                  <p class='text-center'>$menu->sold</p>
                 </td>
                 <td>
-                  <p class='title text-center'>$menu->rating</p>
+                  <p class='text-center'>$menu->rating</p>
                 </td>
                 <td>
-                  <p class='title text-center'>$menu->stock</p>
+                  <p class='text-center'>$menu->stock</p>
                 </td>
                 <td class='td-actions text-center'>
                 ";

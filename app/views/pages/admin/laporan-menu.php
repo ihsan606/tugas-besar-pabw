@@ -62,10 +62,10 @@
                   <p>$menu->title</p>
                 </td>
                 <td>
-                  <p class='title text-center'>$menu->sold</p>
+                  <p class='text-center'>$menu->sold</p>
                 </td>
                 <td>
-                  <p class='title text-center'>$menu->rating</p>
+                  <p class='text-center'>$menu->rating</p>
                 </td>
               </tr>
             ";
