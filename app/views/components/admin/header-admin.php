@@ -83,7 +83,7 @@
         </ul>
       </div>
     </div>
-    <div class="main-panel">
+    <div class="main-panel" data="blue">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
         <div class="container-fluid">
