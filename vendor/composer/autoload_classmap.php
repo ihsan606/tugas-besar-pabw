@@ -13,7 +13,7 @@ return array(
     'App\\models\\Invoice' => $baseDir . '/app/Models/Invoice.php',
     'App\\models\\Menu' => $baseDir . '/app/Models/Menu.php',
     'App\\models\\Order' => $baseDir . '/app/Models/Order.php',
-    'App\\models\\Rating' => $baseDir . '/app/Models/Rating.php',
+    'App\\models\\Review' => $baseDir . '/app/Models/Review.php',
     'App\\models\\Table' => $baseDir . '/app/Models/Table.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',

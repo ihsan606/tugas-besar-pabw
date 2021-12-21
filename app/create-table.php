@@ -3,7 +3,7 @@
 require '../vendor/autoload.php';
 use Illuminate\Database\Capsule\Manager;
 use Illuminate\Database\Schema\Blueprint;
-
+use App\models\Table;
 
 function start($table){
     echo "creating_".$table."_table".PHP_EOL;
@@ -14,14 +14,13 @@ function endMigrations($table){
 }
  $tables= [
      'admins',
-
      'categories',
      'menus',
      'carts',
      'invoices',
      'tables',
      'orders',
-     'ratings'
+     'reviews'
     ];
 
 foreach ($tables as $table){
@@ -29,8 +28,7 @@ foreach ($tables as $table){
          endMigrations($table);
     }else {
 
-
-        // users table --this table provided for admin
+        // admins table --this table provided for admin
         Manager::schema()->dropIfExists('admins');
         Manager::schema()->create('admins', function (Blueprint $table) {
             start('admins');
@@ -43,7 +41,6 @@ foreach ($tables as $table){
             $table->timestamps();
             endMigrations('admins');
         });
-
 
         //customers table
         Manager::schema()->dropIfExists('customers');
@@ -92,7 +89,6 @@ foreach ($tables as $table){
             endMigrations('menus');
         });
 
-
         //carts table
         Manager::schema()->dropIfExists('carts');
         Manager::schema()->create('carts', function (Blueprint $table) {
@@ -110,24 +106,6 @@ foreach ($tables as $table){
             endMigrations('carts');
         });
 
-        //invoices table
-        Manager::schema()->dropIfExists('invoices');
-        Manager::schema()->create('invoices', function (Blueprint $table) {
-            start('invoices');
-            $table->id();
-            $table->string('invoice');
-            $table->unsignedBigInteger('customer_id');
-            $table->enum('status',array('pending','success','expired','failed'));
-            $table->bigInteger('grand_total');
-            $table->string('snap_token')->nullable();
-            $table->timestamps();
-
-
-                    //relationship customer
-            $table->foreign('customer_id')->references('id')->on('customers');
-            endMigrations('invoices');
-        });
-
         //tables table
         Manager::schema()->dropIfExists('tables');
         Manager::schema()->create('tables', function (Blueprint $table) {
@@ -138,6 +116,29 @@ foreach ($tables as $table){
             endMigrations('tables');
         });
 
+        //invoices table
+        Manager::schema()->dropIfExists('invoices');
+        Manager::schema()->create('invoices', function (Blueprint $table) {
+            start('invoices');
+            $table->id();
+            $table->string('invoice');
+            $table->unsignedBigInteger('customer_id');
+            $table->unsignedBigInteger('table_id');
+            $table->enum('status_pembayaran',array('pending','success','expired','failed'));
+            $table->enum('status_pesanan',array('dikonfirmasi','diantar', 'diterima','ditolak'));
+            $table->bigInteger('grand_total');
+            $table->string('snap_token')->nullable();
+            $table->timestamps();
+
+            //relationship customer
+            $table->foreign('customer_id')->references('id')->on('customers');
+            
+            //relationship table
+            $table->foreign('table_id')->references('id')->on('tables');
+            endMigrations('invoices');
+        });
+        
+        //orders table
         Manager::schema()->dropIfExists('orders');
         Manager::schema()->create('orders', function (Blueprint $table) {
             start('orders');
@@ -146,7 +147,6 @@ foreach ($tables as $table){
             $table->unsignedBigInteger('table_id');
             $table->unsignedBigInteger('menu_id');
             $table->string('description');
-            $table->enum('status',array('dikonfirmasi','diproses','diantar','ditolak'));
             $table->integer('qty');
             $table->bigInteger('price');
             $table->timestamps();
@@ -158,25 +158,31 @@ foreach ($tables as $table){
             endMigrations('orders');
         });
 
-        Manager::schema()->dropIfExists('ratings');
-        Manager::schema()->create('ratings', function (Blueprint $table) {
-            start('ratings');
+        //reviews table 
+        Manager::schema()->dropIfExists('reviews');
+        Manager::schema()->create('reviews', function (Blueprint $table) {
+            start('reviews');
             $table->unsignedBigInteger('menu_id');
-            $table->unsignedBigInteger('order_id');
+            // $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('customer_id');
-            $table->integer('rating');
+            $table->text('review');
             $table->timestamps();
-
 
             //relationship product
             $table->foreign('menu_id')->references('id')->on('menus');
 
             //relationship order
-            $table->foreign('order_id')->references('id')->on('orders'); 
+            // $table->foreign('order_id')->references('id')->on('orders'); 
                     
             //relationship customer
             $table->foreign('customer_id')->references('id')->on('customers');
-            endMigrations('ratings');
+            endMigrations('reviews');
         });
     }
+}
+
+for($i = 0; $i < 10; $i++){
+    Table::create([
+        'table' => $i + 1,
+    ]);
 }

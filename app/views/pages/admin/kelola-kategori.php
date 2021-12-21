@@ -49,11 +49,13 @@
           <?php 
           $categories = $data['categories'];
           $url = BASEURL;
-          foreach($categories as $category){
+         for($i = 0; $i < count($categories); $i++){
+            $category = $categories[$i];
+            $no = $i + 1; 
             echo "
               <tr>
                 <td>
-                  <p class='text-center'>$category->id</p>
+                  <p class='text-center'>$no</p>
                 </td>
                 <td class='text-center'>
                   <img src='$url/img/categories/$category->image' alt='' height = '40px' width = '40px'>
@@ -63,10 +65,10 @@
                 </td>
                 <td class='td-actions text-center'>
                   <button type='button' rel='tooltip' title='' class='btn btn-link bg-info px-1 py-1' data-original-title='Edit Kategori'>
-                    <a class='text-light' href='$url./admin/kelola_kategori/edit_kategori/$category->id' style = 'font-size : 16px;'><i class='bi-pencil text-white' role='img' aria-label='Pencil'></i></a>
+                    <a class='text-light' href='$url/admin/kelola_kategori/edit_kategori/$category->id' style = 'font-size : 16px;'><i class='bi-pencil text-white' role='img' aria-label='Pencil'></i></a>
                   </button>
                   <button type='button' rel='tooltip' title='' class='btn btn-link px-1 py-1' data-original-title='Hapus Kategori' style='background-color: #FF0000;'>
-                    <a class='text-light' href='$url./admin/kelola_kategori/destroy/$category->id' style = 'font-size : 16px;'><i class='bi-trash text-white' role='img' aria-label='Trash'></i></a>
+                    <a class='text-light' href='$url/admin/kelola_kategori/destroy/$category->id' style = 'font-size : 16px;'><i class='bi-trash text-white' role='img' aria-label='Trash'></i></a>
                   </button>
                 </td>
               </tr>

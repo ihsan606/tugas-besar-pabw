@@ -50,8 +50,10 @@ class Checkout_Controller extends Controller
             $invoice = Invoice::create([
                 'invoice' => $no_invoice,
                 'customer_id' => $customer->id,
+                'table_id' => $_POST['no_meja'],
                 'grand_total' => $_POST['grand_total'],
-                'status' =>'success',
+                'status_pembayaran' =>'success',
+                'status_pesanan' =>'dikonfirmasi',
             ]);
             $menus = $_SESSION['keranjang']['menus'];
             for ($i=0; $i < count($menus); $i++) { 
@@ -62,7 +64,6 @@ class Checkout_Controller extends Controller
                     'qty' => $menu['jumlah'],
                     'table_id'=>$_POST['no_meja'],
                     'description' =>$menu['keterangan'],
-                    'status' =>'dikonfirmasi',
                     'price'=>($menu['menu'][0]->price*(100-$menu['menu'][0]->discount)/100)*$menu['jumlah']
                 ]);
                 $sold = Menu::where('id', $menu['menu']['0']->id)->get()[0]->sold;

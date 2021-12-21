@@ -175,6 +175,18 @@ class Kelola_Menu_Controller extends Controller{
   }
 
   public function set_stock($id){
-    echo 'set stock' . $id;
+    if(Menu::where('id', $id)->first()->stock == 'tersedia'){
+      $menu = Menu::where('id', $id)->update([
+        'stock' => 'habis',
+      ]);
+    }else{
+      $menu = Menu::where('id', $id)->update([
+        'stock' => 'tersedia',
+      ]);
+    }
+
+    if($menu){
+      header('Location: ' . BASEURL . '/admin/kelola_menu');
+    }
   }
 }
