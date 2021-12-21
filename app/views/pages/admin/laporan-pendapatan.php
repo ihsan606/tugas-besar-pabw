@@ -252,7 +252,7 @@ echo
     <div class="card border-0 rounded shadow-sm overflow-hidden">
       <div class="card-body p-0 d-flex align-items-center">
         <div class="bg-success py-4 px-4 mfe-3">
-          <i class="fas fa-check-circle fa-2x"></i>
+          <i class="fas fa-check-square fa-2x"></i>
         </div>
         <div class="pl-2" style="min-width: 100px;">
           <div class="text-value text-success font-weight-bold"><?= $data['success'] ?> TRANSAKSI</div>
