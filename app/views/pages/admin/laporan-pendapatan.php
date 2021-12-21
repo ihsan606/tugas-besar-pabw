@@ -160,7 +160,7 @@ echo
         data: {
             labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
             datasets: [{
-                label: '# of Votes',
+                label: 'Rp',
                 data: [400000,300000,500000,600000,700000,500000,400000,800000,900000,600000,700000,$dataBulanan[11]],
                 backgroundColor:'transparent',
                 borderColor:'#17a2b8',
