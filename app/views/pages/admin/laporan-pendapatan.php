@@ -18,7 +18,7 @@
   <div class="col-md-9 pb-0 mb-0 d-flex">
     <div class="card">
       <div class="card-body">
-        <h5 class="text-center"><i class="material-icons">Pendapatan Bulanan Tahun 2021</i></h5>
+        <h3 class="text-center"><i class="material-icons">Pendapatan Bulanan Tahun 2021</i></h3>
         <canvas id="chartMonth"></canvas>
       </div>
     </div>
