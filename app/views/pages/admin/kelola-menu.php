@@ -34,7 +34,7 @@
           <th class="text-center" width = "80px"><p class="title">Terjual</p></th>
           <th class="text-center" width = "80px"><p class="title">Rating</p></th>
           <th class="text-center" width = "80px"><p class="title">Stock</p></th>
-          <th class="text-center" width = "120px"><p class="title">Action</p></th>
+          <th class="text-center" width = "150px"><p class="title">Action</p></th>
         </tr>
       </thead>
     </table>
@@ -49,7 +49,7 @@
             <th class="text-center" width = "80px"><p></p></th>
             <th class="text-center" width = "80px"><p></p></th>
             <th class="text-center" width = "80px"><p></p></th>
-            <th class="text-center" width = "120px"><p></p></th>
+            <th class="text-center" width = "150px"><p></p></th>
           <tr>
         </thead>
         <tbody>
@@ -89,24 +89,24 @@
 
                 if($menu->stock == 'tersedia'){
                   echo"
-                    <button type='button' rel='tooltip' title='' class='btn btn-link bg-success px-1 py-1' data-original-title='Hapus Kategori'>
-                      <a class='text-light' href='$url/admin/kelola_menu/set_stock/$menu->id' style = 'font-size : 16px;'><i class='bi-bag-check text-white' role='img' aria-label='Trash'></i></a>
+                    <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Hapus Kategori'>
+                      <a class='text-light' href='$url/admin/kelola_menu/set_stock/$menu->id' style = 'font-size : 18px;'><i class='bi-bag-check text-white' role='img' aria-label='Trash'></i></a>
                     </button>
                   ";
                 }else{
                   echo"
-                    <button type='button' rel='tooltip' title='' class='btn btn-link px-1 py-1' data-original-title='Hapus Kategori' style='background-color: #FF0000;'>
-                      <a class='text-light' href='$url/admin/kelola_menu/set_stock/$menu->id' style = 'font-size : 16px;'><i class='bi-bag-check text-white' role='img' aria-label='Trash'></i></a>
+                    <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Hapus Kategori'>
+                      <a class='text-light' href='$url/admin/kelola_menu/set_stock/$menu->id' style = 'font-size : 18px;'><i class='bi-bag-check text-white' role='img' aria-label='Trash'></i></a>
                     </button>
                   ";
                 }
                   
                 echo"
-                  <button type='button' rel='tooltip' title='' class='btn btn-link bg-info px-1 py-1' data-original-title='Edit Kategori'>
-                    <a class='text-light' href='$url/admin/kelola_menu/edit_menu/$menu->id' style = 'font-size : 16px;'><i class='tim-icons icon-pencil text-white'></i></a>
+                  <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Edit Kategori'>
+                    <a class='text-light' href='$url/admin/kelola_menu/edit_menu/$menu->id' style = 'font-size : 20px;'><i class='tim-icons icon-pencil text-white'></i></a>
                   </button>
-                  <button type='button' rel='tooltip' title='' class='btn btn-link px-1 py-1' data-original-title='Hapus Kategori' style='background-color: #FF0000;'>
-                    <a class='text-light' href='$url/admin/kelola_menu/destroy/$menu->id' style = 'font-size : 16px;'><i class='tim-icons icon-trash-simple text-white'></i></i></a>
+                  <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Hapus Kategori'>
+                    <a class='text-light' href='$url/admin/kelola_menu/destroy/$menu->id' style = 'font-size : 20px;'><i class='tim-icons icon-trash-simple text-white'></i></i></a>
                   </button>
                 </td>
               </tr>

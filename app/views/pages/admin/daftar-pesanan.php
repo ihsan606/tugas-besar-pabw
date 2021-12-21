@@ -63,23 +63,23 @@
     <table class="table table-esponsive" style="border-collapse:collapse;">
         <thead class="thead-light">
             <tr>
-                <th class="text-center" width = "30px">No</th>
-                <th class="text-left" width = "300px">Name</th>
-                <th class="text-center" width = "70px">No meja</th>
+                <th class="text-center" width="30px">No</th>
+                <th class="text-left" width="300px">Name</th>
+                <th class="text-center" width="70px">No meja</th>
                 <th class="text-left"></th>
-                <th class="text-center" width = "100px">Daftar Menu</th>
-                <th class="text-center" width = "120px">Actions</th>
+                <th class="text-center" width="100px">Daftar Menu</th>
+                <th class="text-center" width="120px">Actions</th>
             </tr>
         </thead>
         <tbody class="table-striped">
-            <?php 
-            for($i = 0; $i < count($data['invoices']); $i++){
+            <?php
+            for ($i = 0; $i < count($data['invoices']); $i++) {
                 $url = BASEURL;
                 $no = $i + 1;
                 $orders = $data['invoices'][$i]->orders;
                 $name = $data['invoices'][$i]->customer->name;
                 $no_table =  $data['invoices'][$i]->table_id;
-                echo"
+                echo "
                 <tr>
 
                     <td class='text-center'>$no</td>
@@ -89,15 +89,12 @@
                     <td class='text-center'><h2 style='margin-bottom: 0;'><i class='bi-caret-down-fill text-mute accordion-toggle' data-toggle='collapse' data-target='#demo$no'></i></h2></td>
 
                     <td class='td-actions text-center'>
-                        <a href='$url/daftar_pesanan/' type='button' rel='tooltip' class='btn btn-info btn-sm btn-icon'>
-                            <i class='tim-icons icon-single-02'></i>
-                        </a'>
-                        <a href='$url/daftar_pesanan/' type='button' rel='tooltip' class='btn btn-success btn-sm btn-icon'>
-                            <i class='tim-icons icon-settings'></i>
-                        </a'>
-                        <a href='$url/daftar_pesanan/' type='button' rel='tooltip' class='btn btn-danger btn-sm btn-icon'>
-                            <i class='tim-icons icon-simple-remove'></i>
-                        </a'>
+                        <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Edit Kategori'>
+                            <a class='text-light' href='$url/daftar_pesanan/' style = 'font-size : 20px;'><i class='tim-icons icon-pencil text-white'></i></a>
+                        </button>
+                        <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Edit Kategori'>
+                            <a class='text-light' href='$url/daftar_pesanan/' style = 'font-size : 20px;'><i class='tim-icons icon-simple-remove text-white'></i></a>
+                        </button>
                     </td>
                 </tr>
                 <tr>
@@ -116,13 +113,13 @@
                                 <tbody>
                                 ";
 
-                                for($j = 0; $j < count($orders); $j++){
-                                    $order = $orders[$j];
-                                    $menu = $order->menu->title;
-                                    $qty= $order->qty;
-                                    $description = $order->description;
-                                    $no = $j + 1;
-                                    echo"
+                for ($j = 0; $j < count($orders); $j++) {
+                    $order = $orders[$j];
+                    $menu = $order->menu->title;
+                    $qty = $order->qty;
+                    $description = $order->description;
+                    $no = $j + 1;
+                    echo "
                                         <tr>
                                             <td class='text-center'>$no</td>
                                             <td class='text-left'>$menu</td>
@@ -130,19 +127,19 @@
                                             <td class='text-left'>$description</td>
                                         </tr>
                                     ";
-                                }
+                }
 
-                                echo"
+                echo "
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </td>
             </tr>
-            ";        
+            ";
             }
             ?>
-            
+
         </tbody>
     </table>
 

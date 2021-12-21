@@ -30,7 +30,7 @@
           <th class="text-center" width = "30px"><p class="title">No</p></th>
           <th class="text-left" width = "200px"><p class="title" style="padding-left: 8px;">Nama</p></th>
           <th class="text-left"><p class="title">Email</p></th>
-          <th class="text-center" width = "120px"><p class="title">Action</p></th>
+          <th class="text-center" width = "150px"><p class="title">Action</p></th>
         </tr>
       </thead>
     </table>
@@ -41,7 +41,7 @@
             <th class="text-center" width = "30px"><p></p></th>
             <th class="text-left" width = "200px"><p style="padding-left: 8px;"></p></th>
             <th class="text-left"><p></p></th>
-            <th class="text-center" width = "120px"><p></p></th>
+            <th class="text-center" width = "150px"><p></p></th>
           <tr>
         </thead>
         <tbody>
@@ -64,11 +64,11 @@
                   <p>$admin->email</p>
                 </td>
                 <td class='td-actions text-center'>
-                  <button type='button' rel='tooltip' title='' class='btn btn-link bg-info px-1 py-1' data-original-title='Edit Kategori'>
-                    <a class='text-light' href='$url/admin/kelola_admin/edit_admin/$admin->id' style = 'font-size : 16px;'><i class='tim-icons icon-pencil text-white'></i></a>
+                  <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Edit Kategori'>
+                    <a class='text-light' href='$url/admin/kelola_admin/edit_admin/$admin->id' style = 'font-size : 20px;'><i class='tim-icons icon-pencil text-white'></i></a>
                   </button>
-                  <button type='button' rel='tooltip' title='' class='btn btn-link px-1 py-1' data-original-title='Hapus Kategori' style='background-color: #FF0000;'>
-                    <a class='text-light' href='$url/admin/kelola_admin/destroy/$admin->id' style = 'font-size : 16px;'><i class='tim-icons icon-trash-simple text-white'></i></a>
+                  <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Hapus Kategori'>
+                    <a class='text-light' href='$url/admin/kelola_admin/destroy/$admin->id' style = 'font-size : 20;'><i class='tim-icons icon-trash-simple text-white'></i></a>
                   </button>
                 </td>
               </tr>
