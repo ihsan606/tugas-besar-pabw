@@ -1,62 +1,4 @@
-<div class="row">
 
-  <div class="col-6 col-lg-3">
-    <div class="card border-0 rounded shadow-sm overflow-hidden">
-      <div class="card-body p-0 d-flex align-items-center">
-        <div class="bg-primary py-4 px-4 mfe-3">
-          <i class="fas fa-circle-notch fa-spin fa-2x"></i>
-        </div>
-        <div class="pl-2" style="min-width: 100px;">
-          <div class="text-value text-primary font-weight-bold"><?= $data['pending'] ?> TRANSAKSI</div>
-          <div class="text-primary title text-uppercase font-weight-bold">PENDING</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-6 col-lg-3">
-    <div class="card border-0 rounded shadow-sm overflow-hidden">
-      <div class="card-body p-0 d-flex align-items-center">
-        <div class="bg-success py-4 px-4 mfe-3">
-          <i class="fas fa-check-circle fa-2x"></i>
-        </div>
-        <div class="pl-2" style="min-width: 100px;">
-          <div class="text-value text-success font-weight-bold"><?= $data['success'] ?> TRANSAKSI</div>
-          <div class="text-success text-uppercase font-weight-bold">BERHASIL</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-6 col-lg-3">
-    <div class="card border-0 rounded shadow-sm overflow-hidden">
-      <div class="card-body p-0 d-flex align-items-center">
-        <div class="bg-warning py-4 px-4 mfe-3">
-          <i class="fas fa-exclamation-triangle fa-2x"></i>
-        </div>
-        <div class="pl-2" style="min-width: 100px;">
-          <div class="text-value text-warning font-weight-bold"><?= $data['expired'] ?> TRANSAKSI</div>
-          <div class="text-warning text-uppercase font-weight-bold">KEDALUWARSA</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-6 col-lg-3">
-    <div class="card border-0 rounded shadow-sm overflow-hidden">
-      <div class="card-body p-0 d-flex align-items-center">
-        <div class="bg-danger py-4 px-4 mfe-3">
-          <i class="fas fa-times-circle fa-2x"></i>
-        </div>
-        <div class="pl-2" style="min-width: 100px;">
-          <div class="text-value text-danger font-weight-bold"><?= $data['failed'] ?> TRANSAKSI</div>
-          <div class="text-danger text-uppercase font-weight-bold">GAGAL</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</div>
 
 <!-- <h1>Halaman Laporan Penjualan</h1>
     <div class="card">
@@ -201,11 +143,14 @@ echo
 <?php
 // memasukkan string ke dalam script chart
 $dataBulanan = $data['pendapatan_perbulan'];
-$insideData = "";
-for ($i = 0; $i < count($dataBulanan); $i++) {
-  $insideData .= $dataBulanan[$i];
-  $insideData .= ",";
-}
+
+// $data=[];
+
+// $insideData = "";
+// for ($i = 0; $i < count($dataBulanan); $i++) {
+//   $insideData .= $dataBulanan[$i];
+//   $insideData .= ",";
+// }
 
 echo
 "<script>
@@ -216,7 +161,7 @@ echo
             labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
             datasets: [{
                 label: '# of Votes',
-                data: [2000,000],
+                data: [400000,300000,500000,600000,700000,500000,400000,800000,900000,600000,700000,$dataBulanan[11]],
                 backgroundColor:'transparent',
                 borderColor:'#17a2b8',
                 borderWidth: 2
@@ -288,3 +233,61 @@ echo
     </div>
   </div>
 </div> -->
+<div class="row">
+  <div class="col-6 col-lg-3">
+    <div class="card border-0 rounded shadow-sm overflow-hidden">
+      <div class="card-body p-0 d-flex align-items-center">
+        <div class="bg-primary py-4 px-4 mfe-3">
+          <i class="fas fa-circle-notch fa-spin fa-2x"></i>
+        </div>
+        <div class="pl-2" style="min-width: 100px;">
+          <div class="text-value text-primary font-weight-bold"><?= $data['pending'] ?> TRANSAKSI</div>
+          <div class="text-primary title text-uppercase font-weight-bold">PENDING</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6 col-lg-3">
+    <div class="card border-0 rounded shadow-sm overflow-hidden">
+      <div class="card-body p-0 d-flex align-items-center">
+        <div class="bg-success py-4 px-4 mfe-3">
+          <i class="fas fa-check-circle fa-2x"></i>
+        </div>
+        <div class="pl-2" style="min-width: 100px;">
+          <div class="text-value text-success font-weight-bold"><?= $data['success'] ?> TRANSAKSI</div>
+          <div class="text-success text-uppercase font-weight-bold">BERHASIL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6 col-lg-3">
+    <div class="card border-0 rounded shadow-sm overflow-hidden">
+      <div class="card-body p-0 d-flex align-items-center">
+        <div class="bg-warning py-4 px-4 mfe-3">
+          <i class="fas fa-exclamation-triangle fa-2x"></i>
+        </div>
+        <div class="pl-2" style="min-width: 100px;">
+          <div class="text-value text-warning font-weight-bold"><?= $data['expired'] ?> TRANSAKSI</div>
+          <div class="text-warning text-uppercase font-weight-bold">KEDALUWARSA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6 col-lg-3">
+    <div class="card border-0 rounded shadow-sm overflow-hidden">
+      <div class="card-body p-0 d-flex align-items-center">
+        <div class="bg-danger py-4 px-4 mfe-3">
+          <i class="fas fa-times-circle fa-2x"></i>
+        </div>
+        <div class="pl-2" style="min-width: 100px;">
+          <div class="text-value text-danger font-weight-bold"><?= $data['failed'] ?> TRANSAKSI</div>
+          <div class="text-danger text-uppercase font-weight-bold">GAGAL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
