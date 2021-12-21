@@ -74,6 +74,7 @@
         <tbody class="table-striped">
             <?php 
             for($i = 0; $i < count($data['invoices']); $i++){
+                $url = BASEURL;
                 $no = $i + 1;
                 $orders = $data['invoices'][$i]->orders;
                 $name = $data['invoices'][$i]->customer->name;
@@ -88,15 +89,15 @@
                     <td class='text-center'><h2 style='margin-bottom: 0;'><i class='bi-caret-down-fill text-mute accordion-toggle' data-toggle='collapse' data-target='#demo$no'></i></h2></td>
 
                     <td class='td-actions text-center'>
-                        <button type='button' rel='tooltip' class='btn btn-info btn-sm btn-icon'>
+                        <a href='$url/daftar_pesanan/' type='button' rel='tooltip' class='btn btn-info btn-sm btn-icon'>
                             <i class='tim-icons icon-single-02'></i>
-                        </button>
-                        <button type='button' rel='tooltip' class='btn btn-success btn-sm btn-icon'>
+                        </a'>
+                        <a href='$url/daftar_pesanan/' type='button' rel='tooltip' class='btn btn-success btn-sm btn-icon'>
                             <i class='tim-icons icon-settings'></i>
-                        </button>
-                        <button type='button' rel='tooltip' class='btn btn-danger btn-sm btn-icon'>
+                        </a'>
+                        <a href='$url/daftar_pesanan/' type='button' rel='tooltip' class='btn btn-danger btn-sm btn-icon'>
                             <i class='tim-icons icon-simple-remove'></i>
-                        </button>
+                        </a'>
                     </td>
                 </tr>
                 <tr>

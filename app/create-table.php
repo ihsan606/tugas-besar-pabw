@@ -28,7 +28,6 @@ foreach ($tables as $table){
          endMigrations($table);
     }else {
 
-
         // admins table --this table provided for admin
         Manager::schema()->dropIfExists('admins');
         Manager::schema()->create('admins', function (Blueprint $table) {
@@ -42,7 +41,6 @@ foreach ($tables as $table){
             $table->timestamps();
             endMigrations('admins');
         });
-
 
         //customers table
         Manager::schema()->dropIfExists('customers');
@@ -90,7 +88,6 @@ foreach ($tables as $table){
             $table->foreign('category_id')->references('id')->on('categories');
             endMigrations('menus');
         });
-
 
         //carts table
         Manager::schema()->dropIfExists('carts');
@@ -170,7 +167,6 @@ foreach ($tables as $table){
             $table->unsignedBigInteger('customer_id');
             $table->text('review');
             $table->timestamps();
-
 
             //relationship product
             $table->foreign('menu_id')->references('id')->on('menus');
