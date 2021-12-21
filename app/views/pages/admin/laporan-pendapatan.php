@@ -32,7 +32,7 @@
               <i class="material-icons">Pendapatan Hari Ini</i>
             </div>
             <p class="card-category">Total</p>
-            <h3 class="card-title" style="color: #2bffc6!important;"><?= $data['pendapatan_hari_ini'] ?></h3>
+            <h3 class="card-title font-weight-bold" style="color: #2bffc6!important;"><?= $data['pendapatan_hari_ini'] ?></h3>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
               <i class="material-icons">Pendapatan Minggu Ini</i>
             </div>
             <p class="card-category">Total</p>
-            <h3 class="card-title" style="color: #2bffc6!important;"><?= $data['pendapatan_minggu_ini'] ?></h3>
+            <h3 class="card-title font-weight-bold" style="color: #2bffc6!important;"><?= $data['pendapatan_minggu_ini'] ?></h3>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
               <i class="material-icons">Pendapatan Bulan Ini</i>
             </div>
             <p class="card-category">Total</p>
-            <h3 class="card-title" style="color: #2bffc6!important;"><?= $data['pendapatan_bulan_ini'] ?></h3>
+            <h3 class="card-title font-weight-bold" style="color: #2bffc6!important;"><?= $data['pendapatan_bulan_ini'] ?></h3>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@
               <i class="material-icons">Pendapatan Tahun Ini</i>
             </div>
             <p class="card-category">Total</p>
-            <h3 class="card-title" style="color: #2bffc6!important;"><?= $data['pendapatan_tahun_ini'] ?></h3>
+            <h3 class="card-title font-weight-bold" style="color: #2bffc6!important;"><?= $data['pendapatan_tahun_ini'] ?></h3>
           </div>
         </div>
       </div>
