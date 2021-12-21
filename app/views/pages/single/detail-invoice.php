@@ -185,7 +185,7 @@ require '../vendor/autoload.php'; ?>
           },
           onPending: function(result){
             
-            window.location.replace("<?= BASEURL;?>/customer/success")
+            window.location.replace("<?= BASEURL;?>/customer/pesanan_berhasil")
           },
           onError: function(result){
             /* You may add your own implementation here */
