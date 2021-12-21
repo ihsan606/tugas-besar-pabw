@@ -3,7 +3,7 @@
 require '../vendor/autoload.php';
 use Illuminate\Database\Capsule\Manager;
 use Illuminate\Database\Schema\Blueprint;
-
+use App\models\Table;
 
 function start($table){
     echo "creating_".$table."_table".PHP_EOL;
@@ -124,7 +124,8 @@ foreach ($tables as $table){
             $table->string('invoice');
             $table->unsignedBigInteger('customer_id');
             $table->unsignedBigInteger('table_id');
-            $table->enum('status',array('pending','success','expired','failed'));
+            $table->enum('status_pembayaran',array('pending','success','expired','failed'));
+            $table->enum('status_pesanan',array('dikonfirmasi','diantar', 'diterima','ditolak'));
             $table->bigInteger('grand_total');
             $table->string('snap_token')->nullable();
             $table->timestamps();
@@ -146,7 +147,6 @@ foreach ($tables as $table){
             $table->unsignedBigInteger('table_id');
             $table->unsignedBigInteger('menu_id');
             $table->string('description');
-            $table->enum('status',array('dikonfirmasi','diproses','diantar','ditolak'));
             $table->integer('qty');
             $table->bigInteger('price');
             $table->timestamps();
@@ -179,4 +179,10 @@ foreach ($tables as $table){
             endMigrations('reviews');
         });
     }
+}
+
+for($i = 0; $i < 10; $i++){
+    Table::create([
+        'table' => $i + 1,
+    ]);
 }
