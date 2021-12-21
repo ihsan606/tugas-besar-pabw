@@ -89,7 +89,7 @@
 
                 if($menu->stock == 'tersedia'){
                   echo"
-                    <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Hapus Kategori'>
+                    <button type='button' rel='tooltip' title='' class='btn btn-icon btn-success' data-original-title='Hapus Kategori'>
                       <a class='text-light' href='$url/admin/kelola_menu/set_stock/$menu->id' style = 'font-size : 18px;'><i class='bi-bag-check text-white' role='img' aria-label='Trash'></i></a>
                     </button>
                   ";
