@@ -18,7 +18,7 @@
   <div class="col-md-9 pb-0 mb-0 d-flex">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">Laporan Pendapatan Bulanan</h5>
+        <h5 class="text-center"><i class="material-icons">Pendapatan Bulanan Tahun 2021</i></h5>
         <canvas id="chartMonth"></canvas>
       </div>
     </div>
@@ -32,7 +32,7 @@
               <i class="material-icons">Pendapatan Hari Ini</i>
             </div>
             <p class="card-category">Total</p>
-            <h3 class="card-title" style="color: #00FF00!important;"><?= $data['pendapatan_hari_ini'] ?></h3>
+            <h3 class="card-title" style="color: #2bffc6!important;"><?= $data['pendapatan_hari_ini'] ?></h3>
           </div>
         </div>
       </div>
@@ -43,7 +43,7 @@
               <i class="material-icons">Pendapatan Minggu Ini</i>
             </div>
             <p class="card-category">Total</p>
-            <h3 class="card-title" style="color: #00FF00!important;"><?= $data['pendapatan_minggu_ini'] ?></h3>
+            <h3 class="card-title" style="color: #2bffc6!important;"><?= $data['pendapatan_minggu_ini'] ?></h3>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
               <i class="material-icons">Pendapatan Bulan Ini</i>
             </div>
             <p class="card-category">Total</p>
-            <h3 class="card-title" style="color: #3BDBFF!important;"><?= $data['pendapatan_bulan_ini'] ?></h3>
+            <h3 class="card-title" style="color: #2bffc6!important;"><?= $data['pendapatan_bulan_ini'] ?></h3>
           </div>
         </div>
       </div>
@@ -65,7 +65,7 @@
               <i class="material-icons">Pendapatan Tahun Ini</i>
             </div>
             <p class="card-category">Total</p>
-            <h3 class="card-title" style="color: #00FF00!important;"><?= $data['pendapatan_tahun_ini'] ?></h3>
+            <h3 class="card-title" style="color: #2bffc6!important;"><?= $data['pendapatan_tahun_ini'] ?></h3>
           </div>
         </div>
       </div>
