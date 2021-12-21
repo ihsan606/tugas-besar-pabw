@@ -31,8 +31,9 @@
           <th class="text-center" width = "80px"><p class="title">Gambar</p></th>
           <th class="text-left" width = "200px"><p class="title">Nama Menu</p></th>
           <th class="text-left"><p class="title">Kategori</p></th>
-          <th class="text-center" width = "80px"><p class="title">Harga</p></th>
-          <th class="text-center" width = "80px"><p class="title">Diskon</p></th>
+          <th class="text-center" width = "100px"><p class="title">Harga</p></th>
+          <th class="text-center" width = "100px"><p class="title">Diskon</p></th>
+          <th class="text-center" width = "100px"><p class="title">Harga Akhir</p></th>
           <th class="text-center" width = "80px"><p class="title">Stock</p></th>
           <th class="text-center" width = "150px"><p class="title">Action</p></th>
         </tr>
@@ -46,8 +47,9 @@
             <th class="text-center" width = "80px"><p></p></th>
             <th class="text-left"  width = "200px"><p></p></th>
             <th class="text-left"><p></p></th>
-            <th class="text-center" width = "80px"><p></p></th>
-            <th class="text-center" width = "80px"><p></p></th>
+            <th class="text-center" width = "100px"><p></p></th>
+            <th class="text-center" width = "100px"><p></p></th>
+            <th class="text-center" width = "100px"><p></p></th>
             <th class="text-center" width = "80px"><p></p></th>
             <th class="text-center" width = "150px"><p></p></th>
           <tr>
@@ -61,6 +63,8 @@
             $menu = $menus[$i];
             $category_name = $menu->category->name;
             $no = $i + 1; 
+            $price = money_format($menu->price);
+            $final_price = money_format($menu->final_price);
             echo "
               <tr>
                 <td>
@@ -76,10 +80,13 @@
                   <p>$category_name</p>
                 </td>
                 <td>
-                  <p class='text-center'>$menu->sold</p>
+                  <p class='text-center'>$price</p>
                 </td>
                 <td>
-                  <p class='text-center'>$menu->rating</p>
+                  <p class='text-center'>$menu->discount%</p>
+                </td>
+                <td>
+                  <p class='text-center'>$final_price</p>
                 </td>
                 <td>
                   <p class='text-center'>$menu->stock</p>
