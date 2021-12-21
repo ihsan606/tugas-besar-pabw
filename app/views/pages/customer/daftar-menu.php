@@ -110,14 +110,30 @@
               <span class='badge' style='background-color: rgba(0, 0, 0, 0.7)'>$category_name</span>
             </div>
           </div>
+          <div class='row justify-content-between mx-3'>
+          ";
+
+          if($menu->stock == 'tersedia'){
+            echo"
+              <div class='col-md px-0 mb-3' align-self-start style='width: auto;'>
+                <a class='btn btn-sm btn-success text-white' href='$url/customer/detail_menu/$menu->slug'>
+                  <b-icon-cart></b-icon-cart>
+                  Pesan
+                </a>
+              </div>
+            ";
+          }else{
+            echo"
+              <div class='col-md px-0 mb-3' align-self-start style='width: auto;'>
+                <button class='btn btn-sm text-white' href='' style='background-color: grey;' disabled>
+                  <b-icon-cart></b-icon-cart>
+                  Habis
+                </button>
+              </div>
+            ";
+          }
                       
-          <div class='row  justify-content-between mx-3'>
-            <div class='col-md px-0 mb-3' align-self-start style='width: auto;'>
-              <a class='btn btn-sm btn-success' href='$url/customer/detail_menu/$menu->slug'>
-                <b-icon-cart></b-icon-cart>
-                Pesan
-              </a>
-            </div>
+          echo"
             <div class='col-md-auto px-0 mb-3' style='width: auto;'>
               <p class='card-text'>Terjual $menu->sold | <i class='bi-star-fill' role='text' aria-label='Star-Fill' style='color: #ffc107;'></i> $menu->rating</p>
             </div>
