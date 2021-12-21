@@ -82,7 +82,7 @@
                 $no = $i + 1;
                 $orders = $data['invoices'][$i]->orders;
                 $name = $data['invoices'][$i]->customer->name;
-                // $no_table = $data['invoices'][$i]->orders->table->table;
+                // $no_table = $orders->table->table;
                 echo"
                 <tr>
 

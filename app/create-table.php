@@ -14,7 +14,6 @@ function endMigrations($table){
 }
  $tables= [
      'admins',
-
      'categories',
      'menus',
      'carts',
@@ -30,7 +29,7 @@ foreach ($tables as $table){
     }else {
 
 
-        // users table --this table provided for admin
+        // admins table --this table provided for admin
         Manager::schema()->dropIfExists('admins');
         Manager::schema()->create('admins', function (Blueprint $table) {
             start('admins');
@@ -117,14 +116,17 @@ foreach ($tables as $table){
             $table->id();
             $table->string('invoice');
             $table->unsignedBigInteger('customer_id');
+            $table->unsignedBigInteger('table_id');
             $table->enum('status',array('pending','success','expired','failed'));
             $table->bigInteger('grand_total');
             $table->string('snap_token')->nullable();
             $table->timestamps();
 
-
-                    //relationship customer
+            //relationship customer
             $table->foreign('customer_id')->references('id')->on('customers');
+            
+            //relationship table
+            $table->foreign('table_id')->references('id')->on('tables');
             endMigrations('invoices');
         });
 
@@ -137,7 +139,8 @@ foreach ($tables as $table){
             $table->timestamps();
             endMigrations('tables');
         });
-
+        
+        //orders table
         Manager::schema()->dropIfExists('orders');
         Manager::schema()->create('orders', function (Blueprint $table) {
             start('orders');
@@ -158,6 +161,7 @@ foreach ($tables as $table){
             endMigrations('orders');
         });
 
+        //ratings table 
         Manager::schema()->dropIfExists('ratings');
         Manager::schema()->create('ratings', function (Blueprint $table) {
             start('ratings');
