@@ -156,10 +156,10 @@
             labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
             datasets: [{
                 label: '# of Votes',
-                data: [$insideData],
-                backgroundColor:'#17a2b8',
+                data: [2000,000],
+                backgroundColor:'transparent',
                 borderColor:'#17a2b8',
-                borderWidth: 1
+                borderWidth: 2
             }]
         },
         options: {

@@ -22,7 +22,9 @@
           <canvas id="chartMonth"></canvas>
         </div>
       </div>
+      
     </div>
+    
     <div class="col-md-4">
       <div class="row justify-content-between align-items-center">
         <!-- <div class="col-md-12">
