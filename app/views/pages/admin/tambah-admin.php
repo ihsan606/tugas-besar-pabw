@@ -7,7 +7,7 @@
       <div class="row pb-3">
         <div class="col-md-auto align-self-center">
           <div class="input-group-apend">
-            <a href = "<?= BASEURL ?>/admin/kelola_admin" class="btn btn-sm p-2 text-white"><i class="bi-arrow-left-circle-fill mr-2 text-white"></i>KEMBALI</a>
+            <a href = "<?= BASEURL ?>/admin/kelola_admin" class="btn btn-sm p-2 text-white"><i class="fas fa-arrow-circle-left mr-2 text-white"></i>KEMBALI</a>
           </div>
         </div>
       </div>
