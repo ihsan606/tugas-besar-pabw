@@ -20,7 +20,7 @@ function endMigrations($table){
      'invoices',
      'tables',
      'orders',
-     'ratings'
+     'reviews'
     ];
 
 foreach ($tables as $table){
@@ -161,14 +161,14 @@ foreach ($tables as $table){
             endMigrations('orders');
         });
 
-        //ratings table 
-        Manager::schema()->dropIfExists('ratings');
-        Manager::schema()->create('ratings', function (Blueprint $table) {
-            start('ratings');
+        //reviews table 
+        Manager::schema()->dropIfExists('reviews');
+        Manager::schema()->create('reviews', function (Blueprint $table) {
+            start('reviews');
             $table->unsignedBigInteger('menu_id');
-            $table->unsignedBigInteger('order_id');
+            // $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('customer_id');
-            $table->integer('rating');
+            $table->text('review');
             $table->timestamps();
 
 
@@ -176,11 +176,11 @@ foreach ($tables as $table){
             $table->foreign('menu_id')->references('id')->on('menus');
 
             //relationship order
-            $table->foreign('order_id')->references('id')->on('orders'); 
+            // $table->foreign('order_id')->references('id')->on('orders'); 
                     
             //relationship customer
             $table->foreign('customer_id')->references('id')->on('customers');
-            endMigrations('ratings');
+            endMigrations('reviews');
         });
     }
 }

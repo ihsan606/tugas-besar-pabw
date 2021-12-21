@@ -163,7 +163,7 @@ class ComposerStaticInit8967fef25254fedcfe4218aae1d8cf27
         'App\\models\\Invoice' => __DIR__ . '/../..' . '/app/Models/Invoice.php',
         'App\\models\\Menu' => __DIR__ . '/../..' . '/app/Models/Menu.php',
         'App\\models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
-        'App\\models\\Rating' => __DIR__ . '/../..' . '/app/Models/Rating.php',
+        'App\\models\\Review' => __DIR__ . '/../..' . '/app/Models/Review.php',
         'App\\models\\Table' => __DIR__ . '/../..' . '/app/Models/Table.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
