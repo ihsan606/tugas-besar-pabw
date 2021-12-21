@@ -237,12 +237,12 @@ echo
   <div class="col-6 col-lg-3">
     <div class="card border-0 rounded shadow-sm overflow-hidden">
       <div class="card-body p-0 d-flex align-items-center">
-        <div class="bg-primary py-4 px-4 mfe-3">
+        <div class="bg-info py-4 px-4 mfe-3">
           <i class="fas fa-circle-notch fa-spin fa-2x"></i>
         </div>
         <div class="pl-2" style="min-width: 100px;">
-          <div class="text-value text-primary font-weight-bold"><?= $data['pending'] ?> TRANSAKSI</div>
-          <div class="text-primary title text-uppercase font-weight-bold">PENDING</div>
+          <div class="text-value text-info font-weight-bold"><?= $data['pending'] ?> TRANSAKSI</div>
+          <div class="text-info title text-uppercase font-weight-bold">PENDING</div>
         </div>
       </div>
     </div>
