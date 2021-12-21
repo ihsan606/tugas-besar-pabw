@@ -73,12 +73,6 @@
         </thead>
         <tbody class="table-striped">
             <?php 
-
-            // // foreach($data['orders'] as $order){
-            // //     echo $order->table->table;
-            // // }
-            // // echo $data['invoices'];
-            // echo  $no_table = $data['invoices']->orders->table->table;
             for($i = 0; $i < count($data['invoices']); $i++){
                 $no = $i + 1;
                 $orders = $data['invoices'][$i]->orders;
