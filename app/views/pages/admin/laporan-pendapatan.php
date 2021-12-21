@@ -54,7 +54,7 @@
               <i class="material-icons">Pendapatan Bulan Ini</i>
             </div>
             <p class="card-category">Total</p>
-            <h3 class="card-title" style="color: #00FF00!important;"><?= $data['pendapatan_bulan_ini'] ?></h3>
+            <h3 class="card-title" style="color: #3BDBFF!important;"><?= $data['pendapatan_bulan_ini'] ?></h3>
           </div>
         </div>
       </div>
@@ -163,7 +163,7 @@ echo
                 label: 'Rp',
                 data: [400000,300000,500000,600000,700000,500000,400000,800000,900000,600000,700000,$dataBulanan[11]],
                 backgroundColor:'transparent',
-                borderColor:'#00FFFF',
+                borderColor:'#11cdef',
                 borderWidth: 2
             }]
         },
