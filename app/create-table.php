@@ -1,6 +1,8 @@
 <?php 
 
 require '../vendor/autoload.php';
+
+use App\models\Admin;
 use Illuminate\Database\Capsule\Manager;
 use Illuminate\Database\Schema\Blueprint;
 use App\models\Table;
@@ -186,3 +188,33 @@ for($i = 0; $i < 10; $i++){
         'table' => $i + 1,
     ]);
 }
+
+Admin::create([
+        'name' => 'admin',
+        'email' => 'admin@gmail.com',
+        'password' => 'admin',
+    ]);
+    
+Admin::create([
+        'name' => 'eko',
+        'email' => 'eko@gmail.com',
+        'password' => 'eko',
+    ]);
+
+Admin::create([
+        'name' => 'budi',
+        'email' => 'budi@gmail.com',
+        'password' => 'budi',
+    ]);
+
+Admin::create([
+        'name' => 'joko',
+        'email' => 'joko@gmail.com',
+        'password' => 'joko',
+    ]);
+
+Admin::create([
+        'name' => 'edi',
+        'email' => 'edi@gmail.com',
+        'password' => 'edi',
+    ]);
