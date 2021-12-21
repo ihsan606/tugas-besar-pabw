@@ -75,10 +75,11 @@
             <?php
             for ($i = 0; $i < count($data['invoices']); $i++) {
                 $url = BASEURL;
-                $no = $i + 1;
+                $id = $data['invoices'][$i]->id;
                 $orders = $data['invoices'][$i]->orders;
                 $name = $data['invoices'][$i]->customer->name;
                 $no_table =  $data['invoices'][$i]->table_id;
+                $no = $i + 1;
                 echo "
                 <tr>
 
@@ -90,10 +91,10 @@
 
                     <td class='td-actions text-center'>
                         <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Edit Kategori'>
-                            <a class='text-light' href='$url/daftar_pesanan/' style = 'font-size : 20px;'><i class='fas fa-paper-plane fa-2x text-white'></i></a>
+                            <a class='text-light' href='$url/admin/daftar_pesanan/antar_pesanan/$id' style = 'font-size : 20px;'><i class='fas fa-paper-plane fa-2x text-white'></i></a>
                         </button>
                         <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Edit Kategori'>
-                            <a class='text-light' href='$url/daftar_pesanan/' style = 'font-size : 20px;'><i class='tim-icons icon-simple-remove text-white'></i></a>
+                            <a class='text-light' href='$url/admin/daftar_pesanan/tolak_pesanan/$id' style = 'font-size : 20px;'><i class='tim-icons icon-simple-remove text-white'></i></a>
                         </button>
                     </td>
                 </tr>

@@ -18,4 +18,24 @@ class Daftar_Pesanan_Controller extends Controller{
     ];
     $this->view('daftar-pesanan', $data, 'admin');
   }
+
+  public function antar_pesanan($id){
+    $invoice = Invoice::where('id', $id)->update([
+      'status_pesanan' => 'diantar'
+    ]);
+
+    if($invoice){
+      header('Location: ' . BASEURL . '/admin/daftar_pesanan');
+    }
+  }
+
+  public function tolak_pesanan($id){
+    $invoice = Invoice::where('id', $id)->update([
+      'status_pesanan' => 'ditolak'
+    ]);
+
+    if($invoice){
+      header('Location: ' . BASEURL . '/admin/daftar_pesanan');
+    }
+  }
 }
