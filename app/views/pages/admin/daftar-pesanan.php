@@ -90,7 +90,7 @@
 
                     <td class='td-actions text-center'>
                         <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Edit Kategori'>
-                            <a class='text-light' href='$url/daftar_pesanan/' style = 'font-size : 20px;'><i class='tim-icons icon-pencil text-white'></i></a>
+                            <a class='text-light' href='$url/daftar_pesanan/' style = 'font-size : 20px;'><i class='fas fa-paper-plane fa-2x text-white'></i></a>
                         </button>
                         <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Edit Kategori'>
                             <a class='text-light' href='$url/daftar_pesanan/' style = 'font-size : 20px;'><i class='tim-icons icon-simple-remove text-white'></i></a>

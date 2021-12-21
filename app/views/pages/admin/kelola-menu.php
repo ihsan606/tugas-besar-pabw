@@ -31,8 +31,8 @@
           <th class="text-center" width = "80px"><p class="title">Gambar</p></th>
           <th class="text-left" width = "200px"><p class="title">Nama Menu</p></th>
           <th class="text-left"><p class="title">Kategori</p></th>
-          <th class="text-center" width = "80px"><p class="title">Terjual</p></th>
-          <th class="text-center" width = "80px"><p class="title">Rating</p></th>
+          <th class="text-center" width = "80px"><p class="title">Harga</p></th>
+          <th class="text-center" width = "80px"><p class="title">Diskon</p></th>
           <th class="text-center" width = "80px"><p class="title">Stock</p></th>
           <th class="text-center" width = "150px"><p class="title">Action</p></th>
         </tr>
@@ -118,15 +118,3 @@
     </div>
   </div>
 </div>   
-
-<!-- <ol type = "1">
-  <li>Masuk WhatsAp group PPDB MTHQ. Hubungi WA <a href="https://api.whatsapp.com/send?phone=6287749181562&text=Hello%2C%20I%20want%20to%20ask%20about%20this%20product">0877-4918-1462</a></li>
-  <li>Melakukan transfer biaya pendaftaran sebesar Rp200.000 ke BSI (Bank Syariah Indonesia), No. rekening <a href=""> 1057079758</a>, a/n Panitia MTHQ, Kode Bank 451</li>
-  <li>Mengisi Formulir Online Link Pendaftaran <a href="https://gateway.mthq.ponpes.id">https://gateway.mthq.ponpes.id</a> </li>
-</ol>
-
-<ol type = "1">
-  <li>Masuk WhatsAp group PPDB MTHQ dengan menghubungi <br> WA <a href="https://api.whatsapp.com/send?phone=6287749181562&text=Hello%2C%20I%20want%20to%20ask%20about%20this%20product">0877-4918-1462</a></li>
-  <li>Mengisi Formulir Online Link Pendaftaran  <a href="https://gateway.mthq.ponpes.id">https://gateway.mthq.ponpes.id</a> </li>
-  <li>Melengkapi Berkas Persyaratan <a herf = "/berkas">lihat di sini</a></li>
-</ol> -->
