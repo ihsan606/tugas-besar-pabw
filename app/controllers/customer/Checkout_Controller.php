@@ -4,6 +4,7 @@ use Midtrans\Snap;
 use App\models\Order;
 use App\models\Invoice;
 use App\models\Customer;
+use App\models\Menu;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 
@@ -64,6 +65,10 @@ class Checkout_Controller extends Controller
                     'status' =>'dikonfirmasi',
                     'price'=>($menu['menu'][0]->price*(100-$menu['menu'][0]->discount)/100)*$menu['jumlah']
                 ]);
+                $sold = Menu::where('id', $menu['menu']['0']->id)->get()[0]->sold;
+                Menu::where('id', $menu['menu']['0']->id)->update([
+                    'sold' => $sold + $menu['jumlah'],
+                ]);
             }
 
             //hapus keranjang
@@ -105,3 +110,5 @@ class Checkout_Controller extends Controller
 
     }
 }
+
+

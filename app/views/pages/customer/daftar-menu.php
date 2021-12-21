@@ -1,13 +1,5 @@
-<div class="row" align="start">
-  <div class="col">
-    <h2>
-      Daftar
-      <strong>Menu</strong>
-    </h2>
-  </div>
-</div>
 <!-- breadcrumb -->
-<div class="row mt-4">
+<div class="row">
   <div class="col">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -21,13 +13,13 @@
     </nav>
   </div>
 </div>
-<div class="row mt-3">
+<div class="row mt-2">
   <div class="col">
     <form action = "<?=BASEURL;?>/customer/daftar_menu/show", method = "POST">   
       <div class="row justify-content-between">
         <div class="col align-self-center" style="padding-right: 0px;">
           <div class="input-group input-group-lg mb-3">
-            <input name="search" type="text" class="form-control form-control-m" placeholder="Cari Makanan Kesukan Anda..." aria-label="Cari" aria-describedby="basic-addon1"/>
+            <input name="search" type="text" class="form-control border-success" placeholder="Cari Makanan Kesukan Anda..." aria-label="Cari" aria-describedby="basic-addon1"/>
           </div>
         </div>
         <div class="col align-self-center" style="max-width: 70px!important;">
@@ -44,23 +36,49 @@
     <div class="table-responsive">
       <table class="table">
         <thead>
-          <tr>
-            <th class="align-top text-center pt-0 px-0" align="center" style="max-width: auto;">
-              <a class='btn btn-outline-success' href='<?=BASEURL;?>/customer/daftar_menu/sort/termurah'>
+          <tr class="d-flex">
+            <th class="align-top text-left pt-0 px-0" style="width: max-content; min-width: 100%;">
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/semua_menu' style='margin-right:5px;'>
+                <b-icon-cart></b-icon-cart>
+                Semua Menu
+              </a>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/termurah' style='margin-right:5px;'>
                 <b-icon-cart></b-icon-cart>
                 Termurah
               </a>
-            </th>
-            <th class="align-top text-center pt-0 px-0" align="center" width='minimum'>
-              <a class='btn btn-outline-success' href='<?=BASEURL;?>/customer/daftar_menu/sort/termurah'>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/termahal' style='margin-right:5px;'>
                 <b-icon-cart></b-icon-cart>
-                Termurah
+                Termahal
+              </a>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/terbaru' style='margin-right:5px;'>
+                <b-icon-cart></b-icon-cart>
+                Terbaru
+              </a>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/terlaris' style='margin-right:5px;'>
+                <b-icon-cart></b-icon-cart>
+                Terlaris
+              </a>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/rating' style='margin-right:5px;'>
+                <b-icon-cart></b-icon-cart>
+                Rating
+              </a>
+              <a class='btn btn-outline-success px-3 rounded-pill' href='<?=BASEURL;?>/customer/daftar_menu/sort/promo'>
+                <b-icon-cart></b-icon-cart>
+                Promo
               </a>
             </th>
           </tr>
         </thead>
       </table>
     </div>
+  </div>
+</div>
+<div class="row" align="start">
+  <div class="col">
+    <h5>
+      Menampilkan 
+      <strong><?=$data['message']?></strong>
+    </h5>
   </div>
 </div>
 <div class="row row-cols-2 row-cols-sm-4 " align="start">
@@ -72,7 +90,7 @@
     $discount_price = money_format($menu->price*(100-$menu->discount)/100);
     $category_name = $menu->category->name;
     echo "
-      <div class='col mt-3 d-flex'>
+      <div class='col mt-3 d-flex my-2'>
         <div class='card shadow card-product' style = 'border-radius: 7px;'>
           <img src='$url/img/menus/$menu->image' class='card-img-top' alt='...'/ style = 'border-radius: 7px 7px 0px 0px;'>
           <div class='card-body'>

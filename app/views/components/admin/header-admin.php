@@ -29,8 +29,7 @@
   <div class="wrapper">
     <div class="sidebar">
       <!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red"
-    -->
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red" -->
       <div class="sidebar-wrapper">
         <div class="logo">
           <h3 style='margin : 0px 0px 0px 0px; padding : 0px 0px 0px 10px;'>
