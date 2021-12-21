@@ -21,6 +21,10 @@ class Laporan_Pendapatan_Controller extends Controller{
       'pendapatan_bulan_ini' => money_format(Invoice::where('status_pembayaran', 'success')->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->sum('grand_total')),
       'pendapatan_tahun_ini' => money_format(Invoice::where('status_pembayaran', 'success')->whereBetween('created_at', [Carbon::now()->startOfYear(), Carbon::now()->endOfYear()])->sum('grand_total')),
       'pendapatan_perbulan' => $data_perbulan,
+      'pending' => Invoice::where('status_pembayaran', 'pending')->count(),
+      'success' => Invoice::where('status_pembayaran', 'success')->count(),
+      'expired' => Invoice::where('status_pembayaran', 'expired')->count(),
+      'failed' => Invoice::where('status_pembayaran', 'failed')->count(),
     ];
     $this->view('laporan-pendapatan', $data, 'admin');
   }
