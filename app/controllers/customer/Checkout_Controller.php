@@ -50,6 +50,7 @@ class Checkout_Controller extends Controller
             $invoice = Invoice::create([
                 'invoice' => $no_invoice,
                 'customer_id' => $customer->id,
+                'table_id' => $_POST['no_meja'],
                 'grand_total' => $_POST['grand_total'],
                 'status' =>'success',
             ]);

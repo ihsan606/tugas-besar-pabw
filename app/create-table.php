@@ -109,6 +109,16 @@ foreach ($tables as $table){
             endMigrations('carts');
         });
 
+        //tables table
+        Manager::schema()->dropIfExists('tables');
+        Manager::schema()->create('tables', function (Blueprint $table) {
+            start('tables');
+            $table->id();
+            $table->string('table');
+            $table->timestamps();
+            endMigrations('tables');
+        });
+
         //invoices table
         Manager::schema()->dropIfExists('invoices');
         Manager::schema()->create('invoices', function (Blueprint $table) {
@@ -128,16 +138,6 @@ foreach ($tables as $table){
             //relationship table
             $table->foreign('table_id')->references('id')->on('tables');
             endMigrations('invoices');
-        });
-
-        //tables table
-        Manager::schema()->dropIfExists('tables');
-        Manager::schema()->create('tables', function (Blueprint $table) {
-            start('tables');
-            $table->id();
-            $table->string('table');
-            $table->timestamps();
-            endMigrations('tables');
         });
         
         //orders table
