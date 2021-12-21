@@ -11,10 +11,10 @@ class Daftar_Pesanan_Controller extends Controller{
     $data = [
       'title' => 'Daftar Pesanan',
       'invoices' => Invoice::with('orders.menu','orders.table','customer')->get(),
-      'pending' => Invoice::where('status_pembayaran', 'pending')->count(),
-      'success' => Invoice::where('status_pembayaran', 'success')->count(),
-      'expired' => Invoice::where('status_pembayaran', 'expired')->count(),
-      'failed' => Invoice::where('status_pembayaran', 'failed')->count(),
+      'dikonfirmasi' => Invoice::where('status_pesanan', 'dikonfirmasi')->count(),
+      'ditolak' => Invoice::where('status_pesanan', 'ditolak')->count(),
+      'diantar' => Invoice::where('status_pesanan', 'diantar')->count(),
+      'diterima' => Invoice::where('status_pesanan', 'diterima')->count(),
     ];
     $this->view('daftar-pesanan', $data, 'admin');
   }
