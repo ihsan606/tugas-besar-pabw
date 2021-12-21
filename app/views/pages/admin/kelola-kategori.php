@@ -49,11 +49,13 @@
           <?php 
           $categories = $data['categories'];
           $url = BASEURL;
-          foreach($categories as $category){
+         for($i = 0; $i < count($categories); $i++){
+            $category = $categories[$i];
+            $no = $i + 1; 
             echo "
               <tr>
                 <td>
-                  <p class='text-center'>$category->id</p>
+                  <p class='text-center'>$no</p>
                 </td>
                 <td class='text-center'>
                   <img src='$url/img/categories/$category->image' alt='' height = '40px' width = '40px'>

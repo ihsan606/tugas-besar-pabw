@@ -49,11 +49,13 @@
           <?php 
           $admins = $data['admins'];
           $url = BASEURL;
-          foreach($admins as $admin){
+          for($i = 0; $i < count($admins); $i++){
+            $admin = $admins[$i];
+            $no = $i + 1; 
             echo "
               <tr>
                 <td>
-                  <p class='text-center'>$admin->id</p>
+                  <p class='text-center'>$no</p>
                 </td>
                 <td>
                   <p style='padding-left: 8px;'>$admin->name</p>

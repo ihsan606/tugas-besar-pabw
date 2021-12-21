@@ -55,12 +55,14 @@
           <?php 
           $menus = $data['menus'];
           $url = BASEURL;
-          foreach($menus as $menu){
+          for($i = 0; $i < count($menus); $i++){
+            $menu = $menus[$i];
             $category_name = $menu->category->name;
+            $no = $i + 1; 
             echo "
               <tr>
                 <td>
-                  <p class='text-center'>$menu->id</p>
+                  <p class='text-center'>$no</p>
                 </td>
                 <td class='text-center'>
                   <img src='$url/img/menus/$menu->image' alt='' height = '40px' width = '40px'>
