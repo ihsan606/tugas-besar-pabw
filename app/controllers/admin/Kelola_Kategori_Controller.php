@@ -2,6 +2,9 @@
 
 require '../vendor/autoload.php';
 use App\models\Category;
+use App\models\Menu;
+use App\models\Order;
+use App\models\Review;
 use Illuminate\Support\Str;
 
 class Kelola_Kategori_Controller extends Controller{
@@ -127,6 +130,22 @@ class Kelola_Kategori_Controller extends Controller{
     $direktori = 'img/categories/';
     $category = Category::where('id', $id)->get();
     unlink($direktori . $category[0]->image);
+
+    foreach(Menu::where('category_id', $id)->get() as $menus){
+      $orders =  Order::where('menu_id', $menus->id)->get();
+      $reviews = Review::where('menu_id', $menus->id)->get();
+
+      if(count($orders) > 0){
+        Order::where('menu_id', $menus->id)->delete();
+      }
+
+      if(count($reviews) > 0){
+        Review::where('menu_id', $menus->id)->delete();
+      }
+    }
+
+    Menu::where('category_id', $id)->delete();
+
     $category = Category::where('id', $id)->delete();
     if($category){
       header('Location: ' . BASEURL . '/admin/kelola_kategori');

@@ -3,6 +3,8 @@
 require '../vendor/autoload.php';
 use App\models\Menu;
 use App\models\Category;
+use App\models\Review;
+use App\models\Order;
 use Illuminate\Support\Str;
 
 class Kelola_Menu_Controller extends Controller{
@@ -168,6 +170,18 @@ class Kelola_Menu_Controller extends Controller{
     $direktori = 'img/menus/';
     $menu = Menu::where('id', $id)->get();
     unlink($direktori . $menu[0]->image);
+
+    $orders =  Order::where('menu_id', $id)->get();
+    $reviews = Review::where('menu_id', $id)->get();
+
+    if(count($orders) > 0){
+      Order::where('menu_id', $id)->delete();
+    }
+
+    if(count($reviews) > 0){
+      Review::where('menu_id', $id)->delete();
+    }
+
     $menu = Menu::where('id', $id)->delete();
     if($menu){
       header('Location: ' . BASEURL . '/admin/kelola_menu');
