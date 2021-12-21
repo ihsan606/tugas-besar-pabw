@@ -12,4 +12,19 @@ class Laporan_Menu_Controller extends Controller{
     ];
     $this->view('laporan-menu', $data, 'admin');
   }
+
+  public function show()
+  {
+    $search = $_POST['search'];
+
+    if($search){
+      $data = [
+        'title' => 'Laporan Menu',
+        'menus' => Menu::where('title', 'like', '%'.$search.'%')->get(),
+      ];
+      $this->view('laporan-menu', $data, 'admin');
+    }else{
+      header('Location: ' . BASEURL . '/admin/laporan_menu');
+    }
+  }
 }

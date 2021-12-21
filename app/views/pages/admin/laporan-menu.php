@@ -27,7 +27,6 @@
           <th class="text-left"><p class="title">Nama Menu</p></th>
           <th class="text-center" width = "80px"><p class="title">Terjual</p></th>
           <th class="text-center" width = "80px"><p class="title">Rating</p></th>
-          <th class="text-center" width = "120px"><p class="title">Action</p></th>
         </tr>
       </thead>
     </table>
@@ -40,7 +39,6 @@
             <th class="text-left"><p></p></th>
             <th class="text-center" width = "80px"><p></p></th>
             <th class="text-center" width = "80px"><p></p></th>
-            <th class="text-center" width = "120px"><p></p></th>
             </tr>
           <tr>
         </thead>
@@ -68,17 +66,6 @@
                 </td>
                 <td>
                   <p class='title text-center'>$menu->rating</p>
-                </td>
-                <td class='td-actions text-center'>
-                  <button type='button' rel='tooltip' title='' class='btn btn-link bg-success px-1 py-1' data-original-title='Hapus Kategori'>
-                    <a class='text-light' href='$url./admin/kelola_menu/set_stock/$menu->id' style = 'font-size : 16px;'><i class='bi-bag-check text-white' role='img' aria-label='Trash'></i></a>
-                  </button>
-                  <button type='button' rel='tooltip' title='' class='btn btn-link bg-info px-1 py-1' data-original-title='Edit Kategori'>
-                    <a class='text-light' href='$url./admin/kelola_menu/edit_menu/$menu->id' style = 'font-size : 16px;'><i class='bi-pencil text-white' role='img' aria-label='Pencil'></i></a>
-                  </button>
-                  <button type='button' rel='tooltip' title='' class='btn btn-link px-1 py-1' data-original-title='Hapus Kategori' style='background-color: #FF0000;'>
-                    <a class='text-light' href='$url./admin/kelola_menu/destroy/$menu->id' style = 'font-size : 16px;'><i class='bi-trash text-white' role='img' aria-label='Trash'></i></a>
-                  </button>
                 </td>
               </tr>
             ";
