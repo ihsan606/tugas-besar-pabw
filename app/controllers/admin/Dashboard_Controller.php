@@ -2,6 +2,7 @@
 
 require '../vendor/autoload.php';
 use App\models\Invoice;
+use App\models\Menu;
 use Illuminate\Support\Carbon;
 
 class Dashboard_Controller extends Controller{
@@ -23,6 +24,7 @@ class Dashboard_Controller extends Controller{
       'success' => Invoice::where('status_pembayaran', 'success')->count(),
       'expired' => Invoice::where('status_pembayaran', 'expired')->count(),
       'failed' => Invoice::where('status_pembayaran', 'failed')->count(),
+      'menus' => Menu::with('category')->get(),
     ];
     $this->view('dashboard', $data, 'admin');
   }

@@ -78,7 +78,6 @@
 
   <!-- Sweet Alert -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
 
   <?php 
@@ -99,7 +98,7 @@
   // for ($i = 0; $i < count($dataBulanan); $i++) {
   //   $insideData .= $dataBulanan[$i];
   //   $insideData .= ",";
-  // 
+  
   echo"
     <script>
       const ct = document.getElementById('chartMonth').getContext('2d');
@@ -131,7 +130,7 @@
     </script>
     ";
   ?>
-  
+
   <script>
     function alert_warning(message, title, action, location){
       Swal.fire({
@@ -149,7 +148,16 @@
         }
       })
     }
-    
+  </script>
+
+  <!-- <script>
+    $('.accordion-toggle').click(function(){
+    $('.hiddenRow').hide();
+    $(this).next('tr').find('.hiddenRow').show();
+    });
+  </script> -->
+  
+  <script>
     $(document).ready(function() {
       $().ready(function() {
         $sidebar = $('.sidebar');
@@ -257,13 +265,13 @@
       });
     });
   </script>
-  <script>
+  <!-- <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
       demo.initDashboardPageCharts();
 
     });
-  </script>
+  </script> -->
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
     window.TrackJS &&
