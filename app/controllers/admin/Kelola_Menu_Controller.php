@@ -11,7 +11,6 @@ class Kelola_Menu_Controller extends Controller{
   public function index()
   {
     session_start();
-   
     $data = [
       'title' => 'Kelola Menu',
       'menus' => Menu::with('category')->get(),

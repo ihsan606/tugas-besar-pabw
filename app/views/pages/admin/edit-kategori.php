@@ -19,7 +19,7 @@
       </div> 
       <div class="form-group">
         <label for="name" class="form-label">NAMA KATEGORI</label>
-        <input class="form-control" type="text" id = "name" name = "name" placeholder="Masukkan Nama Kategori" value="<?=$data['this_category'][0]->name?>">
+        <input class="form-control" type="text" id = "name" name = "name" placeholder="Masukkan Nama Kategori" value="<?=$data['this_category'][0]->name?>" required> 
       </div>
 
       <button class="btn btn-info mr-1 btn-submit" type="submit"><i class="fa fa-paper-plane text-white mr-2"></i>

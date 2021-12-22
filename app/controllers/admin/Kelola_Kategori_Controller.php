@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 class Kelola_Kategori_Controller extends Controller{
   public function index()
   {
+    session_start();
     $data = [
       'title' => 'Kelola Kategori',
       'categories' => Category::All(),
@@ -68,6 +69,11 @@ class Kelola_Kategori_Controller extends Controller{
             'slug' => Str::slug($name, '-')
           ]);
           if($category){
+            session_start();
+            $_SESSION['alert'] = [
+              'message' => 'data kategori berhasil ditambahkan',
+              'type' => 'success',
+            ];
             header('Location: ' . BASEURL . '/admin/kelola_kategori');
           }
         }else{
@@ -105,6 +111,11 @@ class Kelola_Kategori_Controller extends Controller{
             'slug' => Str::slug($name, '-')
           ]);
           if($category){
+            session_start();
+            $_SESSION['alert'] = [
+              'message' => 'data kategori berhasil diedit',
+              'type' => 'success',
+            ];
             header('Location: ' . BASEURL . '/admin/kelola_kategori');
           }
         }else{
@@ -119,6 +130,11 @@ class Kelola_Kategori_Controller extends Controller{
         'slug' => Str::slug($name, '-')
       ]);
       if($category){
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'data kategori berhasil diedit',
+          'type' => 'success',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_kategori');
       }
     }else{
@@ -148,6 +164,11 @@ class Kelola_Kategori_Controller extends Controller{
 
     $category = Category::where('id', $id)->delete();
     if($category){
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => 'data kategori berhasil dihapus',
+        'type' => 'success',
+      ];
       header('Location: ' . BASEURL . '/admin/kelola_kategori');
     }
   }
