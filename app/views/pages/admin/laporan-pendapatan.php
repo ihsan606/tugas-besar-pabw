@@ -130,3 +130,7 @@
     </div>
   </div>
 </div>
+
+<?php 
+chart_bulanan('chartMonth', $data['pendapatan_perbulan'], 'bar')
+?>
