@@ -131,7 +131,7 @@
     </script>
     ";
   ?>
-  
+
   <script>
     function alert_warning(message, title, action, location){
       Swal.fire({
@@ -149,7 +149,9 @@
         }
       })
     }
-    
+  </script>
+  
+  <script>
     $(document).ready(function() {
       $().ready(function() {
         $sidebar = $('.sidebar');
@@ -257,13 +259,13 @@
       });
     });
   </script>
-  <script>
+  <!-- <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
       demo.initDashboardPageCharts();
 
     });
-  </script>
+  </script> -->
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
     window.TrackJS &&
