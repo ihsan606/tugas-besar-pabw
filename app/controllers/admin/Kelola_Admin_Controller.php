@@ -6,6 +6,7 @@ use App\models\Admin;
 class Kelola_Admin_Controller extends Controller{
   public function index()
   {
+    session_start();
     $data = [
       'title' => 'Kelola Admin',
       'admins' => Admin::All(),
@@ -60,6 +61,11 @@ class Kelola_Admin_Controller extends Controller{
           'password' =>$password
         ]);
         if($admin){
+          session_start();
+          $_SESSION['alert'] = [
+            'message' => 'data admin berhasil ditambahkan',
+            'type' => 'success',
+          ];          
           header('Location: ' . BASEURL . '/admin/kelola_admin');
         }
       }else{
@@ -87,6 +93,11 @@ class Kelola_Admin_Controller extends Controller{
           'password' =>$password
         ]);
         if($admin){
+          session_start();
+          $_SESSION['alert'] = [
+            'message' => 'data admin berhasil diedit',
+            'type' => 'success',
+          ];
           header('Location: ' . BASEURL . '/admin/kelola_admin');
         }
       }else{
@@ -100,6 +111,11 @@ class Kelola_Admin_Controller extends Controller{
   public function destroy($id){
     $admin = Admin::where('id', $id)->delete();
     if($admin){
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => 'data admin berhasil dihapus',
+        'type' => 'success',
+      ];
       header('Location: ' . BASEURL . '/admin/kelola_admin');
     }
   }
