@@ -108,16 +108,16 @@
                   ";
                 }
                   
-                echo"
+                echo <<<TEXT
                   <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Edit Kategori'>
                     <a class='text-light' href='$url/admin/kelola_menu/edit_menu/$menu->id' style = 'font-size : 20px;'><i class='tim-icons icon-pencil text-white'></i></a>
                   </button>
                   <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Hapus Kategori'>
-                    <a class='text-light' href='$url/admin/kelola_menu/destroy/$menu->id' style = 'font-size : 20px;'><i class='tim-icons icon-trash-simple text-white'></i></i></a>
+                    <a onclick="alert_warning('semua data order dan review yang berkaitan dengan menu tersebut akan dihapus secara permanen', 'ANDA YAKIN INGIN MENGHAPUS MENU?', 'HAPUS!', '$url/admin/kelola_menu/destroy/$menu->id')" class='text-light'style = 'font-size : 20px;'><i class='tim-icons icon-trash-simple text-white'></i></i></a>
                   </button>
                 </td>
               </tr>
-            ";
+            TEXT;
           }
           ?>
         </tbody>
@@ -125,3 +125,5 @@
     </div>
   </div>
 </div>   
+
+ <!--   -->

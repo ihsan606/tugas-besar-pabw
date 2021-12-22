@@ -4,7 +4,7 @@ function money_format($str){
   return 'Rp' . number_format($str, '0', '', '.');
 }
 
-function alert_success($message, $type){
+function success_and_error($message, $type){
   if($type == 'success'){
     echo"
       <script>

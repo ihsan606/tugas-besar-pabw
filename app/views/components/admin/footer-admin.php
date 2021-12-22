@@ -82,13 +82,30 @@
 
   <?php 
     if(isset($_SESSION['alert'])){
-      alert_success($_SESSION['alert']['message'], $_SESSION['alert']['type']);
+      success_and_error($_SESSION['alert']['message'], $_SESSION['alert']['type']);
       unset($_SESSION['alert']);
     }
   ?>
-
   <script>
+    function alert_warning(message, title, action, location){
+      Swal.fire({
+        type: 'warning',
+        title: title,
+        text: message,
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'YA, ' + action,
+        cancelButtonText: 'TIDAK',
+      }).then((result) => {
+        if (result.value) {
+          window.location.replace(location);
+        }
+      })
+    }
+    
     $(document).ready(function() {
+      
       $().ready(function() {
         $sidebar = $('.sidebar');
         $navbar = $('.navbar');
