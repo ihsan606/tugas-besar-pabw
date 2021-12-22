@@ -57,8 +57,6 @@
           </ul>
         </div>
       </div>
-    
-
 
   <!--   Core JS Files   -->
   <script src="<?= BASEURL; ?>/assets/js/core/jquery.min.js"></script>
@@ -77,7 +75,6 @@
   <!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="<?= BASEURL; ?>/assets/demo/demo.js"></script>
 
-  
   <script>
     $(document).ready(function() {
       $().ready(function() {
@@ -94,8 +91,6 @@
         window_width = $(window).width();
 
         fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-
-
 
         $('.fixed-plugin a').click(function(event) {
           if ($(this).hasClass('switch-trigger')) {
@@ -175,7 +170,6 @@
 
             white_color = true;
           }
-
 
         });
 
