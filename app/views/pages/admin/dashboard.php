@@ -129,7 +129,7 @@
               <div class="row pb-3">
                 <div class="col align-self-center pr-0">
                   <div class="input-group-prepended ">
-                    <input type="text" class="form-control" name='search' placeholder="cari berdasarkan nama menu">
+                    <input type="text" class="form-control" name='search-laporan-menu' placeholder="cari berdasarkan nama menu">
                   </div>
                 </div>
                 <div class="col-md-auto align-self-center">
@@ -252,7 +252,7 @@
               <div class="row pb-3">
                 <div class="col align-self-center pr-0">
                   <div class="input-group-prepended ">
-                    <input type="text" class="form-control" name='search' placeholder="cari berdasarkan nama menu">
+                    <input type="text" class="form-control" name='search-daftar-pesanan' placeholder="cari berdasarkan nama menu">
                   </div>
                 </div>
                 <div class="col-md-auto align-self-center">
@@ -309,10 +309,10 @@
                 echo <<<TEXT
                                 <td class='td-actions text-center'>
                                     <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Edit Kategori'>
-                                        <a onclick="alert_warning('status pesanan akan diubah menjadi Diantar', 'ANDA YAKIN PESANAN SUDAH SIAP DIANTAR?', 'ANTAR!', '$url/admin/daftar_pesanan/antar_pesanan/$id')" class='text-light' style = 'font-size : 20px;'><i class='fas fa-paper-plane fa-2x text-white'></i></a>
+                                        <a onclick="alert_warning('status pesanan akan diubah menjadi Diantar', 'ANDA YAKIN PESANAN SUDAH SIAP DIANTAR?', 'ANTAR!', '$url/admin/dashboard/antar_pesanan/$id')" class='text-light' style = 'font-size : 20px;'><i class='fas fa-paper-plane fa-2x text-white'></i></a>
                                     </button>
                                     <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Edit Kategori'>
-                                        <a onclick="alert_warning('status pesanan akan diubah menjadi Ditolak', 'ANDA YAKIN INGIN MENOLAK PESANAN?', 'TOLAK!', '$url/admin/daftar_pesanan/tolak_pesanan/$id')" class='text-light' style = 'font-size : 20px;'><i class='tim-icons icon-simple-remove text-white'></i></a>
+                                        <a onclick="alert_warning('status pesanan akan diubah menjadi Ditolak', 'ANDA YAKIN INGIN MENOLAK PESANAN?', 'TOLAK!', '$url/admin/dashboard/tolak_pesanan/$id')" class='text-light' style = 'font-size : 20px;'><i class='tim-icons icon-simple-remove text-white'></i></a>
                                     </button>
                                 </td>
                                 TEXT;

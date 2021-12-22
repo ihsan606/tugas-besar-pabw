@@ -9,6 +9,7 @@ use Illuminate\Support\Carbon;
 class Dashboard_Controller extends Controller{
   public function index()
   { 
+    session_start();
     $data_perbulan = [];
     for($i = 1; $i < 13; $i++){
       array_push($data_perbulan, Invoice::where('status_pembayaran', 'success')->whereMonth('created_at', $i)->sum('grand_total'));
@@ -33,7 +34,7 @@ class Dashboard_Controller extends Controller{
 
   public function show_laporan_menu()
   {
-    $search = $_POST['search'];
+    $search = $_POST['search-laporan-menu'];
 
     if($search){
       $data_perbulan = [];
@@ -63,7 +64,7 @@ class Dashboard_Controller extends Controller{
 
   public function show_daftar_pesanan()
   {
-    $search = $_POST['search'];
+    $search = $_POST['search-daftar-pesanan'];
 
     if($search){
       $data_perbulan = [];
@@ -92,6 +93,36 @@ class Dashboard_Controller extends Controller{
       ];
       $this->view('dashboard', $data, 'admin');
     }else{
+      header('Location: ' . BASEURL . '/admin/dashboard');
+    }
+  }
+
+  public function antar_pesanan($id){
+    $invoice = Invoice::where('id', $id)->update([
+      'status_pesanan' => 'diantar'
+    ]);
+
+    if($invoice){
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => "status pesanan berhasil diubah menjadi Diantar",
+        'type' => 'success',
+      ];
+      header('Location: ' . BASEURL . '/admin/dashboard');
+    }
+  }
+
+  public function tolak_pesanan($id){
+    $invoice = Invoice::where('id', $id)->update([
+      'status_pesanan' => 'ditolak'
+    ]);
+
+    if($invoice){
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => "status pesanan berhasil diubah menjadi Ditolak",
+        'type' => 'success',
+      ];
       header('Location: ' . BASEURL . '/admin/dashboard');
     }
   }
