@@ -1,6 +1,8 @@
 <?php 
 
 require '../vendor/autoload.php';
+
+use App\models\Admin;
 use Illuminate\Database\Capsule\Manager;
 use Illuminate\Database\Schema\Blueprint;
 use App\models\Table;
@@ -89,23 +91,6 @@ foreach ($tables as $table){
             endMigrations('menus');
         });
 
-        //carts table
-        Manager::schema()->dropIfExists('carts');
-        Manager::schema()->create('carts', function (Blueprint $table) {
-            start('carts');
-            $table->id();
-            $table->unsignedBigInteger('menu_id');
-            $table->unsignedBigInteger('customer_id');
-            $table->integer('qty');
-            $table->bigInteger('price');
-            $table->timestamps();
-
-            //relationship menu
-            $table->foreign('menu_id')->references('id')->on('menus');
-            $table->foreign('customer_id')->references('id')->on('customers');
-            endMigrations('carts');
-        });
-
         //tables table
         Manager::schema()->dropIfExists('tables');
         Manager::schema()->create('tables', function (Blueprint $table) {
@@ -186,3 +171,33 @@ for($i = 0; $i < 10; $i++){
         'table' => $i + 1,
     ]);
 }
+
+Admin::create([
+        'name' => 'admin',
+        'email' => 'admin@gmail.com',
+        'password' => 'admin',
+    ]);
+    
+Admin::create([
+        'name' => 'eko',
+        'email' => 'eko@gmail.com',
+        'password' => 'eko',
+    ]);
+
+Admin::create([
+        'name' => 'budi',
+        'email' => 'budi@gmail.com',
+        'password' => 'budi',
+    ]);
+
+Admin::create([
+        'name' => 'joko',
+        'email' => 'joko@gmail.com',
+        'password' => 'joko',
+    ]);
+
+Admin::create([
+        'name' => 'edi',
+        'email' => 'edi@gmail.com',
+        'password' => 'edi',
+    ]);

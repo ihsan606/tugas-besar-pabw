@@ -2,11 +2,15 @@
 
 require '../vendor/autoload.php';
 use App\models\Category;
+use App\models\Menu;
+use App\models\Order;
+use App\models\Review;
 use Illuminate\Support\Str;
 
 class Kelola_Kategori_Controller extends Controller{
   public function index()
   {
+    session_start();
     $data = [
       'title' => 'Kelola Kategori',
       'categories' => Category::All(),
@@ -16,12 +20,14 @@ class Kelola_Kategori_Controller extends Controller{
 
   public function tambah_kategori()
   {
+    session_start();
     $data = ['title' => 'Tambah Kategori',];
     $this->view('tambah-kategori', $data, 'admin');
   }
 
   public function edit_kategori($id)
   {
+    session_start();
     $data = [
       'title' => 'Edit Kategori',
       'this_category' => Category::where('id', $id)->get(),
@@ -65,12 +71,27 @@ class Kelola_Kategori_Controller extends Controller{
             'slug' => Str::slug($name, '-')
           ]);
           if($category){
+            session_start();
+            $_SESSION['alert'] = [
+              'message' => 'data kategori berhasil ditambahkan',
+              'type' => 'success',
+            ];
             header('Location: ' . BASEURL . '/admin/kelola_kategori');
           }
         }else{
+          session_start();
+          $_SESSION['alert'] = [
+            'message' => 'ukuran file gambar tidak boleh lebih dari 2MB',
+            'type' => 'error',
+          ];
           header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
         }
       }else{
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'format file gambar harus .jpg, .png, atau .jpeg',
+          'type' => 'error',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
       }
     }else{
@@ -102,12 +123,27 @@ class Kelola_Kategori_Controller extends Controller{
             'slug' => Str::slug($name, '-')
           ]);
           if($category){
+            session_start();
+            $_SESSION['alert'] = [
+              'message' => 'data kategori berhasil diedit',
+              'type' => 'success',
+            ];
             header('Location: ' . BASEURL . '/admin/kelola_kategori');
           }
         }else{
+          session_start();
+          $_SESSION['alert'] = [
+            'message' => 'ukuran file gambar tidak boleh lebih dari 2MB',
+            'type' => 'error',
+          ];
           header('Location: ' . BASEURL . '/admin/kelola_kategori/edit_kategori/' . $id);
         }
       }else{
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'format file gambar harus .jpg, .png, atau .jpeg',
+          'type' => 'error',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_kategori/edit_kategori/' . $id);
       }
     }else if($name != null){
@@ -116,6 +152,11 @@ class Kelola_Kategori_Controller extends Controller{
         'slug' => Str::slug($name, '-')
       ]);
       if($category){
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'data kategori berhasil diedit',
+          'type' => 'success',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_kategori');
       }
     }else{
@@ -127,8 +168,29 @@ class Kelola_Kategori_Controller extends Controller{
     $direktori = 'img/categories/';
     $category = Category::where('id', $id)->get();
     unlink($direktori . $category[0]->image);
+
+    foreach(Menu::where('category_id', $id)->get() as $menus){
+      $orders =  Order::where('menu_id', $menus->id)->get();
+      $reviews = Review::where('menu_id', $menus->id)->get();
+
+      if(count($orders) > 0){
+        Order::where('menu_id', $menus->id)->delete();
+      }
+
+      if(count($reviews) > 0){
+        Review::where('menu_id', $menus->id)->delete();
+      }
+    }
+
+    Menu::where('category_id', $id)->delete();
+
     $category = Category::where('id', $id)->delete();
     if($category){
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => 'data kategori berhasil dihapus',
+        'type' => 'success',
+      ];
       header('Location: ' . BASEURL . '/admin/kelola_kategori');
     }
   }

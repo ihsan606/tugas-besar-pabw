@@ -6,6 +6,7 @@ use App\models\Admin;
 class Kelola_Admin_Controller extends Controller{
   public function index()
   {
+    session_start();
     $data = [
       'title' => 'Kelola Admin',
       'admins' => Admin::All(),
@@ -15,12 +16,14 @@ class Kelola_Admin_Controller extends Controller{
 
   public function tambah_admin()
   {
+    session_start();
     $data = ['title' => 'Tambah Admin',];
     $this->view('tambah-admin', $data, 'admin');
   }
 
   public function edit_admin($id)
   {
+    session_start();
     $data = [
       'title' => 'Edit Admin',
       'this_admin' => Admin::where('id', $id)->get(),
@@ -60,9 +63,19 @@ class Kelola_Admin_Controller extends Controller{
           'password' =>$password
         ]);
         if($admin){
+          session_start();
+          $_SESSION['alert'] = [
+            'message' => 'data admin berhasil ditambahkan',
+            'type' => 'success',
+          ];          
           header('Location: ' . BASEURL . '/admin/kelola_admin');
         }
       }else{
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'password dan konfirmasi password harus sama',
+          'type' => 'error',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_admin/tambah_admin');
       }   
     }else{
@@ -87,19 +100,34 @@ class Kelola_Admin_Controller extends Controller{
           'password' =>$password
         ]);
         if($admin){
+          session_start();
+          $_SESSION['alert'] = [
+            'message' => 'data admin berhasil diedit',
+            'type' => 'success',
+          ];
           header('Location: ' . BASEURL . '/admin/kelola_admin');
         }
       }else{
-        header('Location: ' . BASEURL . '/admin/kelola_admin/tambah_admin');
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'password dan konfirmasi password harus sama',
+          'type' => 'error',
+        ];
+        header('Location: ' . BASEURL . '/admin/kelola_admin/edit_admin/' . $id);
       }   
     }else{
-      header('Location: ' . BASEURL . '/admin/kelola_admin/tambah_admin');
+      header('Location: ' . BASEURL . '/admin/kelola_admin/edit_admin/' . $id);
     } 
   }
 
   public function destroy($id){
     $admin = Admin::where('id', $id)->delete();
     if($admin){
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => 'data admin berhasil dihapus',
+        'type' => 'success',
+      ];
       header('Location: ' . BASEURL . '/admin/kelola_admin');
     }
   }

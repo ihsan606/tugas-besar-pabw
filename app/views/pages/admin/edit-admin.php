@@ -7,7 +7,7 @@
       <div class="row pb-3">
         <div class="col-md-auto align-self-center">
           <div class="input-group-apend">
-            <a href = "<?= BASEURL ?>/admin/kelola_admin" class="btn btn-sm p-2 text-white"><i class="bi-arrow-left-circle-fill mr-2 text-white"></i>KEMBALI</a>
+            <a href = "<?= BASEURL ?>/admin/kelola_admin" class="btn btn-sm p-2 text-white"><i class="fas fa-arrow-circle-left mr-2 text-white"></i>KEMBALI</a>
           </div>
         </div>
       </div>
@@ -17,13 +17,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>NAMA</label>
-            <input type="text" name="name" placeholder="Masukkan Nama" class="form-control" value="<?=$data['this_admin'][0]->name?>"> 
+            <input type="text" name="name" placeholder="Masukkan Nama" class="form-control" value="<?=$data['this_admin'][0]->name?>" required> 
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>PASSWORD</label>
-            <input type="password" name="password" placeholder="Masukkan Password" class="form-control" value="<?=$data['this_admin'][0]->password?>">
+            <input type="password" name="password" placeholder="Masukkan Password" class="form-control" value="<?=$data['this_admin'][0]->password?>" required>
           </div>
         </div>
       </div>
@@ -32,13 +32,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>EMAIL</label>
-            <input type="email" name="email" placeholder="Masukkan Email" class="form-control" value="<?=$data['this_admin'][0]->email?>">
+            <input type="email" name="email" placeholder="Masukkan Email" class="form-control" value="<?=$data['this_admin'][0]->email?>" required>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>KONFIRMASI PASSWORD</label>
-            <input type="password" name="confirm_password" placeholder="Masukkan Konfirmasi Password" class="form-control" value="<?=$data['this_admin'][0]->password?>">
+            <input type="password" name="confirm_password" placeholder="Masukkan Konfirmasi Password" class="form-control" value="<?=$data['this_admin'][0]->password?>" required>
           </div>
         </div>
       </div>

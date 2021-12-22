@@ -31,10 +31,11 @@
           <th class="text-center" width = "80px"><p class="title">Gambar</p></th>
           <th class="text-left" width = "200px"><p class="title">Nama Menu</p></th>
           <th class="text-left"><p class="title">Kategori</p></th>
-          <th class="text-center" width = "80px"><p class="title">Terjual</p></th>
-          <th class="text-center" width = "80px"><p class="title">Rating</p></th>
+          <th class="text-center" width = "100px"><p class="title">Harga</p></th>
+          <th class="text-center" width = "100px"><p class="title">Diskon</p></th>
+          <th class="text-center" width = "100px"><p class="title">Harga Akhir</p></th>
           <th class="text-center" width = "80px"><p class="title">Stock</p></th>
-          <th class="text-center" width = "120px"><p class="title">Action</p></th>
+          <th class="text-center" width = "150px"><p class="title">Action</p></th>
         </tr>
       </thead>
     </table>
@@ -46,10 +47,11 @@
             <th class="text-center" width = "80px"><p></p></th>
             <th class="text-left"  width = "200px"><p></p></th>
             <th class="text-left"><p></p></th>
+            <th class="text-center" width = "100px"><p></p></th>
+            <th class="text-center" width = "100px"><p></p></th>
+            <th class="text-center" width = "100px"><p></p></th>
             <th class="text-center" width = "80px"><p></p></th>
-            <th class="text-center" width = "80px"><p></p></th>
-            <th class="text-center" width = "80px"><p></p></th>
-            <th class="text-center" width = "120px"><p></p></th>
+            <th class="text-center" width = "150px"><p></p></th>
           <tr>
         </thead>
         <tbody>
@@ -61,6 +63,8 @@
             $menu = $menus[$i];
             $category_name = $menu->category->name;
             $no = $i + 1; 
+            $price = money_format($menu->price);
+            $final_price = money_format($menu->final_price);
             echo "
               <tr>
                 <td>
@@ -76,10 +80,13 @@
                   <p>$category_name</p>
                 </td>
                 <td>
-                  <p class='text-center'>$menu->sold</p>
+                  <p class='text-center'>$price</p>
                 </td>
                 <td>
-                  <p class='text-center'>$menu->rating</p>
+                  <p class='text-center'>$menu->discount%</p>
+                </td>
+                <td>
+                  <p class='text-center'>$final_price</p>
                 </td>
                 <td>
                   <p class='text-center'>$menu->stock</p>
@@ -89,28 +96,28 @@
 
                 if($menu->stock == 'tersedia'){
                   echo"
-                    <button type='button' rel='tooltip' title='' class='btn btn-link bg-success px-1 py-1' data-original-title='Hapus Kategori'>
-                      <a class='text-light' href='$url/admin/kelola_menu/set_stock/$menu->id' style = 'font-size : 16px;'><i class='bi-bag-check text-white' role='img' aria-label='Trash'></i></a>
+                    <button type='button' rel='tooltip' title='' class='btn btn-icon btn-success' data-original-title='Hapus Kategori'>
+                      <a class='text-light' href='$url/admin/kelola_menu/set_stock/$menu->id' style = 'font-size : 18px;'><i class='bi-bag-check text-white' role='img' aria-label='Trash'></i></a>
                     </button>
                   ";
                 }else{
                   echo"
-                    <button type='button' rel='tooltip' title='' class='btn btn-link px-1 py-1' data-original-title='Hapus Kategori' style='background-color: #FF0000;'>
-                      <a class='text-light' href='$url/admin/kelola_menu/set_stock/$menu->id' style = 'font-size : 16px;'><i class='bi-bag-check text-white' role='img' aria-label='Trash'></i></a>
+                    <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Hapus Kategori'>
+                      <a class='text-light' href='$url/admin/kelola_menu/set_stock/$menu->id' style = 'font-size : 18px;'><i class='bi-bag-check text-white' role='img' aria-label='Trash'></i></a>
                     </button>
                   ";
                 }
                   
-                echo"
-                  <button type='button' rel='tooltip' title='' class='btn btn-link bg-info px-1 py-1' data-original-title='Edit Kategori'>
-                    <a class='text-light' href='$url/admin/kelola_menu/edit_menu/$menu->id' style = 'font-size : 16px;'><i class='bi-pencil text-white' role='img' aria-label='Pencil'></i></a>
+                echo <<<TEXT
+                  <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Edit Kategori'>
+                    <a class='text-light' href='$url/admin/kelola_menu/edit_menu/$menu->id' style = 'font-size : 20px;'><i class='tim-icons icon-pencil text-white'></i></a>
                   </button>
-                  <button type='button' rel='tooltip' title='' class='btn btn-link px-1 py-1' data-original-title='Hapus Kategori' style='background-color: #FF0000;'>
-                    <a class='text-light' href='$url/admin/kelola_menu/destroy/$menu->id' style = 'font-size : 16px;'><i class='bi-trash text-white' role='img' aria-label='Trash'></i></a>
+                  <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Hapus Kategori'>
+                    <a onclick="alert_warning('semua data order dan review yang berkaitan dengan menu tersebut akan dihapus secara permanen', 'ANDA YAKIN INGIN MENGHAPUS MENU?', 'HAPUS!', '$url/admin/kelola_menu/destroy/$menu->id')" class='text-light'style = 'font-size : 20px;'><i class='tim-icons icon-trash-simple text-white'></i></i></a>
                   </button>
                 </td>
               </tr>
-            ";
+            TEXT;
           }
           ?>
         </tbody>
@@ -119,14 +126,4 @@
   </div>
 </div>   
 
-<!-- <ol type = "1">
-  <li>Masuk WhatsAp group PPDB MTHQ. Hubungi WA <a href="https://api.whatsapp.com/send?phone=6287749181562&text=Hello%2C%20I%20want%20to%20ask%20about%20this%20product">0877-4918-1462</a></li>
-  <li>Melakukan transfer biaya pendaftaran sebesar Rp200.000 ke BSI (Bank Syariah Indonesia), No. rekening <a href=""> 1057079758</a>, a/n Panitia MTHQ, Kode Bank 451</li>
-  <li>Mengisi Formulir Online Link Pendaftaran <a href="https://gateway.mthq.ponpes.id">https://gateway.mthq.ponpes.id</a> </li>
-</ol>
-
-<ol type = "1">
-  <li>Masuk WhatsAp group PPDB MTHQ dengan menghubungi <br> WA <a href="https://api.whatsapp.com/send?phone=6287749181562&text=Hello%2C%20I%20want%20to%20ask%20about%20this%20product">0877-4918-1462</a></li>
-  <li>Mengisi Formulir Online Link Pendaftaran  <a href="https://gateway.mthq.ponpes.id">https://gateway.mthq.ponpes.id</a> </li>
-  <li>Melengkapi Berkas Persyaratan <a herf = "/berkas">lihat di sini</a></li>
-</ol> -->
+ <!--   -->

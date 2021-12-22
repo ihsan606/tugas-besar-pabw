@@ -3,11 +3,14 @@
 require '../vendor/autoload.php';
 use App\models\Menu;
 use App\models\Category;
+use App\models\Review;
+use App\models\Order;
 use Illuminate\Support\Str;
 
 class Kelola_Menu_Controller extends Controller{
   public function index()
   {
+    session_start();
     $data = [
       'title' => 'Kelola Menu',
       'menus' => Menu::with('category')->get(),
@@ -17,6 +20,7 @@ class Kelola_Menu_Controller extends Controller{
 
   public function tambah_menu()
   {
+    session_start();
     $data = [
       'title' => 'Tambah Menu',
       'categories' => Category::All(),
@@ -26,6 +30,7 @@ class Kelola_Menu_Controller extends Controller{
 
   public function edit_menu($id)
   {
+    session_start();
     $data = [
       'title' => 'Edit Menu',
       'this_menu' => Menu::with('category')->where('id', $id)->get(),
@@ -86,12 +91,27 @@ class Kelola_Menu_Controller extends Controller{
             'final_price' => $final_price,
           ]);
           if($menu){
+            session_start();
+            $_SESSION['alert'] = [
+              'message' => 'data menu berhasil ditambahkan',
+              'type' => 'success',
+            ];
             header('Location: ' . BASEURL . '/admin/kelola_menu');
           }
         }else{
+          session_start();
+          $_SESSION['alert'] = [
+            'message' => 'ukuran file gambar tidak boleh lebih dari 2MB',
+            'type' => 'error',
+          ];
           header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
         }
       }else{
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'format file gambar harus .jpg, .png, atau .jpeg',
+          'type' => 'error',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
       }
     }else{
@@ -138,12 +158,27 @@ class Kelola_Menu_Controller extends Controller{
             'final_price' => $final_price,
           ]);
           if($menu){
+            session_start();
+            $_SESSION['alert'] = [
+              'message' => 'data menu berhasil diedit',
+              'type' => 'success',
+            ];
             header('Location: ' . BASEURL . '/admin/kelola_menu');
           }
         }else{
+          session_start();
+          $_SESSION['alert'] = [
+            'message' => 'ukuran file gambar tidak boleh lebih dari 2MB',
+            'type' => 'error',
+          ];
           header('Location: ' . BASEURL . '/admin/kelola_menu/edit_menu/' . $id);
         }
       }else{
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'format file gambar harus .jpg, .png, atau .jpeg',
+          'type' => 'error',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_menu/edit_menu/' . $id);
       }
     }else if($name != null && $price != null && $category_id != null && $description !== null && $discount != null){
@@ -157,6 +192,11 @@ class Kelola_Menu_Controller extends Controller{
         'final_price' => $final_price,
       ]);
       if($menu){
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'data menu berhasil diedit',
+          'type' => 'success',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_menu');
       }
     }else{
@@ -168,8 +208,25 @@ class Kelola_Menu_Controller extends Controller{
     $direktori = 'img/menus/';
     $menu = Menu::where('id', $id)->get();
     unlink($direktori . $menu[0]->image);
+
+    $orders =  Order::where('menu_id', $id)->get();
+    $reviews = Review::where('menu_id', $id)->get();
+
+    if(count($orders) > 0){
+      Order::where('menu_id', $id)->delete();
+    }
+
+    if(count($reviews) > 0){
+      Review::where('menu_id', $id)->delete();
+    }
+
     $menu = Menu::where('id', $id)->delete();
     if($menu){
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => 'data menu berhasil dihapus',
+        'type' => 'success',
+      ];
       header('Location: ' . BASEURL . '/admin/kelola_menu');
     }
   }
@@ -186,6 +243,11 @@ class Kelola_Menu_Controller extends Controller{
     }
 
     if($menu){
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => 'stok menu berhasil diubah',
+        'type' => 'success',
+      ];
       header('Location: ' . BASEURL . '/admin/kelola_menu');
     }
   }

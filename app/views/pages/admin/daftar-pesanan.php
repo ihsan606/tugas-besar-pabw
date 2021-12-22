@@ -32,7 +32,7 @@
         <div class="card border-0 rounded shadow-sm overflow-hidden">
             <div class="card-body p-0 d-flex align-items-center">
                 <div class="bg-info py-4 px-4 mfe-3" data="blue">
-                    <i class="fas fa-circle-notch fa-spin fa-2x"></i>
+                    <i class="fas fa-paper-plane fa-2x"></i>
                 </div>
                 <div class="pl-2" style="min-width: 100px;">
                     <div class="text-value text-info font-weight-bold"><?= $data['diantar'] ?> PESANAN</div>
@@ -46,7 +46,7 @@
         <div class="card border-0 rounded shadow-sm overflow-hidden">
             <div class="card-body p-0 d-flex align-items-center">
                 <div class="bg-success py-4 px-4 mfe-3">
-                    <i class="fas fa-check-circle fa-2x"></i>
+                    <i class="fas fa-check-square fa-2x"></i>
                 </div>
                 <div class="pl-2" style="min-width: 100px;">
                     <div class="text-value text-success font-weight-bold"><?= $data['diterima'] ?> PESANAN</div>
@@ -63,23 +63,24 @@
     <table class="table table-esponsive" style="border-collapse:collapse;">
         <thead class="thead-light">
             <tr>
-                <th class="text-center" width = "30px">No</th>
-                <th class="text-left" width = "300px">Name</th>
-                <th class="text-center" width = "70px">No meja</th>
+                <th class="text-center" width="30px">No</th>
+                <th class="text-left" width="300px">Name</th>
+                <th class="text-center" width="70px">No meja</th>
                 <th class="text-left"></th>
-                <th class="text-center" width = "100px">Daftar Menu</th>
-                <th class="text-center" width = "120px">Actions</th>
+                <th class="text-center" width="100px">Daftar Menu</th>
+                <th class="text-center" width="120px">Actions</th>
             </tr>
         </thead>
         <tbody class="table-striped">
-            <?php 
-            for($i = 0; $i < count($data['invoices']); $i++){
+            <?php
+            for ($i = 0; $i < count($data['invoices']); $i++) {
                 $url = BASEURL;
-                $no = $i + 1;
+                $id = $data['invoices'][$i]->id;
                 $orders = $data['invoices'][$i]->orders;
                 $name = $data['invoices'][$i]->customer->name;
                 $no_table =  $data['invoices'][$i]->table_id;
-                echo"
+                $no = $i + 1;
+                echo "
                 <tr>
 
                     <td class='text-center'>$no</td>
@@ -87,18 +88,20 @@
                     <td class='text-center'>$no_table</td>
                     <td class=''></td>
                     <td class='text-center'><h2 style='margin-bottom: 0;'><i class='bi-caret-down-fill text-mute accordion-toggle' data-toggle='collapse' data-target='#demo$no'></i></h2></td>
+                    ";
 
+                    echo <<<TEXT
                     <td class='td-actions text-center'>
-                        <a href='$url/daftar_pesanan/' type='button' rel='tooltip' class='btn btn-info btn-sm btn-icon'>
-                            <i class='tim-icons icon-single-02'></i>
-                        </a'>
-                        <a href='$url/daftar_pesanan/' type='button' rel='tooltip' class='btn btn-success btn-sm btn-icon'>
-                            <i class='tim-icons icon-settings'></i>
-                        </a'>
-                        <a href='$url/daftar_pesanan/' type='button' rel='tooltip' class='btn btn-danger btn-sm btn-icon'>
-                            <i class='tim-icons icon-simple-remove'></i>
-                        </a'>
+                        <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Edit Kategori'>
+                            <a onclick="alert_warning('status pesanan akan diubah menjadi Diantar', 'ANDA YAKIN PESANAN SUDAH SIAP DIANTAR?', 'ANTAR!', '$url/admin/daftar_pesanan/antar_pesanan/$id')" class='text-light' style = 'font-size : 20px;'><i class='fas fa-paper-plane fa-2x text-white'></i></a>
+                        </button>
+                        <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Edit Kategori'>
+                            <a onclick="alert_warning('status pesanan akan diubah menjadi Ditolak', 'ANDA YAKIN INGIN MENOLAK PESANAN?', 'TOLAK!', '$url/admin/daftar_pesanan/tolak_pesanan/$id')" class='text-light' style = 'font-size : 20px;'><i class='tim-icons icon-simple-remove text-white'></i></a>
+                        </button>
                     </td>
+                    TEXT;
+
+                    echo"
                 </tr>
                 <tr>
                     <td colspan='12' class='py-0 hiddenRow'>
@@ -116,13 +119,13 @@
                                 <tbody>
                                 ";
 
-                                for($j = 0; $j < count($orders); $j++){
-                                    $order = $orders[$j];
-                                    $menu = $order->menu->title;
-                                    $qty= $order->qty;
-                                    $description = $order->description;
-                                    $no = $j + 1;
-                                    echo"
+                for ($j = 0; $j < count($orders); $j++) {
+                    $order = $orders[$j];
+                    $menu = $order->menu->title;
+                    $qty = $order->qty;
+                    $description = $order->description;
+                    $no = $j + 1;
+                    echo "
                                         <tr>
                                             <td class='text-center'>$no</td>
                                             <td class='text-left'>$menu</td>
@@ -130,19 +133,19 @@
                                             <td class='text-left'>$description</td>
                                         </tr>
                                     ";
-                                }
+                }
 
-                                echo"
+                echo "
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </td>
             </tr>
-            ";        
+            ";
             }
             ?>
-            
+
         </tbody>
     </table>
 

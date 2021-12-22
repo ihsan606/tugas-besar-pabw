@@ -30,35 +30,34 @@
         </div>
       </footer>
     </div>  
+  </div>  
       
-      <div class="fixed-plugin" style="top : 89px;">
-        <div class="dropdown show-dropdown">
-          <a href="#" data-toggle="dropdown">
-            <i class="fa fa-cog fa-2x"> </i>
+  <div class="fixed-plugin" style="top : 89px;">
+    <div class="dropdown show-dropdown">
+      <a href="#" data-toggle="dropdown">
+        <i class="fa fa-cog fa-2x"> </i>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="header-title"> Sidebar Background</li>
+        <li class="adjustments-line">
+          <a href="javascript:void(0)" class="switch-trigger background-color">
+            <div class="badge-colors text-center">
+              <span class="badge filter badge-info active" data-color="blue"></span>
+              <span class="badge filter badge-primary" data-color="primary"></span>
+              <span class="badge filter badge-success" data-color="green"></span>
+            </div>
+            <div class="clearfix"></div>
           </a>
-          <ul class="dropdown-menu">
-            <li class="header-title"> Sidebar Background</li>
-            <li class="adjustments-line">
-              <a href="javascript:void(0)" class="switch-trigger background-color">
-                <div class="badge-colors text-center">
-                  <span class="badge filter badge-primary active" data-color="blue"></span>
-                  <span class="badge filter badge-info" data-color="primary"></span>
-                  <span class="badge filter badge-success" data-color="green"></span>
-                </div>
-                <div class="clearfix"></div>
-              </a>
-            </li>
-            <li class="adjustments-line text-center color-change" style="margin-bottom : 18px;">
-              <span class="color-label">LIGHT MODE</span>
-              <span class="badge light-badge mr-2"></span>
-              <span class="badge dark-badge ml-2"></span>
-              <span class="color-label">DARK MODE</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    
-
+        </li>
+        <li class="adjustments-line text-center color-change" style="margin-bottom : 18px;">
+          <span class="color-label">LIGHT MODE</span>
+          <span class="badge light-badge mr-2"></span>
+          <span class="badge dark-badge ml-2"></span>
+          <span class="color-label">DARK MODE</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <!--   Core JS Files   -->
   <script src="<?= BASEURL; ?>/assets/js/core/jquery.min.js"></script>
@@ -77,8 +76,80 @@
   <!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="<?= BASEURL; ?>/assets/demo/demo.js"></script>
 
+  <!-- Sweet Alert -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
+
+  <?php 
+  if(isset($_SESSION['alert'])){
+    success_and_error($_SESSION['alert']['message'], $_SESSION['alert']['type']);
+    unset($_SESSION['alert']);
+  } 
+  ?>
+
+  <!-- Chart JS --> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js"></script>
+
+  <?php 
+  // memasukkan string ke dalam script chart
+  $dataBulanan = $data['pendapatan_perbulan'];
+  // $data=[]
+  // $insideData = "";
+  // for ($i = 0; $i < count($dataBulanan); $i++) {
+  //   $insideData .= $dataBulanan[$i];
+  //   $insideData .= ",";
+  // 
+  echo"
+    <script>
+      const ct = document.getElementById('chartMonth').getContext('2d');
+      const chartMonth = new Chart(ct, {
+        type: 'bar',
+        data: {
+          labels: ['JAN', 'FEB', 'MAR', 'APR', 'MEI', 'JUN', 'JUL', 'AGU', 'SEP', 'OKT', 'NOV', 'DES'],
+          datasets: [{
+            label: 'Rp',
+            data: [400000,300000,500000,600000,700000,500000,400000,800000,900000,600000,700000,$dataBulanan[11]],
+            backgroundColor:'transparent',
+            borderColor:'#11cdef',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+    ";
+  ?>
   
   <script>
+    function alert_warning(message, title, action, location){
+      Swal.fire({
+        type: 'warning',
+        title: title,
+        text: message,
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#3085d6',
+        confirmButtonText: 'YA, ' + action,
+        cancelButtonText: 'TIDAK',
+      }).then((result) => {
+        if (result.value) {
+          window.location.replace(location);
+        }
+      })
+    }
+    
     $(document).ready(function() {
       $().ready(function() {
         $sidebar = $('.sidebar');
@@ -94,8 +165,6 @@
         window_width = $(window).width();
 
         fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-
-
 
         $('.fixed-plugin a').click(function(event) {
           if ($(this).hasClass('switch-trigger')) {
@@ -176,7 +245,6 @@
             white_color = true;
           }
 
-
         });
 
         $('.light-badge').click(function() {
@@ -187,6 +255,13 @@
           $('body').removeClass('white-content');
         });
       });
+    });
+  </script>
+  <script>
+    $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
+      demo.initDashboardPageCharts();
+
     });
   </script>
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
