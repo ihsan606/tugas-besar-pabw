@@ -171,6 +171,11 @@ class Kelola_Menu_Controller extends Controller{
         'final_price' => $final_price,
       ]);
       if($menu){
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'berhasil mengedit menu',
+          'type' => 'success',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_menu');
       }
     }else{
