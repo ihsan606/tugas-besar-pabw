@@ -86,7 +86,7 @@
   if(isset($_SESSION['alert'])){
     success_and_error($_SESSION['alert']['message'], $_SESSION['alert']['type']);
     unset($_SESSION['alert']);
-    }
+  }
 
 
     // memasukkan string ke dalam script chart
