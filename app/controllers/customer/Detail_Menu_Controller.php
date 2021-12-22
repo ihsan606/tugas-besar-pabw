@@ -44,7 +44,11 @@ class Detail_Menu_Controller extends Controller{
         ]
       );
     }
-    
+
+    $_SESSION['alert'] = [
+      'message' => 'menu berhasil dimasukkan ke keranjang',
+      'type' => 'success',
+    ];
     header('Location: ' . BASEURL . '/customer/keranjang');
   }
 }

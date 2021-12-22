@@ -46,6 +46,11 @@ class Keranjang_Controller extends Controller{
         break;
       }
     }
+
+    $_SESSION['alert'] = [
+      'message' => 'data keranjang berhasil diedit',
+      'type' => 'success',
+    ];
     header('location:'. BASEURL. '/customer/keranjang');
   }
 
@@ -57,6 +62,11 @@ class Keranjang_Controller extends Controller{
         break;
       }
     }
+
+    $_SESSION['alert'] = [
+      'message' => 'data keranjang berhasil dihapus',
+      'type' => 'success',
+    ];
     header('location:'. BASEURL. '/customer/keranjang');
   }
 }

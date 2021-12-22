@@ -62,16 +62,19 @@
               <td>$jumlah</td>
               <td>$price</td>
               <td>$total</td>
-              <td class='td-actions text-center'>
-                <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info px-2 py-1' data-original-title='Edit Kategori'>
-                  <a class='text-dark' href='$url./customer/keranjang/edit_keranjang/$id' style = 'font-size : 22px;'><i class='tim-icons icon-pencil text-white'></i></a>
-                </button>
-                <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger px-2 py-1' data-original-title='Hapus Kategori'>
-                  <a class='text-dark' href='$url./customer/keranjang/destroy/$id' style = 'font-size : 22px;'><i class='tim-icons icon-trash-simple text-white'></i></a>
-                </button>
-              </td>
-            </tr>
-            ";
+              ";
+
+              echo <<<TEXT
+                <td class='td-actions text-center'>
+                  <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info px-2 py-1' data-original-title='Edit Kategori'>
+                    <a class='text-dark' href='$url./customer/keranjang/edit_keranjang/$id' style = 'font-size : 22px;'><i class='tim-icons icon-pencil text-white'></i></a>
+                  </button>
+                  <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger px-2 py-1' data-original-title='Hapus Kategori'>
+                    <a onclick="alert_warning('data keranjang akan dihapus secara permanen', 'ANDA YAKIN INGIN MENGHAPUS KERANJANG?', 'HAPUS!', '$url./customer/keranjang/destroy/$id')" class='text-dark' style = 'font-size : 22px;'><i class='tim-icons icon-trash-simple text-white'></i></a>
+                  </button>
+                </td>
+              </tr>
+            TEXT;
           }
           $_SESSION['keranjang']['total_harga'] = $total_harga;
           ?>
