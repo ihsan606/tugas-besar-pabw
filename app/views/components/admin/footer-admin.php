@@ -87,50 +87,6 @@
   } 
   ?>
 
-  <!-- Chart JS --> 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js"></script>
-
-  <?php 
-  // memasukkan string ke dalam script chart
-  $dataBulanan = $data['pendapatan_perbulan'];
-  // $data=[]
-  // $insideData = "";
-  // for ($i = 0; $i < count($dataBulanan); $i++) {
-  //   $insideData .= $dataBulanan[$i];
-  //   $insideData .= ",";
-  
-  echo"
-    <script>
-      const ct = document.getElementById('chartMonth').getContext('2d');
-      const chartMonth = new Chart(ct, {
-        type: 'bar',
-        data: {
-          labels: ['JAN', 'FEB', 'MAR', 'APR', 'MEI', 'JUN', 'JUL', 'AGU', 'SEP', 'OKT', 'NOV', 'DES'],
-          datasets: [{
-            label: 'Rp',
-            data: [400000,300000,500000,600000,700000,500000,400000,800000,900000,600000,700000,$dataBulanan[11]],
-            backgroundColor:'transparent',
-            borderColor:'#11cdef',
-            borderWidth: 2
-          }]
-        },
-        options: {
-          plugins: {
-            legend: {
-              display: false
-            }
-          },
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
-      });
-    </script>
-    ";
-  ?>
-
   <script>
     function alert_warning(message, title, action, location){
       Swal.fire({
