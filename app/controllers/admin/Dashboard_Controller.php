@@ -24,7 +24,8 @@ class Dashboard_Controller extends Controller{
       'success' => Invoice::where('status_pembayaran', 'success')->count(),
       'expired' => Invoice::where('status_pembayaran', 'expired')->count(),
       'failed' => Invoice::where('status_pembayaran', 'failed')->count(),
-      'menus' => Menu::with('category')->get(),
+      'menus' => Menu::with('category')->get(),'invoices' => Invoice::with('orders.menu','orders.table','customer')->where('status_pesanan', 'dikonfirmasi')->get(),
+
     ];
     $this->view('dashboard', $data, 'admin');
   }
