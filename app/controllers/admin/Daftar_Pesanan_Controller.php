@@ -28,7 +28,7 @@ class Daftar_Pesanan_Controller extends Controller{
     if($invoice){
       session_start();
       $_SESSION['alert'] = [
-        'message' => "status pesanan berhasil diubah menjadi 'Diantar'",
+        'message' => "status pesanan berhasil diubah menjadi Diantar",
         'type' => 'success',
       ];
       header('Location: ' . BASEURL . '/admin/daftar_pesanan');
@@ -43,7 +43,7 @@ class Daftar_Pesanan_Controller extends Controller{
     if($invoice){
       session_start();
       $_SESSION['alert'] = [
-        'message' => "status pesanan berhasil diubah menjadi 'Ditolak'",
+        'message' => "status pesanan berhasil diubah menjadi Ditolak",
         'type' => 'success',
       ];
       header('Location: ' . BASEURL . '/admin/daftar_pesanan');
