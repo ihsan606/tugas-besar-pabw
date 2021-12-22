@@ -26,7 +26,7 @@
   
 </head>
 
-<body class="">
+<body>
   <div class="wrapper">
     <div class="sidebar" data="blue">
       <!--
