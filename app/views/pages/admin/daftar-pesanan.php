@@ -88,15 +88,20 @@
                     <td class='text-center'>$no_table</td>
                     <td class=''></td>
                     <td class='text-center'><h2 style='margin-bottom: 0;'><i class='bi-caret-down-fill text-mute accordion-toggle' data-toggle='collapse' data-target='#demo$no'></i></h2></td>
+                    ";
 
+                    echo <<<TEXT
                     <td class='td-actions text-center'>
                         <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Edit Kategori'>
-                            <a class='text-light' href='$url/admin/daftar_pesanan/antar_pesanan/$id' style = 'font-size : 20px;'><i class='fas fa-paper-plane fa-2x text-white'></i></a>
+                            <a onclick="alert_warning('status pesanan akan diubah menjadi Diantar', 'ANDA YAKIN PESANAN SUDAH SIAP DIANTAR?', 'ANTAR!', '$url/admin/daftar_pesanan/antar_pesanan/$id')" class='text-light' style = 'font-size : 20px;'><i class='fas fa-paper-plane fa-2x text-white'></i></a>
                         </button>
                         <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Edit Kategori'>
-                            <a class='text-light' href='$url/admin/daftar_pesanan/tolak_pesanan/$id' style = 'font-size : 20px;'><i class='tim-icons icon-simple-remove text-white'></i></a>
+                            <a onclick="alert_warning('status pesanan akan diubah menjadi Ditolak', 'ANDA YAKIN INGIN MENOLAK PESANAN?', 'TOLAK!', '$url/admin/daftar_pesanan/tolak_pesanan/$id')" class='text-light' style = 'font-size : 20px;'><i class='tim-icons icon-simple-remove text-white'></i></a>
                         </button>
                     </td>
+                    TEXT;
+
+                    echo"
                 </tr>
                 <tr>
                     <td colspan='12' class='py-0 hiddenRow'>
