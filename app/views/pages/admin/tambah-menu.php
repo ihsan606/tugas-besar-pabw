@@ -17,13 +17,13 @@
         <div class="col-md-6">
           <div class="">
             <label>GAMBAR</label>
-            <input type="file" name = "image" class="form-control form-control-md" >
+            <input type="file" name = "image" class="form-control form-control-md" required>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>KATEGORI</label>
-            <select class="form-control" name="category_id">
+            <select class="form-control" name="category_id" required>
               <option value="" style="background-color: #344675;">-- select category --</option>
               <?php 
               $categories = $data['categories'];
@@ -40,13 +40,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>NAMA MENU</label>
-            <input type="text" name="name" placeholder="Masukkan Nama Menu" class="form-control">
+            <input type="text" name="name" placeholder="Masukkan Nama Menu" class="form-control" required>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>DESKRIPSI</label>
-            <input type="text" name="description" placeholder="Masukkan Deskripsi Menu" class="form-control">
+            <input type="text" name="description" placeholder="Masukkan Deskripsi Menu" class="form-control" required>
           </div>
         </div>
       </div>
@@ -55,15 +55,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>HARGA</label>
-            <input type="number" name="price" placeholder="Masukkan Harga Menu"
-              class="form-control">
+            <input type="number" name="price" placeholder="Masukkan Harga Menu" class="form-control" required>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>DISKON (%)</label>
-            <input type="number" name="discount" placeholder="Masukkan Diskon Menu (%)"
-              class="form-control" value="0">
+            <input type="number" name="discount" placeholder="Masukkan Diskon Menu (%)" class="form-control" value="0" required>
           </div>
         </div>
       </div>
