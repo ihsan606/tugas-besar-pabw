@@ -149,13 +149,6 @@
       })
     }
   </script>
-
-  <!-- <script>
-    $('.accordion-toggle').click(function(){
-    $('.hiddenRow').hide();
-    $(this).next('tr').find('.hiddenRow').show();
-    });
-  </script> -->
   
   <script>
     $(document).ready(function() {
