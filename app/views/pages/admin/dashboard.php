@@ -119,7 +119,7 @@
 
   <div class="row">
     <div class="col-lg-6">
-      <div class="card card-chart">
+      <div class="card card-tasks">
         <div class="card-header">
           <h5 class="card-category">Completed Tasks</h5>
           <h3 class="card-title"><i class="tim-icons icon-send text-success"></i> 12,100K</h3>
@@ -142,13 +142,13 @@
             <table class="table">
               <thead>
                 <tr>
-                  <th class="text-center" width = "30px"><p></p></th>
-                  <th class="text-center" width = "80px"><p></p></th>
-                  <th class="text-left" width = "200px"><p></p></th>
-                  <th class="text-center" width = "80px"><p></p></th>
-                  <th class="text-center" width = "80px"><p></p></th>
-                  <th class="text-right"><p></p></th>
-                  <th class="text-center" width = "100px"><p></p></th>
+                  <th class="text-center py-0" width = "30px"><p></p></th>
+                  <th class="text-center py-0" width = "80px"><p></p></th>
+                  <th class="text-left py-0" width = "200px"><p></p></th>
+                  <th class="text-center py-0" width = "80px"><p></p></th>
+                  <th class="text-center py-0" width = "80px"><p></p></th>
+                  <th class="text-right py-0"><p></p></th>
+                  <th class="text-center py-0" width = "100px"><p></p></th>
                   </tr>
                 <tr>
               </thead>

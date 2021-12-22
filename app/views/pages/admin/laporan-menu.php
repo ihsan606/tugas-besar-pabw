@@ -36,13 +36,13 @@
       <table class="table">
         <thead>
           <tr>
-            <th class="text-center" width = "30px"><p></p></th>
-            <th class="text-center" width = "80px"><p></p></th>
-            <th class="text-left" width = "200px"><p></p></th>
-            <th class="text-center" width = "80px"><p></p></th>
-            <th class="text-center" width = "80px"><p></p></th>
-            <th class="text-right"><p></p></th>
-            <th class="text-center" width = "100px"><p></p></th>
+            <th class="text-center py-0" width = "30px"><p></p></th>
+            <th class="text-center py-0" width = "80px"><p></p></th>
+            <th class="text-left py-0" width = "200px"><p></p></th>
+            <th class="text-center py-0" width = "80px"><p></p></th>
+            <th class="text-center py-0" width = "80px"><p></p></th>
+            <th class="text-right py-0"><p></p></th>
+            <th class="text-center py-0" width = "100px"><p></p></th>
             </tr>
           <tr>
         </thead>
