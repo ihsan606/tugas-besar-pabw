@@ -63,7 +63,7 @@
           <div class="form-group">
             <label>DISKON (%)</label>
             <input type="number" name="discount" placeholder="Masukkan Diskon Menu (%)"
-              class="form-control">
+              class="form-control" value="0">
           </div>
         </div>
       </div>

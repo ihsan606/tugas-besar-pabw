@@ -10,6 +10,8 @@ use Illuminate\Support\Str;
 class Kelola_Menu_Controller extends Controller{
   public function index()
   {
+    session_start();
+   
     $data = [
       'title' => 'Kelola Menu',
       'menus' => Menu::with('category')->get(),
@@ -88,6 +90,11 @@ class Kelola_Menu_Controller extends Controller{
             'final_price' => $final_price,
           ]);
           if($menu){
+            session_start();
+            $_SESSION['alert'] = [
+              'message' => 'berhasil menambah menu',
+              'type' => 'success',
+            ];
             header('Location: ' . BASEURL . '/admin/kelola_menu');
           }
         }else{
@@ -140,6 +147,11 @@ class Kelola_Menu_Controller extends Controller{
             'final_price' => $final_price,
           ]);
           if($menu){
+            session_start();
+            $_SESSION['alert'] = [
+              'message' => 'berhasil mengedit menu',
+              'type' => 'success',
+            ];
             header('Location: ' . BASEURL . '/admin/kelola_menu');
           }
         }else{

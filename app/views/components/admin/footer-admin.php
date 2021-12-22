@@ -80,6 +80,13 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
 
+  <?php 
+    if(isset($_SESSION['alert'])){
+      alert_success($_SESSION['alert']['message'], $_SESSION['alert']['type']);
+      unset($_SESSION['alert']);
+    }
+  ?>
+
   <script>
     $(document).ready(function() {
       $().ready(function() {
