@@ -13,7 +13,18 @@ function alert_success($message, $type){
           title: 'BERHASIL!',
           text: '$message',
           timer: 2000
-        })
+        });
+      </script>
+    ";
+  }elseif($type == 'error'){
+    echo"
+      <script>
+        Swal.fire({
+          type: 'error',
+          title: 'ERROR!',
+          text: '$message',
+          timer: 3000
+        });
       </script>
     ";
   }

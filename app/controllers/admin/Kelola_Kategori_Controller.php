@@ -20,12 +20,14 @@ class Kelola_Kategori_Controller extends Controller{
 
   public function tambah_kategori()
   {
+    session_start();
     $data = ['title' => 'Tambah Kategori',];
     $this->view('tambah-kategori', $data, 'admin');
   }
 
   public function edit_kategori($id)
   {
+    session_start();
     $data = [
       'title' => 'Edit Kategori',
       'this_category' => Category::where('id', $id)->get(),
@@ -77,9 +79,19 @@ class Kelola_Kategori_Controller extends Controller{
             header('Location: ' . BASEURL . '/admin/kelola_kategori');
           }
         }else{
+          session_start();
+          $_SESSION['alert'] = [
+            'message' => 'ukuran file gambar tidak boleh lebih dari 2MB',
+            'type' => 'error',
+          ];
           header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
         }
       }else{
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'format file gambar harus .jpg, .png, atau .jpeg',
+          'type' => 'error',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
       }
     }else{
@@ -119,9 +131,19 @@ class Kelola_Kategori_Controller extends Controller{
             header('Location: ' . BASEURL . '/admin/kelola_kategori');
           }
         }else{
+          session_start();
+          $_SESSION['alert'] = [
+            'message' => 'ukuran file gambar tidak boleh lebih dari 2MB',
+            'type' => 'error',
+          ];
           header('Location: ' . BASEURL . '/admin/kelola_kategori/edit_kategori/' . $id);
         }
       }else{
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'format file gambar harus .jpg, .png, atau .jpeg',
+          'type' => 'error',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_kategori/edit_kategori/' . $id);
       }
     }else if($name != null){

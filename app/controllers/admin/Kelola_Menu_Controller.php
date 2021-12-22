@@ -20,6 +20,7 @@ class Kelola_Menu_Controller extends Controller{
 
   public function tambah_menu()
   {
+    session_start();
     $data = [
       'title' => 'Tambah Menu',
       'categories' => Category::All(),
@@ -29,6 +30,7 @@ class Kelola_Menu_Controller extends Controller{
 
   public function edit_menu($id)
   {
+    session_start();
     $data = [
       'title' => 'Edit Menu',
       'this_menu' => Menu::with('category')->where('id', $id)->get(),
@@ -97,9 +99,19 @@ class Kelola_Menu_Controller extends Controller{
             header('Location: ' . BASEURL . '/admin/kelola_menu');
           }
         }else{
+          session_start();
+          $_SESSION['alert'] = [
+            'message' => 'ukuran file gambar tidak boleh lebih dari 2MB',
+            'type' => 'error',
+          ];
           header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
         }
       }else{
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'format file gambar harus .jpg, .png, atau .jpeg',
+          'type' => 'error',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
       }
     }else{
@@ -154,9 +166,19 @@ class Kelola_Menu_Controller extends Controller{
             header('Location: ' . BASEURL . '/admin/kelola_menu');
           }
         }else{
+          session_start();
+          $_SESSION['alert'] = [
+            'message' => 'ukuran file gambar tidak boleh lebih dari 2MB',
+            'type' => 'error',
+          ];
           header('Location: ' . BASEURL . '/admin/kelola_menu/edit_menu/' . $id);
         }
       }else{
+        session_start();
+        $_SESSION['alert'] = [
+          'message' => 'format file gambar harus .jpg, .png, atau .jpeg',
+          'type' => 'error',
+        ];
         header('Location: ' . BASEURL . '/admin/kelola_menu/edit_menu/' . $id);
       }
     }else if($name != null && $price != null && $category_id != null && $description !== null && $discount != null){
