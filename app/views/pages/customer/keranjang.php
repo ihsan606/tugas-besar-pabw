@@ -97,11 +97,11 @@
     <form action="<?=BASEURL;?>/customer/checkout/store" method="post" class="mt-4" >
       <div class="form-group mb-3">
         <label for="nama">Nama :</label>
-        <input type="text" class="form-control" name="customer_name" />
+        <input type="text" class="form-control" name="customer_name" required>
       </div>
       <div class="form-group mb-3">
         <label for="noMeja">Nomor Meja :</label>
-        <input type="text" class="form-control" name="no_meja" />
+        <input type="text" class="form-control" name="no_meja" required>
       </div>
       <input type="text" class="form-control" value='<?= $_SESSION['keranjang']['total_harga']; ?>' name="grand_total" hidden/>
       
