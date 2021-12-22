@@ -64,14 +64,14 @@
                   <p>$category->name</p>
                 </td>
                 ";
-                
+
                 echo <<<TEXT
                   <td class='td-actions text-center'>
                     <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info' data-original-title='Edit Kategori'>
                       <a class='text-light' href='$url/admin/kelola_kategori/edit_kategori/$category->id' style = 'font-size : 20px;'><i class='tim-icons icon-pencil text-white'></i></a>
                     </button>
                     <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger' data-original-title='Hapus Kategori'>
-                      <a onclick="alert_warning('semua data menu, order, dan review yang berkaitan dengan kategori tersebut akan dihapus secara permanen', 'ANDA YAKIN INGIN MENGHAPUS KATEGORI?', 'HAPUS!', '$url/admin/kelola_kategori/destroy/$category->id')"class='text-light' style = 'font-size : 20px;'><i class='tim-icons icon-trash-simple text-white'></i></a>
+                      <a onclick="alert_warning('semua data menu, order, dan review yang berkaitan dengan kategori tersebut akan dihapus secara permanen', 'ANDA YAKIN INGIN MENGHAPUS KATEGORI?', 'HAPUS!', '$url/admin/kelola_kategori/destroy/$category->id')" class='text-light' style = 'font-size : 20px;'><i class='tim-icons icon-trash-simple text-white'></i></a>
                     </button>
                   </td>
                 </tr>
