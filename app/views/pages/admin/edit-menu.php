@@ -23,7 +23,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>KATEGORI</label>
-            <select class="form-control" name="category_id" value = "<?=$data['this_menu'][0]->category->name?>">
+            <select class="form-control" name="category_id" value = "<?=$data['this_menu'][0]->category->name?>" required>
               <option value="" style="background-color: #344675;">-- select category --</option>
               <?php 
               $categories = $data['categories'];
@@ -44,13 +44,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>NAMA MENU</label>
-            <input type="text" name="name" placeholder="Masukkan Nama Menu" class="form-control" value="<?=$data['this_menu'][0]->title?>">
+            <input type="text" name="name" placeholder="Masukkan Nama Menu" class="form-control" value="<?=$data['this_menu'][0]->title?>" required>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>DESKRIPSI</label>
-            <input type="text" name="description" placeholder="Masukkan Deskripsi Menu" class="form-control" value="<?=$data['this_menu'][0]->description?>">
+            <input type="text" name="description" placeholder="Masukkan Deskripsi Menu" class="form-control" value="<?=$data['this_menu'][0]->description?>" required>
           </div>
         </div>
       </div>
@@ -59,13 +59,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>HARGA</label>
-            <input type="number" name="price" placeholder="Masukkan Harga Menu" class="form-control" value="<?=$data['this_menu'][0]->price?>">
+            <input type="number" name="price" placeholder="Masukkan Harga Menu" class="form-control" value="<?=$data['this_menu'][0]->price?>" required>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>DISKON (%)</label>
-            <input type="number" name="discount" placeholder="Masukkan Diskon Menu (%)" class="form-control" value="<?=$data['this_menu'][0]->discount?>">
+            <input type="number" name="discount" placeholder="Masukkan Diskon Menu (%)" class="form-control" value="<?=$data['this_menu'][0]->discount?>" required>
           </div>
         </div>
       </div>
