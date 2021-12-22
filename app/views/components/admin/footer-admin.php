@@ -30,33 +30,34 @@
         </div>
       </footer>
     </div>  
+  </div>  
       
-      <div class="fixed-plugin" style="top : 89px;">
-        <div class="dropdown show-dropdown">
-          <a href="#" data-toggle="dropdown">
-            <i class="fa fa-cog fa-2x"> </i>
+  <div class="fixed-plugin" style="top : 89px;">
+    <div class="dropdown show-dropdown">
+      <a href="#" data-toggle="dropdown">
+        <i class="fa fa-cog fa-2x"> </i>
+      </a>
+      <ul class="dropdown-menu">
+        <li class="header-title"> Sidebar Background</li>
+        <li class="adjustments-line">
+          <a href="javascript:void(0)" class="switch-trigger background-color">
+            <div class="badge-colors text-center">
+              <span class="badge filter badge-info active" data-color="blue"></span>
+              <span class="badge filter badge-primary" data-color="primary"></span>
+              <span class="badge filter badge-success" data-color="green"></span>
+            </div>
+            <div class="clearfix"></div>
           </a>
-          <ul class="dropdown-menu">
-            <li class="header-title"> Sidebar Background</li>
-            <li class="adjustments-line">
-              <a href="javascript:void(0)" class="switch-trigger background-color">
-                <div class="badge-colors text-center">
-                  <span class="badge filter badge-info active" data-color="blue"></span>
-                  <span class="badge filter badge-primary" data-color="primary"></span>
-                  <span class="badge filter badge-success" data-color="green"></span>
-                </div>
-                <div class="clearfix"></div>
-              </a>
-            </li>
-            <li class="adjustments-line text-center color-change" style="margin-bottom : 18px;">
-              <span class="color-label">LIGHT MODE</span>
-              <span class="badge light-badge mr-2"></span>
-              <span class="badge dark-badge ml-2"></span>
-              <span class="color-label">DARK MODE</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+        </li>
+        <li class="adjustments-line text-center color-change" style="margin-bottom : 18px;">
+          <span class="color-label">LIGHT MODE</span>
+          <span class="badge light-badge mr-2"></span>
+          <span class="badge dark-badge ml-2"></span>
+          <span class="color-label">DARK MODE</span>
+        </li>
+      </ul>
+    </div>
+  </div>
 
   <!--   Core JS Files   -->
   <script src="<?= BASEURL; ?>/assets/js/core/jquery.min.js"></script>
@@ -80,28 +81,27 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
 
-   <!-- Chart JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js"></script>
   <?php 
   if(isset($_SESSION['alert'])){
     success_and_error($_SESSION['alert']['message'], $_SESSION['alert']['type']);
     unset($_SESSION['alert']);
-  }
+  } 
+  ?>
 
+  <!-- Chart JS --> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js"></script>
 
-    // memasukkan string ke dalam script chart
-    $dataBulanan = $data['pendapatan_perbulan'];
-
-    // $data=[];
-
-    // $insideData = "";
-    // for ($i = 0; $i < count($dataBulanan); $i++) {
-    //   $insideData .= $dataBulanan[$i];
-    //   $insideData .= ",";
-    // }
-
-    echo
-    "<script>
+  <?php 
+  // memasukkan string ke dalam script chart
+  $dataBulanan = $data['pendapatan_perbulan'];
+  // $data=[]
+  // $insideData = "";
+  // for ($i = 0; $i < count($dataBulanan); $i++) {
+  //   $insideData .= $dataBulanan[$i];
+  //   $insideData .= ",";
+  // 
+  echo"
+    <script>
       const ct = document.getElementById('chartMonth').getContext('2d');
       const chartMonth = new Chart(ct, {
         type: 'bar',
@@ -128,66 +128,10 @@
           }
         }
       });
-    </script>"
-  ?>
-
-  <?php
-  // memasukkan string ke dalam script chart
-  $dataHarian = [1000000, 2000000, 3000000, 4000000, 2000000];
-  $insideData = "";
-  for ($i = 0; $i < count($dataHarian); $i++) {
-    $insideData .= $dataHarian[$i];
-    $insideData .= ",";
-  }
-
-  echo"
-    <script>
-      const LabelHarian=['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
-      const ctx = document.getElementById('chartDay').getContext('2d');
-      const chartDay = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels:LabelHarian,
-          datasets: [{
-            tension: 0.3,
-            label: 'Laporan Penjualan Harian',
-            data:[$insideData],
-            backgroundColor: [
-              'rgba(255, 99, 132, 0.2)',
-              'rgba(54, 162, 235, 0.2)',
-              'rgba(255, 206, 86, 0.2)',
-              'rgba(75, 192, 192, 0.2)',
-              'rgba(153, 102, 255, 0.2)',
-              'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
-              'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-          }]
-        },
-        options: {
-          plugins: {
-            legend: {
-              display: false
-            }
-          },
-          scales: {
-            y: {
-              beginAtZero: true
-            }
-          }
-        }
-      });
     </script>
-  ";
+    ";
   ?>
-
+  
   <script>
     function alert_warning(message, title, action, location){
       Swal.fire({
