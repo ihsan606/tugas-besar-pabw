@@ -33,7 +33,7 @@
             <th class="text-left" width = "100px"><p class="title">Jumlah</p></th>
             <th class="text-right" width = "150px"><p class="title">Harga</p></th>
             <th class="text-right" width = "150px"><p class="title">Total</p></th>
-            <th class="text-center" style="min-width: 160px;"><p class="title">Action</p></th>
+            <th class="text-center" style="min-width: 100px!important;"><p class="title">Action</p></th>
           </tr>
         </thead>
         <tbody>
@@ -63,11 +63,11 @@
               <td>$price</td>
               <td>$total</td>
               <td class='td-actions text-center'>
-                <button type='button' rel='tooltip' title='' class='btn btn-link bg-info px-1 py-0' data-original-title='Edit Kategori'>
-                  <a class='text-dark' href='$url./customer/keranjang/edit_keranjang/$id' style = 'font-size : 20px;'><i class='bi-pencil text-white' role='img' aria-label='Pencil'></i></a>
+                <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info px-2 py-1' data-original-title='Edit Kategori'>
+                  <a class='text-dark' href='$url./customer/keranjang/edit_keranjang/$id' style = 'font-size : 22px;'><i class='tim-icons icon-pencil text-white'></i></a>
                 </button>
-                <button type='button' rel='tooltip' title='' class='btn btn-link px-1 py-0' data-original-title='Hapus Kategori' style='background-color: #FF0000;'>
-                  <a class='text-dark' href='$url./customer/keranjang/destroy/$id' style = 'font-size : 20px;'><i class='bi-trash text-white' role='img' aria-label='Trash'></i></a>
+                <button type='button' rel='tooltip' title='' class='btn btn-icon btn-danger px-2 py-1' data-original-title='Hapus Kategori'>
+                  <a class='text-dark' href='$url./customer/keranjang/destroy/$id' style = 'font-size : 22px;'><i class='tim-icons icon-trash-simple text-white'></i></a>
                 </button>
               </td>
             </tr>
