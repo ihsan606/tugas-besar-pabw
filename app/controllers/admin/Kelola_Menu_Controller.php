@@ -92,7 +92,7 @@ class Kelola_Menu_Controller extends Controller{
           if($menu){
             session_start();
             $_SESSION['alert'] = [
-              'message' => 'berhasil menambah menu',
+              'message' => 'data menu berhasil ditambahkan',
               'type' => 'success',
             ];
             header('Location: ' . BASEURL . '/admin/kelola_menu');
@@ -149,7 +149,7 @@ class Kelola_Menu_Controller extends Controller{
           if($menu){
             session_start();
             $_SESSION['alert'] = [
-              'message' => 'berhasil mengedit menu',
+              'message' => 'data menu berhasil diedit',
               'type' => 'success',
             ];
             header('Location: ' . BASEURL . '/admin/kelola_menu');
@@ -173,7 +173,7 @@ class Kelola_Menu_Controller extends Controller{
       if($menu){
         session_start();
         $_SESSION['alert'] = [
-          'message' => 'berhasil mengedit menu',
+          'message' => 'data menu berhasil diedit',
           'type' => 'success',
         ];
         header('Location: ' . BASEURL . '/admin/kelola_menu');
@@ -201,6 +201,11 @@ class Kelola_Menu_Controller extends Controller{
 
     $menu = Menu::where('id', $id)->delete();
     if($menu){
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => 'data menu berhasil dihapus',
+        'type' => 'success',
+      ];
       header('Location: ' . BASEURL . '/admin/kelola_menu');
     }
   }
@@ -217,6 +222,11 @@ class Kelola_Menu_Controller extends Controller{
     }
 
     if($menu){
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => 'stok menu berhasil diubah',
+        'type' => 'success',
+      ];
       header('Location: ' . BASEURL . '/admin/kelola_menu');
     }
   }
