@@ -8,6 +8,7 @@ use Illuminate\Support\Carbon;
 class Daftar_Pesanan_Controller extends Controller{
   public function index()
   { 
+    session_start();
     $data = [
       'title' => 'Daftar Pesanan',
       'invoices' => Invoice::with('orders.menu','orders.table','customer')->where('status_pesanan', 'dikonfirmasi')->get(),
@@ -25,6 +26,11 @@ class Daftar_Pesanan_Controller extends Controller{
     ]);
 
     if($invoice){
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => "status pesanan berhasil diubah menjadi 'Diantar'",
+        'type' => 'success',
+      ];
       header('Location: ' . BASEURL . '/admin/daftar_pesanan');
     }
   }
@@ -35,6 +41,11 @@ class Daftar_Pesanan_Controller extends Controller{
     ]);
 
     if($invoice){
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => "status pesanan berhasil diubah menjadi 'Ditolak'",
+        'type' => 'success',
+      ];
       header('Location: ' . BASEURL . '/admin/daftar_pesanan');
     }
   }
