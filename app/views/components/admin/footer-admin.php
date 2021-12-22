@@ -80,12 +80,114 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
 
+   <!-- Chart JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.2/chart.js"></script>
   <?php 
-    if(isset($_SESSION['alert'])){
-      success_and_error($_SESSION['alert']['message'], $_SESSION['alert']['type']);
-      unset($_SESSION['alert']);
+  if(isset($_SESSION['alert'])){
+    success_and_error($_SESSION['alert']['message'], $_SESSION['alert']['type']);
+    unset($_SESSION['alert']);
     }
+
+
+    // memasukkan string ke dalam script chart
+    $dataBulanan = $data['pendapatan_perbulan'];
+
+    // $data=[];
+
+    // $insideData = "";
+    // for ($i = 0; $i < count($dataBulanan); $i++) {
+    //   $insideData .= $dataBulanan[$i];
+    //   $insideData .= ",";
+    // }
+
+    echo
+    "<script>
+      const ct = document.getElementById('chartMonth').getContext('2d');
+      const chartMonth = new Chart(ct, {
+        type: 'bar',
+        data: {
+          labels: ['JAN', 'FEB', 'MAR', 'APR', 'MEI', 'JUN', 'JUL', 'AGU', 'SEP', 'OKT', 'NOV', 'DES'],
+          datasets: [{
+            label: 'Rp',
+            data: [400000,300000,500000,600000,700000,500000,400000,800000,900000,600000,700000,$dataBulanan[11]],
+            backgroundColor:'transparent',
+            borderColor:'#11cdef',
+            borderWidth: 2
+          }]
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>"
   ?>
+
+  <?php
+  // memasukkan string ke dalam script chart
+  $dataHarian = [1000000, 2000000, 3000000, 4000000, 2000000];
+  $insideData = "";
+  for ($i = 0; $i < count($dataHarian); $i++) {
+    $insideData .= $dataHarian[$i];
+    $insideData .= ",";
+  }
+
+  echo"
+    <script>
+      const LabelHarian=['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu'];
+      const ctx = document.getElementById('chartDay').getContext('2d');
+      const chartDay = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels:LabelHarian,
+          datasets: [{
+            tension: 0.3,
+            label: 'Laporan Penjualan Harian',
+            data:[$insideData],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          plugins: {
+            legend: {
+              display: false
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+  ";
+  ?>
+
   <script>
     function alert_warning(message, title, action, location){
       Swal.fire({
