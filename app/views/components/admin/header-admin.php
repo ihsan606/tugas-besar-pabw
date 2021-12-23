@@ -98,7 +98,7 @@ if(!isset($_SESSION['login'])){
     </div>
     <div class="main-panel" data="blue">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent mt-2">
+      <nav class="navbar navbar-expand-lg navbar-absolute " style="position:fixed;background-color:#1e1e2b;height:78px;">
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-toggle d-inline">
@@ -118,7 +118,7 @@ if(!isset($_SESSION['login'])){
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
               <li class="dropdown nav-item" style="vertical-align: middle!important; height: 100%;">
-                <h3 class="my-0"><?=$_SESSION['admin']?></h3>
+                <h3 class="my-0"><?$_SESSION["admin"]?></h3>
               <li class="dropdown nav-item" style="vertical-align: middle!important; height: 100%;">
                 <div class="photo">
                   <img src="<?=BASEURL;?>/assets/img/anime3.png" alt="Profile Photo">
