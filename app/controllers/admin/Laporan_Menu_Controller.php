@@ -6,6 +6,7 @@ use App\models\Menu;
 class Laporan_Menu_Controller extends Controller{
   public function index()
   {
+    session_start();
     $data = [
       'title' => 'Laporan Menu',
       'menus' => Menu::with('category')->get(),
