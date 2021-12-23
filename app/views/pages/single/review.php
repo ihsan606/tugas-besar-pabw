@@ -88,6 +88,7 @@
 
                                 <?php
                                 $url = BASEURL;
+                                $customer_id =$_SESSION['customer_id'];
 
                                 foreach ($data['invoices']->orders as $orders) {
                                     $image_menu = $orders->menu->image;
@@ -95,78 +96,81 @@
                                     $price = money_format($orders->price);
 
                                     echo "<tr style='background: #edf2f7; margin-bottom:5px; '>
-                  <td class='b-none' width='15%'>
-                  <div class='wrapper-image-cart'>
-                  <img src='$url/img/menus/$image_menu' style='width: 80%;border-radius: .5rem'>
-                </div>
-                  </td>
-                  <td class='b-none'>
-                        <p class='mt-2'>$menu->title</p>
-                        <p>Jumlah : $orders->qty</p>
-                        <button
-                            type='button'
-                            class='btn btn-sm btn-warning mb-3'
-                            data-mdb-toggle='modal'
-                            data-mdb-target='#exampleModal'
-                            id='btn-ulas$menu->id'
-                            >
-                            Beri Ulasan
-                            </button>
-                      </td>
-                      <td class='b-none text-right'>
-                      <p class='text-right'>$price</p>
-                    </td>
-                    
-                    
+                                        <td class='b-none' width='15%'>
+                                        <div class='wrapper-image-cart'>
+                                        <img src='$url/img/menus/$image_menu' style='width: 80%;border-radius: .5rem'>
+                                        </div>
+                                        </td>
+                                        <td class='b-none'>
+                                                <p class='mt-2'>$menu->title</p>
+                                                <p>Jumlah : $orders->qty</p>
+                                                <button
+                                                    type='button'
+                                                    class='btn btn-sm btn-warning mb-3'
+                                                    data-mdb-toggle='modal'
+                                                    data-mdb-target='#exampleModal$menu->id'
+                                                    id='btn-ulas$menu->id'
+                                                    >
+                                                    Beri Ulasan
+                                                    </button>
+                                            </td>
+                                            <td class='b-none text-right'>
+                                            <p class='text-right'>$price</p>
+                                            </td>
+                                            
+                                            
 
-                    <!-- Modal -->
-                    <div
-                      class='modal fade'
-                      id='exampleModal'
-                      tabindex='-1'
-                      aria-labelledby='exampleModalLabel'
-                      aria-hidden='true'
-                    >
-                      <div class='modal-dialog'>
-                        <div class='modal-content'>
-                          <div class='modal-header'>
-                            <h5 class='modal-title' id='exampleModalLabel'>Beri Ulasan</h5>
-                            <button
-                              type='button'
-                              class='btn-close'
-                              data-mdb-dismiss='modal'
-                              aria-label='Close'
-                            ></button>
-                          </div>
-                          <form action= '$url/customer/review/store' method='POST'>
-                        <div class='modal-body'>
-                        <div class='text-center my-3'>
-                            <span class='fa fa-star checked ' id='f_star_1' onClick='rate(1)'></span>
-                            <span class='fa fa-star ' id='f_star_2' onClick='rate(2)'></span>
-                            <span class='fa fa-star ' id='f_star_3' onClick='rate(3)'></span>
-                            <span class='fa fa-star ' id='f_star_4' onClick='rate(4)'></span>
-                            <span class='fa fa-star ' id='f_star_5' onClick='rate(5)'></span>
-                        </div>
-                        <input type='hidden' name='rating' id='rating' value='1'>
-                    <div class='form-group'>
-                    <textarea class='form-control' id='review' name='review' rows='3' placeholder='Masukkan Ulasan Menu'
-                    ></textarea>
-                    </div>
-                </div>
-                <div class='modal-footer'>
-                <button type='button' class='btn btn-secondary' data-mdb-dismiss='modal'>
-                Close
-              </button>
-                    <button class='btn btn-info mr-1 btn-submit' type='submit'><i class='fa fa-paper-plane'></i>
-                    IMPORT</button>
-                </div>
-            </form>
-                        
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                </tr>";
+                                            <!-- Modal -->
+                                            <div
+                                            class='modal fade'
+                                            id='exampleModal$menu->id'
+                                            tabindex='-1'
+                                            aria-labelledby='exampleModalLabel'
+                                            aria-hidden='true'
+                                            >
+                                            <div class='modal-dialog'>
+                                                <div class='modal-content'>
+                                                <div class='modal-header'>
+                                                    <h5 class='modal-title' id='exampleModalLabel'>Beri Ulasan</h5>
+                                                    <button
+                                                    type='button'
+                                                    class='btn-close'
+                                                    data-mdb-dismiss='modal'
+                                                    aria-label='Close'
+                                                    ></button>
+                                                </div>
+                                                <form action= '$url/customer/review/store' method='POST'>
+                                                <div class='modal-body'>
+                                            
+                                                <div class='text-center my-3'>
+                                                    <span class='fa fa-star checked ' id='f_star_1' onClick='rate(1)'></span>
+                                                    <span class='fa fa-star ' id='f_star_2' onClick='rate(2)'></span>
+                                                    <span class='fa fa-star ' id='f_star_3' onClick='rate(3)'></span>
+                                                    <span class='fa fa-star ' id='f_star_4' onClick='rate(4)'></span>
+                                                    <span class='fa fa-star ' id='f_star_5' onClick='rate(5)'></span>
+                                                </div>
+                                                <input type='hidden' name='rating' id='rating' value='1'>
+                                                <input type='hidden' name='menu_id' id='menu' value='$menu->id'>
+                                                <input type='hidden' name='customer_id' id='customer' value='$customer_id'>
+                                            <div class='form-group'>
+                                            <textarea class='form-control' id='review' name='review' rows='3' placeholder='Masukkan Ulasan Menu'
+                                            ></textarea>
+                                            </div>
+                                        </div>
+                                        <div class='modal-footer'>
+                                        <button type='button' class='btn btn-secondary' data-mdb-dismiss='modal'>
+                                        Close
+                                    </button>
+                                            <button class='btn btn-info mr-1 btn-submit' type='submit'><i class='fa fa-paper-plane'></i>
+                                            IMPORT</button>
+                                        </div>
+                                    </form>
+                                            
+                                                </div>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </tr>";
                                 }
                                 ?>
                             </table>
@@ -179,44 +183,45 @@
 
 
         <script>
+            console.log(document.getElementsByName('rating')[1].value);
             function rate(id)
             {
-                document.getElementsByName("rating")[0].value = id;
+                document.getElementsByName('rating')[1].value = id;
                 switch(id){
                     case 1 : 
-                        checked("f_star_1");
-                        unchecked("f_star_2");
-                        unchecked("f_star_3");
-                        unchecked("f_star_4");
-                        unchecked("f_star_5");
+                        checked('f_star_1');
+                        unchecked('f_star_2');
+                        unchecked('f_star_3');
+                        unchecked('f_star_4');
+                        unchecked('f_star_5');
                         break;
                     case 2 :
-                        checked("f_star_1");
-                        checked("f_star_2");
-                        unchecked("f_star_3");
-                        unchecked("f_star_4");
-                        unchecked("f_star_5");
+                        checked('f_star_1');
+                        checked('f_star_2');
+                        unchecked('f_star_3');
+                        unchecked('f_star_4');
+                        unchecked('f_star_5');
                         break;
                     case 3 :
-                        checked("f_star_1");
-                        checked("f_star_2");
-                        checked("f_star_3");
-                        unchecked("f_star_4");
-                        unchecked("f_star_5");
+                        checked('f_star_1');
+                        checked('f_star_2');
+                        checked('f_star_3');
+                        unchecked('f_star_4');
+                        unchecked('f_star_5');
                         break;
                     case 4 :
-                        checked("f_star_1");
-                        checked("f_star_2");
-                        checked("f_star_3");
-                        checked("f_star_4");
-                        unchecked("f_star_5");
+                        checked('f_star_1');
+                        checked('f_star_2');
+                        checked('f_star_3');
+                        checked('f_star_4');
+                        unchecked('f_star_5');
                         break;
                     case 5 :
-                        checked("f_star_1");
-                        checked("f_star_2");
-                        checked("f_star_3");
-                        checked("f_star_4");
-                        checked("f_star_5");
+                        checked('f_star_1');
+                        checked('f_star_2');
+                        checked('f_star_3');
+                        checked('f_star_4');
+                        checked('f_star_5');
                         break;
                     default:
                 }
@@ -225,15 +230,15 @@
             function checked(star_id)
             {
                 var element = document.getElementById(star_id);
-                element.classList.add("checked");
+                element.classList.add('checked');
             }
 
             function unchecked(star_id)
             {
                 var element = document.getElementById(star_id);
-                element.classList.remove("checked");
+                element.classList.remove('checked');
             }
-    </script>                   
+    </script>  
         <!-- MDB -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
 </body>
