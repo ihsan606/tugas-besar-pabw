@@ -81,6 +81,12 @@
               <p>Kelola Admin</p>
             </a>
           </li>
+          <li>
+            <a href="<?=BASEURL;?>/admin/logout">
+              <i class="tim-icons icon-button-power"></i>
+              <p>Log out</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
