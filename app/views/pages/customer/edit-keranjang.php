@@ -41,7 +41,7 @@
       </div>
       <button type="submit" class="btn btn-success">
         <b-icon-cart></b-icon-cart>
-        Pesan
+        Edit
       </button>
     </form>
   </div>

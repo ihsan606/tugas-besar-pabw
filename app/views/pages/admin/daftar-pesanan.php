@@ -91,8 +91,8 @@
                 </tr>
             </thead>
         </table>
-        <div class=" table-full-width table-responsive"></div>
-            <table class="table" style="border-collapse:collapse;">
+        <div class="table-full-width table-responsive" style="border-collapse:collapse;">
+            <table class="table">
                 <thead>
                     <tr>
                         <th class="text-center" width="30px"></th>
@@ -178,7 +178,8 @@
                     }
                     ?>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

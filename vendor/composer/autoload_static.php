@@ -156,14 +156,14 @@ class ComposerStaticInit8967fef25254fedcfe4218aae1d8cf27
     );
 
     public static $classMap = array (
-        'App\\models\\Admin' => __DIR__ . '/../..' . '/app/Models/Admin.php',
-        'App\\models\\Category' => __DIR__ . '/../..' . '/app/Models/Category.php',
-        'App\\models\\Customer' => __DIR__ . '/../..' . '/app/Models/customer.php',
-        'App\\models\\Invoice' => __DIR__ . '/../..' . '/app/Models/Invoice.php',
-        'App\\models\\Menu' => __DIR__ . '/../..' . '/app/Models/Menu.php',
-        'App\\models\\Order' => __DIR__ . '/../..' . '/app/Models/Order.php',
-        'App\\models\\Review' => __DIR__ . '/../..' . '/app/Models/Review.php',
-        'App\\models\\Table' => __DIR__ . '/../..' . '/app/Models/Table.php',
+        'App\\models\\Admin' => __DIR__ . '/../..' . '/app/models/Admin.php',
+        'App\\models\\Category' => __DIR__ . '/../..' . '/app/models/Category.php',
+        'App\\models\\Customer' => __DIR__ . '/../..' . '/app/models/customer.php',
+        'App\\models\\Invoice' => __DIR__ . '/../..' . '/app/models/Invoice.php',
+        'App\\models\\Menu' => __DIR__ . '/../..' . '/app/models/Menu.php',
+        'App\\models\\Order' => __DIR__ . '/../..' . '/app/models/Order.php',
+        'App\\models\\Review' => __DIR__ . '/../..' . '/app/models/Review.php',
+        'App\\models\\Table' => __DIR__ . '/../..' . '/app/models/Table.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',

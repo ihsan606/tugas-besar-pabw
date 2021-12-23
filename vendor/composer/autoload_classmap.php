@@ -6,14 +6,14 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\models\\Admin' => $baseDir . '/app/Models/Admin.php',
-    'App\\models\\Category' => $baseDir . '/app/Models/Category.php',
-    'App\\models\\Customer' => $baseDir . '/app/Models/customer.php',
-    'App\\models\\Invoice' => $baseDir . '/app/Models/Invoice.php',
-    'App\\models\\Menu' => $baseDir . '/app/Models/Menu.php',
-    'App\\models\\Order' => $baseDir . '/app/Models/Order.php',
-    'App\\models\\Review' => $baseDir . '/app/Models/Review.php',
-    'App\\models\\Table' => $baseDir . '/app/Models/Table.php',
+    'App\\models\\Admin' => $baseDir . '/app/models/Admin.php',
+    'App\\models\\Category' => $baseDir . '/app/models/Category.php',
+    'App\\models\\Customer' => $baseDir . '/app/models/customer.php',
+    'App\\models\\Invoice' => $baseDir . '/app/models/Invoice.php',
+    'App\\models\\Menu' => $baseDir . '/app/models/Menu.php',
+    'App\\models\\Order' => $baseDir . '/app/models/Order.php',
+    'App\\models\\Review' => $baseDir . '/app/models/Review.php',
+    'App\\models\\Table' => $baseDir . '/app/models/Table.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',

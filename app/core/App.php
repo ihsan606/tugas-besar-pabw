@@ -2,7 +2,7 @@
 
 class App
 {
-  protected $controller = "Home_Controller";
+  protected $controller = "home_Controller";
   protected $method = "index";
   protected $params = [];
 
@@ -29,7 +29,7 @@ class App
         }
       } else if ($url[0] == "admin") {
         unset($url[0]);
-        $this->controller = "Dashboard_Controller";
+        $this->controller = "dashboard_Controller";
         if (isset($url[1])) {
           if (file_exists('../app/controllers/admin/' . $url[1] . '_Controller.php')) {
             $this->controller = $url[1] . '_Controller';

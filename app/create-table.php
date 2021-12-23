@@ -16,9 +16,9 @@ function endMigrations($table){
 }
  $tables= [
      'admins',
+     'customers',
      'categories',
      'menus',
-     'carts',
      'invoices',
      'tables',
      'orders',
@@ -150,6 +150,7 @@ foreach ($tables as $table){
             $table->unsignedBigInteger('menu_id');
             // $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('customer_id');
+            $table->integer('rate');
             $table->text('review');
             $table->timestamps();
 
