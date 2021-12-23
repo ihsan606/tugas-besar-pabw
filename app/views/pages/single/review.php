@@ -192,42 +192,42 @@
                     document.getElementsByName('rating')[i].value = id;
 
                     switch (id) {
-                    case 1:
-                        checked('f_star_1_' + menu_id);
-                        unchecked('f_star_2_' + menu_id);
-                        unchecked('f_star_3_' + menu_id);
-                        unchecked('f_star_4_' + menu_id);
-                        unchecked('f_star_5_' + menu_id);
-                        break;
-                    case 2:
-                        checked('f_star_1_' + menu_id);
-                        checked('f_star_2_' + menu_id);
-                        unchecked('f_star_3_' + menu_id);
-                        unchecked('f_star_4_' + menu_id);
-                        unchecked('f_star_5_' + menu_id);
-                        break;
-                    case 3:
-                        checked('f_star_1_' + menu_id);
-                        checked('f_star_2_' + menu_id);
-                        checked('f_star_3_' + menu_id);
-                        unchecked('f_star_4_' + menu_id);
-                        unchecked('f_star_5_' + menu_id);
-                        break;
-                    case 4:
-                        checked('f_star_1_' + menu_id);
-                        checked('f_star_2_' + menu_id);
-                        checked('f_star_3_' + menu_id);
-                        checked('f_star_4_' + menu_id);
-                        unchecked('f_star_5_' + menu_id);
-                        break;
-                    case 5:
-                        checked('f_star_1_' + menu_id);
-                        checked('f_star_2_' + menu_id);
-                        checked('f_star_3_' + menu_id);
-                        checked('f_star_4_' + menu_id);
-                        checked('f_star_5_' + menu_id);
-                        break;
-                    default:
+                        case 1:
+                            checked('f_star_1_' + menu_id);
+                            unchecked('f_star_2_' + menu_id);
+                            unchecked('f_star_3_' + menu_id);
+                            unchecked('f_star_4_' + menu_id);
+                            unchecked('f_star_5_' + menu_id);
+                            break;
+                        case 2:
+                            checked('f_star_1_' + menu_id);
+                            checked('f_star_2_' + menu_id);
+                            unchecked('f_star_3_' + menu_id);
+                            unchecked('f_star_4_' + menu_id);
+                            unchecked('f_star_5_' + menu_id);
+                            break;
+                        case 3:
+                            checked('f_star_1_' + menu_id);
+                            checked('f_star_2_' + menu_id);
+                            checked('f_star_3_' + menu_id);
+                            unchecked('f_star_4_' + menu_id);
+                            unchecked('f_star_5_' + menu_id);
+                            break;
+                        case 4:
+                            checked('f_star_1_' + menu_id);
+                            checked('f_star_2_' + menu_id);
+                            checked('f_star_3_' + menu_id);
+                            checked('f_star_4_' + menu_id);
+                            unchecked('f_star_5_' + menu_id);
+                            break;
+                        case 5:
+                            checked('f_star_1_' + menu_id);
+                            checked('f_star_2_' + menu_id);
+                            checked('f_star_3_' + menu_id);
+                            checked('f_star_4_' + menu_id);
+                            checked('f_star_5_' + menu_id);
+                            break;
+                        default:
                     }
                 }
             }
