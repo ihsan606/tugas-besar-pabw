@@ -187,47 +187,52 @@
             console.log(document.getElementsByName('rating')[1].value);
 
             function rate(id, menu_id) {
-                
-                document.getElementsByName('rating')[1].value = id;
-                switch (id) {
+                let rating = document.getElementsByName('rating');
+                for(i = 0; i < rating.length; i++){
+                    document.getElementsByName('rating')[i].value = id;
+
+                    switch (id) {
                     case 1:
-                        checked('f_star_1' + menu_id);
+                        checked('f_star_1_' + menu_id);
                         unchecked('f_star_2_' + menu_id);
                         unchecked('f_star_3_' + menu_id);
                         unchecked('f_star_4_' + menu_id);
                         unchecked('f_star_5_' + menu_id);
                         break;
                     case 2:
-                        checked('f_star_1' + menu_id);
-                        checked('f_star_2' + menu_id);
+                        checked('f_star_1_' + menu_id);
+                        checked('f_star_2_' + menu_id);
                         unchecked('f_star_3_' + menu_id);
                         unchecked('f_star_4_' + menu_id);
                         unchecked('f_star_5_' + menu_id);
                         break;
                     case 3:
-                        checked('f_star_1' + menu_id);
-                        checked('f_star_2' + menu_id);
-                        checked('f_star_3' + menu_id);
+                        checked('f_star_1_' + menu_id);
+                        checked('f_star_2_' + menu_id);
+                        checked('f_star_3_' + menu_id);
                         unchecked('f_star_4_' + menu_id);
                         unchecked('f_star_5_' + menu_id);
                         break;
                     case 4:
-                        checked('f_star_1' + menu_id);
-                        checked('f_star_2' + menu_id);
-                        checked('f_star_3' + menu_id);
-                        checked('f_star_4' + menu_id);
+                        checked('f_star_1_' + menu_id);
+                        checked('f_star_2_' + menu_id);
+                        checked('f_star_3_' + menu_id);
+                        checked('f_star_4_' + menu_id);
                         unchecked('f_star_5_' + menu_id);
                         break;
                     case 5:
-                        checked('f_star_1' + menu_id);
-                        checked('f_star_2' + menu_id);
-                        checked('f_star_3' + menu_id);
-                        checked('f_star_4' + menu_id);
-                        checked('f_star_5' + menu_id);
+                        checked('f_star_1_' + menu_id);
+                        checked('f_star_2_' + menu_id);
+                        checked('f_star_3_' + menu_id);
+                        checked('f_star_4_' + menu_id);
+                        checked('f_star_5_' + menu_id);
                         break;
                     default:
+                    }
                 }
             }
+                
+                
 
             function checked(star_id) {
                 var element = document.getElementById(star_id);
