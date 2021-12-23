@@ -26,7 +26,7 @@
     <div class="container-sm">
         <div class="fade-in">
             <div class="row">
-                
+
                 <div class="col-md-12">
                     <div class="card border-0 rounded shadow-sm border-top-orange">
                         <div class="card-body">
@@ -88,12 +88,13 @@
 
                                 <?php
                                 $url = BASEURL;
-                                $customer_id =$_SESSION['customer_id'];
+                                $customer_id = $_SESSION['customer_id'];
 
                                 foreach ($data['invoices']->orders as $orders) {
                                     $image_menu = $orders->menu->image;
                                     $menu = $orders->menu;
                                     $price = money_format($orders->price);
+                                    $menu_id = $menu->id;
 
                                     echo "<tr style='background: #edf2f7; margin-bottom:5px; '>
                                         <td class='b-none' width='15%'>
@@ -143,11 +144,11 @@
                                                 <div class='modal-body'>
                                             
                                                 <div class='text-center my-3'>
-                                                    <span class='fa fa-star checked ' id='f_star_1' onClick='rate(1)'></span>
-                                                    <span class='fa fa-star ' id='f_star_2' onClick='rate(2)'></span>
-                                                    <span class='fa fa-star ' id='f_star_3' onClick='rate(3)'></span>
-                                                    <span class='fa fa-star ' id='f_star_4' onClick='rate(4)'></span>
-                                                    <span class='fa fa-star ' id='f_star_5' onClick='rate(5)'></span>
+                                                    <span class='fa fa-star checked ' id='f_star_1_$menu_id' onClick='rate(1, $menu_id)'></span>
+                                                    <span class='fa fa-star ' id='f_star_2_$menu_id' onClick='rate(2, $menu_id)'></span>
+                                                    <span class='fa fa-star ' id='f_star_3_$menu_id' onClick='rate(3, $menu_id)'></span>
+                                                    <span class='fa fa-star ' id='f_star_4_$menu_id' onClick='rate(4, $menu_id)'></span>
+                                                    <span class='fa fa-star ' id='f_star_5_$menu_id' onClick='rate(5, $menu_id)'></span>
                                                 </div>
                                                 <input type='hidden' name='rating' id='rating' value='1'>
                                                 <input type='hidden' name='menu_id' id='menu' value='$menu->id'>
@@ -184,61 +185,60 @@
 
         <script>
             console.log(document.getElementsByName('rating')[1].value);
-            function rate(id)
-            {
+
+            function rate(id, menu_id) {
+                
                 document.getElementsByName('rating')[1].value = id;
-                switch(id){
-                    case 1 : 
-                        checked('f_star_1');
-                        unchecked('f_star_2');
-                        unchecked('f_star_3');
-                        unchecked('f_star_4');
-                        unchecked('f_star_5');
+                switch (id) {
+                    case 1:
+                        checked('f_star_1' + menu_id);
+                        unchecked('f_star_2_' + menu_id);
+                        unchecked('f_star_3_' + menu_id);
+                        unchecked('f_star_4_' + menu_id);
+                        unchecked('f_star_5_' + menu_id);
                         break;
-                    case 2 :
-                        checked('f_star_1');
-                        checked('f_star_2');
-                        unchecked('f_star_3');
-                        unchecked('f_star_4');
-                        unchecked('f_star_5');
+                    case 2:
+                        checked('f_star_1' + menu_id);
+                        checked('f_star_2' + menu_id);
+                        unchecked('f_star_3_' + menu_id);
+                        unchecked('f_star_4_' + menu_id);
+                        unchecked('f_star_5_' + menu_id);
                         break;
-                    case 3 :
-                        checked('f_star_1');
-                        checked('f_star_2');
-                        checked('f_star_3');
-                        unchecked('f_star_4');
-                        unchecked('f_star_5');
+                    case 3:
+                        checked('f_star_1' + menu_id);
+                        checked('f_star_2' + menu_id);
+                        checked('f_star_3' + menu_id);
+                        unchecked('f_star_4_' + menu_id);
+                        unchecked('f_star_5_' + menu_id);
                         break;
-                    case 4 :
-                        checked('f_star_1');
-                        checked('f_star_2');
-                        checked('f_star_3');
-                        checked('f_star_4');
-                        unchecked('f_star_5');
+                    case 4:
+                        checked('f_star_1' + menu_id);
+                        checked('f_star_2' + menu_id);
+                        checked('f_star_3' + menu_id);
+                        checked('f_star_4' + menu_id);
+                        unchecked('f_star_5_' + menu_id);
                         break;
-                    case 5 :
-                        checked('f_star_1');
-                        checked('f_star_2');
-                        checked('f_star_3');
-                        checked('f_star_4');
-                        checked('f_star_5');
+                    case 5:
+                        checked('f_star_1' + menu_id);
+                        checked('f_star_2' + menu_id);
+                        checked('f_star_3' + menu_id);
+                        checked('f_star_4' + menu_id);
+                        checked('f_star_5' + menu_id);
                         break;
                     default:
                 }
             }
 
-            function checked(star_id)
-            {
+            function checked(star_id) {
                 var element = document.getElementById(star_id);
                 element.classList.add('checked');
             }
 
-            function unchecked(star_id)
-            {
+            function unchecked(star_id) {
                 var element = document.getElementById(star_id);
                 element.classList.remove('checked');
             }
-    </script>  
+        </script>
         <!-- MDB -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
 </body>
