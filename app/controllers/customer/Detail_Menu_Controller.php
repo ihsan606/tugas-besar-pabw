@@ -9,7 +9,7 @@ class Detail_Menu_Controller extends Controller{
     session_start();
     $data = [
       'title' => 'Detail Menu',
-      'detail_menu' => Menu::with('category')->where('slug', $slug)->get(),
+      'detail_menu' => Menu::with('category', 'reviews')->where('slug', $slug)->get(),
     ];
     $this->view('detail-menu', $data, 'customer');
   }
