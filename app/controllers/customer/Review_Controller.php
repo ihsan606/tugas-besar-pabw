@@ -25,22 +25,31 @@ class Review_Controller extends Controller {
         $customer_id = $_POST['customer_id']; 
         $rating = $_POST['rating']; 
         $review = $_POST['review'];
+         
+        if(Review::where('customer_id', $customer_id)->where('menu_id', $menu_id)->first()){
+            Review::where('customer_id', $customer_id)->where('menu_id', $menu_id)->update([
+                'rate' => $rating,
+                'review' => $review,
+            ]);
+        }else{
+            Review::create([
+                'menu_id' => $menu_id,
+                'customer_id' => $customer_id,
+                'rate' => $rating,
+                'review' => $review,
+            ]);
+        }
         
-        Review::create([
-            'menu_id' => $menu_id,
-            'customer_id' => $customer_id,
-            'rating' => $rating,
-            'review' => $review,
-        ]);
 
-        $final_rating = Review::where('menu_id', $menu_id)->avg('rating');
+        $final_rating = Review::where('menu_id', $menu_id)->avg('rate');
 
         if($final_rating){
-            Menu::where('menu_id', $menu_id)->update([
+            Menu::where('id', $menu_id)->update([
                 'rating' => $final_rating,
             ]);
         }
 
         header('location:'. BASEURL. '/customer/review');
+        // //SHOLAT SUBUH DULU GUYS!!!
     }
 }
