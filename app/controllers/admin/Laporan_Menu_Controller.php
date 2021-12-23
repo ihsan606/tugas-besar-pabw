@@ -9,7 +9,7 @@ class Laporan_Menu_Controller extends Controller{
     session_start();
     $data = [
       'title' => 'Laporan Menu',
-      'menus' => Menu::with('category')->get(),
+      'menus' => Menu::with('reviews')->get(),
     ];
     $this->view('laporan-menu', $data, 'admin');
   }
@@ -21,7 +21,7 @@ class Laporan_Menu_Controller extends Controller{
     if($search){
       $data = [
         'title' => 'Laporan Menu',
-        'menus' => Menu::where('title', 'like', '%'.$search.'%')->get(),
+        'menus' => Menu::with('reviews')->where('title', 'like', '%'.$search.'%')->get(),
       ];
       $this->view('laporan-menu', $data, 'admin');
     }else{
