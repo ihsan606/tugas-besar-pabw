@@ -45,7 +45,7 @@
                   </p>
                 </div>
               </div>
-              <form action="<?=BASEURL?>/admin/login/auth" method="POST" class="signin-form">
+              <form action="<?=BASEURL?>/admin/login/login" method="POST" class="signin-form">
                 <div class="form-group mb-3">
                   <label class="label" for="email">Email</label>
                   <input type="email" name="email" class="form-control" placeholder="Email" required />

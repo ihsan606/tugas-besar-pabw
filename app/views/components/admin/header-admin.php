@@ -1,3 +1,9 @@
+<?php 
+if(!isset($_SESSION['login'])){
+  header('location:'. BASEURL. '/admin/login');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,7 +88,7 @@
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/logout">
+            <a href="<?=BASEURL;?>/admin/login/logout">
               <i class="tim-icons icon-button-power"></i>
               <p>Log out</p>
             </a>
