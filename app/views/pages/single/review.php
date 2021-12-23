@@ -67,7 +67,8 @@
                                         </td>
                                         <td>:</td>
                                         <td>
-                                            <button id="btn-status" class="btn btn-sm btn-info"> success</button>
+                                            <button id="btn-status" class="btn btn-sm btn-info" disabled> success</button>
+                                            <a href="<?= BASEURL;?>/home" class="btn btn-sm " style="background-color:#ffc107">kembali ke home</a>
 
 
                                         </td>
@@ -96,10 +97,10 @@
                                     $price = money_format($orders->price);
                                     $menu_id = $menu->id;
 
-                                    echo "<tr style='background: #edf2f7; margin-bottom:5px; '>
+                                    echo "<tr style='background: #edf2f7; border: 1px solid rgba(71, 71, 71, 0.67);border-radius: 25px; margin-bottom:5px; '>
                                         <td class='b-none' width='15%'>
                                         <div class='wrapper-image-cart'>
-                                        <img src='$url/img/menus/$image_menu' style='width: 80%;border-radius: .5rem'>
+                                        <img class='mx-2' src='$url/img/menus/$image_menu' style='width: 80%;border-radius: .5rem'>
                                         </div>
                                         </td>
                                         <td class='b-none'>
@@ -163,7 +164,7 @@
                                         Close
                                     </button>
                                             <button class='btn btn-info mr-1 btn-submit' type='submit'><i class='fa fa-paper-plane'></i>
-                                            IMPORT</button>
+                                            Kirim</button>
                                         </div>
                                     </form>
                                             
