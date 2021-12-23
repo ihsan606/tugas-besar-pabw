@@ -81,6 +81,12 @@
               <p>Kelola Admin</p>
             </a>
           </li>
+          <li>
+            <a href="<?=BASEURL;?>/admin/logout">
+              <i class="tim-icons icon-button-power"></i>
+              <p>Log out</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -137,10 +143,10 @@
                   </p>
                 </a>
                 <ul class="dropdown-menu dropdown-navbar">
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a></li>
+                  <li class="nav-link"><a href="#" class="nav-item dropdown-item">Profile</a></li>
+                  <li class="nav-link"><a href="#" class="nav-item dropdown-item">Settings</a></li>
                   <li class="dropdown-divider"></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a></li>
+                  <li class="nav-link"><a href="<?=BASEURL;?>/admin/logout" class="nav-item dropdown-item">Log out</a></li>
                 </ul>
               </li>
               <li class="separator d-lg-none"></li>
