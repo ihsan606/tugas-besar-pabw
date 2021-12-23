@@ -150,7 +150,7 @@
                                                     <span class='fa fa-star ' id='f_star_4_$menu_id' onClick='rate(4, $menu_id)'></span>
                                                     <span class='fa fa-star ' id='f_star_5_$menu_id' onClick='rate(5, $menu_id)'></span>
                                                 </div>
-                                                <input type='hidden' name='rating' id='rating' value='1'>
+                                                <input type='hidden' name='rating' id='rating' value='$menu->id'>
                                                 <input type='hidden' name='menu_id' id='menu' value='$menu->id'>
                                                 <input type='hidden' name='customer_id' id='customer' value='$customer_id'>
                                             <div class='form-group'>
