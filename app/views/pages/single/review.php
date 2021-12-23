@@ -18,7 +18,7 @@
     <!-- <link rel="stylesheet" href="style.css"> -->
     <!-- Bootstrap Icon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="../../../public/assets/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?=BASEURL?>/assets/css/custom.css">
 
 </head>
 
