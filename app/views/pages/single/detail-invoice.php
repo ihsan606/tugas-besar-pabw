@@ -172,13 +172,16 @@ require '../vendor/autoload.php'; ?>
         url = window.location.href;
         const url_arr = url.split("/");
         snap_token = url_arr[8];
+        console.log(snap_token);
+
         return snap_token;
     }
 
     function openSnap(){
-        $snap_token = getURL();
+        snap_token = getURL();
+        console.log(snap_token);
         // window.snap.pay($snap_token);
-        window.snap.pay($snap_token, {
+        window.snap.pay(snap_token, {
           onSuccess: function(result){
             /* You may add your own implementation here */
             alert("payment success!"); console.log(result);
