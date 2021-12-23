@@ -33,7 +33,7 @@
         <h2>
           <strong>Delicious Food Menu,</strong>
           <br />
-          in Your Gadged
+          in Your Gadget
         </h2>
         <p>Ayo segera pilih dan pesan makanan favorit Anda</p>
         <a class="btn btn-lg btn-success" href="<?=BASEURL?>/customer/daftar_menu">
