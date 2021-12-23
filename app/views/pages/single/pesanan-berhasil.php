@@ -76,7 +76,7 @@
                             <tr>
                                 <th class="text-left">Menu</th>
                                 <th class="text-center">Jumlah</th>
-                                <th class="text-center">Status</th>
+                                <!-- <th class="text-center">Status</th> -->
                             </tr>
                         </thead>
 
@@ -87,7 +87,7 @@
                                 echo "<tr>";
                                 echo "<td>$menu->title</td>";
                                 echo "<td class='text-center'>$orders->qty</td>";
-                                echo "<td class='text-center'>$orders->status</td>";
+                                // echo "<td class='text-center'>$orders->status</td>";
                                 echo "</tr>";
                             }
                             ?>
@@ -98,7 +98,8 @@
             </div>
             <div class="row mt-2 mb-3">
                 <div class="col d-flex justify-content-center">
-                <a href="<?= BASEURL;?>/home" class="btn btn-info">Kembali Ke Home</a>
+                <!-- <a href="<?= BASEURL;?>/home" class="btn btn-info">Kembali Ke Home</a> -->
+                <a href="<?= BASEURL;?>/home" class="btn btn-info">Terima Pesanan</a>
                 </div>
             </div>
         </div>
