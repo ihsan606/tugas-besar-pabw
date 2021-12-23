@@ -167,8 +167,8 @@
               </tr>
             </thead>
           </table>
-          <div class="table-full-width table-responsive" style="border-collapse:collapse;">
-            <table class="table">
+          <div class="table-full-width table-responsive" >
+            <table class="table" style="border-collapse:collapse;">
               <thead>
                 <tr>
                   <th class="text-center py-0" width="30px">
@@ -275,7 +275,7 @@
               </tr>
             </thead>
           </table>
-          <div class=" table-full-width table-responsive"></div>
+          <div class="table-full-width table-responsive">
             <table class="table" style="border-collapse:collapse;">
               <thead>
                 <tr>
@@ -362,8 +362,9 @@
                 }
                 ?>
                 
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
