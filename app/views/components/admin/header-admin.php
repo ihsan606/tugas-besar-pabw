@@ -88,7 +88,7 @@ if(!isset($_SESSION['login'])){
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/login/logout">
+            <a onclick="alert_warning('Anda akan diarahkan ke halaman login', 'ANDA YAKIN INGIN KELUAR?', 'KELUAR!', '<?=BASEURL;?>/admin/login/logout')">
               <i class="tim-icons icon-button-power"></i>
               <p>Log out</p>
             </a>
