@@ -28,11 +28,11 @@
     </div>
     <div class="form-login md-5">
       <div class="container login">
-        <div class="row">
-          <div class="col-7  text-center left-image">
+        <div class="row align-items-center">
+          <div class="col-7 text-center left-image align-self-center">
             <img src="../img/rezerva.png" alt="" >
           </div>
-          <div class="col-5">
+          <div class="col-5 align-self-center">
             <div class="login-wrap p-4 p-md-5">
               <div class="d-flex">
                 <div class="w-100">
@@ -45,26 +45,24 @@
                   </p>
                 </div>
               </div>
-              <form action="#" class="signin-form">
+              <form action="<?=BASEURL?>/admin/login/auth" method="POST" class="signin-form">
                 <div class="form-group mb-3">
-                  <label class="label" for="name">Username</label>
-                  <input type="text" class="form-control" placeholder="Username" required />
+                  <label class="label" for="email">Email</label>
+                  <input type="email" name="email" class="form-control" placeholder="Email" required />
                 </div>
                 <div class="form-group mb-3">
                   <label class="label" for="password">Password</label>
-                  <input type="password" class="form-control" placeholder="Password" required />
+                  <input type="password" name="password" class="form-control" placeholder="Password" required />
                 </div>
                 <div class="form-group text-center">
                   <button class="btn btn-info" type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
-                </div>
-                <div class="form-group d-md-flex">
-                  <div class="w-50 text-left">
+                  <div class="text-center mt-3">
                     <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
                       <input type="checkbox" checked />
                       <span class="checkmark"></span>
                     </label>
                   </div>
-                  <div class="w-50 text-md-right">
+                  <div class="text-center mt-3">
                     <a href="#">Forgot Password</a>
                   </div>
                 </div>
