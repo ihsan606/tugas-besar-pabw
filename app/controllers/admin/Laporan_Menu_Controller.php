@@ -9,7 +9,7 @@ class Laporan_Menu_Controller extends Controller{
     session_start();
     $data = [
       'title' => 'Laporan Menu',
-      'menus' => Menu::with('reviews')->get(),
+      'menus' => Menu::with('reviews.customer')->get(),
     ];
     $this->view('laporan-menu', $data, 'admin');
   }

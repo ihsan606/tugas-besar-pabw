@@ -53,6 +53,7 @@
           $url = BASEURL;
           for($i = 0; $i < count($menus); $i++){
             $menu = $menus[$i];
+            $reviews = $menus[$i]->reviews;
             $no = $i + 1; 
             echo "
               <tr>
@@ -70,10 +71,12 @@
                     <div class='accordion-item'>
             ";
 
-            for ($j = 0; $j < 3; $j++){
+            for ($j = 0; $j < count($reviews); $j++){
+              $name = $reviews[$j]->customer->name;
+              $review = $reviews[$j];
               echo"
-                <h5>Orang ke-$j</h5>
-                <p>Prosesnya cepat, harga terjangkau, recomended</p>
+                <h5>$name</h5>
+                <p>$review->review</p>
                 <br>
               ";
             }
