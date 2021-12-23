@@ -1,6 +1,8 @@
 <?php 
 
 use App\models\Invoice;
+use App\models\Review;
+use App\models\Menu;
 
 require '../vendor/autoload.php';
 
@@ -15,7 +17,15 @@ class Review_Controller extends Controller {
             'invoices' =>Invoice::with('orders.menu','customer')->where('customer_id',$customer_id)->first(),
         ];
         $this->view('review', $data, 'single');
+    }
 
-
+    public function store(){
+        session_start();
+        $menu_id = $_POST['menu_id'];
+        $customer_id = $_POST['customer_id']; 
+        $rating = $_POST['rating']; 
+        $review = $_POST['review'];
+        
+        
     }
 }

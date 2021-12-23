@@ -145,17 +145,17 @@
                                             
                                                 <div class='text-center my-3'>
                                                     <span class='fa fa-star checked ' id='f_star_1_$menu_id' onClick='rate(1, $menu_id)'></span>
-                                                    <span class='fa fa-star ' id='f_star_2_$menu_id' onClick='rate(2, $menu_id)'></span>
-                                                    <span class='fa fa-star ' id='f_star_3_$menu_id' onClick='rate(3, $menu_id)'></span>
+                                                    <span class='fa fa-star checked ' id='f_star_2_$menu_id' onClick='rate(2, $menu_id)'></span>
+                                                    <span class='fa fa-star checked ' id='f_star_3_$menu_id' onClick='rate(3, $menu_id)'></span>
                                                     <span class='fa fa-star ' id='f_star_4_$menu_id' onClick='rate(4, $menu_id)'></span>
                                                     <span class='fa fa-star ' id='f_star_5_$menu_id' onClick='rate(5, $menu_id)'></span>
                                                 </div>
-                                                <input type='hidden' name='rating' id='rating' value='$menu->id'>
+                                                <input type='hidden' name='rating' id='rating' value='3'>
                                                 <input type='hidden' name='menu_id' id='menu' value='$menu->id'>
                                                 <input type='hidden' name='customer_id' id='customer' value='$customer_id'>
                                             <div class='form-group'>
                                             <textarea class='form-control' id='review' name='review' rows='3' placeholder='Masukkan Ulasan Menu'
-                                            ></textarea>
+                                            required></textarea>
                                             </div>
                                         </div>
                                         <div class='modal-footer'>
