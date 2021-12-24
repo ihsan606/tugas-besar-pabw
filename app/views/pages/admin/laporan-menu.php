@@ -74,10 +74,29 @@
             for ($j = 0; $j < count($reviews); $j++){
               $name = $reviews[$j]->customer->name;
               $review = $reviews[$j];
-              echo"
-                <h5>$name</h5>
-                <p>$review->review</p>
-                <br>
+              echo "
+                <div class='card px-2 py-2 my-2 shadow'>
+                  <div class='row'>
+                    <div class='col-sm-1'>
+                    <img
+                      class='rounded-circle ml-2'
+                      width='30'
+                      src='https://ui-avatars.com/api/?name=$name&amp;background=4e73df&amp;color=ffffff&amp;size=100'
+                    />
+                    </div>
+                    <div class='col-sm-11'>
+                      <p>$name</p>
+                    </div>
+                  </div>
+                    <div class='row'>
+                      <div class='col-sm-1'>
+                        <p></p>
+                      </div>
+                      <div class='col-sm-11'>
+                        <p>$review->review</p>
+                      </div>
+                  </div>
+                </div>
               ";
             }
 
@@ -93,4 +112,4 @@
       </table>
     </div>
   </div>
-</div>   
+</div> 

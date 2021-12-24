@@ -121,7 +121,11 @@ if(!isset($_SESSION['login'])){
                 <h3 class="my-0"><?=$_SESSION["admin"]?></h3>
               <li class="dropdown nav-item" style="vertical-align: middle!important; height: 100%;">
                 <div class="photo">
-                  <img src="<?=BASEURL;?>/assets/img/anime3.png" alt="Profile Photo">
+                  <img
+                      class='rounded-circle ml-0'
+                      width='30'
+                      src='https://ui-avatars.com/api/?name=<?=$_SESSION["admin"]?>&amp;background=4e73df&amp;color=ffffff&amp;size=100'
+                    />
                 </div>
               </li>
               <li class="separator d-lg-none"></li>
