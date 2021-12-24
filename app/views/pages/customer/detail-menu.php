@@ -111,8 +111,8 @@
 
     </div>
     <div class="col-5">
-      <h5 class="text-center" style="font-size:50px;color:#00b74a"><?=$data['detail_menu'][0]->rating ?>
-      <i class="fa fa-star" style="color:#00b74a"></i>
+      <h5 class="text-center mt-2" style="font-size:60px;color:#00b74a"><?=$data['detail_menu'][0]->rating ?>
+      <i class="fa fa-star" style="color:orange"></i>
     </h5>  
       
     </div>
@@ -154,7 +154,8 @@
   <div class="alert mt-5" style="background-color:rgba(0,0,0,.02)" role="alert">
       Ringkasan Ulasan
     </div>
-    <div class="col-12">
+    <div class="row">
+    <div class="col-7">
 
       <?php
       $bintang_5 = $data['bintang_5'];
@@ -199,6 +200,13 @@
       </div>
 
     </div>
+    <div class="col-5">
+      <h5 class="text-center mt-4" style="font-size:50px;color:#00b74a"><?=$data['detail_menu'][0]->rating ?>
+      <i class="fa fa-star" style="color:orange"></i>
+    </h5>  
+      
+    </div>
+  </div>
     <div class="alert mt-5" style="background-color:rgba(0,0,0,.02)" role="alert">
       Ulasan Pelanggan
     </div>
