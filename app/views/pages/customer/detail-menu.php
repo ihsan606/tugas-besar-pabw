@@ -132,12 +132,15 @@
           src='https://ui-avatars.com/api/?name=$customer->name&amp;background=4e73df&amp;color=ffffff&amp;size=100'
               />
     </div>
-    <div class='col-sm-1'>
+    <div class='col-sm-11'>
       <p>$customer->name</p>
     </div>
   </div>
   <div class='row'>
-      <div class='col'>
+  <div class='col-sm-1'>
+  <p></p>
+  </div>
+      <div class='col-sm-11'>
       <p>$review->review</p>
       </div>
   </div>
@@ -214,28 +217,31 @@
     foreach ($data['reviews'] as $review) {
       $customer = $review->customer;
       echo "
-      <div class='card px-2 py-2 my-2 shadow'>
-        <div class='row'>
-          <div class='col-md-1'>
-          <img
-            class='rounded-circle ml-2'
-            width='30'
-            src='https://ui-avatars.com/api/?name=$customer->name&amp;background=4e73df&amp;color=ffffff&amp;size=100'
-          />
-          </div>
-          <div class='col-md-11'>
-            <p>$customer->name</p>
-          </div>
-        </div>
-        <div class='row'>
-          <div class='col-md-1'>
-            <p></p>
-          </div>
-          <div class='col-md-11'>
-            <p>$review->review</p>
-          </div>
-        </div>
-      </div>";
+      <table>
+        <tbody>
+          <tr>
+            <td colspan='2' style='min-width: 50px!important'> 
+              <img
+                class='rounded-circle ml-2'
+                width='30'
+                src='https://ui-avatars.com/api/?name=$customer->name&amp;background=4e73df&amp;color=ffffff&amp;size=100'
+              />
+            </td>
+            <td colspan='10'>
+              <p>$customer->name</p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan='2' style='min-width: 50px!important'>
+              <p></p>
+            </td>
+            <td colspan='10'>
+              <p>$review->review</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    ";
     }
     ?>
   </div>
