@@ -228,16 +228,15 @@
           </div>
         </div>
         <div class='row'>
-            <div class='col-sm-12'>
-              <p>$review->review</p>
-            </div>
+          <div class='col-sm-1'>
+            <p></p>
+          </div>
+          <div class='col-sm-11'>
+            <p>$review->review</p>
+          </div>
         </div>
       </div>";
     }
-
-
     ?>
-
-
   </div>
 </div>
