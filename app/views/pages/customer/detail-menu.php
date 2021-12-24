@@ -4,13 +4,13 @@
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
-          <a class="text-dark" href="<?=BASEURL?>/customer/home">Home</a>
+          <a class="text-dark" href="<?= BASEURL ?>/customer/home">Home</a>
         </li>
         <li class="breadcrumb-item">
-          <a class="text-dark" href="<?=BASEURL?>/customer/daftar_menu">Daftar Menu</a>
+          <a class="text-dark" href="<?= BASEURL ?>/customer/daftar_menu">Daftar Menu</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">
-          <strong>Detail Menu</strong> 
+          <strong>Detail Menu</strong>
         </li>
       </ol>
     </nav>
@@ -19,30 +19,216 @@
 
 <div class="row row-cols-md-2 row-cols-md-1 mt-2">
   <div class="col-md-auto col-md-6 mb-3">
-    <img src="<?=BASEURL?>/img/menus/<?=$data['detail_menu'][0]->image?>" class="img-fluid shadow" alt="..." />
+    <img src="<?= BASEURL ?>/img/menus/<?= $data['detail_menu'][0]->image ?>" class="img-fluid shadow rounded" alt="..." />
   </div>
   <div class="col-md-6 col-md-auto">
     <h2>
-      <strong><?=$data['detail_menu'][0]->title?></strong>
+      <strong><?= $data['detail_menu'][0]->title ?></strong>
     </h2>
     <hr />
+
     <h4>
       Harga:
-      <strong>Rp <?=$data['detail_menu'][0]->price?></strong>
+      <strong>Rp <?= $data['detail_menu'][0]->price ?></strong>
     </h4>
-    <form class="mt-4" action = "<?=BASEURL;?>/customer/detail_menu/store/<?=$data['detail_menu'][0]->id?>", method = "POST">
+    <div class="d-sm-block d-md-none">
+      <div class="alert" style="background-color:rgba(0,0,0,.02)" role="alert">
+        Deskripsi Menu
+      </div>
+      <p><?= $data['detail_menu'][0]->description ?></p>
+
+    </div>
+    <form class="mt-4" action="<?= BASEURL; ?>/customer/detail_menu/store/<?= $data['detail_menu'][0]->id ?>" , method="POST">
       <div class="form-group mb-4">
         <label for="jumlah">Jumlah Pesanan</label>
         <input type="number" required class="form-control" name="jumlah" placeholder="Masukkan Jumlah Pesanan" required>
       </div>
       <div class="form-group mb-4">
         <label for="keterangan">Keterangan</label>
-        <textarea name="keterangan"  class="form-control" placeholder="Keterangan seperti: Pedas, Bungkus" style='height: 100px;' required></textarea>
+        <textarea name="keterangan" class="form-control" placeholder="Keterangan seperti: Pedas, Bungkus" style='height: 100px;' required></textarea>
       </div>
       <button type="submit" class="btn btn-success">
         <b-icon-cart></b-icon-cart>
         Pesan
       </button>
     </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-9 d-none d-md-block">
+    <div class="alert" style="background-color:rgba(0,0,0,.02)" role="alert">
+      Deskripsi Menu
+    </div>
+    <p><?= $data['detail_menu'][0]->description ?></p>
+    <div class="alert mt-5" style="background-color:rgba(0,0,0,.02)" role="alert">
+      Ringkasan Ulasan
+    </div>
+    <div class="row">
+    <div class="col-6">
+
+      <?php
+      $bintang_5 = $data['bintang_5'];
+      $bintang_4 = $data['bintang_4'];
+      $bintang_3 = $data['bintang_3'];
+      $bintang_2 = $data['bintang_2'];
+      $bintang_1 = $data['bintang_1'];
+
+      ?>
+      <!-- bintang 1 -->
+      <div class="progress" style="height: 15px;">
+        <p class="mx-2">5</p>
+        <div class="progress-bar bg-success rounded" role="progressbar" style="width: <?= $bintang_5; ?>%;" aria-valuenow="<?= $bintang_5; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+      <!-- bintang 2 -->
+      <div class="progress my-2" style="height: 15px;">
+        <p class="mx-2">4</p>
+
+        <div class="progress-bar bg-success rounded" role="progressbar" style="width: <?= $bintang_4; ?>%;" aria-valuenow="<?= $bintang_4; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+      <!-- bintang 3 -->
+      <div class="progress mb-2" style="height: 15px;">
+        <p class="mx-2">3</p>
+
+        <div class="progress-bar bg-success rounded" role="progressbar" style="width: <?= $bintang_3; ?>%;" aria-valuenow="<?= $bintang_3; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+      <!-- bintang 4 -->
+      <div class="progress mb-2" style="height: 15px;">
+        <p class="mx-2">2</p>
+
+        <div class="progress-bar bg-success rounded" role="progressbar" style="width: <?= $bintang_2; ?>%;" aria-valuenow="<?= $bintang_2; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+      <!-- bintang 5 -->
+      <div class="progress mb-2" style="height: 15px;">
+        <p class="mx-2">1</p>
+
+        <div class="progress-bar bg-success rounded" role="progressbar" style="width: <?= $bintang_1; ?>%;" aria-valuenow="<?= $bintang_1; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+    </div>
+    <div class="col-5">
+      <h5 class="text-center" style="font-size:50px;color:#00b74a"><?=$data['detail_menu'][0]->rating ?>
+      <i class="fa fa-star" style="color:#00b74a"></i>
+    </h5>  
+      
+    </div>
+  </div>
+    <div class="alert mt-5" style="background-color:rgba(0,0,0,.02)" role="alert">
+      Ulasan Pelanggan
+    </div>
+    <?php
+    foreach ($data['reviews'] as $review) {
+      $customer = $review->customer;
+      echo "<div class='card px-2 py-2 my-2 shadow'>
+  <div class='row'>
+    <div class='col-sm-1'>
+    <img
+          class='rounded-circle ml-2'
+          width='30'
+          src='https://ui-avatars.com/api/?name=$customer->name&amp;background=4e73df&amp;color=ffffff&amp;size=100'
+              />
+    </div>
+    <div class='col-sm-1'>
+      <p>$customer->name</p>
+    </div>
+  </div>
+  <div class='row'>
+      <div class='col'>
+      <p>$review->review</p>
+      </div>
+  </div>
+  </div>";
+    }
+
+
+    ?>
+
+
+  </div>
+
+  <div class="d-sm-block d-md-none">
+  <div class="alert mt-5" style="background-color:rgba(0,0,0,.02)" role="alert">
+      Ringkasan Ulasan
+    </div>
+    <div class="col-12">
+
+      <?php
+      $bintang_5 = $data['bintang_5'];
+      $bintang_4 = $data['bintang_4'];
+      $bintang_3 = $data['bintang_3'];
+      $bintang_2 = $data['bintang_2'];
+      $bintang_1 = $data['bintang_1'];
+
+      ?>
+      <!-- bintang 1 -->
+      <div class="progress" style="height: 15px;">
+        <p class="mx-2">5</p>
+        <div class="progress-bar bg-success rounded" role="progressbar" style="width: <?= $bintang_5; ?>%;" aria-valuenow="<?= $bintang_5; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+      <!-- bintang 2 -->
+      <div class="progress my-2" style="height: 15px;">
+        <p class="mx-2">4</p>
+
+        <div class="progress-bar bg-success rounded" role="progressbar" style="width: <?= $bintang_4; ?>%;" aria-valuenow="<?= $bintang_4; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+      <!-- bintang 3 -->
+      <div class="progress mb-2" style="height: 15px;">
+        <p class="mx-2">3</p>
+
+        <div class="progress-bar bg-success rounded" role="progressbar" style="width: <?= $bintang_3; ?>%;" aria-valuenow="<?= $bintang_3; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+      <!-- bintang 4 -->
+      <div class="progress mb-2" style="height: 15px;">
+        <p class="mx-2">2</p>
+
+        <div class="progress-bar bg-success rounded" role="progressbar" style="width: <?= $bintang_2; ?>%;" aria-valuenow="<?= $bintang_2; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+      <!-- bintang 5 -->
+      <div class="progress mb-2" style="height: 15px;">
+        <p class="mx-2">1</p>
+
+        <div class="progress-bar bg-success rounded" role="progressbar" style="width: <?= $bintang_1; ?>%;" aria-valuenow="<?= $bintang_1; ?>" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+
+    </div>
+    <div class="alert mt-5" style="background-color:rgba(0,0,0,.02)" role="alert">
+      Ulasan Pelanggan
+    </div>
+    <?php
+    foreach ($data['reviews'] as $review) {
+      $customer = $review->customer;
+      echo "<div class='card px-2 py-2 my-2 shadow'>
+  <div class='row'>
+    <div class='col-sm-1'>
+    <img
+          class='rounded-circle ml-2'
+          width='30'
+          src='https://ui-avatars.com/api/?name=$customer->name&amp;background=4e73df&amp;color=ffffff&amp;size=100'
+              />
+    </div>
+    <div class='col-sm-1'>
+      <p>$customer->name</p>
+    </div>
+  </div>
+  <div class='row'>
+      <div class='col'>
+      <p>$review->review</p>
+      </div>
+  </div>
+  </div>";
+    }
+
+
+    ?>
+
+
   </div>
 </div>

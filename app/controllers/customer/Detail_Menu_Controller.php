@@ -2,14 +2,22 @@
 
 require '../vendor/autoload.php';
 use App\models\Menu;
+use App\models\Review;
 
 class Detail_Menu_Controller extends Controller{
   public function index($slug)
   {
     session_start();
+    $menu_id = Menu::with('category', 'reviews')->where('slug', $slug)->first()->id;
     $data = [
       'title' => 'Detail Menu',
       'detail_menu' => Menu::with('category', 'reviews')->where('slug', $slug)->get(),
+      'bintang_5'=>(Review::where('menu_id', $menu_id)->where('rate',5)->get()->count()/Review::where('menu_id', $menu_id)->get()->count())*100,
+      'bintang_4'=>(Review::where('menu_id', $menu_id)->where('rate',4)->get()->count()/Review::where('menu_id', $menu_id)->get()->count())*100,
+      'bintang_3'=>(Review::where('menu_id', $menu_id)->where('rate',3)->get()->count()/Review::where('menu_id', $menu_id)->get()->count())*100,
+      'bintang_2'=>(Review::where('menu_id', $menu_id)->where('rate',2)->get()->count()/Review::where('menu_id', $menu_id)->get()->count())*100,
+      'bintang_1'=>(Review::where('menu_id', $menu_id)->where('rate',1)->get()->count()/Review::where('menu_id', $menu_id)->get()->count())*100,
+      'reviews' => Review::with('menu','customer')->where('menu_id', $menu_id)->get()
     ];
     $this->view('detail-menu', $data, 'customer');
   }
