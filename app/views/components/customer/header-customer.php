@@ -19,6 +19,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
   <!-- Bootstrap Icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+  <!-- local css style -->
+  <link rel="stylesheet" type="text/css" href="<?=BASEURL?>/assets/css/custom.css">
+
   <title>Rezerva | Customer | <?= $data['title']; ?></title>
 
   <!-- Sweet Alert -->
