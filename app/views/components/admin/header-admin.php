@@ -46,49 +46,49 @@ if(!isset($_SESSION['login'])){
         </div>
         <ul class="nav">
           <li>
-            <a href="<?=BASEURL;?>/admin/dashboard">
+            <a href="<?=BASEURL;?>/admin/dashboard" style="font-size: 12px;">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/daftar_pesanan">
-              <i class="tim-icons icon-atom"></i>
+            <a href="<?=BASEURL;?>/admin/daftar_pesanan" style="font-size: 12px;">
+              <i class="tim-icons icon-notes"></i>
               <p>Daftar Pesanan</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/laporan_pendapatan">
+            <a href="<?=BASEURL;?>/admin/laporan_pendapatan" style="font-size: 12px;">
               <i class="tim-icons icon-pin"></i>
               <p>Laporan Pendapatan</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/laporan_menu">
+            <a href="<?=BASEURL;?>/admin/laporan_menu" style="font-size: 12px;">
               <i class="tim-icons icon-bell-55"></i>
               <p>Laporan Menu</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/kelola_menu">
+            <a href="<?=BASEURL;?>/admin/kelola_menu" style="font-size: 12px;">
               <i class="tim-icons icon-puzzle-10"></i>
               <p>Kelola Menu</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/kelola_kategori">
-              <i class="tim-icons icon-single-02"></i>
+            <a href="<?=BASEURL;?>/admin/kelola_kategori" style="font-size: 12px;">
+              <i class="tim-icons icon-align-center"></i>
               <p>Kelola Kategori</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/kelola_admin">
-              <i class="tim-icons icon-align-center"></i>
+            <a href="<?=BASEURL;?>/admin/kelola_admin" style="font-size: 12px;">
+              <i class="tim-icons icon-single-02"></i>
               <p>Kelola Admin</p>
             </a>
           </li>
           <li>
-            <a onclick="alert_warning('Anda akan diarahkan ke halaman login', 'ANDA YAKIN INGIN KELUAR?', 'KELUAR!', '<?=BASEURL;?>/admin/login/logout')">
+            <a onclick="alert_warning('Anda akan diarahkan ke halaman login', 'ANDA YAKIN INGIN KELUAR?', 'KELUAR!', '<?=BASEURL;?>/admin/login/logout')" style="font-size: 12px;">
               <i class="tim-icons icon-button-power"></i>
               <p>Logout</p>
             </a>
