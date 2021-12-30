@@ -46,7 +46,7 @@ if(!isset($_SESSION['login'])){
         </div>
         <ul class="nav">
           <li>
-            <a href="<?=BASEURL;?>/admin/dashboard" style="font-size: 14px;">
+            <a href="<?=BASEURL;?>/admin/dashboard" style="font-size: 12px;">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
