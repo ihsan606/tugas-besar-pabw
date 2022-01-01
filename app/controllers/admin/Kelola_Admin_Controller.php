@@ -40,7 +40,8 @@ class Kelola_Admin_Controller extends Controller{
         'title' => 'Kelola Admin',
         'admins' => Admin::where('name', 'like', '%'.$search.'%')->get(),
       ];
-      $this->view('kelola-admin', $data, 'admin');
+      $this->view('kelola_admin', $data, 'admin');
+      
     }else{
       header('Location: ' . BASEURL . '/admin/kelola_admin');
     }
