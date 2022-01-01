@@ -99,7 +99,7 @@
             <div class="row mt-2 mb-3">
                 <div class="col d-flex justify-content-center">
                 <!-- <a href="<?= BASEURL;?>/home" class="btn btn-info">Kembali Ke Home</a> -->
-                <a href="<?= BASEURL;?>/home" class="btn btn-info">Terima Pesanan</a>
+                <a href="<?= BASEURL;?>/customer/review" class="btn btn-info">Terima Pesanan</a>
                 </div>
             </div>
         </div>

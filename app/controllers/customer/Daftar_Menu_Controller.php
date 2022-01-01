@@ -10,7 +10,7 @@ class Daftar_Menu_Controller extends Controller{
     session_start();
     $data = [
       'title' => 'Daftar Menu',
-      'menus' => Menu::with('category')->get(),
+      'menus' => Menu::with('category', 'reviews')->get(),
       'message' => 'Daftar Menu',
     ];
     $this->view('daftar-menu', $data, 'customer');
@@ -21,12 +21,12 @@ class Daftar_Menu_Controller extends Controller{
     session_start();
 
     if(isset($_POST['search']) && $_POST['search'] != ''){
-      $menus = Menu::with('category')->where('title', 'like', '%'.$_POST['search'].'%')->get();
+      $menus = Menu::with('category' , 'reviews')->where('title', 'like', '%'.$_POST['search'].'%')->get();
       $message = 'Hasil Pencarian ' . '"' . $_POST['search'] . '"';
     }else if($slug){
       $id = Category::where('slug', $slug)->first()->id;
       $menus = Menu::with('category')->where('category_id', $id)->get();
-      $message = 'Menampilkan Kategory ' . Category::where('slug', $slug)->first()->name;
+      $message = 'Kategori ' . Category::where('slug', $slug)->first()->name;
     }else{
       header('Location: ' . BASEURL . '/customer/daftar_menu');
     }

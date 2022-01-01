@@ -13,7 +13,7 @@ class Dashboard_Controller extends Controller{
     session_start();
     $data_perbulan = [];
     for($i = 1; $i < 13; $i++){
-      array_push($data_perbulan, Invoice::where('status_pembayaran', 'success')->whereMonth('created_at', $i)->sum('grand_total'));
+      array_push($data_perbulan, Invoice::where('status_pembayaran', 'success')->whereYear('created_at', Carbon::today()->format('Y'))->whereMonth('created_at', $i)->sum('grand_total'));
     }
 
     $data = [
@@ -27,8 +27,9 @@ class Dashboard_Controller extends Controller{
       'success' => Invoice::where('status_pembayaran', 'success')->count(),
       'expired' => Invoice::where('status_pembayaran', 'expired')->count(),
       'failed' => Invoice::where('status_pembayaran', 'failed')->count(),
-      'menus' => Menu::with('category')->get(),
+      'menus' => Menu::with('reviews.customer')->get(),
       'invoices' => Invoice::with('orders.menu','orders.table','customer')->where('status_pesanan', 'dikonfirmasi')->get(),
+      'year' => Carbon::today()->format('Y'),
     ];
     $this->view('dashboard', $data, 'admin');
   }
@@ -40,7 +41,7 @@ class Dashboard_Controller extends Controller{
     if($search){
       $data_perbulan = [];
       for($i = 1; $i < 13; $i++){
-        array_push($data_perbulan, Invoice::where('status_pembayaran', 'success')->whereMonth('created_at', $i)->sum('grand_total'));
+        array_push($data_perbulan, Invoice::where('status_pembayaran', 'success')->whereYear('created_at', Carbon::today()->format('Y'))->whereMonth('created_at', $i)->sum('grand_total'));
       }
 
       $data = [
@@ -54,8 +55,9 @@ class Dashboard_Controller extends Controller{
         'success' => Invoice::where('status_pembayaran', 'success')->count(),
         'expired' => Invoice::where('status_pembayaran', 'expired')->count(),
         'failed' => Invoice::where('status_pembayaran', 'failed')->count(),
-        'menus' => Menu::where('title', 'like', '%'.$search.'%')->get(),
+        'menus' => Menu::with('reviews.customer')->where('title', 'like', '%'.$search.'%')->get(),
         'invoices' => Invoice::with('orders.menu','orders.table','customer')->where('status_pesanan', 'dikonfirmasi')->get(),
+        'year' => Carbon::today()->format('Y'),
       ];
       $this->view('dashboard', $data, 'admin');
     }else{
@@ -70,7 +72,7 @@ class Dashboard_Controller extends Controller{
     if($search){
       $data_perbulan = [];
       for($i = 1; $i < 13; $i++){
-        array_push($data_perbulan, Invoice::where('status_pembayaran', 'success')->whereMonth('created_at', $i)->sum('grand_total'));
+        array_push($data_perbulan, Invoice::where('status_pembayaran', 'success')->whereYear('created_at', Carbon::today()->format('Y'))->whereMonth('created_at', $i)->sum('grand_total'));
       }
 
       $customers_id = [];
@@ -89,8 +91,9 @@ class Dashboard_Controller extends Controller{
         'success' => Invoice::where('status_pembayaran', 'success')->count(),
         'expired' => Invoice::where('status_pembayaran', 'expired')->count(),
         'failed' => Invoice::where('status_pembayaran', 'failed')->count(),
-        'menus' => Menu::with('category')->get(),
+        'menus' => Menu::with('reviews.customer')->get(),
         'invoices' => Invoice::with('orders.menu','orders.table','customer')->where('status_pesanan', 'dikonfirmasi')->whereIn('customer_id', $customers_id)->get(),
+        'year' => Carbon::today()->format('Y'),
       ];
       $this->view('dashboard', $data, 'admin');
     }else{
@@ -128,3 +131,5 @@ class Dashboard_Controller extends Controller{
     }
   }
 }
+
+?>

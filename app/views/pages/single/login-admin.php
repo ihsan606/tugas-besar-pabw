@@ -36,7 +36,7 @@
             <div class="login-wrap p-4 p-md-5">
               <div class="d-flex">
                 <div class="w-100">
-                  <h3 class="mb-4">Sign In</h3>
+                  <h3 class="mb-4">Login</h3>
                 </div>
                 <div class="w-100">
                   <p class="social-media d-flex justify-content-end">
@@ -55,7 +55,7 @@
                   <input type="password" name="password" class="form-control" placeholder="Password" required />
                 </div>
                 <div class="form-group text-center">
-                  <button class="btn btn-info" type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+                  <button class="btn btn-info" type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
                   <div class="text-center mt-3">
                     <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
                       <input type="checkbox" checked />

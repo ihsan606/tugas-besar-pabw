@@ -13,12 +13,17 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
   <!-- Nucleo Icons -->
   <link href="<?= BASEURL; ?>/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
   <!-- MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
   <!-- Bootstrap Icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+  <!-- local css style -->
+  <link rel="stylesheet" type="text/css" href="<?=BASEURL?>/assets/css/custom.css">
+
   <title>Rezerva | Customer | <?= $data['title']; ?></title>
 
   <!-- Sweet Alert -->
@@ -75,37 +80,17 @@
             <?php 
             foreach($data['data_categories'] as $category){
               $url = BASEURL;
-              echo"
+              echo <<<TEXT
                 <li>
                   <a class='dropdown-item' href='$url/customer/daftar_menu/show/$category->slug'>
                     <h6><img src='$url/img/categories/$category->image' width='50' style='margin-right: 10px;'>$category->name</h6>
                   </a>
                 </li>
-              ";
+              TEXT;
             }
             ?>
           </ul>
         </li>
-        <!-- <li class="nav-item dropdown">
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            KATEGORI
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <?php 
-            // foreach($data['data_categories'] as $category){
-            //   $url = BASEURL;
-            //   echo"
-            //     <li>
-            //       <a class='dropdown-item' href='$url/customer/daftar_menu/show/$category->slug'>
-            //         <img src='$url/img/categories/$category->image' width='50'>$category->name
-            //       </a>
-            //     </li>
-            //   ";
-            // }
-            ?>
-          </ul>
-        </li> -->
       </ul>
       <!-- Left links -->
     </div>
@@ -114,7 +99,9 @@
     <!-- Right elements -->
     <div class="d-flex align-items-center">
       <a href="<?= BASEURL; ?>/customer/keranjang" type="button" class="btn btn-success" style="font-size: 14px; min-width: auto;">
-        Keranjang <span class="badge bg-white" style="color: #0d6efd; font-size: 12px; font-weight: 600;">
+        <i class='bi-cart text-white fs-6' style='margin-right: 5px;'></i>
+        Keranjang 
+        <span class="badge bg-white" style="color: #0d6efd; font-size: 12px; font-weight: 600;">
           <?php
           if (isset($_SESSION['keranjang']['menus'])) {
             echo count($_SESSION['keranjang']['menus']);
