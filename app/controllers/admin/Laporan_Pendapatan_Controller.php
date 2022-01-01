@@ -11,7 +11,7 @@ class Laporan_Pendapatan_Controller extends Controller{
     $_SESSION;
     $data_perbulan = [];
     for($i = 1; $i < 13; $i++){
-      array_push($data_perbulan, Invoice::where('status_pembayaran', 'success')->whereMonth('created_at', $i)->sum('grand_total'));
+      array_push($data_perbulan, Invoice::where('status_pembayaran', 'success')->whereYear('created_at', Carbon::today()->format('Y'))->whereMonth('created_at', $i)->sum('grand_total'));
     }
 
     $data = [
@@ -25,6 +25,7 @@ class Laporan_Pendapatan_Controller extends Controller{
       'success' => Invoice::where('status_pembayaran', 'success')->count(),
       'expired' => Invoice::where('status_pembayaran', 'expired')->count(),
       'failed' => Invoice::where('status_pembayaran', 'failed')->count(),
+      'year' => Carbon::today()->format('Y'),
     ];
     $this->view('laporan-pendapatan', $data, 'admin');
   }
