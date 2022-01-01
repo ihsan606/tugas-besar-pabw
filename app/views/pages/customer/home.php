@@ -12,8 +12,8 @@
             </h2>
             <p>Ayo segera pilih dan pesan makanan favorit Anda</p>
             <a class="btn btn-lg btn-success" href="<?=BASEURL?>/customer/daftar_menu">
-              <b-icon-arrow-right></b-icon-arrow-right>
               Pesan Sekarang
+              <i class='bi-arrow-right text-white fs-6' style='margin-left: 5px;'></i>
             </a>
           </div>
         </div>
@@ -37,8 +37,8 @@
         </h2>
         <p>Ayo segera pilih dan pesan makanan favorit Anda</p>
         <a class="btn btn-lg btn-success" href="<?=BASEURL?>/customer/daftar_menu">
-          <b-icon-arrow-right></b-icon-arrow-right>
           Pesan Sekarang
+          <i class='bi-arrow-right text-white fs-6' style='margin-left: 5px;'></i>
         </a>
       </div>
     </div>
@@ -86,7 +86,7 @@
             echo"
               <div class='col-md px-0 mb-3' align-self-start style='width: auto;'>
                 <a class='btn btn-sm btn-success text-white' href='$url/customer/detail_menu/$menu->slug'>
-                  <b-icon-cart></b-icon-cart>
+                  <i class='bi-bag-check text-white fs-6' style='margin-right: 5px;'></i>
                   Pesan
                 </a>
               </div>
@@ -95,7 +95,7 @@
             echo"
               <div class='col-md px-0 mb-3' align-self-start style='width: auto;'>
                 <button class='btn btn-sm text-white' href='' style='background-color: grey;' disabled>
-                  <b-icon-cart></b-icon-cart>
+                  <i class='bi-bag-check text-white fs-6' style='margin-right: 5px;'></i>
                   Habis
                 </button>
               </div>
@@ -116,7 +116,7 @@
 <div class="row mt-4" align="end">
   <div class="col">
     <a href="<?=BASEURL?>/customer/daftar_menu" class="btn btn-success float-right">
-      <b-icon-eye></b-icon-eye>
+      <i class='bi-eye text-white fs-6' style='margin-right: 5px;'></i>
       Lihat Semua
     </a>
   </div>
@@ -163,7 +163,7 @@
             echo"
               <div class='col-md px-0 mb-3' align-self-start style='width: auto;'>
                 <a class='btn btn-sm btn-success text-white' href='$url/customer/detail_menu/$menu->slug'>
-                  <b-icon-cart></b-icon-cart>
+                  <i class='bi-bag-check text-white fs-6' style='margin-right: 5px;'></i>
                   Pesan
                 </a>
               </div>
@@ -172,7 +172,7 @@
             echo"
               <div class='col-md px-0 mb-3' align-self-start style='width: auto;'>
                 <button class='btn btn-sm text-white' href='' style='background-color: grey;' disabled>
-                  <b-icon-cart></b-icon-cart>
+                  <i class='bi-bag-check text-white fs-6' style='margin-right: 5px;'></i>
                   Habis
                 </button>
               </div>
@@ -193,7 +193,7 @@
 <div class="row mt-4" align="end">
   <div class="col">
     <a href="<?=BASEURL?>/customer/daftar_menu" class="btn btn-success float-right">
-      <b-icon-eye></b-icon-eye>
+      <i class='bi-eye text-white fs-6' style='margin-right: 5px;'></i>
       Lihat Semua
     </a>
   </div>

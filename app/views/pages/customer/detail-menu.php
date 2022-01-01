@@ -47,8 +47,8 @@
         <label for="keterangan">Keterangan</label>
         <textarea name="keterangan" class="form-control" placeholder="Keterangan seperti: Pedas, Bungkus" style='height: 100px;' required></textarea>
       </div>
-      <button type="submit" class="btn btn-success">
-        <b-icon-cart></b-icon-cart>
+      <button type="submit" class="btn btn-sm btn-success">
+        <i class='bi-bag-check text-white fs-6' style='margin-right: 5px;'></i>
         Pesan
       </button>
     </form>
