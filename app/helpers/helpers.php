@@ -52,7 +52,7 @@ function chart_bulanan($id, $data, $type, $bgCol='transparent', $brCol='#11cdef'
           labels: ['JAN', 'FEB', 'MAR', 'APR', 'MEI', 'JUN', 'JUL', 'AGU', 'SEP', 'OKT', 'NOV', 'DES'],
           datasets: [{
             label: 'Rp',
-            data: [$insideData],
+            data: [15000000, 10000000, 12000000, 17000000, 13000000, 18000000, 10000000, 13000000, 15000000, 16000000, 17000000, 12500000],
             backgroundColor:'$bgCol',
             borderColor:'$brCol',
             borderWidth: $brWid
