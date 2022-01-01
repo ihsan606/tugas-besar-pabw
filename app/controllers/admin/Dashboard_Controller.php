@@ -17,20 +17,20 @@ class Dashboard_Controller extends Controller{
     }
 
     $data = [
-    'title' => 'Dashboard',
-    'pendapatan_hari_ini' => money_format(Invoice::where('status_pembayaran', 'success')->where('created_at', '>=', Carbon::today())->sum('grand_total')),
-    'pendapatan_minggu_ini' => money_format(Invoice::where('status_pembayaran', 'success')->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->sum('grand_total')),
-    'pendapatan_bulan_ini' => money_format(Invoice::where('status_pembayaran', 'success')->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->sum('grand_total')),
-    'pendapatan_tahun_ini' => money_format(Invoice::where('status_pembayaran', 'success')->whereBetween('created_at', [Carbon::now()->startOfYear(), Carbon::now()->endOfYear()])->sum('grand_total')),
-    'pendapatan_perbulan' => $data_perbulan,
-    'pending' => Invoice::where('status_pembayaran', 'pending')->count(),
-    'success' => Invoice::where('status_pembayaran', 'success')->count(),
-    'expired' => Invoice::where('status_pembayaran', 'expired')->count(),
-    'failed' => Invoice::where('status_pembayaran', 'failed')->count(),
-    'menus' => Menu::with('reviews.customer')->get(),
-    'invoices' => Invoice::with('orders.menu','orders.table','customer')->where('status_pesanan', 'dikonfirmasi')->get(),
-    'year' => Carbon::today()->format('Y'),
-  ];
+      'title' => 'Dashboard',
+      'pendapatan_hari_ini' => money_format(Invoice::where('status_pembayaran', 'success')->where('created_at', '>=', Carbon::today())->sum('grand_total')),
+      'pendapatan_minggu_ini' => money_format(Invoice::where('status_pembayaran', 'success')->whereBetween('created_at', [Carbon::now()->startOfWeek(), Carbon::now()->endOfWeek()])->sum('grand_total')),
+      'pendapatan_bulan_ini' => money_format(Invoice::where('status_pembayaran', 'success')->whereBetween('created_at', [Carbon::now()->startOfMonth(), Carbon::now()->endOfMonth()])->sum('grand_total')),
+      'pendapatan_tahun_ini' => money_format(Invoice::where('status_pembayaran', 'success')->whereBetween('created_at', [Carbon::now()->startOfYear(), Carbon::now()->endOfYear()])->sum('grand_total')),
+      'pendapatan_perbulan' => $data_perbulan,
+      'pending' => Invoice::where('status_pembayaran', 'pending')->count(),
+      'success' => Invoice::where('status_pembayaran', 'success')->count(),
+      'expired' => Invoice::where('status_pembayaran', 'expired')->count(),
+      'failed' => Invoice::where('status_pembayaran', 'failed')->count(),
+      'menus' => Menu::with('reviews.customer')->get(),
+      'invoices' => Invoice::with('orders.menu','orders.table','customer')->where('status_pesanan', 'dikonfirmasi')->get(),
+      'year' => Carbon::today()->format('Y'),
+    ];
     $this->view('dashboard', $data, 'admin');
   }
 

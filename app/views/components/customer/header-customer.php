@@ -48,7 +48,7 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-    <i class="fas fa-bars"></i>
+    <i class="fas fa-bars text-muted"></i>
     </button>
 
     <!-- Collapsible wrapper -->
