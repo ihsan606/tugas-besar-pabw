@@ -78,13 +78,13 @@
             <?php 
             foreach($data['data_categories'] as $category){
               $url = BASEURL;
-              echo"
+              echo <<<TEXT
                 <li>
                   <a class='dropdown-item' href='$url/customer/daftar_menu/show/$category->slug'>
                     <h6><img src='$url/img/categories/$category->image' width='50' style='margin-right: 10px;'>$category->name</h6>
                   </a>
                 </li>
-              ";
+              TEXT;
             }
             ?>
           </ul>
