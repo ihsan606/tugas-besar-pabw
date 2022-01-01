@@ -78,7 +78,7 @@
                       ";
         
                       echo <<<TEXT
-                        <td class='td-actions text-center'>
+                        <td class='td-actions text-center' style='min-width:50px;'>
                           <button type='button' rel='tooltip' title='' class='btn btn-icon btn-info px-2 py-1' data-original-title='Edit Kategori'>
                             <a class='text-dark' href='$url./customer/keranjang/edit_keranjang/$id' style = 'font-size : 18px;'><i class='tim-icons icon-pencil text-white'></i></a>
                           </button>
