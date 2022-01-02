@@ -54,17 +54,17 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0 nav-link" href="<?= BASEURL; ?>/customer/home">
+      <a class="navbar-brand mt-2 mt-lg-0 nav-link px-0" href="<?= BASEURL; ?>/customer/home">
         <img src="<?=BASEURL?>/assets/img/slack-logo-icon.png" width="40px" height="40px" alt="" style="margin-right: 10px;">
         REZERVA
       </a>
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="<?= BASEURL; ?>/customer/home">Home</a>
+          <a class="nav-link <?= ($data['title'] == 'Home' ? 'active' : '') ?>" href="<?= BASEURL; ?>/customer/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= BASEURL; ?>/customer/daftar_menu">Menu</a>
+          <a class="nav-link <?= ($data['title'] == 'Daftar Menu' ? 'active' : '') ?>" href="<?= BASEURL; ?>/customer/daftar_menu">Menu</a>
         </li>
         <li class="nav-item dropdown">
           <a
