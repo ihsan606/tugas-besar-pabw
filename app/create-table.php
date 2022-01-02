@@ -101,6 +101,25 @@ foreach ($tables as $table){
             endMigrations('tables');
         });
 
+        //carts table
+        Manager::schema()->dropIfExists('carts');
+        Manager::schema()->create('carts', function (Blueprint $table) {
+            start('carts');
+            $table->id();
+            $table->unsignedBigInteger('menu_id');
+            $table->integer('jumlah');
+            $table->unsignedBigInteger('session_id');
+            $table->string('keterangan');
+            $table->integer('price');
+            $table->timestamps();
+
+            $table->foreign('menu_id')->references('id')->on('menus');
+
+            endMigrations('carts');
+        });
+
+
+
         //invoices table
         Manager::schema()->dropIfExists('invoices');
         Manager::schema()->create('invoices', function (Blueprint $table) {

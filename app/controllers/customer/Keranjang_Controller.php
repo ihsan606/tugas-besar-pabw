@@ -3,13 +3,11 @@
 require '../vendor/autoload.php';
 
 class Keranjang_Controller extends Controller{
-  public function index($snap_token = '')
+  public function index()
   {
     session_start();
     if(isset($_SESSION['keranjang']['menus'])){
-      if($snap_token != ''){
-    
-      }
+
       $data = ['title' => 'Keranjang',];
       $this->view('keranjang', $data, 'customer');
     }else{

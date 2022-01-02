@@ -157,6 +157,7 @@ class ComposerStaticInit8967fef25254fedcfe4218aae1d8cf27
 
     public static $classMap = array (
         'App\\models\\Admin' => __DIR__ . '/../..' . '/app/models/Admin.php',
+        'App\\models\\Cart' => __DIR__ . '/../..' . '/app/models/Cart.php',
         'App\\models\\Category' => __DIR__ . '/../..' . '/app/models/Category.php',
         'App\\models\\Customer' => __DIR__ . '/../..' . '/app/models/customer.php',
         'App\\models\\Invoice' => __DIR__ . '/../..' . '/app/models/Invoice.php',
