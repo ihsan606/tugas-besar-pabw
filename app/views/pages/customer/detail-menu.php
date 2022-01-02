@@ -140,7 +140,7 @@
       echo "
       <div class='card px-2 py-2 my-2 shadow'>
         <div class='row'>
-          <div class='col-sm-1 text-end'>
+          <div class='col-sm-1 text-end' style='min-width: 50px; max-width: 70px;'>
             <img
               class='rounded-circle ml-2'
               width='30'
@@ -152,7 +152,7 @@
           </div>
         </div>
         <div class='row'>
-          <div class='col-sm-1'>
+          <div class='col-sm-1' style='min-width: 50px; max-width: 70px;'>
             <p></p>
           </div>
           <div class='col-sm-11'>
