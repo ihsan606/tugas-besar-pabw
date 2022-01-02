@@ -11,6 +11,10 @@ class Dashboard_Controller extends Controller{
   public function index()
   { 
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $data_perbulan = [];
     for($i = 1; $i < 13; $i++){
       array_push($data_perbulan, Invoice::where('status_pembayaran', 'success')->whereYear('created_at', Carbon::today()->format('Y'))->whereMonth('created_at', $i)->sum('grand_total'));
@@ -36,6 +40,11 @@ class Dashboard_Controller extends Controller{
 
   public function show_laporan_menu()
   {
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $search = $_POST['search-laporan-menu'];
 
     if($search){
@@ -67,6 +76,11 @@ class Dashboard_Controller extends Controller{
 
   public function show_daftar_pesanan()
   {
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+    
     $search = $_POST['search-daftar-pesanan'];
 
     if($search){
@@ -102,12 +116,16 @@ class Dashboard_Controller extends Controller{
   }
 
   public function antar_pesanan($id){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $invoice = Invoice::where('id', $id)->update([
       'status_pesanan' => 'diantar'
     ]);
 
     if($invoice){
-      session_start();
       $_SESSION['alert'] = [
         'message' => "status pesanan berhasil diubah menjadi Diantar",
         'type' => 'success',
@@ -117,12 +135,16 @@ class Dashboard_Controller extends Controller{
   }
 
   public function tolak_pesanan($id){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $invoice = Invoice::where('id', $id)->update([
       'status_pesanan' => 'ditolak'
     ]);
 
     if($invoice){
-      session_start();
       $_SESSION['alert'] = [
         'message' => "status pesanan berhasil diubah menjadi Ditolak",
         'type' => 'success',

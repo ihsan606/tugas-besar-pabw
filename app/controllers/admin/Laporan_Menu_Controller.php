@@ -7,6 +7,10 @@ class Laporan_Menu_Controller extends Controller{
   public function index()
   {
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $data = [
       'title' => 'Laporan Menu',
       'menus' => Menu::with('reviews.customer')->get(),
@@ -16,6 +20,11 @@ class Laporan_Menu_Controller extends Controller{
 
   public function show()
   {
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+    
     $search = $_POST['search'];
 
     if($search){

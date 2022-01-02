@@ -8,6 +8,10 @@ class Laporan_Pendapatan_Controller extends Controller{
   public function index()
   {
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+    
     $_SESSION;
     $data_perbulan = [];
     for($i = 1; $i < 13; $i++){

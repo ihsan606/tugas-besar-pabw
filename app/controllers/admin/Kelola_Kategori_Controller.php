@@ -11,6 +11,10 @@ class Kelola_Kategori_Controller extends Controller{
   public function index()
   {
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $data = [
       'title' => 'Kelola Kategori',
       'categories' => Category::All(),
@@ -21,6 +25,10 @@ class Kelola_Kategori_Controller extends Controller{
   public function tambah_kategori()
   {
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $data = ['title' => 'Tambah Kategori',];
     $this->view('tambah-kategori', $data, 'admin');
   }
@@ -28,6 +36,10 @@ class Kelola_Kategori_Controller extends Controller{
   public function edit_kategori($id)
   {
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $data = [
       'title' => 'Edit Kategori',
       'this_category' => Category::where('id', $id)->get(),
@@ -36,6 +48,11 @@ class Kelola_Kategori_Controller extends Controller{
   }
 
   public function show(){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $search = $_POST['search'];
 
     if($search){
@@ -50,6 +67,11 @@ class Kelola_Kategori_Controller extends Controller{
   }
 
   public function store(){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $image_name = $_FILES['image']['name'];
     $allowed_extension = ['png', 'jpg', 'jpeg'];
     $x = explode('.', $image_name);
@@ -71,7 +93,6 @@ class Kelola_Kategori_Controller extends Controller{
             'slug' => Str::slug($name, '-')
           ]);
           if($category){
-            session_start();
             $_SESSION['alert'] = [
               'message' => 'data kategori berhasil ditambahkan',
               'type' => 'success',
@@ -79,7 +100,6 @@ class Kelola_Kategori_Controller extends Controller{
             header('Location: ' . BASEURL . '/admin/kelola_kategori');
           }
         }else{
-          session_start();
           $_SESSION['alert'] = [
             'message' => 'ukuran file gambar tidak boleh lebih dari 2MB',
             'type' => 'error',
@@ -87,7 +107,6 @@ class Kelola_Kategori_Controller extends Controller{
           header('Location: ' . BASEURL . '/admin/kelola_kategori/tambah_kategori');
         }
       }else{
-        session_start();
         $_SESSION['alert'] = [
           'message' => 'format file gambar harus .jpg, .png, atau .jpeg',
           'type' => 'error',
@@ -100,6 +119,11 @@ class Kelola_Kategori_Controller extends Controller{
   }
 
   public function update($id){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $image_name = $_FILES['image']['name'];
     $allowed_extension = ['png', 'jpg', 'jpeg'];
     $x = explode('.', $image_name);
@@ -123,7 +147,6 @@ class Kelola_Kategori_Controller extends Controller{
             'slug' => Str::slug($name, '-')
           ]);
           if($category){
-            session_start();
             $_SESSION['alert'] = [
               'message' => 'data kategori berhasil diedit',
               'type' => 'success',
@@ -131,7 +154,6 @@ class Kelola_Kategori_Controller extends Controller{
             header('Location: ' . BASEURL . '/admin/kelola_kategori');
           }
         }else{
-          session_start();
           $_SESSION['alert'] = [
             'message' => 'ukuran file gambar tidak boleh lebih dari 2MB',
             'type' => 'error',
@@ -139,7 +161,6 @@ class Kelola_Kategori_Controller extends Controller{
           header('Location: ' . BASEURL . '/admin/kelola_kategori/edit_kategori/' . $id);
         }
       }else{
-        session_start();
         $_SESSION['alert'] = [
           'message' => 'format file gambar harus .jpg, .png, atau .jpeg',
           'type' => 'error',
@@ -152,7 +173,6 @@ class Kelola_Kategori_Controller extends Controller{
         'slug' => Str::slug($name, '-')
       ]);
       if($category){
-        session_start();
         $_SESSION['alert'] = [
           'message' => 'data kategori berhasil diedit',
           'type' => 'success',
@@ -165,6 +185,11 @@ class Kelola_Kategori_Controller extends Controller{
   }
 
   public function destroy($id){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $direktori = 'img/categories/';
     $category = Category::where('id', $id)->get();
     unlink($direktori . $category[0]->image);
@@ -186,7 +211,6 @@ class Kelola_Kategori_Controller extends Controller{
 
     $category = Category::where('id', $id)->delete();
     if($category){
-      session_start();
       $_SESSION['alert'] = [
         'message' => 'data kategori berhasil dihapus',
         'type' => 'success',

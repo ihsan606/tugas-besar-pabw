@@ -9,6 +9,10 @@ class Daftar_Pesanan_Controller extends Controller{
   public function index()
   { 
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $data = [
       'title' => 'Daftar Pesanan',
       'invoices' => Invoice::with('orders.menu','orders.table','customer')->where('status_pesanan', 'dikonfirmasi')->get(),
@@ -21,6 +25,11 @@ class Daftar_Pesanan_Controller extends Controller{
   }
 
   public function show(){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $search = $_POST['search'];
      if($search){
       $customers_id = [];
@@ -43,12 +52,16 @@ class Daftar_Pesanan_Controller extends Controller{
   }
 
   public function antar_pesanan($id){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $invoice = Invoice::where('id', $id)->update([
       'status_pesanan' => 'diantar'
     ]);
 
     if($invoice){
-      session_start();
       $_SESSION['alert'] = [
         'message' => "status pesanan berhasil diubah menjadi Diantar",
         'type' => 'success',
@@ -58,12 +71,16 @@ class Daftar_Pesanan_Controller extends Controller{
   }
 
   public function tolak_pesanan($id){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $invoice = Invoice::where('id', $id)->update([
       'status_pesanan' => 'ditolak'
     ]);
 
     if($invoice){
-      session_start();
       $_SESSION['alert'] = [
         'message' => "status pesanan berhasil diubah menjadi Ditolak",
         'type' => 'success',
