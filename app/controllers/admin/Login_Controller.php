@@ -9,6 +9,10 @@ class Login_Controller extends Controller{
   {
     session_start();
     if(isset($_SESSION['login'])){
+      $_SESSION['alert'] = [
+        'message' => 'Anda berhasil login',
+        'type' => 'success',
+      ];
       header('location:'. BASEURL. '/admin/dashboard');
     }
     $data = ['title' => 'Login',];
@@ -25,11 +29,20 @@ class Login_Controller extends Controller{
       session_start();
       $_SESSION['login'] = true;
       $_SESSION['admin'] = $admin->name;
+      $_SESSION['alert'] = [
+        'message' => 'Anda berhasil login',
+        'type' => 'success',
+      ];
       header('location:'. BASEURL. '/admin/dashboard');
     }else{
       $data = [
         'title' => 'Login',
         'email' => $email,
+      ];
+      session_start();
+      $_SESSION['alert'] = [
+        'message' => 'email dan password tidak ditemukan',
+        'type' => 'error',
       ];
       $this->view('login-admin', $data, 'single');
     }
@@ -39,7 +52,10 @@ class Login_Controller extends Controller{
     session_start();
     unset($_SESSION['login']);
     unset($_SESSION['admin']);
-
+    $_SESSION['alert'] = [
+      'message' => 'Anda berhasil logout',
+      'type' => 'success',
+    ];
     header('location:'. BASEURL. '/admin/login');
   }
 }
