@@ -36,7 +36,7 @@
       
       if($data['detail_menu'][0]->discount > 0){
         echo "
-          </strong><strong class ='text-dark'>$final_price </strong><strong class='text-danger' style='font-size:13px;'><strike style='color: #909497'>$price</strike> $discount% 
+          <strong class ='text-dark'>$final_price </strong><strong class='text-danger' style='font-size: 13px!important;'><strike style='color: #909497'>$price</strike> $discount% </strong> 
         ";
       }else{
         echo <<<TEXT
