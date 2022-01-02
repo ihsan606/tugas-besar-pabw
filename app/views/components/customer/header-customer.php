@@ -54,7 +54,7 @@
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="<?= BASEURL; ?>/customer/home">
+      <a class="navbar-brand mt-2 mt-lg-0 nav-link" href="<?= BASEURL; ?>/customer/home">
         <img src="<?=BASEURL?>/assets/img/slack-logo-icon.png" width="40px" height="40px" alt="" style="margin-right: 10px;">
         REZERVA
       </a>

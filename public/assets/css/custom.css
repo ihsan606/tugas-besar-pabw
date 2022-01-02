@@ -12,9 +12,7 @@ a {
     color: #000;
 }
 
-a:hover {
-    color: #FFFFFF!important;
-}
+
 
 .header-main {
     position: relative;
@@ -278,6 +276,18 @@ hr.solid {
     text-decoration: none;
     background-color: #29cc75!important;
     border-radius: .5rem;
+}
+
+.nav-link.active, .nav-link:active {
+    color: #29cc75!important;
+    font-weight: 550;
+    text-decoration: none;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: #29cc75!important;
+    font-weight: 550;
+    text-decoration: none;
 }
 
 /**
