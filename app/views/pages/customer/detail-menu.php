@@ -58,9 +58,9 @@
 <div class="row">
   <div class="col d-none d-md-block">
     <div class="alert" style="background-color:rgba(0,0,0,.02)" role="alert">
-      Deskripsi Menu
+      Deskripsi Menu:
+      <p><?= $data['detail_menu'][0]->description ?></p>
     </div>
-    <p><?= $data['detail_menu'][0]->description ?></p>
     <div class="alert mt-5" style="background-color:rgba(0,0,0,.02)" role="alert">
       Ringkasan Ulasan
     </div>
