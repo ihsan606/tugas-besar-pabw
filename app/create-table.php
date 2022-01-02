@@ -83,7 +83,7 @@ foreach ($tables as $table){
             $table->enum('stock',array('tersedia','habis'))->default('tersedia');
             $table->integer('discount');
             $table->integer('sold');
-            $table->integer('rating');
+            $table->float('rating');
             $table->timestamps();
 
             //relationship category
