@@ -28,7 +28,7 @@
     <hr />
     <h4>
       Harga:
-      <strong>Rp <?=$data['detail_menu'][0]->price?></strong>
+      <strong><?= money_format($data['detail_menu'][0]->final_price)?></strong>
     </h4>
     <form class="mt-4" action = "<?=BASEURL;?>/customer/keranjang/update/<?=$data['detail_menu'][0]->id?>", method = "POST">
       <div class="form-group mb-4">

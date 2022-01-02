@@ -29,7 +29,7 @@
 
     <h4>
       Harga:
-      <strong>Rp <?= $data['detail_menu'][0]->price ?></strong>
+      <strong><?= money_format($data['detail_menu'][0]->final_price)?></strong>
     </h4>
     <div class="d-sm-block d-md-none">
       <div class="alert" style="background-color:rgba(0,0,0,.02)" role="alert">
@@ -56,7 +56,7 @@
 </div>
 
 <div class="row">
-  <div class="col-9 d-none d-md-block">
+  <div class="col d-none d-md-block">
     <div class="alert" style="background-color:rgba(0,0,0,.02)" role="alert">
       Deskripsi Menu
     </div>
@@ -65,7 +65,7 @@
       Ringkasan Ulasan
     </div>
     <div class="row">
-    <div class="col-6">
+    <div class="col-4">
 
       <?php
       $bintang_5 = $data['bintang_5'];
@@ -110,7 +110,7 @@
       </div>
 
     </div>
-    <div class="col-5">
+    <div class="col-3">
       <h5 class="text-center mt-2" style="font-size:60px;color:#00b74a"><?=$data['detail_menu'][0]->rating ?>
       <i class="fa fa-star" style="color:orange"></i>
     </h5>  
@@ -123,28 +123,30 @@
     <?php
     foreach ($data['reviews'] as $review) {
       $customer = $review->customer;
-      echo "<div class='card px-2 py-2 my-2 shadow'>
-  <div class='row'>
-    <div class='col-sm-1'>
-    <img
-          class='rounded-circle ml-2'
-          width='30'
-          src='https://ui-avatars.com/api/?name=$customer->name&amp;background=4e73df&amp;color=ffffff&amp;size=100'
-              />
-    </div>
-    <div class='col-sm-11'>
-      <p>$customer->name</p>
-    </div>
-  </div>
-  <div class='row'>
-  <div class='col-sm-1'>
-  <p></p>
-  </div>
-      <div class='col-sm-11'>
-      <p>$review->review</p>
+      echo "
+      <div class='card px-2 py-2 my-2 shadow'>
+        <div class='row'>
+          <div class='col-sm-1 text-end'>
+            <img
+              class='rounded-circle ml-2'
+              width='30'
+              src='https://ui-avatars.com/api/?name=$customer->name&amp;background=4e73df&amp;color=ffffff&amp;size=100'
+            />
+          </div>
+          <div class='col-sm-11'>
+            <p>$customer->name</p>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='col-sm-1'>
+            <p></p>
+          </div>
+          <div class='col-sm-11'>
+            <p>$review->review</p>
+          </div>
+        </div>
       </div>
-  </div>
-  </div>";
+      ";
     }
 
 
@@ -219,8 +221,8 @@
       echo "
       <table>
         <tbody>
-          <tr>
-            <td colspan='2' style='min-width: 50px!important'> 
+          <tr class='align-top'>
+            <td class='text-center' colspan='2' style='min-width: 50px!important'> 
               <img
                 class='rounded-circle ml-2'
                 width='30'
