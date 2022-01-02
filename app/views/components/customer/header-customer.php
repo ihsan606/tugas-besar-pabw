@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" href="img/uq.png" width="50" type="image/x-icon">
+  <link rel="icon" type="image/png" href="<?=BASEURL?>/assets/img/slack-logo-icon.png" />
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,6 +55,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
       <a class="navbar-brand mt-2 mt-lg-0" href="<?= BASEURL; ?>/customer/home">
+        <img src="<?=BASEURL?>/assets/img/slack-logo-icon.png" width="40px" height="40px" alt="" style="margin-right: 10px;">
         REZERVA
       </a>
       <!-- Left links -->
