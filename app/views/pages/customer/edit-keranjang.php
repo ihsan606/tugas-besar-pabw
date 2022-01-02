@@ -26,9 +26,24 @@
       <strong><?=$data['detail_menu'][0]->title?></strong>
     </h2>
     <hr />
+    
     <h4>
       Harga:
-      <strong><?= money_format($data['detail_menu'][0]->final_price)?></strong>
+      <?php 
+      $discount = $data['detail_menu'][0]->discount;
+      $price = money_format($data['detail_menu'][0]->price);
+      $final_price = money_format($data['detail_menu'][0]->final_price);
+      
+      if($data['detail_menu'][0]->discount > 0){
+        echo "
+          </strong><strong class ='text-dark'>$final_price</strong><strong class='text-danger' style='font-size:13px;'><strike style='color: #909497'>$price</strike> $discount% 
+        ";
+      }else{
+        echo <<<TEXT
+          <strong>$final_price</strong>
+        TEXT;
+      }
+      ?>
     </h4>
     <form class="mt-4" action = "<?=BASEURL;?>/customer/keranjang/update/<?=$data['detail_menu'][0]->id?>", method = "POST">
       <div class="form-group mb-4">
