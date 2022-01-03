@@ -184,7 +184,7 @@ foreach ($tables as $table){
     }
 }
 
-for($i = 0; $i < 10; $i++){
+for($i = 0; $i < 100; $i++){
     Table::create([
         'table' => $i + 1,
     ]);

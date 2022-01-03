@@ -159,7 +159,7 @@ class ComposerStaticInit8967fef25254fedcfe4218aae1d8cf27
         'App\\models\\Admin' => __DIR__ . '/../..' . '/app/models/Admin.php',
         'App\\models\\Cart' => __DIR__ . '/../..' . '/app/models/Cart.php',
         'App\\models\\Category' => __DIR__ . '/../..' . '/app/models/Category.php',
-        'App\\models\\Customer' => __DIR__ . '/../..' . '/app/models/customer.php',
+        'App\\models\\Customer' => __DIR__ . '/../..' . '/app/models/Customer.php',
         'App\\models\\Invoice' => __DIR__ . '/../..' . '/app/models/Invoice.php',
         'App\\models\\Menu' => __DIR__ . '/../..' . '/app/models/Menu.php',
         'App\\models\\Order' => __DIR__ . '/../..' . '/app/models/Order.php',
