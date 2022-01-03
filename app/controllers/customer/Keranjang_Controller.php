@@ -11,7 +11,8 @@ class Keranjang_Controller extends Controller
     {
         session_start();
         if (isset($_SESSION['session_id'])) {
-            $session = $_SESSION['session_id'];
+          $session = $_SESSION['session_id'];
+          if(Cart::with('menu')->where('session_id', $session)->count() > 0){
             $carts = Cart::with('menu')->where('session_id', $session)->latest()->get();
             $totalPrice = Cart::with('menu')
                 ->where('session_id', $_SESSION['session_id'])
@@ -22,6 +23,10 @@ class Keranjang_Controller extends Controller
                 "total_price" => $totalPrice
             ];
             $this->view('keranjang', $data, 'customer');
+          }else{
+            $data = ['title' => 'Keranjang Kosong',];
+            $this->view('keranjang-kosong', $data, 'customer');
+          }
         }else{
             $data = ['title' => 'Keranjang Kosong',];
             $this->view('keranjang-kosong', $data, 'customer');
@@ -48,7 +53,7 @@ class Keranjang_Controller extends Controller
                     'keterangan' => $item->first()->keterangan . ", " . $keterangan,
                 ]);
 
-                header('Location: ' . BASEURL . '/customer/cart');
+                header('Location: ' . BASEURL . '/customer/keranjang');
             } else {
                 $cart = Cart::insert([
                     'menu_id' => $menu_id,
@@ -65,7 +70,7 @@ class Keranjang_Controller extends Controller
                     // setcookie('session_id', $random);
 
 
-                    header('Location: ' . BASEURL . '/customer/cart');
+                    header('Location: ' . BASEURL . '/customer/keranjang');
                 }
             }
         } else {
@@ -87,7 +92,7 @@ class Keranjang_Controller extends Controller
                 // setcookie('session_id', $random);
                 $_SESSION['session_id'] = $random;
 
-                header('Location: ' . BASEURL . '/customer/cart');
+                header('Location: ' . BASEURL . '/customer/keranjang');
             }
         }
     }
@@ -123,7 +128,7 @@ class Keranjang_Controller extends Controller
                 'message' => 'data keranjang berhasil diedit',
                 'type' => 'success',
             ];
-            header('location:' . BASEURL . '/customer/cart');
+            header('location:' . BASEURL . '/customer/keranjang');
         }
     }
 
@@ -136,7 +141,7 @@ class Keranjang_Controller extends Controller
             'message' => 'data keranjang berhasil dihapus',
             'type' => 'success',
         ];
-        header('location:' . BASEURL . '/customer/cart');
+        header('location:' . BASEURL . '/customer/keranjang');
     }
 
     public function countItems()

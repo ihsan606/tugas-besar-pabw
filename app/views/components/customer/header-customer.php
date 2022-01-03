@@ -99,7 +99,7 @@
 
     <!-- Right elements -->
     <div class="d-flex align-items-center">
-      <a href="<?= BASEURL; ?>/customer/cart" type="button" class="btn btn-success" style="font-size: 14px; min-width: auto;">
+      <a href="<?= BASEURL; ?>/customer/keranjang" type="button" class="btn btn-success" style="font-size: 14px; min-width: auto;">
         <i class='bi-cart text-white fs-6' style='margin-right: 5px;'></i>
         Keranjang 
         <span class="badge bg-white" style="color: #0d6efd; font-size: 12px; font-weight: 600;">
