@@ -44,7 +44,7 @@
       }
       ?>
     </h4>
-    <form class="mt-4" action = "<?=BASEURL;?>/customer/cart/update/<?=$data['detail_keranjang']->id?>", method = "POST">
+    <form class="mt-4" action = "<?=BASEURL;?>/customer/keranjang/update/<?=$data['detail_keranjang']->id?>", method = "POST">
       <div class="form-group mb-4">
         <label for="jumlah">Jumlah Pesanan</label>
         <input type="number" required class="form-control" name="jumlah" placeholder="Masukkan Jumlah Pesanan" value="<?=$data['detail_keranjang']['jumlah']?>" required>
