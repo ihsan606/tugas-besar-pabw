@@ -29,11 +29,11 @@
     <h4>
       Harga:
       <?php 
-      $discount = $data['detail_menu'][0]->discount;
-      $price = money_format($data['detail_menu'][0]->price);
-      $final_price = money_format($data['detail_menu'][0]->final_price);
+      $discount = $data['detail_menu']->discount;
+      $price = money_format($data['detail_menu']->price);
+      $final_price = money_format($data['detail_menu']->final_price);
       
-      if($data['detail_menu'][0]->discount > 0){
+      if($data['detail_menu']->discount > 0){
         echo "
           <strong class ='text-dark'>$final_price </strong><strong class='text-danger' style='font-size: 13px!important;'><strike style='color: #909497'>$price</strike> $discount% </strong> 
         ";
