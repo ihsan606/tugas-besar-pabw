@@ -109,13 +109,11 @@
                 $total_harga = money_format($data['total_price']);
 
                 echo "<tr>
-                <td class='set-td text-right' width='60%'>
-                  <p class='m-0'>TOTAL </p>
+                <td class='set-td text-right' width='75%' align='right'>
+                  <strong><p class='m-0'>TOTAL :</p></strong>
                 </td>
-                <td class='set-td  text-right' width='30%'>&nbsp; : Rp.</td>
                 <td class='text-right set-td '>
-                  <p class='m-0 number-text' id='subtotal'> $total_harga
-                  </p>
+                  <strong><p class='m-0 number-text' id='subtotal'>$total_harga</p></strong>
                 </td>
               </tr>";
                 
