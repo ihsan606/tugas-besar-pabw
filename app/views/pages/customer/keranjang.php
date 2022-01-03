@@ -64,7 +64,7 @@
                       </table>
                       <table class='table-borderless table-font'>
                         <tr>
-                          <td style='padding: .20rem'>QTY</td>
+                          <td style='padding: .20rem'>Jumlah</td>
                           <td style='padding: .20rem'>:</td>
                           <td style='padding: .20rem'><b class='number-text'>$jumlah</b></td>
                         </tr>
@@ -109,8 +109,8 @@
                 $total_harga = money_format($data['total_price']);
 
                 echo "<tr>
-                <td class='set-td text-left' width='60%'>
-                  <p class='m-0'>JUMLAH </p>
+                <td class='set-td text-right' width='60%'>
+                  <p class='m-0'>TOTAL </p>
                 </td>
                 <td class='set-td  text-right' width='30%'>&nbsp; : Rp.</td>
                 <td class='text-right set-td '>

@@ -7,9 +7,6 @@ require '../vendor/autoload.php';
 
 class Cart_Controller extends Controller
 {
-
-
-
     public function index()
     {
         session_start();
@@ -121,6 +118,7 @@ class Cart_Controller extends Controller
             'price' => $jumlah * $price
         ]);
         if ($send) {
+            session_start();
             $_SESSION['alert'] = [
                 'message' => 'data keranjang berhasil diedit',
                 'type' => 'success',
@@ -133,6 +131,7 @@ class Cart_Controller extends Controller
     {
         $cart = Cart::with('menu')->whereId($id)->first();
         $cart->delete();
+        session_start();
         $_SESSION['alert'] = [
             'message' => 'data keranjang berhasil dihapus',
             'type' => 'success',
