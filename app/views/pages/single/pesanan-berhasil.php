@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="<?=BASEURL?>/assets/img/slack-logo-icon.png" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -99,7 +100,7 @@
             <div class="row mt-2 mb-3">
                 <div class="col d-flex justify-content-center">
                 <!-- <a href="<?= BASEURL;?>/home" class="btn btn-info">Kembali Ke Home</a> -->
-                <a href="<?= BASEURL;?>/customer/review" class="btn btn-info">Terima Pesanan</a>
+                <a href="<?= BASEURL;?>/customer/success/set_status_invoice/<?=$data['invoice']->customer_id?>" class="btn btn-info">Terima Pesanan</a>
                 </div>
             </div>
         </div>
