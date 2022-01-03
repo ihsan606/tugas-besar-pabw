@@ -28,7 +28,6 @@
 
     <h4>
       Harga:
-<<<<<<< HEAD
       <?php 
       $discount = $data['detail_menu'][0]->discount;
       $price = money_format($data['detail_menu'][0]->price);
@@ -44,9 +43,6 @@
         TEXT;
       }
       ?>
-=======
-      <strong>Rp <?=$data['detail_menu']->price?></strong>
->>>>>>> 04968ee (update keranjang)
     </h4>
     <form class="mt-4" action = "<?=BASEURL;?>/customer/cart/update/<?=$data['detail_keranjang']->id?>", method = "POST">
       <div class="form-group mb-4">
