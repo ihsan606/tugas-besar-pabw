@@ -118,8 +118,6 @@ foreach ($tables as $table){
             endMigrations('carts');
         });
 
-
-
         //invoices table
         Manager::schema()->dropIfExists('invoices');
         Manager::schema()->create('invoices', function (Blueprint $table) {
