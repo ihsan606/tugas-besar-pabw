@@ -52,7 +52,7 @@
       <p><?= $data['detail_menu'][0]->description ?></p>
 
     </div>
-    <form class="mt-4" action="<?= BASEURL; ?>/customer/cart/store/<?= $data['detail_menu'][0]->id ?>" , method="POST">
+    <form class="mt-4" action="<?= BASEURL; ?>/customer/keranjang/store/<?= $data['detail_menu'][0]->id ?>" , method="POST">
       <div class="form-group mb-4">
         <label for="jumlah">Jumlah Pesanan</label>
         <input type="number" required class="form-control" name="jumlah" placeholder="Masukkan Jumlah Pesanan" required>
