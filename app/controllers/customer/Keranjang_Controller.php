@@ -5,7 +5,7 @@ use App\models\Menu;
 
 require '../vendor/autoload.php';
 
-class Keranjanag_Controller extends Controller
+class Keranjang_Controller extends Controller
 {
     public function index()
     {
