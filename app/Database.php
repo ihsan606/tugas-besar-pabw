@@ -1,18 +1,20 @@
 <?php
 
+require_once 'config/config.php';
+
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule();
 
 $capsule->addConnection([
-    'driver' => 'mysql',
-    'host' => 'localhost',
-    'database' => 'rezerva',
-    'username' => 'root',
-    'password' => '',
-    'charset' => 'utf8',
-    'collation' => 'utf8_unicode_ci',
-    'prefix' => '',
+    'driver' => DRIVER,
+    'host' => HOST,
+    'database' => DATABASE,
+    'username' => USERNAME,
+    'password' => PASSWORD,
+    'charset' => CHARSET,
+    'collation' => COLLATION,
+    'prefix' => PREFIX,
 ]);
 
 // Set the event dispatcher used by Eloquent models... (optional)
