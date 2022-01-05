@@ -50,7 +50,7 @@
                                         </td>
                                         <td>:</td>
                                         <td>
-                                            <p><?= $data['invoices']->customer->name; ?></p>
+                                            <p><?= htmlspecialchars($data['invoices']->customer->name); ?></p>
                                         </td>
                                     </tr>
                                     <tr>

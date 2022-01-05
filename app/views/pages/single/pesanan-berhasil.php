@@ -76,6 +76,7 @@
                         <thead class="table-light">
                             <tr>
                                 <th class="text-left">Menu</th>
+                                <th class="text-left">Keterangan</th>
                                 <th class="text-center">Jumlah</th>
                                 <!-- <th class="text-center">Status</th> -->
                             </tr>
@@ -85,8 +86,10 @@
                             <?php 
                             foreach($data['invoice']->orders as $orders){
                                 $menu = $orders->menu;
+                                $description = htmlspecialchars($orders->description);
                                 echo "<tr>";
                                 echo "<td>$menu->title</td>";
+                                echo "<td class='text-left'>$description</td>";
                                 echo "<td class='text-center'>$orders->qty</td>";
                                 // echo "<td class='text-center'>$orders->status</td>";
                                 echo "</tr>";

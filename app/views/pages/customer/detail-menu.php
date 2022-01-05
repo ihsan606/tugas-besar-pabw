@@ -137,6 +137,7 @@
     <?php
     foreach ($data['reviews'] as $review) {
       $customer = $review->customer;
+      $review = htmlspecialchars($review->review);
       echo "
       <div class='card px-2 py-2 my-2 shadow'>
         <div class='row'>
@@ -156,7 +157,7 @@
             <p></p>
           </div>
           <div class='col-sm-11'>
-            <p>$review->review</p>
+            <p>$review</p>
           </div>
         </div>
       </div>

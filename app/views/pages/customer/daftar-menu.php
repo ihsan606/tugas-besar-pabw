@@ -77,7 +77,7 @@
   <div class="col">
     <h5>
       Menampilkan 
-      <strong><?=$data['message']?></strong>
+      <strong><?=htmlspecialchars($data['message'])?></strong>
     </h5>
   </div>
 </div>

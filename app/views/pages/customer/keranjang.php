@@ -45,7 +45,7 @@
                     $no = $i + 1;
                     $image = $menu->menu->image;
                     $title = $menu->menu->title;
-                    $keterangan = $menu->keterangan;
+                    $keterangan = htmlspecialchars($menu->keterangan);
                     $jumlah = $menu->jumlah;
                     $total = money_format($menu->price);
                     echo"

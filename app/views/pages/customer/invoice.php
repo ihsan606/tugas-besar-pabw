@@ -1,3 +1,0 @@
-
-
-<p><?= $data['invoices']; ?></p>

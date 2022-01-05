@@ -109,7 +109,7 @@
                         $url = BASEURL;
                         $id = $data['invoices'][$i]->id;
                         $orders = $data['invoices'][$i]->orders;
-                        $name = $data['invoices'][$i]->customer->name;
+                        $name = htmlspecialchars($data['invoices'][$i]->customer->name);
                         $no_table =  $data['invoices'][$i]->table_id;
                         $no = $i + 1;
                         echo "
@@ -155,7 +155,7 @@
                             $order = $orders[$j];
                             $menu = $order->menu->title;
                             $qty = $order->qty;
-                            $description = $order->description;
+                            $description = htmlspecialchars($order->description);
                             $no = $j + 1;
                             echo "
                                                 <tr>
