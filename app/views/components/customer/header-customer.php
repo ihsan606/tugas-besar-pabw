@@ -66,9 +66,6 @@
         <li class="nav-item">
           <a class="nav-link <?= ($data['title'] == 'Daftar Menu' ? 'active' : '') ?>" href="<?= BASEURL; ?>/customer/daftar_menu">Menu</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link <?= ($data['title'] == 'Documentation' ? 'active' : '') ?>" href="<?= BASEURL; ?>/customer/documentation">Documentation</a>
-        </li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -94,6 +91,9 @@
             }
             ?>
           </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <?= ($data['title'] == 'Documentation' ? 'active' : '') ?>" href="<?= BASEURL; ?>/customer/documentation">Documentation</a>
         </li>
       </ul>
       <!-- Left links -->
