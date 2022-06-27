@@ -11,7 +11,7 @@ require '../vendor/autoload.php'; ?>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="img/uq.png" width="50" type="image/x-icon">
+  <link rel="icon" type="image/png" href="<?=BASEURL?>/assets/img/slack-logo-icon.png" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,7 +84,7 @@ require '../vendor/autoload.php'; ?>
                     </td>
                     <td>:</td>
                     <td>
-                        <h5><?= $data['invoices']->customer->name; ?></h5>
+                        <h5><?= htmlspecialchars($data['invoices']->customer->name); ?></h5>
                     </td>
                   </tr>
                   <tr>
@@ -122,8 +122,8 @@ require '../vendor/autoload.php'; ?>
               <tr>
               <th><h5>Foto</h5> </th>
               <th><h5>Makanan</h5> </th>
-              <th><h5>jumlah</h5> </th>
-              <th><h5>Pesan</h5></th>
+              <th><h5>Jumlah</h5> </th>
+              <th><h5>Keterangan</h5></th>
               <th><h5>Meja</h5> </th>
               <th><h5>Total</h5> </th>
               </tr>
@@ -135,6 +135,7 @@ require '../vendor/autoload.php'; ?>
                 $image_menu = $orders->menu->image;
                 $menu = $orders->menu;
                 $price = money_format($orders->price);
+                $description = htmlspecialchars($orders->description);
 
                 echo "<tr style='background: #edf2f7; margin-bottom:5px; '>
                   <td class='b-none' width='15%'>
@@ -149,7 +150,7 @@ require '../vendor/autoload.php'; ?>
                       <p class='m-0'>$orders->qty</p>
                     </td>
                       <td class='b-none '>
-                      <p class='m-0'>$orders->description</p>
+                      <p class='m-0'>$description</p>
                     </td>
                       <td class='b-none text-left'>
                       <p class='m-0'>$orders->table_id</p>
@@ -171,14 +172,18 @@ require '../vendor/autoload.php'; ?>
     function getURL() {
         url = window.location.href;
         const url_arr = url.split("/");
-        snap_token = url_arr[8];
+        let url_count = url_arr.length;
+        snap_token = url_arr[url_count-1];
+        console.log(snap_token);
+
         return snap_token;
     }
 
     function openSnap(){
-        $snap_token = getURL();
+        snap_token = getURL();
+        console.log(snap_token);
         // window.snap.pay($snap_token);
-        window.snap.pay($snap_token, {
+        window.snap.pay(snap_token, {
           onSuccess: function(result){
             /* You may add your own implementation here */
             alert("payment success!"); console.log(result);

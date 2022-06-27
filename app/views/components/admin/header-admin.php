@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="id, in">
+<html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="apple-touch-icon" sizes="76x76" href="<?= BASEURL; ?>/assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="<?= BASEURL; ?>/assets/img/favicon.png">
+  <link rel="icon" type="image/png" href="<?=BASEURL?>/assets/img/slack-logo-icon.png" />
   <!-- Fonts and icons -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
@@ -26,7 +26,7 @@
   
 </head>
 
-<body class="">
+<body>
   <div class="wrapper">
     <div class="sidebar" data="blue">
       <!--
@@ -40,45 +40,51 @@
         </div>
         <ul class="nav">
           <li>
-            <a href="<?=BASEURL;?>/admin/dashboard">
+            <a href="<?=BASEURL;?>/admin/dashboard" style="font-size: 12px;">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/daftar_pesanan">
-              <i class="tim-icons icon-atom"></i>
+            <a href="<?=BASEURL;?>/admin/daftar_pesanan" style="font-size: 12px;">
+              <i class="tim-icons icon-notes"></i>
               <p>Daftar Pesanan</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/laporan_pendapatan">
+            <a href="<?=BASEURL;?>/admin/laporan_pendapatan" style="font-size: 12px;">
               <i class="tim-icons icon-pin"></i>
               <p>Laporan Pendapatan</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/laporan_menu">
+            <a href="<?=BASEURL;?>/admin/laporan_menu" style="font-size: 12px;">
               <i class="tim-icons icon-bell-55"></i>
               <p>Laporan Menu</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/kelola_menu">
+            <a href="<?=BASEURL;?>/admin/kelola_menu" style="font-size: 12px;">
               <i class="tim-icons icon-puzzle-10"></i>
               <p>Kelola Menu</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/kelola_kategori">
-              <i class="tim-icons icon-single-02"></i>
+            <a href="<?=BASEURL;?>/admin/kelola_kategori" style="font-size: 12px;">
+              <i class="tim-icons icon-align-center"></i>
               <p>Kelola Kategori</p>
             </a>
           </li>
           <li>
-            <a href="<?=BASEURL;?>/admin/kelola_admin">
-              <i class="tim-icons icon-align-center"></i>
+            <a href="<?=BASEURL;?>/admin/kelola_admin" style="font-size: 12px;">
+              <i class="tim-icons icon-single-02"></i>
               <p>Kelola Admin</p>
+            </a>
+          </li>
+          <li>
+            <a onclick="alert_warning('Anda akan diarahkan ke halaman login', 'ANDA YAKIN INGIN KELUAR?', 'KELUAR!', '<?=BASEURL;?>/admin/login/logout')" style="font-size: 12px;">
+              <i class="tim-icons icon-button-power"></i>
+              <p>Logout</p>
             </a>
           </li>
         </ul>
@@ -86,7 +92,7 @@
     </div>
     <div class="main-panel" data="blue">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
+      <nav class="navbar navbar-expand-lg navbar-absolute " style="position:fixed;background-color:#1e1e2f;height:78px;">
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-toggle d-inline">
@@ -105,61 +111,22 @@
           </button>
           <div class="collapse navbar-collapse" id="navigation">
             <ul class="navbar-nav ml-auto">
-              <li class="search-bar input-group">
-                <button class="btn btn-link" id="search-button" data-toggle="modal" data-target="#searchModal"><i class="tim-icons icon-zoom-split" ></i>
-                  <span class="d-lg-none d-md-block">Search</span>
-                </button>
-              </li>
-              <li class="dropdown nav-item">
-                <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                  <div class="notification d-none d-lg-block d-xl-block"></div>
-                  <i class="tim-icons icon-sound-wave"></i>
-                  <p class="d-lg-none">
-                    Notifications
-                  </p>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right dropdown-navbar">
-                  <li class="nav-link"><a href="#" class="nav-item dropdown-item">Mike John responded to your email</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">You have 5 more tasks</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Your friend Michael is in town</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Another notification</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Another one</a></li>
-                </ul>
-              </li>
-              <li class="dropdown nav-item">
-                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                  <div class="photo">
-                    <img src="<?=BASEURL;?>/assets/img/anime3.png" alt="Profile Photo">
-                  </div>
-                  <b class="caret d-none d-lg-block d-xl-block"></b>
-                  <p class="d-lg-none">
-                    Log out
-                  </p>
-                </a>
-                <ul class="dropdown-menu dropdown-navbar">
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Profile</a></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Settings</a></li>
-                  <li class="dropdown-divider"></li>
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a></li>
-                </ul>
+              <li class="dropdown nav-item" style="vertical-align: middle!important; height: 100%;">
+                <h3 class="my-0"><?=$_SESSION["admin"]?></h3>
+              <li class="dropdown nav-item" style="vertical-align: middle!important; height: 100%;">
+                <div class="photo">
+                  <img
+                      class='rounded-circle ml-0'
+                      width='30'
+                      src='https://ui-avatars.com/api/?name=<?=$_SESSION["admin"]?>&amp;background=4e73df&amp;color=ffffff&amp;size=100'
+                    />
+                </div>
               </li>
               <li class="separator d-lg-none"></li>
             </ul>
           </div>
         </div>
       </nav>
-      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="tim-icons icon-simple-remove"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
       <!-- End Navbar -->
       <div class="content pb-0">
         

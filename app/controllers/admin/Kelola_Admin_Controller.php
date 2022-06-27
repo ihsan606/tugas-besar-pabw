@@ -7,6 +7,10 @@ class Kelola_Admin_Controller extends Controller{
   public function index()
   {
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $data = [
       'title' => 'Kelola Admin',
       'admins' => Admin::All(),
@@ -17,6 +21,10 @@ class Kelola_Admin_Controller extends Controller{
   public function tambah_admin()
   {
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $data = ['title' => 'Tambah Admin',];
     $this->view('tambah-admin', $data, 'admin');
   }
@@ -24,6 +32,10 @@ class Kelola_Admin_Controller extends Controller{
   public function edit_admin($id)
   {
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $data = [
       'title' => 'Edit Admin',
       'this_admin' => Admin::where('id', $id)->get(),
@@ -33,6 +45,11 @@ class Kelola_Admin_Controller extends Controller{
 
   public function show()
   {
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $search = $_POST['search'];
 
     if($search){
@@ -41,12 +58,18 @@ class Kelola_Admin_Controller extends Controller{
         'admins' => Admin::where('name', 'like', '%'.$search.'%')->get(),
       ];
       $this->view('kelola-admin', $data, 'admin');
+      
     }else{
       header('Location: ' . BASEURL . '/admin/kelola_admin');
     }
   }
 
   public function store(){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $name = $_POST['name']; 
 
     $email = $_POST['email'];
@@ -63,7 +86,6 @@ class Kelola_Admin_Controller extends Controller{
           'password' =>$password
         ]);
         if($admin){
-          session_start();
           $_SESSION['alert'] = [
             'message' => 'data admin berhasil ditambahkan',
             'type' => 'success',
@@ -71,7 +93,6 @@ class Kelola_Admin_Controller extends Controller{
           header('Location: ' . BASEURL . '/admin/kelola_admin');
         }
       }else{
-        session_start();
         $_SESSION['alert'] = [
           'message' => 'password dan konfirmasi password harus sama',
           'type' => 'error',
@@ -84,6 +105,11 @@ class Kelola_Admin_Controller extends Controller{
   }
 
   public function update($id){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $name = $_POST['name']; 
 
     $email = $_POST['email'];
@@ -100,7 +126,6 @@ class Kelola_Admin_Controller extends Controller{
           'password' =>$password
         ]);
         if($admin){
-          session_start();
           $_SESSION['alert'] = [
             'message' => 'data admin berhasil diedit',
             'type' => 'success',
@@ -108,7 +133,6 @@ class Kelola_Admin_Controller extends Controller{
           header('Location: ' . BASEURL . '/admin/kelola_admin');
         }
       }else{
-        session_start();
         $_SESSION['alert'] = [
           'message' => 'password dan konfirmasi password harus sama',
           'type' => 'error',
@@ -121,9 +145,13 @@ class Kelola_Admin_Controller extends Controller{
   }
 
   public function destroy($id){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $admin = Admin::where('id', $id)->delete();
     if($admin){
-      session_start();
       $_SESSION['alert'] = [
         'message' => 'data admin berhasil dihapus',
         'type' => 'success',

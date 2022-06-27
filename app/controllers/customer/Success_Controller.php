@@ -17,4 +17,14 @@ class Success_Controller extends Controller{
         $this->view('pesanan-berhasil', $data, 'single');
 
     }
+
+    public function set_status_invoice($customer_id){
+        $invoive = Invoice::with('orders.menu','customer')->where('customer_id',$customer_id)->update([
+            'status_pesanan' => 'diterima',
+        ]);
+
+        if($invoive){
+            header('location:'. BASEURL. '/customer/review');
+        }
+    }
 }

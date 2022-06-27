@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <link rel="icon" href="img/uq.png" width="50" type="image/x-icon">
+  <link rel="icon" type="image/png" href="<?=BASEURL?>/assets/img/slack-logo-icon.png" />
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,12 +13,17 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
   <!-- Nucleo Icons -->
   <link href="<?= BASEURL; ?>/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
   <!-- MDB -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
   <!-- Bootstrap Icon -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+  <!-- local css style -->
+  <link rel="stylesheet" type="text/css" href="<?=BASEURL?>/assets/css/custom.css">
+
   <title>Rezerva | Customer | <?= $data['title']; ?></title>
 
   <!-- Sweet Alert -->
@@ -43,22 +48,23 @@
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-    <i class="fas fa-bars"></i>
+    <i class="fas fa-bars text-muted"></i>
     </button>
 
     <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
-      <a class="navbar-brand mt-2 mt-lg-0" href="<?= BASEURL; ?>/customer/home">
+      <a class="navbar-brand mt-2 mt-lg-0 nav-link px-0" href="<?= BASEURL; ?>/customer/home">
+        <img src="<?=BASEURL?>/assets/img/slack-logo-icon.png" width="40px" height="40px" alt="" style="margin-right: 10px;">
         REZERVA
       </a>
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" href="<?= BASEURL; ?>/customer/home">Home</a>
+          <a class="nav-link <?= ($data['title'] == 'Home' ? 'active' : '') ?>" href="<?= BASEURL; ?>/customer/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?= BASEURL; ?>/customer/daftar_menu">Menu</a>
+          <a class="nav-link <?= ($data['title'] == 'Daftar Menu' ? 'active' : '') ?>" href="<?= BASEURL; ?>/customer/daftar_menu">Menu</a>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -75,37 +81,20 @@
             <?php 
             foreach($data['data_categories'] as $category){
               $url = BASEURL;
-              echo"
+              echo <<<TEXT
                 <li>
                   <a class='dropdown-item' href='$url/customer/daftar_menu/show/$category->slug'>
                     <h6><img src='$url/img/categories/$category->image' width='50' style='margin-right: 10px;'>$category->name</h6>
                   </a>
                 </li>
-              ";
+              TEXT;
             }
             ?>
           </ul>
         </li>
-        <!-- <li class="nav-item dropdown">
-          <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            KATEGORI
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <?php 
-            // foreach($data['data_categories'] as $category){
-            //   $url = BASEURL;
-            //   echo"
-            //     <li>
-            //       <a class='dropdown-item' href='$url/customer/daftar_menu/show/$category->slug'>
-            //         <img src='$url/img/categories/$category->image' width='50'>$category->name
-            //       </a>
-            //     </li>
-            //   ";
-            // }
-            ?>
-          </ul>
-        </li> -->
+        <li class="nav-item">
+          <a class="nav-link <?= ($data['title'] == 'Documentation' ? 'active' : '') ?>" href="<?= BASEURL; ?>/customer/documentation">Documentation</a>
+        </li>
       </ul>
       <!-- Left links -->
     </div>
@@ -114,13 +103,16 @@
     <!-- Right elements -->
     <div class="d-flex align-items-center">
       <a href="<?= BASEURL; ?>/customer/keranjang" type="button" class="btn btn-success" style="font-size: 14px; min-width: auto;">
-        Keranjang <span class="badge bg-white" style="color: #0d6efd; font-size: 12px; font-weight: 600;">
+        <i class='bi-cart text-white fs-6' style='margin-right: 5px;'></i>
+        Keranjang 
+        <span class="badge bg-white" style="color: #0d6efd; font-size: 12px; font-weight: 600;">
           <?php
-          if (isset($_SESSION['keranjang']['menus'])) {
-            echo count($_SESSION['keranjang']['menus']);
-          } else {
-            echo 0;
-          }
+            if(isset($data['countCarts'])){
+              echo $data['countCarts'];
+            }else{
+              echo $data['countCarts'];
+            }
+            
           ?>
         </span>
       </a>

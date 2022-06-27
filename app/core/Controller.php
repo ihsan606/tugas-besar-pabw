@@ -1,11 +1,18 @@
 <?php
 
 require '../vendor/autoload.php';
+
+use App\models\Cart;
 use App\models\Category;
 
 class Controller {
   public function view($view, $data = [], $layout = ""){
     $data['data_categories'] = Category::all();
+    if (isset($_SESSION['session_id'])) {
+      $data['countCarts'] = Cart::where('session_id',$_SESSION['session_id'])->get()->count();
+    }else{
+      $data['countCarts'] = 0;
+    }
     if($layout == 'customer'){
       $this::getComponent('customer/header-customer', $data);
       require_once '../app/views/pages/customer/' . $view . '.php';

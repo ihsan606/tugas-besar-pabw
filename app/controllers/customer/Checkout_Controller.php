@@ -1,10 +1,11 @@
 <?php
 
 use Midtrans\Snap;
+use App\models\Cart;
+use App\models\Menu;
 use App\models\Order;
 use App\models\Invoice;
 use App\models\Customer;
-use App\models\Menu;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 
@@ -55,25 +56,49 @@ class Checkout_Controller extends Controller
                 'status_pembayaran' =>'success',
                 'status_pesanan' =>'dikonfirmasi',
             ]);
-            $menus = $_SESSION['keranjang']['menus'];
-            for ($i=0; $i < count($menus); $i++) { 
-                $menu = $menus[$i];
-                Order::create([
+
+            foreach (Cart::where('session_id', $_SESSION['session_id'])->get() as $cart) {
+
+                //insert product ke table order
+                $invoice->orders()->create([
                     'invoice_id' => Invoice::latest('id')->first()->id,
-                    'menu_id' => $menu['menu']['0']->id,
-                    'qty' => $menu['jumlah'],
+                    'menu_id' => $cart->menu_id,
+                    'qty' => $cart->jumlah,
                     'table_id'=>$_POST['no_meja'],
-                    'description' =>$menu['keterangan'],
-                    'price'=>($menu['menu'][0]->price*(100-$menu['menu'][0]->discount)/100)*$menu['jumlah']
+                    'description' =>$cart->keterangan,
+                    'price' => $cart->price
+                ]);   
+
+                $sold = Menu::where('id', $cart->menu_id)->first()->sold;
+                Menu::where('id', $cart->menu_id)->update([
+                    'sold' => $sold + $cart->jumlah,
                 ]);
-                $sold = Menu::where('id', $menu['menu']['0']->id)->get()[0]->sold;
-                Menu::where('id', $menu['menu']['0']->id)->update([
-                    'sold' => $sold + $menu['jumlah'],
-                ]);
+
             }
+            // $menus = $_SESSION['keranjang']['menus'];
+            // for ($i=0; $i < count($menus); $i++) { 
+            //     $menu = $menus[$i];
+            //     Order::create([
+            //         'invoice_id' => Invoice::latest('id')->first()->id,
+            //         'menu_id' => $menu['menu']['0']->id,
+            //         'qty' => $menu['jumlah'],
+            //         'table_id'=>$_POST['no_meja'],
+            //         'description' =>$menu['keterangan'],
+            //         'price'=>($menu['menu'][0]->price*(100-$menu['menu'][0]->discount)/100)*$menu['jumlah']
+            //     ]);
+            //     $sold = Menu::where('id', $cart->menu_id)->first()->sold;
+            //     Menu::where('id', $cart->menu_id)->update([
+            //         'sold' => $sold + $cart->jumlah,
+            //     ]);
+            // }
 
             //hapus keranjang
-            session_unset();
+             //remove cart by customer
+             Cart::with('menu')
+             ->where('session_id', $_SESSION['session_id'])
+             ->delete();
+
+             $_SESSION['session_id'] = null;
             //create transaction to midtrans, then save snap token
             $payload = [
                 'transaction_details' => [

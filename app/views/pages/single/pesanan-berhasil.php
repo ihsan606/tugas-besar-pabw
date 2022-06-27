@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="<?=BASEURL?>/assets/img/slack-logo-icon.png" />
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -75,8 +76,9 @@
                         <thead class="table-light">
                             <tr>
                                 <th class="text-left">Menu</th>
+                                <th class="text-left">Keterangan</th>
                                 <th class="text-center">Jumlah</th>
-                                <th class="text-center">Status</th>
+                                <!-- <th class="text-center">Status</th> -->
                             </tr>
                         </thead>
 
@@ -84,10 +86,12 @@
                             <?php 
                             foreach($data['invoice']->orders as $orders){
                                 $menu = $orders->menu;
+                                $description = htmlspecialchars($orders->description);
                                 echo "<tr>";
                                 echo "<td>$menu->title</td>";
+                                echo "<td class='text-left'>$description</td>";
                                 echo "<td class='text-center'>$orders->qty</td>";
-                                echo "<td class='text-center'>$orders->status</td>";
+                                // echo "<td class='text-center'>$orders->status</td>";
                                 echo "</tr>";
                             }
                             ?>
@@ -98,7 +102,8 @@
             </div>
             <div class="row mt-2 mb-3">
                 <div class="col d-flex justify-content-center">
-                <a href="<?= BASEURL;?>/home" class="btn btn-info">Kembali Ke Home</a>
+                <!-- <a href="<?= BASEURL;?>/home" class="btn btn-info">Kembali Ke Home</a> -->
+                <a href="<?= BASEURL;?>/customer/success/set_status_invoice/<?=$data['invoice']->customer_id?>" class="btn btn-info">Terima Pesanan</a>
                 </div>
             </div>
         </div>

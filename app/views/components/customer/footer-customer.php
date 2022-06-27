@@ -54,10 +54,10 @@
 
     <!-- Sweet Alert -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
 
     <?php 
+  
     if(isset($_SESSION['alert'])){
       success_and_error($_SESSION['alert']['message'], $_SESSION['alert']['type']);
       unset($_SESSION['alert']);

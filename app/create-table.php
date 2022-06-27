@@ -16,9 +16,9 @@ function endMigrations($table){
 }
  $tables= [
      'admins',
+     'customers',
      'categories',
      'menus',
-     'carts',
      'invoices',
      'tables',
      'orders',
@@ -83,7 +83,7 @@ foreach ($tables as $table){
             $table->enum('stock',array('tersedia','habis'))->default('tersedia');
             $table->integer('discount');
             $table->integer('sold');
-            $table->integer('rating');
+            $table->float('rating');
             $table->timestamps();
 
             //relationship category
@@ -99,6 +99,23 @@ foreach ($tables as $table){
             $table->string('table');
             $table->timestamps();
             endMigrations('tables');
+        });
+
+        //carts table
+        Manager::schema()->dropIfExists('carts');
+        Manager::schema()->create('carts', function (Blueprint $table) {
+            start('carts');
+            $table->id();
+            $table->unsignedBigInteger('menu_id');
+            $table->integer('jumlah');
+            $table->unsignedBigInteger('session_id');
+            $table->string('keterangan');
+            $table->integer('price');
+            $table->timestamps();
+
+            $table->foreign('menu_id')->references('id')->on('menus');
+
+            endMigrations('carts');
         });
 
         //invoices table
@@ -150,6 +167,7 @@ foreach ($tables as $table){
             $table->unsignedBigInteger('menu_id');
             // $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('customer_id');
+            $table->integer('rate');
             $table->text('review');
             $table->timestamps();
 
@@ -166,7 +184,7 @@ foreach ($tables as $table){
     }
 }
 
-for($i = 0; $i < 10; $i++){
+for($i = 0; $i < 100; $i++){
     Table::create([
         'table' => $i + 1,
     ]);

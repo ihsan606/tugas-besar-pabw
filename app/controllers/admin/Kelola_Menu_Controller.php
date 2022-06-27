@@ -11,6 +11,10 @@ class Kelola_Menu_Controller extends Controller{
   public function index()
   {
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $data = [
       'title' => 'Kelola Menu',
       'menus' => Menu::with('category')->get(),
@@ -21,6 +25,10 @@ class Kelola_Menu_Controller extends Controller{
   public function tambah_menu()
   {
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $data = [
       'title' => 'Tambah Menu',
       'categories' => Category::All(),
@@ -31,6 +39,10 @@ class Kelola_Menu_Controller extends Controller{
   public function edit_menu($id)
   {
     session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $data = [
       'title' => 'Edit Menu',
       'this_menu' => Menu::with('category')->where('id', $id)->get(),
@@ -41,6 +53,11 @@ class Kelola_Menu_Controller extends Controller{
 
   public function show()
   {
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $search = $_POST['search'];
 
     if($search){
@@ -55,6 +72,11 @@ class Kelola_Menu_Controller extends Controller{
   }
 
   public function store(){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $image_name = $_FILES['image']['name'];
     $allowed_extension = ['png', 'jpg', 'jpeg'];
     $x = explode('.', $image_name);
@@ -91,7 +113,6 @@ class Kelola_Menu_Controller extends Controller{
             'final_price' => $final_price,
           ]);
           if($menu){
-            session_start();
             $_SESSION['alert'] = [
               'message' => 'data menu berhasil ditambahkan',
               'type' => 'success',
@@ -99,7 +120,6 @@ class Kelola_Menu_Controller extends Controller{
             header('Location: ' . BASEURL . '/admin/kelola_menu');
           }
         }else{
-          session_start();
           $_SESSION['alert'] = [
             'message' => 'ukuran file gambar tidak boleh lebih dari 2MB',
             'type' => 'error',
@@ -107,7 +127,6 @@ class Kelola_Menu_Controller extends Controller{
           header('Location: ' . BASEURL . '/admin/kelola_menu/tambah_menu');
         }
       }else{
-        session_start();
         $_SESSION['alert'] = [
           'message' => 'format file gambar harus .jpg, .png, atau .jpeg',
           'type' => 'error',
@@ -120,6 +139,11 @@ class Kelola_Menu_Controller extends Controller{
   }
 
   public function update($id){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $image_name = $_FILES['image']['name'];
     $allowed_extension = ['png', 'jpg', 'jpeg'];
     $x = explode('.', $image_name);
@@ -158,7 +182,6 @@ class Kelola_Menu_Controller extends Controller{
             'final_price' => $final_price,
           ]);
           if($menu){
-            session_start();
             $_SESSION['alert'] = [
               'message' => 'data menu berhasil diedit',
               'type' => 'success',
@@ -166,7 +189,6 @@ class Kelola_Menu_Controller extends Controller{
             header('Location: ' . BASEURL . '/admin/kelola_menu');
           }
         }else{
-          session_start();
           $_SESSION['alert'] = [
             'message' => 'ukuran file gambar tidak boleh lebih dari 2MB',
             'type' => 'error',
@@ -174,7 +196,6 @@ class Kelola_Menu_Controller extends Controller{
           header('Location: ' . BASEURL . '/admin/kelola_menu/edit_menu/' . $id);
         }
       }else{
-        session_start();
         $_SESSION['alert'] = [
           'message' => 'format file gambar harus .jpg, .png, atau .jpeg',
           'type' => 'error',
@@ -192,7 +213,6 @@ class Kelola_Menu_Controller extends Controller{
         'final_price' => $final_price,
       ]);
       if($menu){
-        session_start();
         $_SESSION['alert'] = [
           'message' => 'data menu berhasil diedit',
           'type' => 'success',
@@ -205,6 +225,11 @@ class Kelola_Menu_Controller extends Controller{
   }
 
   public function destroy($id){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     $direktori = 'img/menus/';
     $menu = Menu::where('id', $id)->get();
     unlink($direktori . $menu[0]->image);
@@ -222,7 +247,6 @@ class Kelola_Menu_Controller extends Controller{
 
     $menu = Menu::where('id', $id)->delete();
     if($menu){
-      session_start();
       $_SESSION['alert'] = [
         'message' => 'data menu berhasil dihapus',
         'type' => 'success',
@@ -232,6 +256,11 @@ class Kelola_Menu_Controller extends Controller{
   }
 
   public function set_stock($id){
+    session_start();
+    if(!isset($_SESSION['login'])){
+      header('location:'. BASEURL. '/admin/login');
+    }
+
     if(Menu::where('id', $id)->first()->stock == 'tersedia'){
       $menu = Menu::where('id', $id)->update([
         'stock' => 'habis',
@@ -243,7 +272,6 @@ class Kelola_Menu_Controller extends Controller{
     }
 
     if($menu){
-      session_start();
       $_SESSION['alert'] = [
         'message' => 'stok menu berhasil diubah',
         'type' => 'success',

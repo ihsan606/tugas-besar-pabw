@@ -77,7 +77,7 @@
   <div class="col">
     <h5>
       Menampilkan 
-      <strong><?=$data['message']?></strong>
+      <strong><?=htmlspecialchars($data['message'])?></strong>
     </h5>
   </div>
 </div>
@@ -117,7 +117,7 @@
             echo"
               <div class='col-md px-0 mb-3' align-self-start style='width: auto;'>
                 <a class='btn btn-sm btn-success text-white' href='$url/customer/detail_menu/$menu->slug'>
-                  <b-icon-cart></b-icon-cart>
+                  <i class='bi-bag-check text-white fs-6' style='margin-right: 5px;'></i>
                   Pesan
                 </a>
               </div>
@@ -126,7 +126,7 @@
             echo"
               <div class='col-md px-0 mb-3' align-self-start style='width: auto;'>
                 <button class='btn btn-sm text-white' href='' style='background-color: grey;' disabled>
-                  <b-icon-cart></b-icon-cart>
+                  <i class='bi-bag-check text-white fs-6' style='margin-right: 5px;'></i>
                   Habis
                 </button>
               </div>
@@ -145,41 +145,6 @@
   ?>
   
 </div>
-
-
-    <!-- <div class='col mt-3 d-flex'>
-              <div class='card shadow card-product' style = 'border-radius: 7px;'>
-                <a href='$url/customer/detail_menu/$menu->slug' style='text-decoration: none!important;'>
-                  <img src='$url/img/menus/$menu->image' class='card-img-top' alt='...'/ style = 'border-radius: 7px 7px 0px 0px;'>
-                </a>
-
-                <div class='card-body'>
-                  <a href='$url/customer/detail_menu/$menu->slug' style='text-decoration: none!important;'>
-                    <h5 class='card-title text-dark'>$menu->title</h5>";
-                    if($menu->discount > 0){
-                      echo "<p class='card-text text-danger'><strike>Rp $menu->price</strike> <strong class ='text-dark'>$menu->discount% <br>Rp $discount_price</strong></p>";
-                    }else{
-                      echo "<p class='card-text text-dark'><strong>Rp $menu->price</strong></p>";
-                    }
-                    echo "
-                  </a>
-                </div>
-                
-                <div class='row justify-content-between mx-3 mb-3'>
-                  <a href='$url/customer/detail_menu/$menu->slug' style='text-decoration: none!important;'>
-                    <div class='col-md px-0'>
-                      <a class='btn btn-sm btn-success' href='$url/customer/detail_menu/$menu->slug'>
-                        <b-icon-cart></b-icon-cart>
-                        Pesan
-                      </a>
-                    </div>
-                    <div class='col-md-auto px-0'>
-                      <p class='card-text'>terjual $menu->sold | <i class='bi-star-fill' role='text' aria-label='Star-Fill' style='color: #ffc107;'></i> $menu->rating</p>
-                    </div>
-                  </a>
-                </div> 
-              </div>
-            </div> -->
 
     
     

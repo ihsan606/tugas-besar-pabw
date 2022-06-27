@@ -38,10 +38,10 @@
       <table class="table">
         <thead>
           <tr>
-            <th class="text-center" width = "30px"><p></p></th>
-            <th class="text-center" width = "80px"><p></p></th>
-            <th class="text-left"><p></p></th>
-            <th class="text-center" width = "150px"><p></p></th>
+            <th class="text-center py-0" width = "30px"><p></p></th>
+            <th class="text-center py-0" width = "80px"><p></p></th>
+            <th class="text-left py-0"><p></p></th>
+            <th class="text-center py-0" width = "150px"><p></p></th>
           <tr>
         </thead>
         <tbody>

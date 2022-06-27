@@ -4,18 +4,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
-  <!--     Fonts and icons     -->
+  <link rel="apple-touch-icon" sizes="76x76" href="<?=BASEURL?>/assets/img/apple-icon.png" />
+  <link rel="icon" type="image/png" href="<?=BASEURL?>/assets/img/slack-logo-icon.png" />
+  <!-- Fonts and icons -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
   <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="<?=BASEURL?>/assets/css/nucleo-icons.css" rel="stylesheet" />
   <!-- CSS Files from black dashboard -->
-  <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <link href="<?=BASEURL?>/assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+   <!-- Sweet Alert -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
 
   <!-- style css -->
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="<?=BASEURL?>/css/style.css" />
   <link rel="stylesheet" href="loginAdmin.css">
   <!-- bootstrap css -->
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
@@ -28,15 +30,15 @@
     </div>
     <div class="form-login md-5">
       <div class="container login">
-        <div class="row">
-          <div class="col-7  text-center left-image">
-            <img src="../img/rezerva.png" alt="" >
+        <div class="row align-items-center">
+          <div class="col-7 text-center left-image align-self-center">
+            <img src="<?=BASEURL?>/img/rezerva.png" alt="" >
           </div>
-          <div class="col-5">
+          <div class="col-5 align-self-center">
             <div class="login-wrap p-4 p-md-5">
               <div class="d-flex">
                 <div class="w-100">
-                  <h3 class="mb-4">Sign In</h3>
+                  <h3 class="mb-4">Login</h3>
                 </div>
                 <div class="w-100">
                   <p class="social-media d-flex justify-content-end">
@@ -45,26 +47,24 @@
                   </p>
                 </div>
               </div>
-              <form action="#" class="signin-form">
+              <form action="<?=BASEURL?>/admin/login/login" method="POST" class="signin-form">
                 <div class="form-group mb-3">
-                  <label class="label" for="name">Username</label>
-                  <input type="text" class="form-control" placeholder="Username" required />
+                  <label class="label" for="email">Email</label>
+                  <input type="email" name="email" class="form-control" placeholder="Email" required value="<?=$data['email'] ?? ''?>">
                 </div>
                 <div class="form-group mb-3">
                   <label class="label" for="password">Password</label>
-                  <input type="password" class="form-control" placeholder="Password" required />
+                  <input type="password" name="password" class="form-control" placeholder="Password" required />
                 </div>
                 <div class="form-group text-center">
-                  <button class="btn btn-info" type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
-                </div>
-                <div class="form-group d-md-flex">
-                  <div class="w-50 text-left">
+                  <button class="btn btn-info" type="submit" class="form-control btn btn-primary rounded submit px-3">Login</button>
+                  <div class="text-center mt-3">
                     <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
                       <input type="checkbox" checked />
                       <span class="checkmark"></span>
                     </label>
                   </div>
-                  <div class="w-50 text-md-right">
+                  <div class="text-center mt-3">
                     <a href="#">Forgot Password</a>
                   </div>
                 </div>
@@ -77,21 +77,33 @@
   </div>
 
 
-  <script src="../assets/js/core/jquery.min.js"></script>
-  <script src="../assets/js/core/popper.min.js"></script>
-  <script src="../assets/js/core/bootstrap.min.js"></script>
-  <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+  <script src="<?=BASEURL?>/assets/js/core/jquery.min.js"></script>
+  <script src="<?=BASEURL?>/assets/js/core/popper.min.js"></script>
+  <script src="<?=BASEURL?>/assets/js/core/bootstrap.min.js"></script>
+  <script src="<?=BASEURL?>/assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!--  Google Maps Plugin    -->
   <!-- Place this tag in your head or just before your close body tag. -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
-  <script src="../assets/js/plugins/chartjs.min.js"></script>
+  <script src="<?=BASEURL?>/assets/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
-  <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+  <script src="<?=BASEURL?>/assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script>
+  <script src="<?=BASEURL?>/assets/js/black-dashboard.min.js?v=1.0.0"></script>
   <!-- Black Dashboard DEMO methods, don't include it in your project! -->
-  <script src="../assets/demo/demo.js"></script>
+  <script src="<?=BASEURL?>/assets/demo/demo.js"></script>
+
+  <!-- Sweet Alert -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
+
+  <?php 
+  if(isset($_SESSION['alert'])){
+    success_and_error($_SESSION['alert']['message'], $_SESSION['alert']['type']);
+    unset($_SESSION['alert']);
+  } 
+  ?>
+
   <script>
     $(document).ready(function() {
       $().ready(function() {
@@ -207,12 +219,12 @@
       });
     });
   </script>
-  <script>
+  <!-- <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/js/demos.js
       demo.initDashboardPageCharts();
     });
-  </script>
+  </script> -->
   <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
   <script>
     window.TrackJS &&
